@@ -21,7 +21,7 @@ function Setnav() {
                   "<li><a href='country.html' id='btn_byCountry' class='btn btn-wb'>by Country</a></li>" +
                   "<li><a href='heatmap.html' id='btn_heatmap' class='btn btn-wb'>Heatmap</a></li>" +
                   "<li><a href='Summary.html' id='btn_Summary' class='btn btn-wb'>Summary</a></li>" +
-                  "<li><a href='about.html' id='btn_About' class='btn btn-wb'>About</a></li>" +
+                  "<li><a href='About.html' id='btn_About' class='btn btn-wb'>About</a></li>" +
                   "</ul>";
     return navHTML;
     
