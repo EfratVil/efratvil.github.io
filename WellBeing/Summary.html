@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Visualizing Well-being</title>
+    <link rel="stylesheet" href="CSS/reset.css" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lobster" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Droid+Serif" />
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="CSS/main.css" />
+    <link href="CSS/mix.css" rel="stylesheet" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <nav>
+    </nav>           
+
+<h2> Summary of indicators grades per country for 2015</h2>
+
+
+
+    <br />
+
+    <div style="width:800px; margin: 18px;">Each country's 24 indicators were graded according to this scale<br/>
+        
+    </div>
+
+    <table style="width:800px; text-align: center; margin: 18px;">
+        <tr>
+            <td height="10px" style=" width:100px; ">Worst&nbsp;</td>
+            <td height="10px" style=" width:100px;">&nbsp;</td>
+            <td height="10px" style=" width:100px;">&nbsp;</td>
+            <td height="10px" style=" width:100px;">Avg -</td>
+            <td height="10px" style=" width:100px;">Avg +</td>
+            <td height="10px" style=" width:100px;">&nbsp;</td>
+            <td height="10px" style=" width:100px;">&nbsp;</td>
+            <td height="10px" style=" width:100px;">Outstanding</td>
+        </tr>
+        <tr>
+            <td height="10px" style="background-color: #d73027; width:100px; color: #fff;">0</td>
+            <td height="10px" style="background-color: #f46d43; width:100px;">1</td>
+            <td height="10px" style="background-color: #fdae61; width:100px;">2</td>
+            <td height="10px" style="background-color: #fee08b; width:100px;">3</td>
+            <td height="10px" style="background-color: #d9ef8b; width:100px;">4</td>
+            <td height="10px" style="background-color: #a6d96a; width:100px;">5</td>
+            <td height="10px" style="background-color: #66bd63; width:100px;">6</td>
+            <td height="10px" style="background-color: #1a9850; width:100px; color: #fff;">7</td>
+        </tr>
+    </table>
+
+  
+        <div style="width:800px; margin: 18px;">
+        Summary of the grades each country received:
+        </div>
+        <div id="Grid"></div>
+
+        <br /><br />
+        <footer></footer>
+
+
+        <script type="text/javascript">
+
+
+            function colorPickerUp(c, h) {
+                var color = "";
+
+                if (c == 7) { color = "#1a9850"; }
+                else if (c == 6) { color = "#66bd63"; }
+                else if (c == 5) { color = "#a6d96a"; }
+                else if (c == 4) { color = "#d9ef8b"; }
+                else if (c == 3) { color = "#fee08b"; }
+                else if (c == 2) { color = "#fdae61"; }
+                else if (c == 1) { color = "#f46d43"; }
+                else { color = "#d73027"; }
+
+
+                return "style = 'height: " + h * 4 + "px; background-color: " + color + "; margin-left: 6px; margin-right: 6px;'"
+            }
+
+            $.get('data/zone_country_summary_2015.csv', function (data) {
+
+                var html = '<div>';
+                var country = "";
+                var count = 0;
+                var countryAvg = 0;
+
+                // split data into rows
+                var rows = data.split("\n");
+
+                rows.forEach(function getvalues(ourrow) {
+
+                    // split row into columns
+                    var columns = ourrow.split(",");
+
+                    if (country == columns[0]) {
+                        html += "<div " + colorPickerUp(columns[1], columns[2]) + ">" + "</div>"; //columns[1] + " - " + columns[2] +
+                        countryAvg = countryAvg + columns[1] * columns[2]
+                    }
+                    else {
+                        // new country
+                        if (country != "") { html += "</div>"; }
+                        console.log("Country - " + columns[0] + " avg - " + countryAvg / 24);
+                        country = columns[0];
+                        countryAvg = columns[1] * columns[2]
+                        count = 1;
+                        html += "<div class='mix category-1'><h3>" + columns[0] + "</h3>";
+                        html += "<div " + colorPickerUp(columns[1], columns[2]) + ">" + "</div>"; // columns[1] + " - " + columns[2] + //style='background-color: #d9ef8b;
+                    }
+                })
+
+                html += "</div>";  // close last mix
+                html += "</div>";  // close Grid div
+
+                $('#Grid').append(html);
+
+            });
+
+
+            $("#btnFilter").click(function () {
+
+                $.each($('.xx'), function (index, value) {
+                    //  $(this).css("color", "Blue");
+                    $(this).css({ "visibility": "hidden" });
+                });
+
+
+            });
+
+        </script>
+
+        <script src="JS/main.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("nav").html(Setnav());
+                $("footer").html(Setfooter());
+                $("#btn_Summary").removeClass("btn-wb").addClass("btn-wb-active");
+
+
+            });
+        </script>
+
+</body>
+    </html>

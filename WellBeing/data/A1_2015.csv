@@ -1,0 +1,37 @@
+ID,Indicator,Country,year,Value,zone,zone_id
+1,A1,Australia,2015,1.1,Zone4,4
+2,A1,Austria,2015,1,Zone4,4
+3,A1,Belgium,2015,2,Zone4,4
+4,A1,Brazil,2015,6.7,Zone2,2
+5,A1,Canada,2015,0.2,Zone4,4
+6,A1,Chile,2015,9.4,Zone2,2
+7,A1,Czech Republic,2015,0.9,Zone4,4
+8,A1,Denmark,2015,0.9,Zone4,4
+9,A1,Estonia,2015,8.1,Zone2,2
+10,A1,Finland,2015,0.6,Zone4,4
+11,A1,France,2015,0.5,Zone4,4
+12,A1,Germany,2015,0.1,Zone4,4
+13,A1,Greece,2015,0.7,Zone4,4
+14,A1,Hungary,2015,4.8,Zone3,3
+15,A1,Iceland,2015,0.4,Zone4,4
+16,A1,Ireland,2015,0.2,Zone4,4
+17,A1,Israel,2015,3.7,Zone3,3
+18,A1,Italy,2015,1.1,Zone4,4
+19,A1,Japan,2015,6.4,Zone2,2
+20,A1,Korea,2015,4.2,Zone3,3
+21,A1,Luxembourg,2015,0.1,Zone4,4
+22,A1,Mexico,2015,4.2,Zone3,3
+23,A1,Netherlands,2015,0,Zone4,4
+24,A1,New Zealand,2015,0.2,Zone4,4
+25,A1,Norway,2015,0.3,Zone4,4
+26,A1,Poland,2015,3.2,Zone3,3
+27,A1,Portugal,2015,0.9,Zone4,4
+28,A1,Russia,2015,15.1,Outlier_Low,0
+29,A1,Slovak Republic,2015,0.6,Zone4,4
+30,A1,Slovenia,2015,0.5,Zone4,4
+31,A1,Spain,2015,0.1,Zone4,4
+32,A1,Sweden,2015,0,Zone4,4
+33,A1,Switzerland,2015,0,Zone4,4
+34,A1,Turkey,2015,12.7,Zone1,1
+35,A1,United Kingdom,2015,0.2,Zone4,4
+36,A1,United States,2015,0.1,Zone4,4

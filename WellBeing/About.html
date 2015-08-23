@@ -1,0 +1,97 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Visualizing Well-being</title>
+        
+        <link rel="stylesheet" href="CSS/reset.css" />
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lobster" />
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Droid+Serif" />
+        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="CSS/main.css" />
+    </head>
+    <body>
+ 
+        <nav>
+        </nav>          
+            
+            
+            <section>
+                <div id="container"></div>
+                <h2> About</h2>          
+
+                <div style="width:800px; margin: 18px;">
+                    The Wikiprogress Data Visualization Contest 2015 was a good opportunity to learn and practice d3.JS.
+                    <br />
+                    The data used in the visualizations is from oecd.stats - Better Life Index for years 2013-2015. See 
+                    the <a href='http://www.oecd.org/statistics/OECD-Better-Life-Index-2015-definitions.pdf' target='_blank'>
+    detailed definitions</a> of the indicators.
+    <br /><br />
+    The concept used: well being is  relative between countries. In order to simplify the data visualization:
+    each indicator values per country were reviewed and graded into 6 zones according to standard deviation distance from the mean.
+    2 more zones created for outlier data (extremely low or high).
+
+    <br /><br />
+    <b>Zones legend:</b>
+    <table style="width:800px; text-align: center; margin: 5px;">
+        <tr>
+            <td height="10px" style=" width:100px; ">Worst&nbsp;</td>
+            <td height="10px" style=" width:100px;">&nbsp;</td>
+            <td height="10px" style=" width:100px;">&nbsp;</td>
+            <td height="10px" style=" width:100px;">Below Avg</td>
+            <td height="10px" style=" width:100px;">Above Avg</td>
+            <td height="10px" style=" width:100px;">&nbsp;</td>
+            <td height="10px" style=" width:100px;">&nbsp;</td>
+            <td height="10px" style=" width:100px;">Best&nbsp;</td>
+        </tr>
+        <tr>
+            <td height="10px" style="background-color: #d73027; width:100px; color: #fff;">0</td>
+            <td height="10px" style="background-color: #f46d43; width:100px;">1</td>
+            <td height="10px" style="background-color: #fdae61; width:100px;">2</td>
+            <td height="10px" style="background-color: #fee08b; width:100px;">3</td>
+            <td height="10px" style="background-color: #d9ef8b; width:100px;">4</td>
+            <td height="10px" style="background-color: #a6d96a; width:100px;">5</td>
+            <td height="10px" style="background-color: #66bd63; width:100px;">6</td>
+            <td height="10px" style="background-color: #1a9850; width:100px; color: #fff;">7</td>
+        </tr>
+    </table>
+
+    <br />
+
+    <br />
+    <b>Attributions:</b><br /><br />
+    Thanks to:<br /><br />
+
+    The D3.js community, specifically for <a href="http://bl.ocks.org/mbostock">Mike Bostock</a> for providing so many usfull code examples.<br />
+
+    <a href='http://bl.ocks.org/ianyfchang/8119685'>@ianyfchang</a> for the heatmap code.<br />
+
+    And <a href="http://tympanus.net/codrops/2012/04/05/slideshow-with-jmpress-js/">codrops</a> for the slideshow plugin.
+
+    <br /><br />
+    Created by Efrat Vilenski<br />
+    <a href='https://twitter.com/EfratVil'>@EfratVil</a><br />
+</div> 
+                <br /><br /><br /><br /><br /><br /><br />
+            </section>
+            
+            
+            
+            
+    <footer></footer>      
+    
+        <script src="JS/jQuery.js"></script>       
+        <script src="JS/main.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("nav").html(Setnav());
+                $("footer").html(Setfooter());
+                $("#btn_About").removeClass("btn-wb").addClass("btn-wb-active");
+            });
+        </script>
+
+    </body>
+</html>

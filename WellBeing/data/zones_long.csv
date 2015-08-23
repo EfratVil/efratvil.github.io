@@ -1,0 +1,2593 @@
+ID,Indicator,Country,year,Value,zone,zone_id
+1,A1,Australia,2013,1.2,Zone5,5
+1,A1,Australia,2014,1.1,Zone5,5
+1,A1,Australia,2015,1.1,Zone5,5
+1,A2,Australia,2013,19,Zone4,4
+1,A2,Australia,2014,20,Zone4,4
+1,A2,Australia,2015,20,Zone3,3
+1,A3,Australia,2013,2.3,Zone5,5
+1,A3,Australia,2014,2.3,Zone5,5
+1,A3,Australia,2015,2.3,Zone5,5
+1,B1,Australia,2013,28884,Zone4,4
+1,B1,Australia,2014,31197,Zone5,5
+1,B1,Australia,2015,31588,Zone5,5
+1,B2,Australia,2013,32178,Zone3,3
+1,B2,Australia,2014,38482,Zone3,3
+1,B2,Australia,2015,47657,Zone3,3
+1,C1,Australia,2013,73,Zone4,4
+1,C1,Australia,2014,72,Zone4,4
+1,C1,Australia,2015,72,Zone4,4
+1,C2,Australia,2013,12.4,Zone4,4
+1,C2,Australia,2014,4.4,Zone5,5
+1,C2,Australia,2015,4.8,Zone4,4
+1,C3,Australia,2013,0.96,Zone5,5
+1,C3,Australia,2014,1.06,Zone5,5
+1,C3,Australia,2015,1.08,Zone5,5
+1,C4,Australia,2013,43908,Zone4,4
+1,C4,Australia,2014,46585,Zone4,4
+1,C4,Australia,2015,50449,Zone5,5
+1,D1,Australia,2013,94,Zone4,4
+1,D1,Australia,2014,93,Zone4,4
+1,D1,Australia,2015,92,Zone4,4
+1,E1,Australia,2013,73,Zone3,3
+1,E1,Australia,2014,74,Zone4,4
+1,E1,Australia,2015,76,Zone4,4
+1,E2,Australia,2013,519,Zone4,4
+1,E2,Australia,2014,514,Zone4,4
+1,E2,Australia,2015,512,Zone4,4
+1,E3,Australia,2013,18.5,Zone4,4
+1,E3,Australia,2014,18.8,Zone5,5
+1,E3,Australia,2015,19.4,Zone5,5
+1,F1,Australia,2013,14,Zone5,5
+1,F1,Australia,2014,13,Zone5,5
+1,F1,Australia,2015,13,Zone5,5
+1,F2,Australia,2013,91,Zone4,4
+1,F2,Australia,2014,93,Zone4,4
+1,F2,Australia,2015,91,Zone4,4
+1,G1,Australia,2013,10.5,Zone5,5
+1,G1,Australia,2014,10.5,Zone5,5
+1,G1,Australia,2015,10.5,Zone5,5
+1,G2,Australia,2013,93,Zone5,5
+1,G2,Australia,2014,93,Zone5,5
+1,G2,Australia,2015,93,Zone5,5
+1,H1,Australia,2013,82,Zone4,4
+1,H1,Australia,2014,82,Zone4,4
+1,H1,Australia,2015,82.1,Zone4,4
+1,H2,Australia,2013,85,Zone5,5
+1,H2,Australia,2014,85,Zone5,5
+1,H2,Australia,2015,85,Zone5,5
+1,I1,Australia,2013,7.2,Zone4,4
+1,I1,Australia,2014,7.4,Zone4,4
+1,I1,Australia,2015,7.3,Zone4,4
+1,J1,Australia,2013,2.1,Zone5,5
+1,J1,Australia,2014,2.1,Zone5,5
+1,J1,Australia,2015,2.1,Zone5,5
+1,J2,Australia,2013,1,Zone5,5
+1,J2,Australia,2014,0.8,Zone6,6
+1,J2,Australia,2015,0.8,Zone6,6
+1,K1,Australia,2013,14.13,Zone3,3
+1,K1,Australia,2014,14.23,Zone3,3
+1,K1,Australia,2015,14.02,Zone3,3
+1,K2,Australia,2013,14.41,Zone3,3
+1,K2,Australia,2014,14.41,Zone3,3
+1,K2,Australia,2015,14.41,Zone3,3
+2,A1,Austria,2013,1.2,Zone5,5
+2,A1,Austria,2014,1,Zone5,5
+2,A1,Austria,2015,1,Zone5,5
+2,A2,Austria,2013,21,Zone3,3
+2,A2,Austria,2014,21,Zone3,3
+2,A2,Austria,2015,21,Zone3,3
+2,A3,Austria,2013,1.7,Zone4,4
+2,A3,Austria,2014,1.6,Zone3,3
+2,A3,Austria,2015,1.6,Zone3,3
+2,B1,Austria,2013,28852,Zone4,4
+2,B1,Austria,2014,29256,Zone4,4
+2,B1,Austria,2015,31173,Zone4,4
+2,B2,Austria,2013,47458,Zone3,3
+2,B2,Austria,2014,48125,Zone3,3
+2,B2,Austria,2015,49887,Zone3,3
+2,C1,Austria,2013,72,Zone4,4
+2,C1,Austria,2014,73,Zone4,4
+2,C1,Austria,2015,72,Zone4,4
+2,C2,Austria,2013,9.5,Zone4,4
+2,C2,Austria,2014,3.4,Zone5,5
+2,C2,Austria,2015,3.9,Zone5,5
+2,C3,Austria,2013,1.07,Zone5,5
+2,C3,Austria,2014,1.07,Zone5,5
+2,C3,Austria,2015,1.19,Zone5,5
+2,C4,Austria,2013,43688,Zone4,4
+2,C4,Austria,2014,43837,Zone4,4
+2,C4,Austria,2015,45199,Zone4,4
+2,D1,Austria,2013,94,Zone4,4
+2,D1,Austria,2014,95,Zone4,4
+2,D1,Austria,2015,89,Zone4,4
+2,E1,Austria,2013,82,Zone4,4
+2,E1,Austria,2014,82,Zone4,4
+2,E1,Austria,2015,83,Zone4,4
+2,E2,Austria,2013,487,Zone3,3
+2,E2,Austria,2014,498,Zone4,4
+2,E2,Austria,2015,500,Zone4,4
+2,E3,Austria,2013,16.9,Zone3,3
+2,E3,Austria,2014,16.9,Zone3,3
+2,E3,Austria,2015,17,Zone3,3
+2,F1,Austria,2013,27,Zone3,3
+2,F1,Austria,2014,27,Zone3,3
+2,F1,Austria,2015,27,Zone3,3
+2,F2,Austria,2013,96,Zone5,5
+2,F2,Austria,2014,95,Zone5,5
+2,F2,Austria,2015,94,Zone5,5
+2,G1,Austria,2013,7.1,Zone3,3
+2,G1,Austria,2014,7.1,Zone3,3
+2,G1,Austria,2015,7.1,Zone3,3
+2,G2,Austria,2013,82,Zone4,4
+2,G2,Austria,2014,75,Zone4,4
+2,G2,Austria,2015,75,Zone4,4
+2,H1,Austria,2013,81.1,Zone4,4
+2,H1,Austria,2014,81.1,Zone4,4
+2,H1,Austria,2015,81,Zone4,4
+2,H2,Austria,2013,69,Zone4,4
+2,H2,Austria,2014,69,Zone4,4
+2,H2,Austria,2015,69,Zone4,4
+2,I1,Austria,2013,7.4,Zone4,4
+2,I1,Austria,2014,7.5,Zone4,4
+2,I1,Austria,2015,6.9,Zone4,4
+2,J1,Austria,2013,3,Zone5,5
+2,J1,Austria,2014,3.4,Zone5,5
+2,J1,Austria,2015,3.4,Zone5,5
+2,J2,Austria,2013,0.6,Zone6,6
+2,J2,Austria,2014,0.5,Zone6,6
+2,J2,Austria,2015,0.4,Zone6,6
+2,K1,Austria,2013,8.76,Zone4,4
+2,K1,Austria,2014,8.61,Zone4,4
+2,K1,Austria,2015,7.61,Zone4,4
+2,K2,Austria,2013,14.46,Zone3,3
+2,K2,Austria,2014,14.46,Zone3,3
+2,K2,Austria,2015,14.46,Zone3,3
+3,A1,Belgium,2013,1.4,Zone5,5
+3,A1,Belgium,2014,1.9,Zone5,5
+3,A1,Belgium,2015,2,Zone4,4
+3,A2,Belgium,2013,20,Zone3,3
+3,A2,Belgium,2014,20,Zone4,4
+3,A2,Belgium,2015,21,Zone3,3
+3,A3,Belgium,2013,2.2,Zone5,5
+3,A3,Belgium,2014,2.3,Zone5,5
+3,A3,Belgium,2015,2.2,Zone5,5
+3,B1,Belgium,2013,26874,Zone4,4
+3,B1,Belgium,2014,27811,Zone4,4
+3,B1,Belgium,2015,28307,Zone4,4
+3,B2,Belgium,2013,74007,Zone5,5
+3,B2,Belgium,2014,78368,Zone4,4
+3,B2,Belgium,2015,83876,Zone4,4
+3,C1,Belgium,2013,62,Zone3,3
+3,C1,Belgium,2014,62,Zone3,3
+3,C1,Belgium,2015,62,Zone3,3
+3,C2,Belgium,2013,7.4,Zone5,5
+3,C2,Belgium,2014,4.5,Zone5,5
+3,C2,Belgium,2015,5,Zone4,4
+3,C3,Belgium,2013,3.45,Zone3,3
+3,C3,Belgium,2014,3.37,Zone4,4
+3,C3,Belgium,2015,3.88,Zone4,4
+3,C4,Belgium,2013,44321,Zone4,4
+3,C4,Belgium,2014,47276,Zone4,4
+3,C4,Belgium,2015,48082,Zone4,4
+3,D1,Belgium,2013,92,Zone4,4
+3,D1,Belgium,2014,91,Zone4,4
+3,D1,Belgium,2015,94,Zone4,4
+3,E1,Belgium,2013,70,Zone3,3
+3,E1,Belgium,2014,71,Zone3,3
+3,E1,Belgium,2015,72,Zone3,3
+3,E2,Belgium,2013,509,Zone4,4
+3,E2,Belgium,2014,507,Zone4,4
+3,E2,Belgium,2015,509,Zone4,4
+3,E3,Belgium,2013,18.7,Zone5,5
+3,E3,Belgium,2014,18.8,Zone5,5
+3,E3,Belgium,2015,18.9,Zone5,5
+3,F1,Belgium,2013,21,Zone4,4
+3,F1,Belgium,2014,21,Zone4,4
+3,F1,Belgium,2015,21,Zone4,4
+3,F2,Belgium,2013,80,Zone3,3
+3,F2,Belgium,2014,84,Zone4,4
+3,F2,Belgium,2015,87,Zone4,4
+3,G1,Belgium,2013,4.5,Zone2,2
+3,G1,Belgium,2014,4.5,Zone2,2
+3,G1,Belgium,2015,4.5,Zone2,2
+3,G2,Belgium,2013,89,Zone5,5
+3,G2,Belgium,2014,89,Zone5,5
+3,G2,Belgium,2015,89,Zone5,5
+3,H1,Belgium,2013,80.5,Zone4,4
+3,H1,Belgium,2014,80.5,Zone4,4
+3,H1,Belgium,2015,80.5,Zone4,4
+3,H2,Belgium,2013,73,Zone4,4
+3,H2,Belgium,2014,74,Zone4,4
+3,H2,Belgium,2015,74,Zone4,4
+3,I1,Belgium,2013,6.9,Zone4,4
+3,I1,Belgium,2014,7.1,Zone4,4
+3,I1,Belgium,2015,6.9,Zone4,4
+3,J1,Belgium,2013,6.7,Zone3,3
+3,J1,Belgium,2014,6.6,Zone3,3
+3,J1,Belgium,2015,6.6,Zone3,3
+3,J2,Belgium,2013,1.7,Zone5,5
+3,J2,Belgium,2014,1.2,Zone5,5
+3,J2,Belgium,2015,1.1,Zone5,5
+3,K1,Belgium,2013,4.43,Zone5,5
+3,K1,Belgium,2014,4.41,Zone5,5
+3,K1,Belgium,2015,4.57,Zone5,5
+3,K2,Belgium,2013,15.71,Zone5,5
+3,K2,Belgium,2014,15.71,Zone5,5
+3,K2,Belgium,2015,15.71,Zone5,5
+4,A1,Brazil,2013,6.7,Zone2,2
+4,A1,Brazil,2014,6.7,Zone2,2
+4,A1,Brazil,2015,6.7,Zone2,2
+4,A2,Brazil,2013,21,Zone3,3
+4,A2,Brazil,2014,21,Zone3,3
+4,A2,Brazil,2015,21,Zone3,3
+4,A3,Brazil,2013,1.4,Zone3,3
+4,A3,Brazil,2014,1.4,Zone3,3
+4,A3,Brazil,2015,1.6,Zone3,3
+4,B1,Brazil,2013,10225,Zone2,2
+4,B1,Brazil,2014,10310,Zone2,2
+4,B1,Brazil,2015,11664,Zone2,2
+4,B2,Brazil,2013,5861,Zone2,2
+4,B2,Brazil,2014,6875,Zone2,2
+4,B2,Brazil,2015,6844,Zone2,2
+4,C1,Brazil,2013,68,Zone4,4
+4,C1,Brazil,2014,67,Zone4,4
+4,C1,Brazil,2015,67,Zone4,4
+4,C2,Brazil,2013,14,Zone3,3
+4,C2,Brazil,2014,4.8,Zone4,4
+4,C2,Brazil,2015,4.6,Zone5,5
+4,C3,Brazil,2013,3.02,Zone4,4
+4,C3,Brazil,2014,2.17,Zone4,4
+4,C3,Brazil,2015,1.97,Zone5,5
+4,C4,Brazil,2013,10905,Zone1,1
+4,C4,Brazil,2014,7909,Zone1,1
+4,C4,Brazil,2015,17177,Zone2,2
+4,D1,Brazil,2013,88,Zone3,3
+4,D1,Brazil,2014,90,Zone4,4
+4,D1,Brazil,2015,90,Zone4,4
+4,E1,Brazil,2013,41,Zone2,2
+4,E1,Brazil,2014,43,Zone2,2
+4,E1,Brazil,2015,45,Zone2,2
+4,E2,Brazil,2013,401,Outlier_Low,0
+4,E2,Brazil,2014,406,Zone1,1
+4,E2,Brazil,2015,402,Outlier_Low,0
+4,E3,Brazil,2013,16.3,Zone3,3
+4,E3,Brazil,2014,16.3,Zone3,3
+4,E3,Brazil,2015,16.3,Zone3,3
+4,F1,Brazil,2013,19,Zone4,4
+4,F1,Brazil,2014,18,Zone4,4
+4,F1,Brazil,2015,18,Zone4,4
+4,F2,Brazil,2013,75,Zone3,3
+4,F2,Brazil,2014,67,Zone2,2
+4,F2,Brazil,2015,72,Zone3,3
+4,G1,Brazil,2013,4,Zone2,2
+4,G1,Brazil,2014,4,Zone2,2
+4,G1,Brazil,2015,4,Zone2,2
+4,G2,Brazil,2013,78,Zone4,4
+4,G2,Brazil,2014,79,Zone4,4
+4,G2,Brazil,2015,79,Zone4,4
+4,H1,Brazil,2013,73.5,Zone2,2
+4,H1,Brazil,2014,73.4,Zone2,2
+4,H1,Brazil,2015,73.7,Zone2,2
+4,H2,Brazil,2013,69,Zone4,4
+4,H2,Brazil,2014,69,Zone4,4
+4,H2,Brazil,2015,69,Zone4,4
+4,I1,Brazil,2013,6.7,Zone4,4
+4,I1,Brazil,2014,7.2,Zone4,4
+4,I1,Brazil,2015,7,Zone4,4
+4,J1,Brazil,2013,7.9,Zone2,2
+4,J1,Brazil,2014,7.9,Zone2,2
+4,J1,Brazil,2015,7.9,Zone2,2
+4,J2,Brazil,2013,21,Outlier_Low,0
+4,J2,Brazil,2014,25.5,Outlier_Low,0
+4,J2,Brazil,2015,25.5,Outlier_Low,0
+4,K1,Brazil,2013,12.5,Zone3,3
+4,K1,Brazil,2014,10.74,Zone3,3
+4,K1,Brazil,2015,10.41,Zone3,3
+4,K2,Brazil,2013,14.84,Zone4,4
+4,K2,Brazil,2014,14.97,Zone4,4
+4,K2,Brazil,2015,14.97,Zone4,4
+5,A1,Canada,2013,0.2,Zone6,6
+5,A1,Canada,2014,0.2,Zone6,6
+5,A1,Canada,2015,0.2,Zone6,6
+5,A2,Canada,2013,22,Zone3,3
+5,A2,Canada,2014,22,Zone3,3
+5,A2,Canada,2015,21,Zone3,3
+5,A3,Canada,2013,2.6,Zone6,6
+5,A3,Canada,2014,2.5,Zone5,5
+5,A3,Canada,2015,2.5,Zone5,5
+5,B1,Canada,2013,28194,Zone4,4
+5,B1,Canada,2014,30212,Zone5,5
+5,B1,Canada,2015,29365,Zone4,4
+5,B2,Canada,2013,63852,Zone4,4
+5,B2,Canada,2014,63261,Zone4,4
+5,B2,Canada,2015,67913,Zone4,4
+5,C1,Canada,2013,72,Zone4,4
+5,C1,Canada,2014,72,Zone4,4
+5,C1,Canada,2015,72,Zone4,4
+5,C2,Canada,2013,11.3,Zone4,4
+5,C2,Canada,2014,6.6,Zone4,4
+5,C2,Canada,2015,6.4,Zone4,4
+5,C3,Canada,2013,1,Zone5,5
+5,C3,Canada,2014,0.9,Zone5,5
+5,C3,Canada,2015,0.9,Zone5,5
+5,C4,Canada,2013,42253,Zone4,4
+5,C4,Canada,2014,44017,Zone4,4
+5,C4,Canada,2015,46911,Zone4,4
+5,D1,Canada,2013,94,Zone4,4
+5,D1,Canada,2014,94,Zone4,4
+5,D1,Canada,2015,92,Zone4,4
+5,E1,Canada,2013,88,Zone4,4
+5,E1,Canada,2014,89,Zone4,4
+5,E1,Canada,2015,89,Zone4,4
+5,E2,Canada,2013,527,Zone5,5
+5,E2,Canada,2014,522,Zone4,4
+5,E2,Canada,2015,522,Zone4,4
+5,E3,Canada,2013,17,Zone3,3
+5,E3,Canada,2014,17,Zone3,3
+5,E3,Canada,2015,17.2,Zone3,3
+5,F1,Canada,2013,16,Zone4,4
+5,F1,Canada,2014,15,Zone4,4
+5,F1,Canada,2015,15,Zone4,4
+5,F2,Canada,2013,89,Zone4,4
+5,F2,Canada,2014,90,Zone4,4
+5,F2,Canada,2015,91,Zone4,4
+5,G1,Canada,2013,10.5,Zone5,5
+5,G1,Canada,2014,10.5,Zone5,5
+5,G1,Canada,2015,10.5,Zone5,5
+5,G2,Canada,2013,61,Zone3,3
+5,G2,Canada,2014,61,Zone3,3
+5,G2,Canada,2015,61,Zone3,3
+5,H1,Canada,2013,81,Zone4,4
+5,H1,Canada,2014,81,Zone4,4
+5,H1,Canada,2015,81.5,Zone4,4
+5,H2,Canada,2013,88,Zone5,5
+5,H2,Canada,2014,88,Zone5,5
+5,H2,Canada,2015,89,Zone5,5
+5,I1,Canada,2013,7.4,Zone4,4
+5,I1,Canada,2014,7.6,Zone5,5
+5,I1,Canada,2015,7.3,Zone4,4
+5,J1,Canada,2013,1.3,Zone6,6
+5,J1,Canada,2014,1.3,Zone6,6
+5,J1,Canada,2015,1.3,Zone6,6
+5,J2,Canada,2013,1.6,Zone5,5
+5,J2,Canada,2014,1.7,Zone5,5
+5,J2,Canada,2015,1.5,Zone5,5
+5,K1,Canada,2013,3.91,Zone5,5
+5,K1,Canada,2014,3.98,Zone5,5
+5,K1,Canada,2015,3.94,Zone5,5
+5,K2,Canada,2013,14.25,Zone3,3
+5,K2,Canada,2014,14.25,Zone2,2
+5,K2,Canada,2015,14.25,Zone2,2
+6,A1,Chile,2013,9.4,Zone1,1
+6,A1,Chile,2014,9.4,Zone2,2
+6,A1,Chile,2015,9.4,Zone2,2
+6,A2,Chile,2013,18,Zone4,4
+6,A2,Chile,2014,19,Zone4,4
+6,A2,Chile,2015,18,Zone4,4
+6,A3,Chile,2013,1.3,Zone3,3
+6,A3,Chile,2014,1.3,Zone3,3
+6,A3,Chile,2015,1.2,Zone2,2
+6,B1,Chile,2013,11039,Zone2,2
+6,B1,Chile,2014,13762,Zone2,2
+6,B1,Chile,2015,14533,Zone2,2
+6,B2,Chile,2013,16972,Zone2,2
+6,B2,Chile,2014,18141,Zone2,2
+6,B2,Chile,2015,17733,Zone2,2
+6,C1,Chile,2013,61,Zone3,3
+6,C1,Chile,2014,62,Zone3,3
+6,C1,Chile,2015,62,Zone3,3
+6,C2,Chile,2013,10.5,Zone4,4
+6,C2,Chile,2014,4.7,Zone4,4
+6,C2,Chile,2015,4.4,Zone5,5
+6,C3,Chile,2013,2.94,Zone4,4
+6,C3,Chile,2014,2.01,Zone4,4
+6,C3,Chile,2015,1.59,Zone5,5
+6,C4,Chile,2013,15820,Zone2,2
+6,C4,Chile,2014,15438,Zone2,2
+6,C4,Chile,2015,22101,Zone2,2
+6,D1,Chile,2013,82,Zone2,2
+6,D1,Chile,2014,85,Zone3,3
+6,D1,Chile,2015,86,Zone3,3
+6,E1,Chile,2013,71,Zone3,3
+6,E1,Chile,2014,72,Zone3,3
+6,E1,Chile,2015,57,Zone2,2
+6,E2,Chile,2013,439,Zone2,2
+6,E2,Chile,2014,439,Zone2,2
+6,E2,Chile,2015,436,Zone2,2
+6,E3,Chile,2013,16.2,Zone2,2
+6,E3,Chile,2014,16.4,Zone3,3
+6,E3,Chile,2015,16.5,Zone3,3
+6,F1,Chile,2013,53,Outlier_Low,0
+6,F1,Chile,2014,46,Outlier_Low,0
+6,F1,Chile,2015,46,Outlier_Low,0
+6,F2,Chile,2013,77,Zone3,3
+6,F2,Chile,2014,79,Zone3,3
+6,F2,Chile,2015,73,Zone3,3
+6,G1,Chile,2013,2,Zone1,1
+6,G1,Chile,2014,2,Zone1,1
+6,G1,Chile,2015,2,Zone1,1
+6,G2,Chile,2013,88,Zone5,5
+6,G2,Chile,2014,88,Zone5,5
+6,G2,Chile,2015,49,Zone2,2
+6,H1,Chile,2013,78.3,Zone3,3
+6,H1,Chile,2014,78.3,Zone3,3
+6,H1,Chile,2015,78.9,Zone3,3
+6,H2,Chile,2013,59,Zone3,3
+6,H2,Chile,2014,59,Zone3,3
+6,H2,Chile,2015,59,Zone3,3
+6,I1,Chile,2013,6.5,Zone3,3
+6,I1,Chile,2014,6.6,Zone3,3
+6,I1,Chile,2015,6.7,Zone4,4
+6,J1,Chile,2013,8.3,Zone2,2
+6,J1,Chile,2014,6.9,Zone3,3
+6,J1,Chile,2015,6.9,Zone3,3
+6,J2,Chile,2013,3.7,Zone4,4
+6,J2,Chile,2014,5.2,Zone4,4
+6,J2,Chile,2015,4.4,Zone4,4
+6,K1,Chile,2013,16.32,Zone3,3
+6,K1,Chile,2014,15.42,Zone3,3
+6,K1,Chile,2015,15.42,Zone3,3
+6,K2,Chile,2013,13.66,Zone2,2
+6,K2,Chile,2014,14.41,Zone3,3
+6,K2,Chile,2015,14.41,Zone3,3
+7,A1,Czech Republic,2013,0.7,Zone5,5
+7,A1,Czech Republic,2014,0.9,Zone5,5
+7,A1,Czech Republic,2015,0.9,Zone5,5
+7,A2,Czech Republic,2013,25,Zone2,2
+7,A2,Czech Republic,2014,25,Zone2,2
+7,A2,Czech Republic,2015,26,Zone1,1
+7,A3,Czech Republic,2013,1.4,Zone3,3
+7,A3,Czech Republic,2014,1.4,Zone3,3
+7,A3,Czech Republic,2015,1.4,Zone3,3
+7,B1,Czech Republic,2013,16957,Zone3,3
+7,B1,Czech Republic,2014,17262,Zone3,3
+7,B1,Czech Republic,2015,18404,Zone3,3
+7,B2,Czech Republic,2013,14749,Zone2,2
+7,B2,Czech Republic,2014,17875,Zone2,2
+7,B2,Czech Republic,2015,17299,Zone2,2
+7,C1,Czech Republic,2013,66,Zone4,4
+7,C1,Czech Republic,2014,67,Zone4,4
+7,C1,Czech Republic,2015,68,Zone4,4
+7,C2,Czech Republic,2013,6.7,Zone5,5
+7,C2,Czech Republic,2014,4.2,Zone5,5
+7,C2,Czech Republic,2015,4.1,Zone5,5
+7,C3,Czech Republic,2013,2.8,Zone4,4
+7,C3,Czech Republic,2014,3.03,Zone4,4
+7,C3,Czech Republic,2015,3.12,Zone4,4
+7,C4,Czech Republic,2013,19312,Zone2,2
+7,C4,Czech Republic,2014,20645,Zone2,2
+7,C4,Czech Republic,2015,20338,Zone2,2
+7,D1,Czech Republic,2013,89,Zone4,4
+7,D1,Czech Republic,2014,87,Zone3,3
+7,D1,Czech Republic,2015,85,Zone3,3
+7,E1,Czech Republic,2013,92,Zone5,5
+7,E1,Czech Republic,2014,92,Zone5,5
+7,E1,Czech Republic,2015,92,Zone5,5
+7,E2,Czech Republic,2013,490,Zone3,3
+7,E2,Czech Republic,2014,496,Zone4,4
+7,E2,Czech Republic,2015,500,Zone4,4
+7,E3,Czech Republic,2013,17.8,Zone4,4
+7,E3,Czech Republic,2014,17.9,Zone4,4
+7,E3,Czech Republic,2015,18.1,Zone4,4
+7,F1,Czech Republic,2013,17,Zone4,4
+7,F1,Czech Republic,2014,16,Zone4,4
+7,F1,Czech Republic,2015,16,Zone4,4
+7,F2,Czech Republic,2013,84,Zone4,4
+7,F2,Czech Republic,2014,81,Zone3,3
+7,F2,Czech Republic,2015,85,Zone4,4
+7,G1,Czech Republic,2013,6.8,Zone3,3
+7,G1,Czech Republic,2014,6.8,Zone3,3
+7,G1,Czech Republic,2015,6.8,Zone3,3
+7,G2,Czech Republic,2013,63,Zone3,3
+7,G2,Czech Republic,2014,59,Zone2,2
+7,G2,Czech Republic,2015,59,Zone3,3
+7,H1,Czech Republic,2013,78,Zone3,3
+7,H1,Czech Republic,2014,78,Zone3,3
+7,H1,Czech Republic,2015,78.2,Zone3,3
+7,H2,Czech Republic,2013,59,Zone3,3
+7,H2,Czech Republic,2014,60,Zone3,3
+7,H2,Czech Republic,2015,60,Zone3,3
+7,I1,Czech Republic,2013,6.3,Zone3,3
+7,I1,Czech Republic,2014,6.7,Zone4,4
+7,I1,Czech Republic,2015,6.5,Zone3,3
+7,J1,Czech Republic,2013,3,Zone5,5
+7,J1,Czech Republic,2014,2.8,Zone5,5
+7,J1,Czech Republic,2015,2.8,Zone5,5
+7,J2,Czech Republic,2013,1.7,Zone5,5
+7,J2,Czech Republic,2014,0.8,Zone6,6
+7,J2,Czech Republic,2015,0.8,Zone6,6
+7,K1,Czech Republic,2013,7.58,Zone4,4
+7,K1,Czech Republic,2014,7.14,Zone4,4
+7,K1,Czech Republic,2015,6.98,Zone4,4
+7,K2,Czech Republic,2013,14.34,Zone3,3
+7,K2,Czech Republic,2014,14.98,Zone4,4
+7,K2,Czech Republic,2015,14.98,Zone4,4
+8,A1,Denmark,2013,0.6,Zone5,5
+8,A1,Denmark,2014,0.4,Zone6,6
+8,A1,Denmark,2015,0.9,Zone5,5
+8,A2,Denmark,2013,24,Zone2,2
+8,A2,Denmark,2014,24,Zone2,2
+8,A2,Denmark,2015,24,Zone2,2
+8,A3,Denmark,2013,1.9,Zone4,4
+8,A3,Denmark,2014,2,Zone4,4
+8,A3,Denmark,2015,1.9,Zone4,4
+8,B1,Denmark,2013,24682,Zone4,4
+8,B1,Denmark,2014,25172,Zone4,4
+8,B1,Denmark,2015,26491,Zone4,4
+8,B2,Denmark,2013,36184,Zone3,3
+8,B2,Denmark,2014,39951,Zone3,3
+8,B2,Denmark,2015,44488,Zone3,3
+8,C1,Denmark,2013,73,Zone4,4
+8,C1,Denmark,2014,73,Zone4,4
+8,C1,Denmark,2015,73,Zone4,4
+8,C2,Denmark,2013,12.9,Zone3,3
+8,C2,Denmark,2014,5.8,Zone4,4
+8,C2,Denmark,2015,5.6,Zone4,4
+8,C3,Denmark,2013,1.85,Zone4,4
+8,C3,Denmark,2014,2.11,Zone4,4
+8,C3,Denmark,2015,1.78,Zone5,5
+8,C4,Denmark,2013,45802,Zone4,4
+8,C4,Denmark,2014,45642,Zone4,4
+8,C4,Denmark,2015,48347,Zone4,4
+8,D1,Denmark,2013,94,Zone4,4
+8,D1,Denmark,2014,96,Zone5,5
+8,D1,Denmark,2015,95,Zone5,5
+8,E1,Denmark,2013,76,Zone4,4
+8,E1,Denmark,2014,77,Zone4,4
+8,E1,Denmark,2015,78,Zone4,4
+8,E2,Denmark,2013,499,Zone4,4
+8,E2,Denmark,2014,500,Zone4,4
+8,E2,Denmark,2015,498,Zone4,4
+8,E3,Denmark,2013,18.8,Zone5,5
+8,E3,Denmark,2014,19.2,Zone5,5
+8,E3,Denmark,2015,19.4,Zone5,5
+8,F1,Denmark,2013,16,Zone4,4
+8,F1,Denmark,2014,15,Zone4,4
+8,F1,Denmark,2015,15,Zone4,4
+8,F2,Denmark,2013,94,Zone5,5
+8,F2,Denmark,2014,95,Zone5,5
+8,F2,Denmark,2015,94,Zone5,5
+8,G1,Denmark,2013,7,Zone3,3
+8,G1,Denmark,2014,7,Zone3,3
+8,G1,Denmark,2015,7,Zone3,3
+8,G2,Denmark,2013,88,Zone5,5
+8,G2,Denmark,2014,88,Zone5,5
+8,G2,Denmark,2015,88,Zone5,5
+8,H1,Denmark,2013,79.9,Zone4,4
+8,H1,Denmark,2014,79.9,Zone4,4
+8,H1,Denmark,2015,80.1,Zone4,4
+8,H2,Denmark,2013,70,Zone4,4
+8,H2,Denmark,2014,71,Zone4,4
+8,H2,Denmark,2015,72,Zone4,4
+8,I1,Denmark,2013,7.5,Zone5,5
+8,I1,Denmark,2014,7.6,Zone5,5
+8,I1,Denmark,2015,7.5,Zone5,5
+8,J1,Denmark,2013,3.9,Zone4,4
+8,J1,Denmark,2014,3.9,Zone4,4
+8,J1,Denmark,2015,3.9,Zone4,4
+8,J2,Denmark,2013,0.9,Zone6,6
+8,J2,Denmark,2014,0.8,Zone6,6
+8,J2,Denmark,2015,0.3,Zone6,6
+8,K1,Denmark,2013,1.97,Zone6,6
+8,K1,Denmark,2014,2.06,Zone5,5
+8,K1,Denmark,2015,2.03,Zone5,5
+8,K2,Denmark,2013,16.06,Zone5,5
+8,K2,Denmark,2014,16.06,Zone6,6
+8,K2,Denmark,2015,16.06,Zone6,6
+9,A1,Estonia,2013,9.6,Zone1,1
+9,A1,Estonia,2014,8.6,Zone2,2
+9,A1,Estonia,2015,8.1,Zone2,2
+9,A2,Estonia,2013,19,Zone4,4
+9,A2,Estonia,2014,20,Zone4,4
+9,A2,Estonia,2015,19,Zone4,4
+9,A3,Estonia,2013,1.6,Zone3,3
+9,A3,Estonia,2014,1.6,Zone3,3
+9,A3,Estonia,2015,1.5,Zone3,3
+9,B1,Estonia,2013,12800,Zone2,2
+9,B1,Estonia,2014,14382,Zone2,2
+9,B1,Estonia,2015,15167,Zone2,2
+9,B2,Estonia,2013,8802,Zone2,2
+9,B2,Estonia,2014,7843,Zone2,2
+9,B2,Estonia,2015,7680,Zone2,2
+9,C1,Estonia,2013,65,Zone3,3
+9,C1,Estonia,2014,67,Zone4,4
+9,C1,Estonia,2015,68,Zone4,4
+9,C2,Estonia,2013,10.7,Zone4,4
+9,C2,Estonia,2014,5.3,Zone4,4
+9,C2,Estonia,2015,5.2,Zone4,4
+9,C3,Estonia,2013,7.06,Zone2,2
+9,C3,Estonia,2014,5.46,Zone3,3
+9,C3,Estonia,2015,3.82,Zone4,4
+9,C4,Estonia,2013,17323,Zone2,2
+9,C4,Estonia,2014,17488,Zone2,2
+9,C4,Estonia,2015,18944,Zone2,2
+9,D1,Estonia,2013,86,Zone3,3
+9,D1,Estonia,2014,89,Zone4,4
+9,D1,Estonia,2015,89,Zone4,4
+9,E1,Estonia,2013,89,Zone4,4
+9,E1,Estonia,2014,89,Zone4,4
+9,E1,Estonia,2015,90,Zone4,4
+9,E2,Estonia,2013,514,Zone4,4
+9,E2,Estonia,2014,523,Zone5,5
+9,E2,Estonia,2015,526,Zone5,5
+9,E3,Estonia,2013,17.4,Zone3,3
+9,E3,Estonia,2014,17.5,Zone4,4
+9,E3,Estonia,2015,17.5,Zone4,4
+9,F1,Estonia,2013,9,Zone5,5
+9,F1,Estonia,2014,9,Zone5,5
+9,F1,Estonia,2015,9,Zone5,5
+9,F2,Estonia,2013,75,Zone3,3
+9,F2,Estonia,2014,80,Zone3,3
+9,F2,Estonia,2015,79,Zone3,3
+9,G1,Estonia,2013,3.3,Zone2,2
+9,G1,Estonia,2014,3.3,Zone2,2
+9,G1,Estonia,2015,3.3,Zone2,2
+9,G2,Estonia,2013,64,Zone3,3
+9,G2,Estonia,2014,64,Zone3,3
+9,G2,Estonia,2015,64,Zone3,3
+9,H1,Estonia,2013,76.3,Zone2,2
+9,H1,Estonia,2014,76.3,Zone2,2
+9,H1,Estonia,2015,76.5,Zone2,2
+9,H2,Estonia,2013,51,Zone2,2
+9,H2,Estonia,2014,52,Zone2,2
+9,H2,Estonia,2015,54,Zone3,3
+9,I1,Estonia,2013,5.4,Zone2,2
+9,I1,Estonia,2014,5.4,Zone2,2
+9,I1,Estonia,2015,5.6,Zone2,2
+9,J1,Estonia,2013,5.5,Zone4,4
+9,J1,Estonia,2014,5.5,Zone3,3
+9,J1,Estonia,2015,5.5,Zone3,3
+9,J2,Estonia,2013,5.2,Zone4,4
+9,J2,Estonia,2014,4.7,Zone4,4
+9,J2,Estonia,2015,4.8,Zone4,4
+9,K1,Estonia,2013,4.1,Zone5,5
+9,K1,Estonia,2014,3.59,Zone5,5
+9,K1,Estonia,2015,3.3,Zone5,5
+9,K2,Estonia,2013,14.2,Zone3,3
+9,K2,Estonia,2014,14.9,Zone4,4
+9,K2,Estonia,2015,14.9,Zone4,4
+10,A1,Finland,2013,0.7,Zone5,5
+10,A1,Finland,2014,0.6,Zone6,6
+10,A1,Finland,2015,0.6,Zone6,6
+10,A2,Finland,2013,22,Zone3,3
+10,A2,Finland,2014,22,Zone3,3
+10,A2,Finland,2015,22,Zone3,3
+10,A3,Finland,2013,1.9,Zone4,4
+10,A3,Finland,2014,1.9,Zone4,4
+10,A3,Finland,2015,1.9,Zone4,4
+10,B1,Finland,2013,25739,Zone4,4
+10,B1,Finland,2014,26904,Zone4,4
+10,B1,Finland,2015,27927,Zone4,4
+10,B2,Finland,2013,22335,Zone2,2
+10,B2,Finland,2014,20190,Zone2,2
+10,B2,Finland,2015,18761,Zone2,2
+10,C1,Finland,2013,69,Zone4,4
+10,C1,Finland,2014,70,Zone4,4
+10,C1,Finland,2015,69,Zone4,4
+10,C2,Finland,2013,14.5,Zone3,3
+10,C2,Finland,2014,6.4,Zone4,4
+10,C2,Finland,2015,6.9,Zone4,4
+10,C3,Finland,2013,1.75,Zone4,4
+10,C3,Finland,2014,1.65,Zone5,5
+10,C3,Finland,2015,1.73,Zone5,5
+10,C4,Finland,2013,36468,Zone4,4
+10,C4,Finland,2014,38976,Zone4,4
+10,C4,Finland,2015,40060,Zone4,4
+10,D1,Finland,2013,92,Zone4,4
+10,D1,Finland,2014,93,Zone4,4
+10,D1,Finland,2015,95,Zone5,5
+10,E1,Finland,2013,83,Zone4,4
+10,E1,Finland,2014,84,Zone4,4
+10,E1,Finland,2015,85,Zone4,4
+10,E2,Finland,2013,543,Zone5,5
+10,E2,Finland,2014,529,Zone5,5
+10,E2,Finland,2015,529,Zone5,5
+10,E3,Finland,2013,19.6,Zone5,5
+10,E3,Finland,2014,19.7,Zone5,5
+10,E3,Finland,2015,19.7,Zone5,5
+10,F1,Finland,2013,15,Zone5,5
+10,F1,Finland,2014,15,Zone4,4
+10,F1,Finland,2015,15,Zone4,4
+10,F2,Finland,2013,92,Zone4,4
+10,F2,Finland,2014,95,Zone5,5
+10,F2,Finland,2015,94,Zone5,5
+10,G1,Finland,2013,9,Zone4,4
+10,G1,Finland,2014,9,Zone4,4
+10,G1,Finland,2015,9,Zone4,4
+10,G2,Finland,2013,69,Zone3,3
+10,G2,Finland,2014,69,Zone3,3
+10,G2,Finland,2015,69,Zone3,3
+10,H1,Finland,2013,80.6,Zone4,4
+10,H1,Finland,2014,80.6,Zone4,4
+10,H1,Finland,2015,80.7,Zone4,4
+10,H2,Finland,2013,69,Zone4,4
+10,H2,Finland,2014,69,Zone4,4
+10,H2,Finland,2015,65,Zone3,3
+10,I1,Finland,2013,7.4,Zone4,4
+10,I1,Finland,2014,7.4,Zone4,4
+10,I1,Finland,2015,7.4,Zone5,5
+10,J1,Finland,2013,2.4,Zone5,5
+10,J1,Finland,2014,2.4,Zone5,5
+10,J1,Finland,2015,2.4,Zone5,5
+10,J2,Finland,2013,2.2,Zone5,5
+10,J2,Finland,2014,1.8,Zone5,5
+10,J2,Finland,2015,1.4,Zone5,5
+10,K1,Finland,2013,3.89,Zone5,5
+10,K1,Finland,2014,3.7,Zone5,5
+10,K1,Finland,2015,3.58,Zone5,5
+10,K2,Finland,2013,14.89,Zone4,4
+10,K2,Finland,2014,14.89,Zone4,4
+10,K2,Finland,2015,14.89,Zone4,4
+11,A1,France,2013,0.6,Zone5,5
+11,A1,France,2014,0.5,Zone6,6
+11,A1,France,2015,0.5,Zone6,6
+11,A2,France,2013,21,Zone3,3
+11,A2,France,2014,21,Zone3,3
+11,A2,France,2015,21,Zone3,3
+11,A3,France,2013,1.8,Zone4,4
+11,A3,France,2014,1.8,Zone4,4
+11,A3,France,2015,1.8,Zone4,4
+11,B1,France,2013,28310,Zone4,4
+11,B1,France,2014,29322,Zone4,4
+11,B1,France,2015,28799,Zone4,4
+11,B2,France,2013,46520,Zone3,3
+11,B2,France,2014,47668,Zone3,3
+11,B2,France,2015,48741,Zone3,3
+11,C1,France,2013,64,Zone3,3
+11,C1,France,2014,64,Zone3,3
+11,C1,France,2015,64,Zone3,3
+11,C2,France,2013,9.3,Zone4,4
+11,C2,France,2014,6.5,Zone4,4
+11,C2,France,2015,6.5,Zone4,4
+11,C3,France,2013,3.83,Zone3,3
+11,C3,France,2014,3.98,Zone3,3
+11,C3,France,2015,3.99,Zone4,4
+11,C4,France,2013,37505,Zone4,4
+11,C4,France,2014,38625,Zone4,4
+11,C4,France,2015,40242,Zone4,4
+11,D1,France,2013,93,Zone4,4
+11,D1,France,2014,91,Zone4,4
+11,D1,France,2015,87,Zone3,3
+11,E1,France,2013,71,Zone3,3
+11,E1,France,2014,72,Zone3,3
+11,E1,France,2015,73,Zone3,3
+11,E2,France,2013,497,Zone4,4
+11,E2,France,2014,499,Zone4,4
+11,E2,France,2015,500,Zone4,4
+11,E3,France,2013,16.4,Zone3,3
+11,E3,France,2014,16.5,Zone3,3
+11,E3,France,2015,16.4,Zone3,3
+11,F1,France,2013,12,Zone5,5
+11,F1,France,2014,12,Zone5,5
+11,F1,France,2015,12,Zone5,5
+11,F2,France,2013,81,Zone3,3
+11,F2,France,2014,85,Zone4,4
+11,F2,France,2015,82,Zone4,4
+11,G1,France,2013,3.5,Zone2,2
+11,G1,France,2014,3.5,Zone2,2
+11,G1,France,2015,3.5,Zone2,2
+11,G2,France,2013,80,Zone4,4
+11,G2,France,2014,80,Zone4,4
+11,G2,France,2015,80,Zone4,4
+11,H1,France,2013,82.2,Zone4,4
+11,H1,France,2014,82.2,Zone4,4
+11,H1,France,2015,82.1,Zone4,4
+11,H2,France,2013,67,Zone4,4
+11,H2,France,2014,68,Zone4,4
+11,H2,France,2015,67,Zone4,4
+11,I1,France,2013,6.6,Zone4,4
+11,I1,France,2014,6.7,Zone4,4
+11,I1,France,2015,6.5,Zone3,3
+11,J1,France,2013,5,Zone4,4
+11,J1,France,2014,5,Zone4,4
+11,J1,France,2015,5,Zone4,4
+11,J2,France,2013,1.1,Zone5,5
+11,J2,France,2014,0.8,Zone6,6
+11,J2,France,2015,0.6,Zone6,6
+11,K1,France,2013,8.96,Zone4,4
+11,K1,France,2014,8.71,Zone4,4
+11,K1,France,2015,8.15,Zone4,4
+11,K2,France,2013,15.33,Zone4,4
+11,K2,France,2014,15.33,Zone4,4
+11,K2,France,2015,15.33,Zone4,4
+12,A1,Germany,2013,0.9,Zone5,5
+12,A1,Germany,2014,0.9,Zone5,5
+12,A1,Germany,2015,0.1,Zone6,6
+12,A2,Germany,2013,21,Zone3,3
+12,A2,Germany,2014,21,Zone3,3
+12,A2,Germany,2015,21,Zone3,3
+12,A3,Germany,2013,1.8,Zone4,4
+12,A3,Germany,2014,1.8,Zone4,4
+12,A3,Germany,2015,1.8,Zone4,4
+12,B1,Germany,2013,28799,Zone4,4
+12,B1,Germany,2014,30721,Zone5,5
+12,B1,Germany,2015,31252,Zone4,4
+12,B2,Germany,2013,44938,Zone3,3
+12,B2,Germany,2014,49484,Zone3,3
+12,B2,Germany,2015,50394,Zone3,3
+12,C1,Germany,2013,73,Zone4,4
+12,C1,Germany,2014,73,Zone4,4
+12,C1,Germany,2015,73,Zone4,4
+12,C2,Germany,2013,8.3,Zone4,4
+12,C2,Germany,2014,3.2,Zone5,5
+12,C2,Germany,2015,3.1,Zone5,5
+12,C3,Germany,2013,2.84,Zone4,4
+12,C3,Germany,2014,2.52,Zone4,4
+12,C3,Germany,2015,2.37,Zone4,4
+12,C4,Germany,2013,39593,Zone4,4
+12,C4,Germany,2014,41782,Zone4,4
+12,C4,Germany,2015,43682,Zone4,4
+12,D1,Germany,2013,92,Zone4,4
+12,D1,Germany,2014,93,Zone4,4
+12,D1,Germany,2015,94,Zone4,4
+12,E1,Germany,2013,86,Zone4,4
+12,E1,Germany,2014,86,Zone4,4
+12,E1,Germany,2015,86,Zone4,4
+12,E2,Germany,2013,510,Zone4,4
+12,E2,Germany,2014,514,Zone4,4
+12,E2,Germany,2015,515,Zone4,4
+12,E3,Germany,2013,17.9,Zone4,4
+12,E3,Germany,2014,18.1,Zone4,4
+12,E3,Germany,2015,18.2,Zone4,4
+12,F1,Germany,2013,16,Zone4,4
+12,F1,Germany,2014,16,Zone4,4
+12,F1,Germany,2015,16,Zone4,4
+12,F2,Germany,2013,93,Zone4,4
+12,F2,Germany,2014,94,Zone4,4
+12,F2,Germany,2015,95,Zone5,5
+12,G1,Germany,2013,4.5,Zone2,2
+12,G1,Germany,2014,4.5,Zone2,2
+12,G1,Germany,2015,4.5,Zone2,2
+12,G2,Germany,2013,71,Zone4,4
+12,G2,Germany,2014,72,Zone4,4
+12,G2,Germany,2015,72,Zone4,4
+12,H1,Germany,2013,80.8,Zone4,4
+12,H1,Germany,2014,80.8,Zone4,4
+12,H1,Germany,2015,81,Zone4,4
+12,H2,Germany,2013,64,Zone3,3
+12,H2,Germany,2014,65,Zone3,3
+12,H2,Germany,2015,65,Zone3,3
+12,I1,Germany,2013,6.7,Zone4,4
+12,I1,Germany,2014,7,Zone4,4
+12,I1,Germany,2015,7,Zone4,4
+12,J1,Germany,2013,3.6,Zone5,5
+12,J1,Germany,2014,3.6,Zone4,4
+12,J1,Germany,2015,3.6,Zone4,4
+12,J2,Germany,2013,0.8,Zone6,6
+12,J2,Germany,2014,0.5,Zone6,6
+12,J2,Germany,2015,0.5,Zone6,6
+12,K1,Germany,2013,5.41,Zone5,5
+12,K1,Germany,2014,5.6,Zone4,4
+12,K1,Germany,2015,5.25,Zone4,4
+12,K2,Germany,2013,15.31,Zone4,4
+12,K2,Germany,2014,15.31,Zone4,4
+12,K2,Germany,2015,15.31,Zone4,4
+13,A1,Greece,2013,0.9,Zone5,5
+13,A1,Greece,2014,0.5,Zone6,6
+13,A1,Greece,2015,0.7,Zone5,5
+13,A2,Greece,2013,27,Zone1,1
+13,A2,Greece,2014,27,Zone1,1
+13,A2,Greece,2015,25,Zone2,2
+13,A3,Greece,2013,1.2,Zone3,3
+13,A3,Greece,2014,1.2,Zone2,2
+13,A3,Greece,2015,1.2,Zone2,2
+13,B1,Greece,2013,20440,Zone3,3
+13,B1,Greece,2014,19095,Zone3,3
+13,B1,Greece,2015,18575,Zone3,3
+13,B2,Greece,2013,13428,Zone2,2
+13,B2,Greece,2014,14004,Zone2,2
+13,B2,Greece,2015,14579,Zone2,2
+13,C1,Greece,2013,56,Zone2,2
+13,C1,Greece,2014,51,Zone1,1
+13,C1,Greece,2015,49,Zone1,1
+13,C2,Greece,2013,4.7,Zone5,5
+13,C2,Greece,2014,12,Zone1,1
+13,C2,Greece,2015,12.2,Zone1,1
+13,C3,Greece,2013,8.75,Zone1,1
+13,C3,Greece,2014,14.37,Outlier_Low,0
+13,C3,Greece,2015,18.39,Outlier_Low,0
+13,C4,Greece,2013,28011,Zone3,3
+13,C4,Greece,2014,27434,Zone3,3
+13,C4,Greece,2015,25503,Zone3,3
+13,D1,Greece,2013,81,Zone2,2
+13,D1,Greece,2014,68,Outlier_Low,0
+13,D1,Greece,2015,83,Zone2,2
+13,E1,Greece,2013,65,Zone3,3
+13,E1,Greece,2014,67,Zone3,3
+13,E1,Greece,2015,68,Zone3,3
+13,E2,Greece,2013,473,Zone3,3
+13,E2,Greece,2014,468,Zone3,3
+13,E2,Greece,2015,466,Zone3,3
+13,E3,Greece,2013,18.5,Zone4,4
+13,E3,Greece,2014,18.6,Zone4,4
+13,E3,Greece,2015,18.6,Zone4,4
+13,F1,Greece,2013,31,Zone3,3
+13,F1,Greece,2014,27,Zone3,3
+13,F1,Greece,2015,27,Zone3,3
+13,F2,Greece,2013,69,Zone2,2
+13,F2,Greece,2014,66,Zone2,2
+13,F2,Greece,2015,69,Zone2,2
+13,G1,Greece,2013,6.5,Zone3,3
+13,G1,Greece,2014,6.5,Zone3,3
+13,G1,Greece,2015,6.5,Zone3,3
+13,G2,Greece,2013,62,Zone3,3
+13,G2,Greece,2014,62,Zone3,3
+13,G2,Greece,2015,64,Zone3,3
+13,H1,Greece,2013,80.7,Zone4,4
+13,H1,Greece,2014,80.8,Zone4,4
+13,H1,Greece,2015,80.7,Zone4,4
+13,H2,Greece,2013,76,Zone4,4
+13,H2,Greece,2014,76,Zone4,4
+13,H2,Greece,2015,74,Zone4,4
+13,I1,Greece,2013,5.1,Zone2,2
+13,I1,Greece,2014,4.7,Zone1,1
+13,I1,Greece,2015,4.8,Zone1,1
+13,J1,Greece,2013,3.7,Zone5,5
+13,J1,Greece,2014,3.7,Zone4,4
+13,J1,Greece,2015,3.7,Zone4,4
+13,J2,Greece,2013,1.5,Zone5,5
+13,J2,Greece,2014,1.4,Zone5,5
+13,J2,Greece,2015,1.6,Zone5,5
+13,K1,Greece,2013,5.23,Zone5,5
+13,K1,Greece,2014,5.65,Zone4,4
+13,K1,Greece,2015,6.16,Zone4,4
+13,K2,Greece,2013,14.65,Zone4,4
+13,K2,Greece,2014,14.91,Zone4,4
+13,K2,Greece,2015,14.91,Zone4,4
+14,A1,Hungary,2013,4.7,Zone3,3
+14,A1,Hungary,2014,4.8,Zone3,3
+14,A1,Hungary,2015,4.8,Zone3,3
+14,A2,Hungary,2013,20,Zone3,3
+14,A2,Hungary,2014,21,Zone3,3
+14,A2,Hungary,2015,20,Zone3,3
+14,A3,Hungary,2013,1,Zone2,2
+14,A3,Hungary,2014,1,Zone2,2
+14,A3,Hungary,2015,1.1,Zone2,2
+14,B1,Hungary,2013,13858,Zone2,2
+14,B1,Hungary,2014,15240,Zone2,2
+14,B1,Hungary,2015,15442,Zone2,2
+14,B2,Hungary,2013,12390,Zone2,2
+14,B2,Hungary,2014,13652,Zone2,2
+14,B2,Hungary,2015,13277,Zone2,2
+14,C1,Hungary,2013,56,Zone2,2
+14,C1,Hungary,2014,57,Zone2,2
+14,C1,Hungary,2015,58,Zone2,2
+14,C2,Hungary,2013,7.8,Zone5,5
+14,C2,Hungary,2014,6.7,Zone4,4
+14,C2,Hungary,2015,5.7,Zone4,4
+14,C3,Hungary,2013,5.36,Zone2,2
+14,C3,Hungary,2014,5.05,Zone3,3
+14,C3,Hungary,2015,5.1,Zone3,3
+14,C4,Hungary,2013,19437,Zone2,2
+14,C4,Hungary,2014,20514,Zone2,2
+14,C4,Hungary,2015,20948,Zone2,2
+14,D1,Hungary,2013,90,Zone4,4
+14,D1,Hungary,2014,87,Zone3,3
+14,D1,Hungary,2015,87,Zone3,3
+14,E1,Hungary,2013,81,Zone4,4
+14,E1,Hungary,2014,82,Zone4,4
+14,E1,Hungary,2015,82,Zone4,4
+14,E2,Hungary,2013,496,Zone4,4
+14,E2,Hungary,2014,486,Zone3,3
+14,E2,Hungary,2015,487,Zone3,3
+14,E3,Hungary,2013,17.5,Zone4,4
+14,E3,Hungary,2014,17.5,Zone4,4
+14,E3,Hungary,2015,17.6,Zone4,4
+14,F1,Hungary,2013,15,Zone5,5
+14,F1,Hungary,2014,15,Zone4,4
+14,F1,Hungary,2015,15,Zone4,4
+14,F2,Hungary,2013,76,Zone3,3
+14,F2,Hungary,2014,77,Zone3,3
+14,F2,Hungary,2015,77,Zone3,3
+14,G1,Hungary,2013,7.9,Zone4,4
+14,G1,Hungary,2014,7.9,Zone4,4
+14,G1,Hungary,2015,7.9,Zone4,4
+14,G2,Hungary,2013,47,Zone1,1
+14,G2,Hungary,2014,64,Zone3,3
+14,G2,Hungary,2015,62,Zone3,3
+14,H1,Hungary,2013,75,Zone2,2
+14,H1,Hungary,2014,75,Zone2,2
+14,H1,Hungary,2015,75.2,Zone2,2
+14,H2,Hungary,2013,55,Zone3,3
+14,H2,Hungary,2014,56,Zone3,3
+14,H2,Hungary,2015,57,Zone3,3
+14,I1,Hungary,2013,4.7,Zone1,1
+14,I1,Hungary,2014,4.9,Zone2,2
+14,I1,Hungary,2015,4.9,Zone1,1
+14,J1,Hungary,2013,3.6,Zone5,5
+14,J1,Hungary,2014,3.6,Zone4,4
+14,J1,Hungary,2015,3.6,Zone4,4
+14,J2,Hungary,2013,1.3,Zone5,5
+14,J2,Hungary,2014,1.5,Zone5,5
+14,J2,Hungary,2015,1.3,Zone5,5
+14,K1,Hungary,2013,3.1,Zone5,5
+14,K1,Hungary,2014,2.92,Zone5,5
+14,K1,Hungary,2015,3.19,Zone5,5
+14,K2,Hungary,2013,14.9,Zone4,4
+14,K2,Hungary,2014,15.04,Zone4,4
+14,K2,Hungary,2015,15.04,Zone4,4
+15,A1,Iceland,2013,0.4,Zone6,6
+15,A1,Iceland,2014,0.4,Zone6,6
+15,A1,Iceland,2015,0.4,Zone6,6
+15,A2,Iceland,2013,21,Zone3,3
+15,A2,Iceland,2014,21,Zone3,3
+15,A2,Iceland,2015,24,Zone2,2
+15,A3,Iceland,2013,1.6,Zone3,3
+15,A3,Iceland,2014,1.6,Zone3,3
+15,A3,Iceland,2015,1.5,Zone3,3
+15,B1,Iceland,2013,21201,Zone3,3
+15,B1,Iceland,2014,22415,Zone3,3
+15,B1,Iceland,2015,23965,Zone3,3
+15,B2,Iceland,2013,31182,Zone3,3
+15,B2,Iceland,2014,43045,Zone3,3
+15,B2,Iceland,2015,43045,Zone3,3
+15,C1,Iceland,2013,79,Zone5,5
+15,C1,Iceland,2014,80,Zone5,5
+15,C1,Iceland,2015,82,Zone6,6
+15,C2,Iceland,2013,10.8,Zone4,4
+15,C2,Iceland,2014,4.3,Zone5,5
+15,C2,Iceland,2015,4.1,Zone5,5
+15,C3,Iceland,2013,1.97,Zone4,4
+15,C3,Iceland,2014,1.68,Zone5,5
+15,C3,Iceland,2015,1.18,Zone5,5
+15,C4,Iceland,2013,37290,Zone4,4
+15,C4,Iceland,2014,39433,Zone4,4
+15,C4,Iceland,2015,55716,Zone5,5
+15,D1,Iceland,2013,98,Zone5,5
+15,D1,Iceland,2014,96,Zone5,5
+15,D1,Iceland,2015,96,Zone5,5
+15,E1,Iceland,2013,67,Zone3,3
+15,E1,Iceland,2014,71,Zone3,3
+15,E1,Iceland,2015,71,Zone3,3
+15,E2,Iceland,2013,501,Zone4,4
+15,E2,Iceland,2014,486,Zone3,3
+15,E2,Iceland,2015,484,Zone3,3
+15,E3,Iceland,2013,19.4,Zone5,5
+15,E3,Iceland,2014,19.5,Zone5,5
+15,E3,Iceland,2015,19.8,Zone5,5
+15,F1,Iceland,2013,16,Zone4,4
+15,F1,Iceland,2014,18,Zone4,4
+15,F1,Iceland,2015,18,Zone4,4
+15,F2,Iceland,2013,97,Zone5,5
+15,F2,Iceland,2014,97,Zone5,5
+15,F2,Iceland,2015,97,Zone5,5
+15,G1,Iceland,2013,5.1,Zone3,3
+15,G1,Iceland,2014,5.1,Zone3,3
+15,G1,Iceland,2015,5.1,Zone3,3
+15,G2,Iceland,2013,85,Zone5,5
+15,G2,Iceland,2014,81,Zone4,4
+15,G2,Iceland,2015,81,Zone4,4
+15,H1,Iceland,2013,82.4,Zone4,4
+15,H1,Iceland,2014,82.4,Zone4,4
+15,H1,Iceland,2015,83,Zone5,5
+15,H2,Iceland,2013,77,Zone4,4
+15,H2,Iceland,2014,78,Zone4,4
+15,H2,Iceland,2015,77,Zone4,4
+15,I1,Iceland,2013,7.6,Zone5,5
+15,I1,Iceland,2014,7.5,Zone4,4
+15,I1,Iceland,2015,7.5,Zone5,5
+15,J1,Iceland,2013,2.7,Zone5,5
+15,J1,Iceland,2014,2.7,Zone5,5
+15,J1,Iceland,2015,2.7,Zone5,5
+15,J2,Iceland,2013,0.3,Zone6,6
+15,J2,Iceland,2014,1.3,Zone5,5
+15,J2,Iceland,2015,0.3,Zone6,6
+15,K1,Iceland,2013,13.45,Zone3,3
+15,K1,Iceland,2014,13.73,Zone3,3
+15,K1,Iceland,2015,12.25,Zone3,3
+15,K2,Iceland,2013,14.06,Zone3,3
+15,K2,Iceland,2014,14.61,Zone3,3
+15,K2,Iceland,2015,14.61,Zone3,3
+16,A1,Ireland,2013,0.2,Zone6,6
+16,A1,Ireland,2014,0.2,Zone6,6
+16,A1,Ireland,2015,0.2,Zone6,6
+16,A2,Ireland,2013,18,Zone4,4
+16,A2,Ireland,2014,20,Zone4,4
+16,A2,Ireland,2015,19,Zone4,4
+16,A3,Ireland,2013,2.1,Zone5,5
+16,A3,Ireland,2014,2.1,Zone5,5
+16,A3,Ireland,2015,2.1,Zone5,5
+16,B1,Ireland,2013,24104,Zone4,4
+16,B1,Ireland,2014,23721,Zone4,4
+16,B1,Ireland,2015,23917,Zone3,3
+16,B2,Ireland,2013,27378,Zone3,3
+16,B2,Ireland,2014,28099,Zone2,2
+16,B2,Ireland,2015,31580,Zone2,2
+16,C1,Ireland,2013,60,Zone3,3
+16,C1,Ireland,2014,59,Zone3,3
+16,C1,Ireland,2015,60,Zone3,3
+16,C2,Ireland,2013,6.9,Zone5,5
+16,C2,Ireland,2014,6.4,Zone4,4
+16,C2,Ireland,2015,5.9,Zone4,4
+16,C3,Ireland,2013,8.52,Zone1,1
+16,C3,Ireland,2014,9.24,Zone2,2
+16,C3,Ireland,2015,8.39,Zone2,2
+16,C4,Ireland,2013,50109,Zone5,5
+16,C4,Ireland,2014,50853,Zone5,5
+16,C4,Ireland,2015,49506,Zone4,4
+16,D1,Ireland,2013,96,Zone5,5
+16,D1,Ireland,2014,95,Zone4,4
+16,D1,Ireland,2015,96,Zone5,5
+16,E1,Ireland,2013,73,Zone3,3
+16,E1,Ireland,2014,73,Zone3,3
+16,E1,Ireland,2015,75,Zone4,4
+16,E2,Ireland,2013,497,Zone4,4
+16,E2,Ireland,2014,518,Zone4,4
+16,E2,Ireland,2015,516,Zone4,4
+16,E3,Ireland,2013,17.9,Zone4,4
+16,E3,Ireland,2014,17.5,Zone4,4
+16,E3,Ireland,2015,17.6,Zone4,4
+16,F1,Ireland,2013,12,Zone5,5
+16,F1,Ireland,2014,13,Zone5,5
+16,F1,Ireland,2015,13,Zone5,5
+16,F2,Ireland,2013,84,Zone4,4
+16,F2,Ireland,2014,84,Zone4,4
+16,F2,Ireland,2015,80,Zone3,3
+16,G1,Ireland,2013,9,Zone4,4
+16,G1,Ireland,2014,9,Zone4,4
+16,G1,Ireland,2015,9,Zone4,4
+16,G2,Ireland,2013,70,Zone3,3
+16,G2,Ireland,2014,70,Zone3,3
+16,G2,Ireland,2015,70,Zone4,4
+16,H1,Ireland,2013,80.6,Zone4,4
+16,H1,Ireland,2014,80.6,Zone4,4
+16,H1,Ireland,2015,81,Zone4,4
+16,H2,Ireland,2013,83,Zone5,5
+16,H2,Ireland,2014,83,Zone5,5
+16,H2,Ireland,2015,82,Zone5,5
+16,I1,Ireland,2013,7,Zone4,4
+16,I1,Ireland,2014,6.8,Zone4,4
+16,I1,Ireland,2015,7,Zone4,4
+16,J1,Ireland,2013,2.6,Zone5,5
+16,J1,Ireland,2014,2.6,Zone5,5
+16,J1,Ireland,2015,2.6,Zone5,5
+16,J2,Ireland,2013,1.2,Zone5,5
+16,J2,Ireland,2014,0.8,Zone6,6
+16,J2,Ireland,2015,0.8,Zone6,6
+16,K1,Ireland,2013,3.94,Zone5,5
+16,K1,Ireland,2014,4.17,Zone5,5
+16,K1,Ireland,2015,4.2,Zone5,5
+16,K2,Ireland,2013,15.18,Zone4,4
+16,K2,Ireland,2014,15.19,Zone4,4
+16,K2,Ireland,2015,15.19,Zone4,4
+17,A1,Israel,2013,3.8,Zone3,3
+17,A1,Israel,2014,3.8,Zone4,4
+17,A1,Israel,2015,3.7,Zone4,4
+17,A2,Israel,2013,21,Zone3,3
+17,A2,Israel,2014,21,Zone3,3
+17,A2,Israel,2015,21,Zone3,3
+17,A3,Israel,2013,1.1,Zone2,2
+17,A3,Israel,2014,1.1,Zone2,2
+17,A3,Israel,2015,1.2,Zone2,2
+17,B1,Israel,2013,19120,Zone3,3
+17,B1,Israel,2014,20434,Zone3,3
+17,B1,Israel,2015,22104,Zone3,3
+17,B2,Israel,2013,49240,Zone3,3
+17,B2,Israel,2014,55932,Zone4,4
+17,B2,Israel,2015,52933,Zone3,3
+17,C1,Israel,2013,61,Zone3,3
+17,C1,Israel,2014,67,Zone4,4
+17,C1,Israel,2015,67,Zone4,4
+17,C2,Israel,2013,10.5,Zone4,4
+17,C2,Israel,2014,6.5,Zone4,4
+17,C2,Israel,2015,5,Zone4,4
+17,C3,Israel,2013,1.13,Zone5,5
+17,C3,Israel,2014,0.91,Zone5,5
+17,C3,Israel,2015,0.79,Zone5,5
+17,C4,Israel,2013,28629,Zone3,3
+17,C4,Israel,2014,27577,Zone3,3
+17,C4,Israel,2015,28817,Zone3,3
+17,D1,Israel,2013,89,Zone4,4
+17,D1,Israel,2014,89,Zone4,4
+17,D1,Israel,2015,87,Zone3,3
+17,E1,Israel,2013,82,Zone4,4
+17,E1,Israel,2014,83,Zone4,4
+17,E1,Israel,2015,85,Zone4,4
+17,E2,Israel,2013,459,Zone2,2
+17,E2,Israel,2014,474,Zone3,3
+17,E2,Israel,2015,474,Zone3,3
+17,E3,Israel,2013,15.8,Zone2,2
+17,E3,Israel,2014,15.7,Zone2,2
+17,E3,Israel,2015,15.8,Zone2,2
+17,F1,Israel,2013,23,Zone4,4
+17,F1,Israel,2014,21,Zone4,4
+17,F1,Israel,2015,21,Zone4,4
+17,F2,Israel,2013,66,Zone2,2
+17,F2,Israel,2014,66,Zone2,2
+17,F2,Israel,2015,68,Zone2,2
+17,G1,Israel,2013,2.5,Zone1,1
+17,G1,Israel,2014,2.5,Zone1,1
+17,G1,Israel,2015,2.5,Zone1,1
+17,G2,Israel,2013,65,Zone3,3
+17,G2,Israel,2014,68,Zone3,3
+17,G2,Israel,2015,68,Zone3,3
+17,H1,Israel,2013,81.8,Zone4,4
+17,H1,Israel,2014,81.8,Zone4,4
+17,H1,Israel,2015,81.8,Zone4,4
+17,H2,Israel,2013,82,Zone5,5
+17,H2,Israel,2014,82,Zone4,4
+17,H2,Israel,2015,80,Zone4,4
+17,I1,Israel,2013,7.1,Zone4,4
+17,I1,Israel,2014,7.1,Zone4,4
+17,I1,Israel,2015,7.4,Zone5,5
+17,J1,Israel,2013,6.5,Zone3,3
+17,J1,Israel,2014,6.4,Zone3,3
+17,J1,Israel,2015,6.4,Zone3,3
+17,J2,Israel,2013,2.1,Zone5,5
+17,J2,Israel,2014,2.2,Zone5,5
+17,J2,Israel,2015,2.3,Zone5,5
+17,K1,Israel,2013,17.58,Zone3,3
+17,K1,Israel,2014,18.77,Zone2,2
+17,K1,Israel,2015,16.03,Zone3,3
+17,K2,Israel,2013,13.81,Zone3,3
+17,K2,Israel,2014,14.48,Zone3,3
+17,K2,Israel,2015,14.48,Zone3,3
+18,A1,Italy,2013,0.4,Zone6,6
+18,A1,Italy,2014,0.5,Zone6,6
+18,A1,Italy,2015,1.1,Zone5,5
+18,A2,Italy,2013,22,Zone3,3
+18,A2,Italy,2014,23,Zone3,3
+18,A2,Italy,2015,24,Zone2,2
+18,A3,Italy,2013,1.4,Zone3,3
+18,A3,Italy,2014,1.4,Zone3,3
+18,A3,Italy,2015,1.4,Zone3,3
+18,B1,Italy,2013,24216,Zone4,4
+18,B1,Italy,2014,24724,Zone4,4
+18,B1,Italy,2015,25166,Zone4,4
+18,B2,Italy,2013,55255,Zone4,4
+18,B2,Italy,2014,54147,Zone3,3
+18,B2,Italy,2015,54987,Zone3,3
+18,C1,Italy,2013,57,Zone2,2
+18,C1,Italy,2014,58,Zone2,2
+18,C1,Italy,2015,56,Zone2,2
+18,C2,Italy,2013,6.9,Zone5,5
+18,C2,Italy,2014,5.5,Zone4,4
+18,C2,Italy,2015,5.9,Zone4,4
+18,C3,Italy,2013,4.36,Zone3,3
+18,C3,Italy,2014,5.67,Zone3,3
+18,C3,Italy,2015,6.94,Zone3,3
+18,C4,Italy,2013,33947,Zone3,3
+18,C4,Italy,2014,33571,Zone3,3
+18,C4,Italy,2015,34561,Zone3,3
+18,D1,Italy,2013,86,Zone3,3
+18,D1,Italy,2014,91,Zone4,4
+18,D1,Italy,2015,90,Zone4,4
+18,E1,Italy,2013,55,Zone2,2
+18,E1,Italy,2014,56,Zone2,2
+18,E1,Italy,2015,57,Zone2,2
+18,E2,Italy,2013,486,Zone3,3
+18,E2,Italy,2014,489,Zone3,3
+18,E2,Italy,2015,490,Zone3,3
+18,E3,Italy,2013,17.1,Zone3,3
+18,E3,Italy,2014,17,Zone3,3
+18,E3,Italy,2015,16.8,Zone3,3
+18,F1,Italy,2013,21,Zone4,4
+18,F1,Italy,2014,21,Zone4,4
+18,F1,Italy,2015,21,Zone4,4
+18,F2,Italy,2013,71,Zone2,2
+18,F2,Italy,2014,80,Zone3,3
+18,F2,Italy,2015,71,Zone2,2
+18,G1,Italy,2013,5,Zone2,2
+18,G1,Italy,2014,5,Zone2,2
+18,G1,Italy,2015,5,Zone2,2
+18,G2,Italy,2013,81,Zone4,4
+18,G2,Italy,2014,75,Zone4,4
+18,G2,Italy,2015,75,Zone4,4
+18,H1,Italy,2013,82.7,Zone4,4
+18,H1,Italy,2014,82.7,Zone4,4
+18,H1,Italy,2015,82.3,Zone4,4
+18,H2,Italy,2013,64,Zone3,3
+18,H2,Italy,2014,65,Zone3,3
+18,H2,Italy,2015,66,Zone3,3
+18,I1,Italy,2013,5.8,Zone3,3
+18,I1,Italy,2014,6,Zone3,3
+18,I1,Italy,2015,6,Zone3,3
+18,J1,Italy,2013,4.7,Zone4,4
+18,J1,Italy,2014,4.7,Zone4,4
+18,J1,Italy,2015,4.7,Zone4,4
+18,J2,Italy,2013,0.9,Zone6,6
+18,J2,Italy,2014,0.7,Zone6,6
+18,J2,Italy,2015,0.7,Zone6,6
+18,K1,Italy,2013,4.07,Zone5,5
+18,K1,Italy,2014,3.7,Zone5,5
+18,K1,Italy,2015,3.66,Zone5,5
+18,K2,Italy,2013,14.89,Zone4,4
+18,K2,Italy,2014,14.98,Zone4,4
+18,K2,Italy,2015,14.98,Zone4,4
+19,A1,Japan,2013,6.4,Zone2,2
+19,A1,Japan,2014,6.4,Zone3,3
+19,A1,Japan,2015,6.4,Zone3,3
+19,A2,Japan,2013,22,Zone3,3
+19,A2,Japan,2014,22,Zone3,3
+19,A2,Japan,2015,22,Zone3,3
+19,A3,Japan,2013,1.8,Zone4,4
+19,A3,Japan,2014,1.8,Zone4,4
+19,A3,Japan,2015,1.8,Zone4,4
+19,B1,Japan,2013,24147,Zone4,4
+19,B1,Japan,2014,25066,Zone4,4
+19,B1,Japan,2015,26111,Zone4,4
+19,B2,Japan,2013,74966,Zone5,5
+19,B2,Japan,2014,85309,Zone5,5
+19,B2,Japan,2015,86764,Zone5,5
+19,C1,Japan,2013,70,Zone4,4
+19,C1,Japan,2014,71,Zone4,4
+19,C1,Japan,2015,72,Zone4,4
+19,C2,Japan,2013,10.5,Zone4,4
+19,C2,Japan,2014,2.9,Zone5,5
+19,C2,Japan,2015,2.4,Zone5,5
+19,C3,Japan,2013,1.78,Zone4,4
+19,C3,Japan,2014,1.67,Zone5,5
+19,C3,Japan,2015,1.67,Zone5,5
+19,C4,Japan,2013,35143,Zone3,3
+19,C4,Japan,2014,36039,Zone4,4
+19,C4,Japan,2015,35405,Zone3,3
+19,D1,Japan,2013,90,Zone4,4
+19,D1,Japan,2014,90,Zone4,4
+19,D1,Japan,2015,89,Zone4,4
+19,E1,Japan,2013,92,Zone5,5
+19,E1,Japan,2014,93,Zone5,5
+19,E1,Japan,2015,94,Zone5,5
+19,E2,Japan,2013,529,Zone5,5
+19,E2,Japan,2014,538,Zone5,5
+19,E2,Japan,2015,540,Zone5,5
+19,E3,Japan,2013,18.7,Zone5,5
+19,E3,Japan,2014,16.2,Zone3,3
+19,E3,Japan,2015,16.3,Zone3,3
+19,F1,Japan,2013,25,Zone3,3
+19,F1,Japan,2014,24,Zone3,3
+19,F1,Japan,2015,24,Zone3,3
+19,F2,Japan,2013,86,Zone4,4
+19,F2,Japan,2014,86,Zone4,4
+19,F2,Japan,2015,85,Zone4,4
+19,G1,Japan,2013,7.3,Zone3,3
+19,G1,Japan,2014,7.3,Zone3,3
+19,G1,Japan,2015,7.3,Zone3,3
+19,G2,Japan,2013,69,Zone3,3
+19,G2,Japan,2014,59,Zone2,2
+19,G2,Japan,2015,53,Zone2,2
+19,H1,Japan,2013,82.7,Zone4,4
+19,H1,Japan,2014,82.7,Zone4,4
+19,H1,Japan,2015,83.2,Zone5,5
+19,H2,Japan,2013,30,Zone1,1
+19,H2,Japan,2014,30,Zone1,1
+19,H2,Japan,2015,30,Zone1,1
+19,I1,Japan,2013,6,Zone3,3
+19,I1,Japan,2014,6,Zone3,3
+19,I1,Japan,2015,5.9,Zone3,3
+19,J1,Japan,2013,1.4,Zone6,6
+19,J1,Japan,2014,1.4,Zone6,6
+19,J1,Japan,2015,1.4,Zone6,6
+19,J2,Japan,2013,0.4,Zone6,6
+19,J2,Japan,2014,0.3,Zone6,6
+19,J2,Japan,2015,0.3,Zone6,6
+19,K1,Japan,2013,31.7,Zone1,1
+19,K1,Japan,2014,22.62,Zone2,2
+19,K1,Japan,2015,22.26,Zone2,2
+19,K2,Japan,2013,13.96,Zone3,3
+19,K2,Japan,2014,14.93,Zone4,4
+19,K2,Japan,2015,14.93,Zone4,4
+20,A1,Korea,2013,4.2,Zone3,3
+20,A1,Korea,2014,4.2,Zone3,3
+20,A1,Korea,2015,4.2,Zone3,3
+20,A2,Korea,2013,16,Zone5,5
+20,A2,Korea,2014,16,Zone5,5
+20,A2,Korea,2015,16,Zone5,5
+20,A3,Korea,2013,1.4,Zone3,3
+20,A3,Korea,2014,1.4,Zone3,3
+20,A3,Korea,2015,1.4,Zone3,3
+20,B1,Korea,2013,17337,Zone3,3
+20,B1,Korea,2014,18035,Zone3,3
+20,B1,Korea,2015,19510,Zone3,3
+20,B2,Korea,2013,26036,Zone2,2
+20,B2,Korea,2014,28290,Zone2,2
+20,B2,Korea,2015,29091,Zone2,2
+20,C1,Korea,2013,64,Zone3,3
+20,C1,Korea,2014,64,Zone3,3
+20,C1,Korea,2015,64,Zone3,3
+20,C2,Korea,2013,24.3,Zone1,1
+20,C2,Korea,2014,3,Zone5,5
+20,C2,Korea,2015,3.2,Zone5,5
+20,C3,Korea,2013,0.01,Zone6,6
+20,C3,Korea,2014,0.01,Zone6,6
+20,C3,Korea,2015,0.01,Zone6,6
+20,C4,Korea,2013,35406,Zone4,4
+20,C4,Korea,2014,34056,Zone3,3
+20,C4,Korea,2015,36354,Zone3,3
+20,D1,Korea,2013,77,Zone1,1
+20,D1,Korea,2014,77,Zone2,2
+20,D1,Korea,2015,72,Outlier_Low,0
+20,E1,Korea,2013,80,Zone4,4
+20,E1,Korea,2014,81,Zone4,4
+20,E1,Korea,2015,82,Zone4,4
+20,E2,Korea,2013,541,Zone5,5
+20,E2,Korea,2014,537,Zone5,5
+20,E2,Korea,2015,542,Zone5,5
+20,E3,Korea,2013,17.7,Zone4,4
+20,E3,Korea,2014,17.5,Zone4,4
+20,E3,Korea,2015,17.5,Zone4,4
+20,F1,Korea,2013,33,Zone2,2
+20,F1,Korea,2014,30,Zone2,2
+20,F1,Korea,2015,30,Zone2,2
+20,F2,Korea,2013,78,Zone3,3
+20,F2,Korea,2014,78,Zone3,3
+20,F2,Korea,2015,78,Zone3,3
+20,G1,Korea,2013,10.4,Zone5,5
+20,G1,Korea,2014,10.4,Zone5,5
+20,G1,Korea,2015,10.4,Zone5,5
+20,G2,Korea,2013,76,Zone4,4
+20,G2,Korea,2014,76,Zone4,4
+20,G2,Korea,2015,76,Zone4,4
+20,H1,Korea,2013,81.1,Zone4,4
+20,H1,Korea,2014,81.1,Zone4,4
+20,H1,Korea,2015,81.3,Zone4,4
+20,H2,Korea,2013,37,Zone1,1
+20,H2,Korea,2014,37,Zone1,1
+20,H2,Korea,2015,35,Zone1,1
+20,I1,Korea,2013,6,Zone3,3
+20,I1,Korea,2014,6,Zone3,3
+20,I1,Korea,2015,5.8,Zone3,3
+20,J1,Korea,2013,2.1,Zone5,5
+20,J1,Korea,2014,2.1,Zone5,5
+20,J1,Korea,2015,2.1,Zone5,5
+20,J2,Korea,2013,2.6,Zone5,5
+20,J2,Korea,2014,1.1,Zone5,5
+20,J2,Korea,2015,1.1,Zone5,5
+20,K1,Korea,2013,27.66,Zone2,2
+20,K1,Korea,2014,27.13,Zone1,1
+20,K1,Korea,2015,18.72,Zone2,2
+20,K2,Korea,2013,14.63,Zone3,3
+20,K2,Korea,2014,14.63,Zone3,3
+20,K2,Korea,2015,14.63,Zone3,3
+21,A1,Luxembourg,2013,0.1,Zone6,6
+21,A1,Luxembourg,2014,0.7,Zone5,5
+21,A1,Luxembourg,2015,0.1,Zone6,6
+21,A2,Luxembourg,2013,23,Zone3,3
+21,A2,Luxembourg,2014,23,Zone3,3
+21,A2,Luxembourg,2015,21,Zone3,3
+21,A3,Luxembourg,2013,1.9,Zone4,4
+21,A3,Luxembourg,2014,2,Zone4,4
+21,A3,Luxembourg,2015,2,Zone4,4
+21,B1,Luxembourg,2013,35517,Zone5,5
+21,B1,Luxembourg,2014,35635,Zone5,5
+21,B1,Luxembourg,2015,38951,Zone6,6
+21,B2,Luxembourg,2013,66917,Zone4,4
+21,B2,Luxembourg,2014,57159,Zone4,4
+21,B2,Luxembourg,2015,61765,Zone4,4
+21,C1,Luxembourg,2013,65,Zone3,3
+21,C1,Luxembourg,2014,66,Zone4,4
+21,C1,Luxembourg,2015,66,Zone4,4
+21,C2,Luxembourg,2013,5.4,Zone5,5
+21,C2,Luxembourg,2014,4,Zone5,5
+21,C2,Luxembourg,2015,4.3,Zone5,5
+21,C3,Luxembourg,2013,1.41,Zone5,5
+21,C3,Luxembourg,2014,1.56,Zone5,5
+21,C3,Luxembourg,2015,1.78,Zone5,5
+21,C4,Luxembourg,2013,52847,Zone5,5
+21,C4,Luxembourg,2014,52542,Zone5,5
+21,C4,Luxembourg,2015,56021,Zone5,5
+21,D1,Luxembourg,2013,91,Zone4,4
+21,D1,Luxembourg,2014,88,Zone3,3
+21,D1,Luxembourg,2015,87,Zone3,3
+21,E1,Luxembourg,2013,78,Zone4,4
+21,E1,Luxembourg,2014,77,Zone4,4
+21,E1,Luxembourg,2015,78,Zone4,4
+21,E2,Luxembourg,2013,482,Zone3,3
+21,E2,Luxembourg,2014,487,Zone3,3
+21,E2,Luxembourg,2015,490,Zone3,3
+21,E3,Luxembourg,2013,14.9,Zone1,1
+21,E3,Luxembourg,2014,14.1,Zone1,1
+21,E3,Luxembourg,2015,15.1,Zone2,2
+21,F1,Luxembourg,2013,13,Zone5,5
+21,F1,Luxembourg,2014,12,Zone5,5
+21,F1,Luxembourg,2015,12,Zone5,5
+21,F2,Luxembourg,2013,87,Zone4,4
+21,F2,Luxembourg,2014,81,Zone3,3
+21,F2,Luxembourg,2015,86,Zone4,4
+21,G1,Luxembourg,2013,6,Zone3,3
+21,G1,Luxembourg,2014,6,Zone3,3
+21,G1,Luxembourg,2015,6,Zone3,3
+21,G2,Luxembourg,2013,91,Zone5,5
+21,G2,Luxembourg,2014,91,Zone5,5
+21,G2,Luxembourg,2015,91,Zone5,5
+21,H1,Luxembourg,2013,81.1,Zone4,4
+21,H1,Luxembourg,2014,81.1,Zone4,4
+21,H1,Luxembourg,2015,81.5,Zone4,4
+21,H2,Luxembourg,2013,72,Zone4,4
+21,H2,Luxembourg,2014,73,Zone4,4
+21,H2,Luxembourg,2015,72,Zone4,4
+21,I1,Luxembourg,2013,7,Zone4,4
+21,I1,Luxembourg,2014,7.1,Zone4,4
+21,I1,Luxembourg,2015,6.9,Zone4,4
+21,J1,Luxembourg,2013,4.3,Zone4,4
+21,J1,Luxembourg,2014,4.3,Zone4,4
+21,J1,Luxembourg,2015,4.3,Zone4,4
+21,J2,Luxembourg,2013,2.5,Zone5,5
+21,J2,Luxembourg,2014,2.1,Zone5,5
+21,J2,Luxembourg,2015,0.4,Zone6,6
+21,K1,Luxembourg,2013,2.62,Zone5,5
+21,K1,Luxembourg,2014,3.18,Zone5,5
+21,K1,Luxembourg,2015,3.47,Zone5,5
+21,K2,Luxembourg,2013,15.05,Zone4,4
+21,K2,Luxembourg,2014,15.12,Zone4,4
+21,K2,Luxembourg,2015,15.12,Zone4,4
+22,A1,Mexico,2013,4.2,Zone3,3
+22,A1,Mexico,2014,4.2,Zone3,3
+22,A1,Mexico,2015,4.2,Zone3,3
+22,A2,Mexico,2013,18,Zone4,4
+22,A2,Mexico,2014,21,Zone3,3
+22,A2,Mexico,2015,21,Zone3,3
+22,A3,Mexico,2013,1,Zone2,2
+22,A3,Mexico,2014,1,Zone2,2
+22,A3,Mexico,2015,1,Zone2,2
+22,B1,Mexico,2013,12732,Zone2,2
+22,B1,Mexico,2014,12850,Zone2,2
+22,B1,Mexico,2015,13085,Zone2,2
+22,B2,Mexico,2013,9946,Zone2,2
+22,B2,Mexico,2014,10449,Zone2,2
+22,B2,Mexico,2015,9056,Zone2,2
+22,C1,Mexico,2013,60,Zone3,3
+22,C1,Mexico,2014,61,Zone3,3
+22,C1,Mexico,2015,61,Zone3,3
+22,C2,Mexico,2013,21.4,Zone1,1
+22,C2,Mexico,2014,4.7,Zone4,4
+22,C2,Mexico,2015,4.9,Zone4,4
+22,C3,Mexico,2013,0.11,Zone6,6
+22,C3,Mexico,2014,0.09,Zone6,6
+22,C3,Mexico,2015,0.08,Zone6,6
+22,C4,Mexico,2013,9885,Zone1,1
+22,C4,Mexico,2014,14653,Zone2,2
+22,C4,Mexico,2015,16193,Zone2,2
+22,D1,Mexico,2013,76,Zone1,1
+22,D1,Mexico,2014,74,Zone1,1
+22,D1,Mexico,2015,77,Zone1,1
+22,E1,Mexico,2013,36,Zone1,1
+22,E1,Mexico,2014,36,Zone1,1
+22,E1,Mexico,2015,37,Zone1,1
+22,E2,Mexico,2013,420,Zone1,1
+22,E2,Mexico,2014,417,Zone1,1
+22,E2,Mexico,2015,417,Zone1,1
+22,E3,Mexico,2013,14.9,Zone1,1
+22,E3,Mexico,2014,15.2,Zone2,2
+22,E3,Mexico,2015,14.4,Zone1,1
+22,F1,Mexico,2013,33,Zone2,2
+22,F1,Mexico,2014,30,Zone2,2
+22,F1,Mexico,2015,30,Zone2,2
+22,F2,Mexico,2013,78,Zone3,3
+22,F2,Mexico,2014,68,Zone2,2
+22,F2,Mexico,2015,67,Zone2,2
+22,G1,Mexico,2013,9,Zone4,4
+22,G1,Mexico,2014,9,Zone4,4
+22,G1,Mexico,2015,9,Zone4,4
+22,G2,Mexico,2013,63,Zone3,3
+22,G2,Mexico,2014,63,Zone3,3
+22,G2,Mexico,2015,63,Zone3,3
+22,H1,Mexico,2013,74.2,Zone2,2
+22,H1,Mexico,2014,74.4,Zone2,2
+22,H1,Mexico,2015,74.6,Zone2,2
+22,H2,Mexico,2013,66,Zone3,3
+22,H2,Mexico,2014,66,Zone3,3
+22,H2,Mexico,2015,66,Zone3,3
+22,I1,Mexico,2013,7.3,Zone4,4
+22,I1,Mexico,2014,7.4,Zone4,4
+22,I1,Mexico,2015,6.7,Zone4,4
+22,J1,Mexico,2013,13.1,Outlier_Low,0
+22,J1,Mexico,2014,12.8,Outlier_Low,0
+22,J1,Mexico,2015,12.8,Outlier_Low,0
+22,J2,Mexico,2013,23.7,Outlier_Low,0
+22,J2,Mexico,2014,23.4,Outlier_Low,0
+22,J2,Mexico,2015,23.4,Outlier_Low,0
+22,K1,Mexico,2013,28.63,Zone1,1
+22,K1,Mexico,2014,28.77,Zone1,1
+22,K1,Mexico,2015,28.83,Zone1,1
+22,K2,Mexico,2013,12.66,Zone1,1
+22,K2,Mexico,2014,13.89,Zone2,2
+22,K2,Mexico,2015,13.89,Zone2,2
+23,A1,Netherlands,2013,0,Outlier_High,7
+23,A1,Netherlands,2014,0,Outlier_High,7
+23,A1,Netherlands,2015,0,Outlier_High,7
+23,A2,Netherlands,2013,20,Zone3,3
+23,A2,Netherlands,2014,21,Zone3,3
+23,A2,Netherlands,2015,19,Zone4,4
+23,A3,Netherlands,2013,2,Zone4,4
+23,A3,Netherlands,2014,2,Zone4,4
+23,A3,Netherlands,2015,2,Zone4,4
+23,B1,Netherlands,2013,25493,Zone4,4
+23,B1,Netherlands,2014,25697,Zone4,4
+23,B1,Netherlands,2015,27888,Zone4,4
+23,B2,Netherlands,2013,66869,Zone4,4
+23,B2,Netherlands,2014,71073,Zone4,4
+23,B2,Netherlands,2015,77961,Zone4,4
+23,C1,Netherlands,2013,75,Zone5,5
+23,C1,Netherlands,2014,75,Zone5,5
+23,C1,Netherlands,2015,74,Zone5,5
+23,C2,Netherlands,2013,8.8,Zone4,4
+23,C2,Netherlands,2014,3.6,Zone5,5
+23,C2,Netherlands,2015,4.5,Zone5,5
+23,C3,Netherlands,2013,1.49,Zone5,5
+23,C3,Netherlands,2014,1.78,Zone5,5
+23,C3,Netherlands,2015,2.4,Zone4,4
+23,C4,Netherlands,2013,44321,Zone4,4
+23,C4,Netherlands,2014,45362,Zone4,4
+23,C4,Netherlands,2015,47590,Zone4,4
+23,D1,Netherlands,2013,94,Zone4,4
+23,D1,Netherlands,2014,92,Zone4,4
+23,D1,Netherlands,2015,90,Zone4,4
+23,E1,Netherlands,2013,73,Zone3,3
+23,E1,Netherlands,2014,72,Zone3,3
+23,E1,Netherlands,2015,73,Zone3,3
+23,E2,Netherlands,2013,519,Zone4,4
+23,E2,Netherlands,2014,522,Zone4,4
+23,E2,Netherlands,2015,519,Zone4,4
+23,E3,Netherlands,2013,17.8,Zone4,4
+23,E3,Netherlands,2014,18.6,Zone4,4
+23,E3,Netherlands,2015,18.7,Zone4,4
+23,F1,Netherlands,2013,30,Zone3,3
+23,F1,Netherlands,2014,30,Zone2,2
+23,F1,Netherlands,2015,30,Zone2,2
+23,F2,Netherlands,2013,90,Zone4,4
+23,F2,Netherlands,2014,94,Zone4,4
+23,F2,Netherlands,2015,92,Zone4,4
+23,G1,Netherlands,2013,6.1,Zone3,3
+23,G1,Netherlands,2014,6.1,Zone3,3
+23,G1,Netherlands,2015,6.1,Zone3,3
+23,G2,Netherlands,2013,75,Zone4,4
+23,G2,Netherlands,2014,75,Zone4,4
+23,G2,Netherlands,2015,75,Zone4,4
+23,H1,Netherlands,2013,81.3,Zone4,4
+23,H1,Netherlands,2014,81.3,Zone4,4
+23,H1,Netherlands,2015,81.2,Zone4,4
+23,H2,Netherlands,2013,76,Zone4,4
+23,H2,Netherlands,2014,76,Zone4,4
+23,H2,Netherlands,2015,76,Zone4,4
+23,I1,Netherlands,2013,7.5,Zone5,5
+23,I1,Netherlands,2014,7.4,Zone4,4
+23,I1,Netherlands,2015,7.3,Zone4,4
+23,J1,Netherlands,2013,4.9,Zone4,4
+23,J1,Netherlands,2014,4.9,Zone4,4
+23,J1,Netherlands,2015,4.9,Zone4,4
+23,J2,Netherlands,2013,1.1,Zone5,5
+23,J2,Netherlands,2014,0.9,Zone6,6
+23,J2,Netherlands,2015,0.9,Zone6,6
+23,K1,Netherlands,2013,0.66,Zone6,6
+23,K1,Netherlands,2014,0.59,Zone6,6
+23,K1,Netherlands,2015,0.45,Zone6,6
+23,K2,Netherlands,2013,15.66,Zone5,5
+23,K2,Netherlands,2014,15.44,Zone5,5
+23,K2,Netherlands,2015,15.44,Zone5,5
+24,A1,New Zealand,2013,0.2,Zone6,6
+24,A1,New Zealand,2014,0.2,Zone6,6
+24,A1,New Zealand,2015,0.2,Zone6,6
+24,A2,New Zealand,2013,26,Zone2,2
+24,A2,New Zealand,2014,25,Zone2,2
+24,A2,New Zealand,2015,23,Zone2,2
+24,A3,New Zealand,2013,2.3,Zone5,5
+24,A3,New Zealand,2014,2.3,Zone5,5
+24,A3,New Zealand,2015,2.4,Zone5,5
+24,B1,New Zealand,2013,21892,Zone3,3
+24,B1,New Zealand,2014,21773,Zone3,3
+24,B1,New Zealand,2015,23815,Zone3,3
+24,B2,New Zealand,2013,33421,Zone3,3
+24,B2,New Zealand,2014,7480,Zone2,2
+24,B2,New Zealand,2015,28290,Zone2,2
+24,C1,New Zealand,2013,73,Zone4,4
+24,C1,New Zealand,2014,72,Zone4,4
+24,C1,New Zealand,2015,73,Zone4,4
+24,C2,New Zealand,2013,10.5,Zone4,4
+24,C2,New Zealand,2014,5.8,Zone4,4
+24,C2,New Zealand,2015,5.1,Zone4,4
+24,C3,New Zealand,2013,0.59,Zone5,5
+24,C3,New Zealand,2014,0.91,Zone5,5
+24,C3,New Zealand,2015,0.75,Zone5,5
+24,C4,New Zealand,2013,30420,Zone3,3
+24,C4,New Zealand,2014,31394,Zone3,3
+24,C4,New Zealand,2015,35609,Zone3,3
+24,D1,New Zealand,2013,93,Zone4,4
+24,D1,New Zealand,2014,96,Zone5,5
+24,D1,New Zealand,2015,94,Zone4,4
+24,E1,New Zealand,2013,73,Zone3,3
+24,E1,New Zealand,2014,74,Zone4,4
+24,E1,New Zealand,2015,74,Zone3,3
+24,E2,New Zealand,2013,524,Zone5,5
+24,E2,New Zealand,2014,511,Zone4,4
+24,E2,New Zealand,2015,509,Zone4,4
+24,E3,New Zealand,2013,18.2,Zone4,4
+24,E3,New Zealand,2014,18.1,Zone4,4
+24,E3,New Zealand,2015,18.1,Zone4,4
+24,F1,New Zealand,2013,12,Zone5,5
+24,F1,New Zealand,2014,11,Zone5,5
+24,F1,New Zealand,2015,11,Zone5,5
+24,F2,New Zealand,2013,88,Zone4,4
+24,F2,New Zealand,2014,89,Zone4,4
+24,F2,New Zealand,2015,89,Zone4,4
+24,G1,New Zealand,2013,10.3,Zone5,5
+24,G1,New Zealand,2014,10.3,Zone5,5
+24,G1,New Zealand,2015,10.3,Zone5,5
+24,G2,New Zealand,2013,74,Zone4,4
+24,G2,New Zealand,2014,74,Zone4,4
+24,G2,New Zealand,2015,77,Zone4,4
+24,H1,New Zealand,2013,81.2,Zone4,4
+24,H1,New Zealand,2014,81.2,Zone4,4
+24,H1,New Zealand,2015,81.5,Zone4,4
+24,H2,New Zealand,2013,89,Zone5,5
+24,H2,New Zealand,2014,89,Zone5,5
+24,H2,New Zealand,2015,90,Zone5,5
+24,I1,New Zealand,2013,7.2,Zone4,4
+24,I1,New Zealand,2014,7.3,Zone4,4
+24,I1,New Zealand,2015,7.3,Zone4,4
+24,J1,New Zealand,2013,2.2,Zone5,5
+24,J1,New Zealand,2014,2.2,Zone5,5
+24,J1,New Zealand,2015,2.2,Zone5,5
+24,J2,New Zealand,2013,0.9,Zone6,6
+24,J2,New Zealand,2014,1.9,Zone5,5
+24,J2,New Zealand,2015,1.2,Zone5,5
+24,K1,New Zealand,2013,13.02,Zone3,3
+24,K1,New Zealand,2014,13.07,Zone3,3
+24,K1,New Zealand,2015,13.87,Zone3,3
+24,K2,New Zealand,2013,14.87,Zone4,4
+24,K2,New Zealand,2014,14.87,Zone3,3
+24,K2,New Zealand,2015,14.87,Zone3,3
+25,A1,Norway,2013,0.3,Zone6,6
+25,A1,Norway,2014,0.3,Zone6,6
+25,A1,Norway,2015,0.3,Zone6,6
+25,A2,Norway,2013,18,Zone4,4
+25,A2,Norway,2014,17,Zone5,5
+25,A2,Norway,2015,17,Zone5,5
+25,A3,Norway,2013,2,Zone4,4
+25,A3,Norway,2014,2,Zone4,4
+25,A3,Norway,2015,2,Zone4,4
+25,B1,Norway,2013,31459,Zone5,5
+25,B1,Norway,2014,32093,Zone5,5
+25,B1,Norway,2015,33492,Zone5,5
+25,B2,Norway,2013,6905,Zone2,2
+25,B2,Norway,2014,8365,Zone2,2
+25,B2,Norway,2015,8797,Zone2,2
+25,C1,Norway,2013,75,Zone5,5
+25,C1,Norway,2014,76,Zone5,5
+25,C1,Norway,2015,75,Zone5,5
+25,C2,Norway,2013,7.9,Zone5,5
+25,C2,Norway,2014,2.9,Zone5,5
+25,C2,Norway,2015,3.1,Zone5,5
+25,C3,Norway,2013,0.38,Zone6,6
+25,C3,Norway,2014,0.28,Zone6,6
+25,C3,Norway,2015,0.32,Zone6,6
+25,C4,Norway,2013,43990,Zone4,4
+25,C4,Norway,2014,46618,Zone4,4
+25,C4,Norway,2015,50282,Zone5,5
+25,D1,Norway,2013,93,Zone4,4
+25,D1,Norway,2014,93,Zone4,4
+25,D1,Norway,2015,94,Zone4,4
+25,E1,Norway,2013,81,Zone4,4
+25,E1,Norway,2014,82,Zone4,4
+25,E1,Norway,2015,82,Zone4,4
+25,E2,Norway,2013,500,Zone4,4
+25,E2,Norway,2014,498,Zone4,4
+25,E2,Norway,2015,496,Zone4,4
+25,E3,Norway,2013,17.9,Zone4,4
+25,E3,Norway,2014,17.9,Zone4,4
+25,E3,Norway,2015,17.9,Zone4,4
+25,F1,Norway,2013,15,Zone5,5
+25,F1,Norway,2014,16,Zone4,4
+25,F1,Norway,2015,16,Zone4,4
+25,F2,Norway,2013,96,Zone5,5
+25,F2,Norway,2014,96,Zone5,5
+25,F2,Norway,2015,94,Zone5,5
+25,G1,Norway,2013,8.1,Zone4,4
+25,G1,Norway,2014,8.1,Zone4,4
+25,G1,Norway,2015,8.1,Zone4,4
+25,G2,Norway,2013,76,Zone4,4
+25,G2,Norway,2014,78,Zone4,4
+25,G2,Norway,2015,78,Zone4,4
+25,H1,Norway,2013,81.4,Zone4,4
+25,H1,Norway,2014,81.4,Zone4,4
+25,H1,Norway,2015,81.5,Zone4,4
+25,H2,Norway,2013,73,Zone4,4
+25,H2,Norway,2014,73,Zone4,4
+25,H2,Norway,2015,76,Zone4,4
+25,I1,Norway,2013,7.7,Zone5,5
+25,I1,Norway,2014,7.7,Zone5,5
+25,I1,Norway,2015,7.4,Zone5,5
+25,J1,Norway,2013,3.3,Zone5,5
+25,J1,Norway,2014,3.3,Zone5,5
+25,J1,Norway,2015,3.3,Zone5,5
+25,J2,Norway,2013,0.6,Zone6,6
+25,J2,Norway,2014,2.3,Zone5,5
+25,J2,Norway,2015,0.6,Zone6,6
+25,K1,Norway,2013,2.83,Zone5,5
+25,K1,Norway,2014,3.1,Zone5,5
+25,K1,Norway,2015,2.82,Zone5,5
+25,K2,Norway,2013,15.56,Zone5,5
+25,K2,Norway,2014,15.56,Zone5,5
+25,K2,Norway,2015,15.56,Zone5,5
+26,A1,Poland,2013,4,Zone3,3
+26,A1,Poland,2014,3.5,Zone4,4
+26,A1,Poland,2015,3.2,Zone4,4
+26,A2,Poland,2013,24,Zone2,2
+26,A2,Poland,2014,23,Zone3,3
+26,A2,Poland,2015,21,Zone3,3
+26,A3,Poland,2013,1,Zone2,2
+26,A3,Poland,2014,1,Zone2,2
+26,A3,Poland,2015,1.1,Zone2,2
+26,B1,Poland,2013,15371,Zone2,2
+26,B1,Poland,2014,16234,Zone3,3
+26,B1,Poland,2015,17852,Zone3,3
+26,B2,Poland,2013,9222,Zone2,2
+26,B2,Poland,2014,10406,Zone2,2
+26,B2,Poland,2015,10919,Zone2,2
+26,C1,Poland,2013,60,Zone3,3
+26,C1,Poland,2014,60,Zone3,3
+26,C1,Poland,2015,60,Zone3,3
+26,C2,Poland,2013,8.1,Zone5,5
+26,C2,Poland,2014,7.3,Zone3,3
+26,C2,Poland,2015,7.3,Zone3,3
+26,C3,Poland,2013,3.05,Zone4,4
+26,C3,Poland,2014,3.51,Zone4,4
+26,C3,Poland,2015,3.77,Zone4,4
+26,C4,Poland,2013,19806,Zone2,2
+26,C4,Poland,2014,21140,Zone2,2
+26,C4,Poland,2015,22655,Zone2,2
+26,D1,Poland,2013,91,Zone4,4
+26,D1,Poland,2014,89,Zone4,4
+26,D1,Poland,2015,91,Zone4,4
+26,E1,Poland,2013,89,Zone4,4
+26,E1,Poland,2014,89,Zone4,4
+26,E1,Poland,2015,90,Zone4,4
+26,E2,Poland,2013,501,Zone4,4
+26,E2,Poland,2014,520,Zone4,4
+26,E2,Poland,2015,521,Zone4,4
+26,E3,Poland,2013,18.2,Zone4,4
+26,E3,Poland,2014,18.3,Zone4,4
+26,E3,Poland,2015,18.4,Zone4,4
+26,F1,Poland,2013,34,Zone2,2
+26,F1,Poland,2014,33,Zone2,2
+26,F1,Poland,2015,33,Zone2,2
+26,F2,Poland,2013,79,Zone3,3
+26,F2,Poland,2014,77,Zone3,3
+26,F2,Poland,2015,79,Zone3,3
+26,G1,Poland,2013,10.8,Zone5,5
+26,G1,Poland,2014,10.8,Zone5,5
+26,G1,Poland,2015,10.8,Zone5,5
+26,G2,Poland,2013,55,Zone2,2
+26,G2,Poland,2014,55,Zone2,2
+26,G2,Poland,2015,55,Zone2,2
+26,H1,Poland,2013,76.9,Zone3,3
+26,H1,Poland,2014,76.9,Zone3,3
+26,H1,Poland,2015,76.9,Zone3,3
+26,H2,Poland,2013,57,Zone3,3
+26,H2,Poland,2014,58,Zone3,3
+26,H2,Poland,2015,58,Zone3,3
+26,I1,Poland,2013,5.9,Zone3,3
+26,I1,Poland,2014,5.7,Zone2,2
+26,I1,Poland,2015,5.8,Zone3,3
+26,J1,Poland,2013,1.8,Zone6,6
+26,J1,Poland,2014,1.4,Zone6,6
+26,J1,Poland,2015,1.4,Zone6,6
+26,J2,Poland,2013,1.1,Zone5,5
+26,J2,Poland,2014,1,Zone6,6
+26,J2,Poland,2015,0.9,Zone6,6
+26,K1,Poland,2013,7.24,Zone4,4
+26,K1,Poland,2014,7.58,Zone4,4
+26,K1,Poland,2015,7.41,Zone4,4
+26,K2,Poland,2013,14.2,Zone3,3
+26,K2,Poland,2014,14.2,Zone2,2
+26,K2,Poland,2015,14.2,Zone2,2
+27,A1,Portugal,2013,1.2,Zone5,5
+27,A1,Portugal,2014,0.9,Zone5,5
+27,A1,Portugal,2015,0.9,Zone5,5
+27,A2,Portugal,2013,17,Zone4,4
+27,A2,Portugal,2014,18,Zone5,5
+27,A2,Portugal,2015,19,Zone4,4
+27,A3,Portugal,2013,1.6,Zone3,3
+27,A3,Portugal,2014,1.6,Zone3,3
+27,A3,Portugal,2015,1.6,Zone3,3
+27,B1,Portugal,2013,19366,Zone3,3
+27,B1,Portugal,2014,18806,Zone3,3
+27,B1,Portugal,2015,20086,Zone3,3
+27,B2,Portugal,2013,28408,Zone3,3
+27,B2,Portugal,2014,29640,Zone3,3
+27,B2,Portugal,2015,31245,Zone2,2
+27,C1,Portugal,2013,64,Zone3,3
+27,C1,Portugal,2014,62,Zone3,3
+27,C1,Portugal,2015,61,Zone3,3
+27,C2,Portugal,2013,8.7,Zone4,4
+27,C2,Portugal,2014,9.1,Zone3,3
+27,C2,Portugal,2015,8.6,Zone3,3
+27,C3,Portugal,2013,6.14,Zone2,2
+27,C3,Portugal,2014,7.62,Zone2,2
+27,C3,Portugal,2015,9.11,Zone2,2
+27,C4,Portugal,2013,24384,Zone3,3
+27,C4,Portugal,2014,23419,Zone2,2
+27,C4,Portugal,2015,23688,Zone2,2
+27,D1,Portugal,2013,85,Zone3,3
+27,D1,Portugal,2014,85,Zone3,3
+27,D1,Portugal,2015,86,Zone3,3
+27,E1,Portugal,2013,32,Zone1,1
+27,E1,Portugal,2014,35,Zone1,1
+27,E1,Portugal,2015,38,Zone1,1
+27,E2,Portugal,2013,490,Zone3,3
+27,E2,Portugal,2014,488,Zone3,3
+27,E2,Portugal,2015,488,Zone3,3
+27,E3,Portugal,2013,18,Zone4,4
+27,E3,Portugal,2014,17.8,Zone4,4
+27,E3,Portugal,2015,17.6,Zone4,4
+27,F1,Portugal,2013,20,Zone4,4
+27,F1,Portugal,2014,18,Zone4,4
+27,F1,Portugal,2015,18,Zone4,4
+27,F2,Portugal,2013,86,Zone4,4
+27,F2,Portugal,2014,87,Zone4,4
+27,F2,Portugal,2015,86,Zone4,4
+27,G1,Portugal,2013,6.5,Zone3,3
+27,G1,Portugal,2014,6.5,Zone3,3
+27,G1,Portugal,2015,6.5,Zone3,3
+27,G2,Portugal,2013,58,Zone2,2
+27,G2,Portugal,2014,58,Zone2,2
+27,G2,Portugal,2015,58,Zone3,3
+27,H1,Portugal,2013,80.8,Zone4,4
+27,H1,Portugal,2014,80.8,Zone4,4
+27,H1,Portugal,2015,80.5,Zone4,4
+27,H2,Portugal,2013,49,Zone2,2
+27,H2,Portugal,2014,50,Zone2,2
+27,H2,Portugal,2015,46,Zone2,2
+27,I1,Portugal,2013,5,Zone2,2
+27,I1,Portugal,2014,5.2,Zone2,2
+27,I1,Portugal,2015,5.1,Zone2,2
+27,J1,Portugal,2013,5.8,Zone3,3
+27,J1,Portugal,2014,5.7,Zone3,3
+27,J1,Portugal,2015,5.7,Zone3,3
+27,J2,Portugal,2013,1.2,Zone5,5
+27,J2,Portugal,2014,0.9,Zone6,6
+27,J2,Portugal,2015,1.1,Zone5,5
+27,K1,Portugal,2013,8.5,Zone4,4
+27,K1,Portugal,2014,9.31,Zone4,4
+27,K1,Portugal,2015,9.62,Zone4,4
+27,K2,Portugal,2013,14.71,Zone4,4
+27,K2,Portugal,2014,14.95,Zone4,4
+27,K2,Portugal,2015,14.95,Zone4,4
+28,A1,Russia,2013,2.8,Zone4,4
+28,A1,Russia,2014,15.1,Outlier_Low,0
+28,A1,Russia,2015,15.1,Outlier_Low,0
+28,A2,Russia,2013,11,Zone6,6
+28,A2,Russia,2014,11,Outlier_High,7
+28,A2,Russia,2015,11,Outlier_High,7
+28,A3,Russia,2013,0.9,Zone2,2
+28,A3,Russia,2014,0.9,Zone2,2
+28,A3,Russia,2015,0.9,Zone2,2
+28,B1,Russia,2013,15286,Zone2,2
+28,B1,Russia,2014,17230,Zone3,3
+28,B1,Russia,2015,19292,Zone3,3
+28,B2,Russia,2013,15142,Zone2,2
+28,B2,Russia,2014,3331,Zone1,1
+28,B2,Russia,2015,3412,Zone1,1
+28,C1,Russia,2013,68,Zone4,4
+28,C1,Russia,2014,69,Zone4,4
+28,C1,Russia,2015,69,Zone4,4
+28,C2,Russia,2013,10.5,Zone4,4
+28,C2,Russia,2014,4,Zone5,5
+28,C2,Russia,2015,4,Zone5,5
+28,C3,Russia,2013,2.17,Zone4,4
+28,C3,Russia,2014,1.69,Zone5,5
+28,C3,Russia,2015,1.7,Zone5,5
+28,C4,Russia,2013,19719,Zone2,2
+28,C4,Russia,2014,21311,Zone2,2
+28,C4,Russia,2015,20885,Zone2,2
+28,D1,Russia,2013,87,Zone3,3
+28,D1,Russia,2014,84,Zone3,3
+28,D1,Russia,2015,90,Zone4,4
+28,E1,Russia,2013,91,Zone5,5
+28,E1,Russia,2014,94,Zone5,5
+28,E1,Russia,2015,94,Zone5,5
+28,E2,Russia,2013,469,Zone3,3
+28,E2,Russia,2014,475,Zone3,3
+28,E2,Russia,2015,481,Zone3,3
+28,E3,Russia,2013,16.6,Zone3,3
+28,E3,Russia,2014,15.8,Zone2,2
+28,E3,Russia,2015,16,Zone2,2
+28,F1,Russia,2013,16,Zone4,4
+28,F1,Russia,2014,15,Zone4,4
+28,F1,Russia,2015,15,Zone4,4
+28,F2,Russia,2013,49,Outlier_Low,0
+28,F2,Russia,2014,44,Outlier_Low,0
+28,F2,Russia,2015,56,Zone1,1
+28,G1,Russia,2013,2.5,Zone1,1
+28,G1,Russia,2014,2.5,Zone1,1
+28,G1,Russia,2015,2.5,Zone1,1
+28,G2,Russia,2013,65,Zone3,3
+28,G2,Russia,2014,65,Zone3,3
+28,G2,Russia,2015,65,Zone3,3
+28,H1,Russia,2013,69.8,Outlier_Low,0
+28,H1,Russia,2014,69,Outlier_Low,0
+28,H1,Russia,2015,70.2,Outlier_Low,0
+28,H2,Russia,2013,37,Zone1,1
+28,H2,Russia,2014,37,Zone1,1
+28,H2,Russia,2015,37,Zone1,1
+28,I1,Russia,2013,5.6,Zone2,2
+28,I1,Russia,2014,5.5,Zone2,2
+28,I1,Russia,2015,6,Zone3,3
+28,J1,Russia,2013,2.8,Zone5,5
+28,J1,Russia,2014,3.8,Zone4,4
+28,J1,Russia,2015,3.8,Zone4,4
+28,J2,Russia,2013,10.2,Zone2,2
+28,J2,Russia,2014,12.8,Zone2,2
+28,J2,Russia,2015,12.8,Zone2,2
+28,K1,Russia,2013,0.16,Zone6,6
+28,K1,Russia,2014,0.17,Zone6,6
+28,K1,Russia,2015,0.16,Zone6,6
+28,K2,Russia,2013,14.84,Zone4,4
+28,K2,Russia,2014,14.97,Zone4,4
+28,K2,Russia,2015,14.97,Zone4,4
+29,A1,Slovak Republic,2013,1.4,Zone5,5
+29,A1,Slovak Republic,2014,1.1,Zone5,5
+29,A1,Slovak Republic,2015,0.6,Zone6,6
+29,A2,Slovak Republic,2013,25,Zone2,2
+29,A2,Slovak Republic,2014,25,Zone2,2
+29,A2,Slovak Republic,2015,26,Zone1,1
+29,A3,Slovak Republic,2013,1.2,Zone3,3
+29,A3,Slovak Republic,2014,1.2,Zone2,2
+29,A3,Slovak Republic,2015,1.1,Zone2,2
+29,B1,Slovak Republic,2013,16682,Zone3,3
+29,B1,Slovak Republic,2014,17228,Zone3,3
+29,B1,Slovak Republic,2015,17503,Zone3,3
+29,B2,Slovak Republic,2013,7798,Zone2,2
+29,B2,Slovak Republic,2014,9651,Zone2,2
+29,B2,Slovak Republic,2015,8663,Zone2,2
+29,C1,Slovak Republic,2013,59,Zone3,3
+29,C1,Slovak Republic,2014,60,Zone3,3
+29,C1,Slovak Republic,2015,60,Zone3,3
+29,C2,Slovak Republic,2013,5,Zone5,5
+29,C2,Slovak Republic,2014,5.8,Zone4,4
+29,C2,Slovak Republic,2015,5.5,Zone4,4
+29,C3,Slovak Republic,2013,8.65,Zone1,1
+29,C3,Slovak Republic,2014,8.89,Zone2,2
+29,C3,Slovak Republic,2015,9.46,Zone2,2
+29,C4,Slovak Republic,2013,19335,Zone2,2
+29,C4,Slovak Republic,2014,20428,Zone2,2
+29,C4,Slovak Republic,2015,20307,Zone2,2
+29,D1,Slovak Republic,2013,89,Zone4,4
+29,D1,Slovak Republic,2014,88,Zone3,3
+29,D1,Slovak Republic,2015,90,Zone4,4
+29,E1,Slovak Republic,2013,91,Zone5,5
+29,E1,Slovak Republic,2014,91,Zone5,5
+29,E1,Slovak Republic,2015,92,Zone5,5
+29,E2,Slovak Republic,2013,488,Zone3,3
+29,E2,Slovak Republic,2014,469,Zone3,3
+29,E2,Slovak Republic,2015,472,Zone3,3
+29,E3,Slovak Republic,2013,16.4,Zone3,3
+29,E3,Slovak Republic,2014,16.4,Zone3,3
+29,E3,Slovak Republic,2015,16.3,Zone3,3
+29,F1,Slovak Republic,2013,12,Zone5,5
+29,F1,Slovak Republic,2014,13,Zone5,5
+29,F1,Slovak Republic,2015,13,Zone5,5
+29,F2,Slovak Republic,2013,81,Zone3,3
+29,F2,Slovak Republic,2014,82,Zone4,4
+29,F2,Slovak Republic,2015,81,Zone3,3
+29,G1,Slovak Republic,2013,6.6,Zone3,3
+29,G1,Slovak Republic,2014,6.6,Zone3,3
+29,G1,Slovak Republic,2015,6.6,Zone3,3
+29,G2,Slovak Republic,2013,59,Zone2,2
+29,G2,Slovak Republic,2014,59,Zone2,2
+29,G2,Slovak Republic,2015,59,Zone3,3
+29,H1,Slovak Republic,2013,76.1,Zone2,2
+29,H1,Slovak Republic,2014,76.1,Zone2,2
+29,H1,Slovak Republic,2015,76.2,Zone2,2
+29,H2,Slovak Republic,2013,62,Zone3,3
+29,H2,Slovak Republic,2014,63,Zone3,3
+29,H2,Slovak Republic,2015,66,Zone3,3
+29,I1,Slovak Republic,2013,5.9,Zone3,3
+29,I1,Slovak Republic,2014,5.9,Zone3,3
+29,I1,Slovak Republic,2015,6.1,Zone3,3
+29,J1,Slovak Republic,2013,3,Zone5,5
+29,J1,Slovak Republic,2014,3,Zone5,5
+29,J1,Slovak Republic,2015,3,Zone5,5
+29,J2,Slovak Republic,2013,1.5,Zone5,5
+29,J2,Slovak Republic,2014,1.2,Zone5,5
+29,J2,Slovak Republic,2015,1.2,Zone5,5
+29,K1,Slovak Republic,2013,6.38,Zone4,4
+29,K1,Slovak Republic,2014,6.48,Zone4,4
+29,K1,Slovak Republic,2015,7.02,Zone4,4
+29,K2,Slovak Republic,2013,14.78,Zone4,4
+29,K2,Slovak Republic,2014,14.99,Zone4,4
+29,K2,Slovak Republic,2015,14.99,Zone4,4
+30,A1,Slovenia,2013,0.5,Zone6,6
+30,A1,Slovenia,2014,0.4,Zone6,6
+30,A1,Slovenia,2015,0.5,Zone6,6
+30,A2,Slovenia,2013,20,Zone3,3
+30,A2,Slovenia,2014,20,Zone4,4
+30,A2,Slovenia,2015,20,Zone3,3
+30,A3,Slovenia,2013,1.4,Zone3,3
+30,A3,Slovenia,2014,1.4,Zone3,3
+30,A3,Slovenia,2015,1.5,Zone3,3
+30,B1,Slovenia,2013,19119,Zone3,3
+30,B1,Slovenia,2014,19692,Zone3,3
+30,B1,Slovenia,2015,19326,Zone3,3
+30,B2,Slovenia,2013,18065,Zone2,2
+30,B2,Slovenia,2014,18912,Zone2,2
+30,B2,Slovenia,2015,18465,Zone2,2
+30,C1,Slovenia,2013,64,Zone3,3
+30,C1,Slovenia,2014,64,Zone3,3
+30,C1,Slovenia,2015,63,Zone3,3
+30,C2,Slovenia,2013,7.7,Zone5,5
+30,C2,Slovenia,2014,5,Zone4,4
+30,C2,Slovenia,2015,5.5,Zone4,4
+30,C3,Slovenia,2013,3.61,Zone3,3
+30,C3,Slovenia,2014,4.23,Zone3,3
+30,C3,Slovenia,2015,5.15,Zone3,3
+30,C4,Slovenia,2013,32480,Zone3,3
+30,C4,Slovenia,2014,33040,Zone3,3
+30,C4,Slovenia,2015,32037,Zone3,3
+30,D1,Slovenia,2013,92,Zone4,4
+30,D1,Slovenia,2014,93,Zone4,4
+30,D1,Slovenia,2015,90,Zone4,4
+30,E1,Slovenia,2013,83,Zone4,4
+30,E1,Slovenia,2014,84,Zone4,4
+30,E1,Slovenia,2015,85,Zone4,4
+30,E2,Slovenia,2013,499,Zone4,4
+30,E2,Slovenia,2014,497,Zone4,4
+30,E2,Slovenia,2015,499,Zone4,4
+30,E3,Slovenia,2013,18.4,Zone4,4
+30,E3,Slovenia,2014,18.3,Zone4,4
+30,E3,Slovenia,2015,18.4,Zone4,4
+30,F1,Slovenia,2013,26,Zone3,3
+30,F1,Slovenia,2014,26,Zone3,3
+30,F1,Slovenia,2015,26,Zone3,3
+30,F2,Slovenia,2013,87,Zone4,4
+30,F2,Slovenia,2014,90,Zone4,4
+30,F2,Slovenia,2015,88,Zone4,4
+30,G1,Slovenia,2013,10.3,Zone5,5
+30,G1,Slovenia,2014,10.3,Zone5,5
+30,G1,Slovenia,2015,10.3,Zone5,5
+30,G2,Slovenia,2013,66,Zone3,3
+30,G2,Slovenia,2014,66,Zone3,3
+30,G2,Slovenia,2015,52,Zone2,2
+30,H1,Slovenia,2013,80.1,Zone4,4
+30,H1,Slovenia,2014,80.1,Zone4,4
+30,H1,Slovenia,2015,80.2,Zone4,4
+30,H2,Slovenia,2013,60,Zone3,3
+30,H2,Slovenia,2014,61,Zone3,3
+30,H2,Slovenia,2015,65,Zone3,3
+30,I1,Slovenia,2013,6.1,Zone3,3
+30,I1,Slovenia,2014,6,Zone3,3
+30,I1,Slovenia,2015,5.7,Zone2,2
+30,J1,Slovenia,2013,3.9,Zone4,4
+30,J1,Slovenia,2014,3.9,Zone4,4
+30,J1,Slovenia,2015,3.9,Zone4,4
+30,J2,Slovenia,2013,0.7,Zone6,6
+30,J2,Slovenia,2014,0.4,Zone6,6
+30,J2,Slovenia,2015,0.4,Zone6,6
+30,K1,Slovenia,2013,5.55,Zone5,5
+30,K1,Slovenia,2014,5.72,Zone4,4
+30,K1,Slovenia,2015,5.63,Zone4,4
+30,K2,Slovenia,2013,14.62,Zone3,3
+30,K2,Slovenia,2014,14.62,Zone3,3
+30,K2,Slovenia,2015,14.62,Zone3,3
+31,A1,Spain,2013,0,Outlier_High,7
+31,A1,Spain,2014,0,Outlier_High,7
+31,A1,Spain,2015,0.1,Zone6,6
+31,A2,Spain,2013,20,Zone3,3
+31,A2,Spain,2014,20,Zone4,4
+31,A2,Spain,2015,22,Zone3,3
+31,A3,Spain,2013,1.8,Zone4,4
+31,A3,Spain,2014,1.9,Zone4,4
+31,A3,Spain,2015,1.9,Zone4,4
+31,B1,Spain,2013,22847,Zone4,4
+31,B1,Spain,2014,22799,Zone3,3
+31,B1,Spain,2015,22477,Zone3,3
+31,B2,Spain,2013,21636,Zone2,2
+31,B2,Spain,2014,23920,Zone2,2
+31,B2,Spain,2015,24774,Zone2,2
+31,C1,Spain,2013,58,Zone2,2
+31,C1,Spain,2014,56,Zone2,2
+31,C1,Spain,2015,56,Zone2,2
+31,C2,Spain,2013,10.9,Zone4,4
+31,C2,Spain,2014,17.7,Outlier_Low,0
+31,C2,Spain,2015,17.8,Outlier_Low,0
+31,C3,Spain,2013,8.99,Zone1,1
+31,C3,Spain,2014,11.13,Zone1,1
+31,C3,Spain,2015,12.96,Zone1,1
+31,C4,Spain,2013,34769,Zone3,3
+31,C4,Spain,2014,34747,Zone3,3
+31,C4,Spain,2015,34824,Zone3,3
+31,D1,Spain,2013,93,Zone4,4
+31,D1,Spain,2014,92,Zone4,4
+31,D1,Spain,2015,95,Zone5,5
+31,E1,Spain,2013,53,Zone2,2
+31,E1,Spain,2014,54,Zone2,2
+31,E1,Spain,2015,55,Zone2,2
+31,E2,Spain,2013,484,Zone3,3
+31,E2,Spain,2014,490,Zone3,3
+31,E2,Spain,2015,490,Zone3,3
+31,E3,Spain,2013,17.3,Zone3,3
+31,E3,Spain,2014,17.6,Zone4,4
+31,E3,Spain,2015,17.6,Zone4,4
+31,F1,Spain,2013,25,Zone3,3
+31,F1,Spain,2014,24,Zone3,3
+31,F1,Spain,2015,24,Zone3,3
+31,F2,Spain,2013,79,Zone3,3
+31,F2,Spain,2014,75,Zone3,3
+31,F2,Spain,2015,71,Zone2,2
+31,G1,Spain,2013,7.3,Zone3,3
+31,G1,Spain,2014,7.3,Zone3,3
+31,G1,Spain,2015,7.3,Zone3,3
+31,G2,Spain,2013,69,Zone3,3
+31,G2,Spain,2014,69,Zone3,3
+31,G2,Spain,2015,69,Zone3,3
+31,H1,Spain,2013,82.4,Zone4,4
+31,H1,Spain,2014,82.4,Zone4,4
+31,H1,Spain,2015,82.5,Zone4,4
+31,H2,Spain,2013,75,Zone4,4
+31,H2,Spain,2014,75,Zone4,4
+31,H2,Spain,2015,72,Zone4,4
+31,I1,Spain,2013,6.3,Zone3,3
+31,I1,Spain,2014,6.2,Zone3,3
+31,I1,Spain,2015,6.5,Zone3,3
+31,J1,Spain,2013,4.2,Zone4,4
+31,J1,Spain,2014,4.2,Zone4,4
+31,J1,Spain,2015,4.2,Zone4,4
+31,J2,Spain,2013,0.8,Zone6,6
+31,J2,Spain,2014,0.7,Zone6,6
+31,J2,Spain,2015,0.6,Zone6,6
+31,K1,Spain,2013,6.34,Zone4,4
+31,K1,Spain,2014,5.95,Zone4,4
+31,K1,Spain,2015,5.89,Zone4,4
+31,K2,Spain,2013,15.85,Zone5,5
+31,K2,Spain,2014,16.06,Zone6,6
+31,K2,Spain,2015,16.06,Zone6,6
+32,A1,Sweden,2013,0,Outlier_High,7
+32,A1,Sweden,2014,0,Outlier_High,7
+32,A1,Sweden,2015,0,Outlier_High,7
+32,A2,Sweden,2013,21,Zone3,3
+32,A2,Sweden,2014,21,Zone3,3
+32,A2,Sweden,2015,20,Zone3,3
+32,A3,Sweden,2013,1.7,Zone4,4
+32,A3,Sweden,2014,1.7,Zone4,4
+32,A3,Sweden,2015,1.7,Zone4,4
+32,B1,Sweden,2013,26242,Zone4,4
+32,B1,Sweden,2014,27546,Zone4,4
+32,B1,Sweden,2015,29185,Zone4,4
+32,B2,Sweden,2013,44889,Zone3,3
+32,B2,Sweden,2014,55301,Zone4,4
+32,B2,Sweden,2015,60328,Zone4,4
+32,C1,Sweden,2013,74,Zone5,5
+32,C1,Sweden,2014,74,Zone5,5
+32,C1,Sweden,2015,74,Zone5,5
+32,C2,Sweden,2013,13.9,Zone3,3
+32,C2,Sweden,2014,6.5,Zone4,4
+32,C2,Sweden,2015,6.5,Zone4,4
+32,C3,Sweden,2013,1.29,Zone5,5
+32,C3,Sweden,2014,1.4,Zone5,5
+32,C3,Sweden,2015,1.37,Zone5,5
+32,C4,Sweden,2013,37094,Zone4,4
+32,C4,Sweden,2014,38789,Zone4,4
+32,C4,Sweden,2015,40818,Zone4,4
+32,D1,Sweden,2013,92,Zone4,4
+32,D1,Sweden,2014,91,Zone4,4
+32,D1,Sweden,2015,92,Zone4,4
+32,E1,Sweden,2013,87,Zone4,4
+32,E1,Sweden,2014,87,Zone4,4
+32,E1,Sweden,2015,88,Zone4,4
+32,E2,Sweden,2013,496,Zone4,4
+32,E2,Sweden,2014,484,Zone3,3
+32,E2,Sweden,2015,482,Zone3,3
+32,E3,Sweden,2013,19.2,Zone5,5
+32,E3,Sweden,2014,19.2,Zone5,5
+32,E3,Sweden,2015,19.3,Zone5,5
+32,F1,Sweden,2013,10,Zone5,5
+32,F1,Sweden,2014,10,Zone5,5
+32,F1,Sweden,2015,10,Zone5,5
+32,F2,Sweden,2013,95,Zone5,5
+32,F2,Sweden,2014,97,Zone5,5
+32,F2,Sweden,2015,95,Zone5,5
+32,G1,Sweden,2013,10.9,Zone5,5
+32,G1,Sweden,2014,10.9,Zone5,5
+32,G1,Sweden,2015,10.9,Zone5,5
+32,G2,Sweden,2013,85,Zone5,5
+32,G2,Sweden,2014,85,Zone5,5
+32,G2,Sweden,2015,86,Zone5,5
+32,H1,Sweden,2013,81.9,Zone4,4
+32,H1,Sweden,2014,81.9,Zone4,4
+32,H1,Sweden,2015,81.8,Zone4,4
+32,H2,Sweden,2013,80,Zone4,4
+32,H2,Sweden,2014,80,Zone4,4
+32,H2,Sweden,2015,81,Zone4,4
+32,I1,Sweden,2013,7.6,Zone5,5
+32,I1,Sweden,2014,7.4,Zone4,4
+32,I1,Sweden,2015,7.2,Zone4,4
+32,J1,Sweden,2013,5.1,Zone4,4
+32,J1,Sweden,2014,5.1,Zone4,4
+32,J1,Sweden,2015,5.1,Zone4,4
+32,J2,Sweden,2013,1,Zone5,5
+32,J2,Sweden,2014,1,Zone6,6
+32,J2,Sweden,2015,0.7,Zone6,6
+32,K1,Sweden,2013,1.23,Zone6,6
+32,K1,Sweden,2014,1.14,Zone6,6
+32,K1,Sweden,2015,1.13,Zone6,6
+32,K2,Sweden,2013,15.11,Zone4,4
+32,K2,Sweden,2014,15.11,Zone4,4
+32,K2,Sweden,2015,15.11,Zone4,4
+33,A1,Switzerland,2013,0.1,Zone6,6
+33,A1,Switzerland,2014,0.1,Zone6,6
+33,A1,Switzerland,2015,0,Outlier_High,7
+33,A2,Switzerland,2013,23,Zone3,3
+33,A2,Switzerland,2014,23,Zone3,3
+33,A2,Switzerland,2015,22,Zone3,3
+33,A3,Switzerland,2013,1.8,Zone4,4
+33,A3,Switzerland,2014,1.9,Zone4,4
+33,A3,Switzerland,2015,1.8,Zone4,4
+33,B1,Switzerland,2013,30060,Zone5,5
+33,B1,Switzerland,2014,30745,Zone5,5
+33,B1,Switzerland,2015,33491,Zone5,5
+33,B2,Switzerland,2013,99209,Zone6,6
+33,B2,Switzerland,2014,100812,Zone5,5
+33,B2,Switzerland,2015,108823,Zone5,5
+33,C1,Switzerland,2013,79,Zone5,5
+33,C1,Switzerland,2014,79,Zone5,5
+33,C1,Switzerland,2015,80,Zone5,5
+33,C2,Switzerland,2013,8.4,Zone4,4
+33,C2,Switzerland,2014,2.8,Zone5,5
+33,C2,Switzerland,2015,3,Zone5,5
+33,C3,Switzerland,2013,1.57,Zone4,4
+33,C3,Switzerland,2014,1.48,Zone5,5
+33,C3,Switzerland,2015,1.46,Zone5,5
+33,C4,Switzerland,2013,50323,Zone5,5
+33,C4,Switzerland,2014,52307,Zone5,5
+33,C4,Switzerland,2015,54236,Zone5,5
+33,D1,Switzerland,2013,94,Zone4,4
+33,D1,Switzerland,2014,94,Zone4,4
+33,D1,Switzerland,2015,96,Zone5,5
+33,E1,Switzerland,2013,86,Zone4,4
+33,E1,Switzerland,2014,86,Zone4,4
+33,E1,Switzerland,2015,86,Zone4,4
+33,E2,Switzerland,2013,517,Zone4,4
+33,E2,Switzerland,2014,515,Zone4,4
+33,E2,Switzerland,2015,518,Zone4,4
+33,E3,Switzerland,2013,17.2,Zone3,3
+33,E3,Switzerland,2014,17.1,Zone3,3
+33,E3,Switzerland,2015,17.3,Zone3,3
+33,F1,Switzerland,2013,22,Zone4,4
+33,F1,Switzerland,2014,20,Zone4,4
+33,F1,Switzerland,2015,20,Zone4,4
+33,F2,Switzerland,2013,95,Zone5,5
+33,F2,Switzerland,2014,95,Zone5,5
+33,F2,Switzerland,2015,96,Zone5,5
+33,G1,Switzerland,2013,8.4,Zone4,4
+33,G1,Switzerland,2014,8.4,Zone4,4
+33,G1,Switzerland,2015,8.4,Zone4,4
+33,G2,Switzerland,2013,49,Zone2,2
+33,G2,Switzerland,2014,49,Zone2,2
+33,G2,Switzerland,2015,49,Zone2,2
+33,H1,Switzerland,2013,82.8,Zone5,5
+33,H1,Switzerland,2014,82.8,Zone5,5
+33,H1,Switzerland,2015,82.8,Zone5,5
+33,H2,Switzerland,2013,81,Zone4,4
+33,H2,Switzerland,2014,81,Zone4,4
+33,H2,Switzerland,2015,81,Zone4,4
+33,I1,Switzerland,2013,7.8,Zone5,5
+33,I1,Switzerland,2014,7.8,Zone5,5
+33,I1,Switzerland,2015,7.5,Zone5,5
+33,J1,Switzerland,2013,4.2,Zone4,4
+33,J1,Switzerland,2014,4.2,Zone4,4
+33,J1,Switzerland,2015,4.2,Zone4,4
+33,J2,Switzerland,2013,0.7,Zone6,6
+33,J2,Switzerland,2014,0.5,Zone6,6
+33,J2,Switzerland,2015,0.5,Zone6,6
+33,K1,Switzerland,2013,5.87,Zone4,4
+33,K1,Switzerland,2014,7.3,Zone4,4
+33,K1,Switzerland,2015,6.72,Zone4,4
+33,K2,Switzerland,2013,14.78,Zone4,4
+33,K2,Switzerland,2014,14.98,Zone4,4
+33,K2,Switzerland,2015,14.98,Zone4,4
+34,A1,Turkey,2013,12.7,Outlier_Low,0
+34,A1,Turkey,2014,12.7,Zone1,1
+34,A1,Turkey,2015,12.7,Zone1,1
+34,A2,Turkey,2013,21,Zone3,3
+34,A2,Turkey,2014,21,Zone3,3
+34,A2,Turkey,2015,21,Zone3,3
+34,A3,Turkey,2013,0.9,Zone2,2
+34,A3,Turkey,2014,1.1,Zone2,2
+34,A3,Turkey,2015,1.1,Zone2,2
+34,B1,Turkey,2013,13044,Zone2,2
+34,B1,Turkey,2014,13794,Zone2,2
+34,B1,Turkey,2015,14095,Zone2,2
+34,B2,Turkey,2013,10524,Zone2,2
+34,B2,Turkey,2014,3317,Zone1,1
+34,B2,Turkey,2015,3251,Zone1,1
+34,C1,Turkey,2013,48,Zone1,1
+34,C1,Turkey,2014,49,Zone1,1
+34,C1,Turkey,2015,50,Zone1,1
+34,C2,Turkey,2013,25.8,Outlier_Low,0
+34,C2,Turkey,2014,7.8,Zone3,3
+34,C2,Turkey,2015,8.1,Zone3,3
+34,C3,Turkey,2013,2.59,Zone4,4
+34,C3,Turkey,2014,2.29,Zone4,4
+34,C3,Turkey,2015,2.37,Zone4,4
+34,C4,Turkey,2013,19032,Zone2,2
+34,C4,Turkey,2014,17460,Zone2,2
+34,C4,Turkey,2015,16919,Zone2,2
+34,D1,Turkey,2013,73,Zone1,1
+34,D1,Turkey,2014,79,Zone2,2
+34,D1,Turkey,2015,86,Zone3,3
+34,E1,Turkey,2013,31,Zone1,1
+34,E1,Turkey,2014,32,Zone1,1
+34,E1,Turkey,2015,34,Zone1,1
+34,E2,Turkey,2013,455,Zone2,2
+34,E2,Turkey,2014,462,Zone2,2
+34,E2,Turkey,2015,462,Zone2,2
+34,E3,Turkey,2013,15.2,Zone2,2
+34,E3,Turkey,2014,16,Zone2,2
+34,E3,Turkey,2015,16.4,Zone3,3
+34,F1,Turkey,2013,37,Zone2,2
+34,F1,Turkey,2014,35,Zone2,2
+34,F1,Turkey,2015,35,Zone2,2
+34,F2,Turkey,2013,61,Zone1,1
+34,F2,Turkey,2014,60,Zone2,2
+34,F2,Turkey,2015,62,Zone2,2
+34,G1,Turkey,2013,5.5,Zone3,3
+34,G1,Turkey,2014,5.5,Zone3,3
+34,G1,Turkey,2015,5.5,Zone3,3
+34,G2,Turkey,2013,88,Zone5,5
+34,G2,Turkey,2014,88,Zone5,5
+34,G2,Turkey,2015,88,Zone5,5
+34,H1,Turkey,2013,74.6,Zone2,2
+34,H1,Turkey,2014,74.6,Zone2,2
+34,H1,Turkey,2015,74.6,Zone2,2
+34,H2,Turkey,2013,67,Zone4,4
+34,H2,Turkey,2014,67,Zone3,3
+34,H2,Turkey,2015,68,Zone4,4
+34,I1,Turkey,2013,5.3,Zone2,2
+34,I1,Turkey,2014,4.9,Zone2,2
+34,I1,Turkey,2015,5.6,Zone2,2
+34,J1,Turkey,2013,5.1,Zone4,4
+34,J1,Turkey,2014,5,Zone4,4
+34,J1,Turkey,2015,5,Zone4,4
+34,J2,Turkey,2013,3.3,Zone4,4
+34,J2,Turkey,2014,3.3,Zone4,4
+34,J2,Turkey,2015,1.2,Zone5,5
+34,K1,Turkey,2013,46.13,Outlier_Low,0
+34,K1,Turkey,2014,43.29,Outlier_Low,0
+34,K1,Turkey,2015,40.86,Outlier_Low,0
+34,K2,Turkey,2013,11.73,Outlier_Low,0
+34,K2,Turkey,2014,13.42,Zone1,1
+34,K2,Turkey,2015,13.42,Zone1,1
+35,A1,United Kingdom,2013,0.1,Zone6,6
+35,A1,United Kingdom,2014,0.3,Zone6,6
+35,A1,United Kingdom,2015,0.2,Zone6,6
+35,A2,United Kingdom,2013,22,Zone3,3
+35,A2,United Kingdom,2014,24,Zone2,2
+35,A2,United Kingdom,2015,23,Zone2,2
+35,A3,United Kingdom,2013,1.8,Zone4,4
+35,A3,United Kingdom,2014,1.9,Zone4,4
+35,A3,United Kingdom,2015,1.9,Zone4,4
+35,B1,United Kingdom,2013,26904,Zone4,4
+35,B1,United Kingdom,2014,25828,Zone4,4
+35,B1,United Kingdom,2015,27029,Zone4,4
+35,B2,United Kingdom,2013,62965,Zone4,4
+35,B2,United Kingdom,2014,60065,Zone4,4
+35,B2,United Kingdom,2015,60778,Zone4,4
+35,C1,United Kingdom,2013,70,Zone4,4
+35,C1,United Kingdom,2014,71,Zone4,4
+35,C1,United Kingdom,2015,71,Zone4,4
+35,C2,United Kingdom,2013,6.8,Zone5,5
+35,C2,United Kingdom,2014,5.6,Zone4,4
+35,C2,United Kingdom,2015,5.2,Zone4,4
+35,C3,United Kingdom,2013,2.62,Zone4,4
+35,C3,United Kingdom,2014,2.75,Zone4,4
+35,C3,United Kingdom,2015,2.77,Zone4,4
+35,C4,United Kingdom,2013,44743,Zone4,4
+35,C4,United Kingdom,2014,40649,Zone4,4
+35,C4,United Kingdom,2015,41192,Zone4,4
+35,D1,United Kingdom,2013,95,Zone5,5
+35,D1,United Kingdom,2014,94,Zone4,4
+35,D1,United Kingdom,2015,91,Zone4,4
+35,E1,United Kingdom,2013,75,Zone4,4
+35,E1,United Kingdom,2014,77,Zone4,4
+35,E1,United Kingdom,2015,78,Zone4,4
+35,E2,United Kingdom,2013,500,Zone4,4
+35,E2,United Kingdom,2014,505,Zone4,4
+35,E2,United Kingdom,2015,502,Zone4,4
+35,E3,United Kingdom,2013,16.6,Zone3,3
+35,E3,United Kingdom,2014,16.6,Zone3,3
+35,E3,United Kingdom,2015,16.4,Zone3,3
+35,F1,United Kingdom,2013,13,Zone5,5
+35,F1,United Kingdom,2014,13,Zone5,5
+35,F1,United Kingdom,2015,13,Zone5,5
+35,F2,United Kingdom,2013,97,Zone5,5
+35,F2,United Kingdom,2014,92,Zone4,4
+35,F2,United Kingdom,2015,88,Zone4,4
+35,G1,United Kingdom,2013,11.5,Zone5,5
+35,G1,United Kingdom,2014,11.5,Zone5,5
+35,G1,United Kingdom,2015,11.5,Zone5,5
+35,G2,United Kingdom,2013,66,Zone3,3
+35,G2,United Kingdom,2014,66,Zone3,3
+35,G2,United Kingdom,2015,66,Zone3,3
+35,H1,United Kingdom,2013,81.1,Zone4,4
+35,H1,United Kingdom,2014,81.1,Zone4,4
+35,H1,United Kingdom,2015,81,Zone4,4
+35,H2,United Kingdom,2013,77,Zone4,4
+35,H2,United Kingdom,2014,78,Zone4,4
+35,H2,United Kingdom,2015,74,Zone4,4
+35,I1,United Kingdom,2013,6.8,Zone4,4
+35,I1,United Kingdom,2014,6.9,Zone4,4
+35,I1,United Kingdom,2015,6.8,Zone4,4
+35,J1,United Kingdom,2013,1.9,Zone5,5
+35,J1,United Kingdom,2014,1.9,Zone5,5
+35,J1,United Kingdom,2015,1.9,Zone5,5
+35,J2,United Kingdom,2013,1.2,Zone5,5
+35,J2,United Kingdom,2014,0.3,Zone6,6
+35,J2,United Kingdom,2015,0.3,Zone6,6
+35,K1,United Kingdom,2013,12.06,Zone3,3
+35,K1,United Kingdom,2014,12.27,Zone3,3
+35,K1,United Kingdom,2015,12.7,Zone3,3
+35,K2,United Kingdom,2013,14.83,Zone4,4
+35,K2,United Kingdom,2014,14.83,Zone3,3
+35,K2,United Kingdom,2015,14.83,Zone3,3
+36,A1,United States,2013,0,Outlier_High,7
+36,A1,United States,2014,0.1,Zone6,6
+36,A1,United States,2015,0.1,Zone6,6
+36,A2,United States,2013,19,Zone4,4
+36,A2,United States,2014,19,Zone4,4
+36,A2,United States,2015,18,Zone4,4
+36,A3,United States,2013,2.3,Zone5,5
+36,A3,United States,2014,2.3,Zone5,5
+36,A3,United States,2015,2.4,Zone5,5
+36,B1,United States,2013,38001,Zone6,6
+36,B1,United States,2014,39531,Zone6,6
+36,B1,United States,2015,41355,Zone6,6
+36,B2,United States,2013,115918,Zone6,6
+36,B2,United States,2014,132822,Outlier_High,7
+36,B2,United States,2015,145769,Outlier_High,7
+36,C1,United States,2013,67,Zone4,4
+36,C1,United States,2014,67,Zone4,4
+36,C1,United States,2015,67,Zone4,4
+36,C2,United States,2013,11.4,Zone4,4
+36,C2,United States,2014,6.3,Zone4,4
+36,C2,United States,2015,5.9,Zone4,4
+36,C3,United States,2013,2.8,Zone4,4
+36,C3,United States,2014,2.36,Zone4,4
+36,C3,United States,2015,1.91,Zone5,5
+36,C4,United States,2013,54450,Zone5,5
+36,C4,United States,2014,54214,Zone5,5
+36,C4,United States,2015,56340,Zone5,5
+36,D1,United States,2013,90,Zone4,4
+36,D1,United States,2014,90,Zone4,4
+36,D1,United States,2015,90,Zone4,4
+36,E1,United States,2013,89,Zone4,4
+36,E1,United States,2014,89,Zone4,4
+36,E1,United States,2015,89,Zone4,4
+36,E2,United States,2013,496,Zone4,4
+36,E2,United States,2014,494,Zone4,4
+36,E2,United States,2015,492,Zone3,3
+36,E3,United States,2013,17.1,Zone3,3
+36,E3,United States,2014,17.1,Zone3,3
+36,E3,United States,2015,17.2,Zone3,3
+36,F1,United States,2013,18,Zone4,4
+36,F1,United States,2014,18,Zone4,4
+36,F1,United States,2015,18,Zone4,4
+36,F2,United States,2013,87,Zone4,4
+36,F2,United States,2014,87,Zone4,4
+36,F2,United States,2015,85,Zone4,4
+36,G1,United States,2013,8.3,Zone4,4
+36,G1,United States,2014,8.3,Zone4,4
+36,G1,United States,2015,8.3,Zone4,4
+36,G2,United States,2013,70,Zone3,3
+36,G2,United States,2014,67,Zone3,3
+36,G2,United States,2015,68,Zone3,3
+36,H1,United States,2013,78.7,Zone3,3
+36,H1,United States,2014,78.7,Zone3,3
+36,H1,United States,2015,78.7,Zone3,3
+36,H2,United States,2013,90,Zone5,5
+36,H2,United States,2014,90,Zone5,5
+36,H2,United States,2015,88,Zone5,5
+36,I1,United States,2013,7,Zone4,4
+36,I1,United States,2014,7,Zone4,4
+36,I1,United States,2015,7.2,Zone4,4
+36,J1,United States,2013,1.5,Zone6,6
+36,J1,United States,2014,1.5,Zone6,6
+36,J1,United States,2015,1.5,Zone6,6
+36,J2,United States,2013,4.8,Zone4,4
+36,J2,United States,2014,5.2,Zone4,4
+36,J2,United States,2015,5.2,Zone4,4
+36,K1,United States,2013,11.13,Zone4,4
+36,K1,United States,2014,11.44,Zone3,3
+36,K1,United States,2015,11.3,Zone3,3
+36,K2,United States,2013,14.27,Zone3,3
+36,K2,United States,2014,14.27,Zone2,2
+36,K2,United States,2015,14.27,Zone2,2
