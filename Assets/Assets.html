@@ -1,0 +1,64 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Assets Visualization Demo</title>
+    <script src="http://d3js.org/d3.v3.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.css">
+
+    <style>
+        #chart svg {
+            height: 400px;
+        }
+    </style>
+            <link rel="stylesheet" href="CSS/reset.css" />
+            <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lobster" />
+            <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Droid+Serif" />
+            <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+            <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" href="CSS/main.css" />
+
+
+        </head>
+        <body>
+
+
+            <nav></nav>
+
+
+                <section>
+                    <div id="container"></div>
+                    <h2>Assets end of day trade price for years 2008-2015</h2>
+            
+                    <div id="chart">
+                        <svg></svg>
+                    </div>
+
+
+                <br /><br /><br /><br /><br /><br /><br />
+            </section>
+
+       
+        <br />
+    <footer>
+    </footer>
+
+        <script src="JS/jQuery.js"></script>
+        <script src="JS/d3.min.js"></script>
+        <script src="JS/main.js"></script>
+        <script src="JS/ev_asset.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("nav").html(Setnav());
+                $("footer").html(Setfooter());
+                $("#btn_Assets").removeClass("btn-wb").addClass("btn-wb-active");
+            });
+        </script>
+
+
+
+    </body>
+</html>

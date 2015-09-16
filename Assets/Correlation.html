@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Correlation Explorer in D3.js</title>
+          <link rel="stylesheet" href="CSS/reset.css" />
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lobster" />
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Droid+Serif" />
+        <link rel="stylesheet" href="CSS/main.css" />
+
+    <style>
+        .pixel:hover
+        { 
+          stroke: #000;
+          stroke-width: 1px;
+        }
+        .tick:hover
+        { 
+          fill: #aaa;
+        /* stroke: #000;  
+        stroke-width: 1px;*/
+        }
+        div.tooltip
+        {
+	        position: absolute;
+	        text-align: left;
+	        padding: 8px;
+	        font: 12px sans-serif;
+	        background: #000;
+            color: #ddd;
+	        border: solid 1px #aaa;
+	        border-radius: 4px;
+	        pointer-events: none;
+        }
+
+        /*----*/
+            body {
+                font: 10px sans-serif;
+            }
+
+            .axis  {
+                font-size: 12px;
+            }
+
+            .axis path,
+            .axis line {
+                fill: none;
+                stroke: #000;
+                shape-rendering: crispEdges;
+            }
+
+            .dot {
+                stroke: #f46d43;
+            }
+
+            svg {
+                margin: 30px;
+            }
+
+            /*div.tooltip {
+                position: absolute;
+                max-width: 200px;
+                height: auto;
+                padding: 5px;
+                background-color: white;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                pointer-events: none; 
+                font-family: sans-serif;
+                font-size: 12px;
+            }*/
+
+            #Indicator_explain {
+                padding: 0px 12px 0px 24px;
+                height: 50px;
+                width: 900px;
+            }
+
+            
+        table td {
+
+            border: none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <nav></nav>  
+  <p>
+    <!--input type="text" value="data/assets.csv" id="file_path">
+    Transpose?
+    <input type="checkbox" id="transpose">
+    <button id="file_load">Load CSV!</button>
+    <button id="js_comparison">or generate JS comparison table?</button-->
+  
+    Sort by:
+    <select id="sort_func">
+      <option value="abs_value">by Absolute Value</option>
+      <option value="value" selected="selected">by Value</option>
+      <option value="similarity">by Similarity</option>
+      <option value="alphabetic">Alphabetic</option>
+      <option value="original">Original</option>
+    </select>
+
+    Keep symmetry?
+    <input type='checkbox' id="keep_symmetry" checked="true">
+    
+    <!--input type='text' id="zoom" value="0.4"-->
+  </p>
+
+   
+  <!-- <p>Built with <a href="http://d3js.org/">d3.js</a>.</p> -->
+  
+   
+    <br />
+    <table>
+        <tr>
+            <td style="vertical-align: top;"><svg id="chart"></svg>
+            <!--  
+              Select assets:
+                <select id="x_asset">
+                    <option selected value="BX">Brent oil</option>
+                    <option value="CX">Corn</option>
+                    <option value="EX">EURUSD</option>
+                    <option value="GX">Gold</option>
+                    <option value="RX">RX</option>
+                    <option value="SX">Soybean</option>
+                    <option value="UX">USDLibor</option>
+                    <option value="WX">WTI oil</option>
+
+                </select>
+                <select id="y_asset">
+                    <option value="BX">Brent oil</option>
+                    <option selected value="CX">Corn</option>
+                    <option value="EX">EURUSD</option>
+                    <option value="GX">Gold</option>
+                    <option value="RX">RX</option>
+                    <option value="SX">Soybean</option>
+                    <option value="UX">USDLibor</option>
+                    <option value="WX">WTI oil</option>
+                </select>
+            -->
+            </td>
+            <td style="vertical-align: top;"><br /><br /><div id="scatter" style="font-size:18px; margin-left:40px;">Click a square to see matching scatter plot.</div><br /><svg id="scatter_chart"></svg> </td>
+        </tr>
+        <!--tr>
+            <td style="vertical-align: top;"><br /><div id="asset1"></div><br /><svg id="line_chart1"></svg></td>
+            <td style="vertical-align: top;"><br /><div id="asset2"></div><br /><svg id="line_chart2"></svg></td>
+        </tr-->
+    </table>
+
+    <footer></footer>      
+    <div class="tooltip" style="opacity: 0.01"></div>
+
+   
+    <!--script type='text/javascript' src="evb_tst.js"></script>
+    <script type='text/javascript' src="../Assets/JS/evb_ScatterPlot.js"></script-->
+
+
+    <script src="JS/jQuery.js"></script>
+    <script src="JS/d3.min.js"></script>
+    <script src="JS/main.js"></script>
+    <script type='text/javascript' src="JS/evb_Regression2.js"></script>
+    <script type='text/javascript' src="JS/correxplorer.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("nav").html(Setnav());
+            $("footer").html(Setfooter());
+            $("#btn_Correlation").removeClass("btn-wb").addClass("btn-wb-active");
+        });
+    </script>
+
+
+</body>
+
+
+
+</html>
+

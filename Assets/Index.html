@@ -1,0 +1,90 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Assets Visualization Demo</title>
+        
+        <link rel="stylesheet" href="CSS/reset.css" />
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lobster" />
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Droid+Serif" />
+        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="CSS/main.css" />
+    </head>
+    <body>
+ 
+        <nav>
+        </nav>          
+                     
+            <section>
+                
+                 
+                <div style="width:800px; margin: 20px;">
+                    <br /><br />
+                    Demo tool to explore assets end of day trade price and explore relationships and correlation between different assets.
+
+                    <br /><br />
+                    <b>Assets Categories:</b>
+                    <table  style="width:400px; text-align: center; margin: 5px;">
+                        <tr>
+                            <td height="10px" rowspan="6" style=" width:100px; ">Commodities</td>
+                            <td height="10px" rowspan="3" style ="background-color: #1565C0; color: #fff; width:100px; font-weight:bold;">Energy</td>
+                            <td height="10px" style="color: #1565C0; width:100px; font-weight:bold;">Brent oil</td>
+                        </tr>
+                        <tr>
+                            <td height="10px" style="color: #1565C0; width:100px; font-weight:bold;">RBOB</td>
+                        </tr>
+                        <tr>
+                            <td height="10px" style="color: #1565C0; width:100px; font-weight:bold;">WTI oil</td>
+                        </tr>
+                        <tr>
+                            <td height="10px" rowspan="2" style="background-color: #00695C; color: #fff; width:100px; ">Agriculture</td>
+                            <td height="10px" style="color: #00695C; width:100px; font-weight:bold;">Corn</td>
+                        </tr>
+                        <tr>
+                            
+                            <td height="10px" style="color: #00695C; width:100px; font-weight:bold;">Soybean</td>
+                        </tr>
+                        <tr>
+                            <td height="10px" style="background-color: #00695C; color: #fff; width:100px; ">Metal</td>
+                            <td height="10px" style="color: #00695C; width:100px; ">Gold</td>
+                        </tr>
+                        <tr>
+                            <td height="10px" rowspan="1" style=" width:100px; ">Extchange Rate</td>
+                            <td height="10px" style="background-color: #827717; color: #fff; width: 100px; font-weight: bold; ">EURUSD</td>
+                            <td height="10px" style="color: #827717; width: 100px; font-weight: bold; ">EURUSD</td>
+                        </tr>
+                        <tr>
+                            <td height="10px" rowspan="2" style="width:100px; ">Intrest Rate</td>
+                            <td height="10px" style="background-color: #EF6C00; color: #fff; width: 100px; font-weight: bold; ">Japan</td>
+                            <td height="10px" style="color: #EF6C00; width:100px; font-weight:bold; ">Tibor</td>
+                        </tr>
+                        <tr>
+                            <td height="10px" style="background-color: #EF6C00; color: #fff; width: 100px; font-weight: bold; ">US</td>
+                            <td height="10px" style="color: #EF6C00; width:100px;font-weight:bold; ">Libor</td>
+                        </tr>
+
+                        <!--td rowspan="2">$50</td-->
+                    </table>
+
+                    <br />
+                    <br /><br />
+                    </div>
+</section>
+            
+          
+    <footer></footer>      
+    
+        <script src="JS/jQuery.js"></script>   
+        <script src="JS/main.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("nav").html(Setnav());
+                $("footer").html(Setfooter());
+                $("#btn_Legend").removeClass("btn-wb").addClass("btn-wb-active");
+            });
+        </script>            
+    </body>
+</html>
