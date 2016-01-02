@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>D3 Demo</title>
+  <meta name="description" content="">
+  <meta name="author" content="Efrat Vilenski">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/revealjs/css/reveal.min.css">
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/revealjs/css/theme/default.css" id="theme">
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/css/tomorrow.css" id="theme">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->  <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section class='' data-state='' id='slide-1'>
+  
+  <style>iframe{background-color: white}</style> 
+
+<h2>D3.JS Demo</h2>
+
+<h3>Israel r User Group</h3>
+
+<p>Efrat Vilenski, Jan 2015</p>
+
+</section>
+<section class='' data-state='' id='slide-2'>
+  <h3>About D3</h3>
+  <p>Data visualization framework.
+<br/>
+D3 bring data to life.</p>
+
+</section>
+<section class='' data-state='' id='slide-3'>
+  <h2>D3 Fun</h2>
+  <iframe src="http://bl.ocks.org/mbostock/raw/3231298/" width="960px" height="540px" scrolling="No"></iframe>
+
+<p><a class="Link1" href="http://bl.ocks.org/mbostock/3231298/" target="_blank">Source</a></p>
+
+</section>
+<section class='' data-state='' id='slide-4'>
+  <h3>The basics</h3>
+  <p><a class="Link1" href="http://blog.visual.ly/creating-animations-and-transitions-with-d3-js/" target="_blank">Animations and Transitions</a>
+<br/>
+Many tutorials &amp; Examples available.</p>
+
+</section>
+<section class='' data-state='' id='slide-5'>
+  <h2>Radial Chart</h2>
+  <iframe src="http://bl.ocks.org/emeeks/raw/2fffa9abe50ac97603c7/" width="960px" height="540px" scrolling="No"></iframe>
+
+<p><a class="Link1" href="http://bl.ocks.org/emeeks/2fffa9abe50ac97603c7/" target="_blank">Source</a></p>
+
+</section>
+<section class='' data-state='' id='slide-6'>
+  <h2>Interactive drill</h2>
+  <iframe src="http://bl.ocks.org/timelyportfolio/raw/862dcabf010da04b9b5b/" width="1200px" height="540px" scrolling="No"></iframe>
+
+<p><a class="Link1" href="http://bl.ocks.org/timelyportfolio/862dcabf010da04b9b5b/" target="_blank">Source</a></p>
+
+</section>
+<section class='' data-state='' id='slide-7'>
+  <h2>mouseover highlighting</h2>
+  <iframe src="http://bl.ocks.org/emeeks/raw/78ab7c4cbf601484af96/" width="960px" height="540px" scrolling="No"></iframe>
+
+<p><a class="Link1" href="http://bl.ocks.org/emeeks/78ab7c4cbf601484af96/" target="_blank">Source</a></p>
+
+</section>
+<section class='' data-state='' id='slide-8'>
+  <h2>Charts can dance</h2>
+  <iframe src="http://bl.ocks.org/mbostock/raw/1256572/" width="1000px" height="480px" scrolling="No"></iframe>
+
+</section>
+<section class='' data-state='' id='slide-9'>
+  <h2>D3 - More examples</h2>
+  <p><a class="Link1" href="http://flowingdata.com/projects/2015/timeuse-simulation/" target="_blank">Flowingdata - Timeuse Simulation</a></p>
+
+<p><a class="Link1" href="http://bl.ocks.org/mbostock/raw/7607535/" target="_blank">mbostock - Zoomable Circle Packing</a></p>
+
+</section>
+    </div>
+  </div>
+</body>
+  <script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/revealjs/lib/js/head.min.js"></script>
+  <script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/revealjs/js/reveal.min.js"></script>
+  <script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    theme: Reveal.getQueryHash().theme || 'default', 
+    transition: Reveal.getQueryHash().transition || 'default', 
+    dependencies: [
+    // Cross-browser shim that fully implements classList -
+    // https://github.com/eligrey/classList.js/
+      { src: 'http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/revealjs/lib/js/classList.js', condition: function() { return !document.body.classList;}},
+      // Zoom in and out with Alt+click
+      { src: 'http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/revealjs/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Speaker notes
+      { src: 'http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/revealjs/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: 'http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/revealjs/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+  });
+  </script>  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+ 
+
+</html>

@@ -1,0 +1,65 @@
+---
+title: "test"
+author: "Efrat Vilenski"
+date: "December 11, 2015"
+output: slidy_presentation
+---
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Slide with R Code and Output
+
+```{r}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+
+## Random
+```{r, fig.width=8, fig.height=4}
+library(parcoords)
+set.seed(10)
+a <- rnorm(50,0,1)
+b <- rnorm(50,0,1)
+c <- rnorm(50,0,1)
+d <- rnorm(50,0,1)
+e <- rnorm(50,0,1)
+data <- data.frame(a=a, b=b, c=c, d=d, e=e)    
+parcoords(data, rownames=FALSE,reorderable = T,brushMode = "2d-strums")
+
+```
+
+## Random2
+```{r, echo=FALSE, results='asis', warning=FALSE}
+plot(cars)
+
+```
+
+## Random
+```{r, fig.width=8, fig.height=4}
+set.seed(10)
+a <- rnorm(50,0,1)
+b <- rnorm(50,0,1)
+c <- rnorm(50,0,1)
+d <- rnorm(50,0,1)
+e <- rnorm(50,0,1)
+data <- data.frame(a=a, b=b, c=c, d=d, e=e)    
+parcoords(data, rownames=FALSE,reorderable = T,brushMode = "2d-strums")
+
+```
+

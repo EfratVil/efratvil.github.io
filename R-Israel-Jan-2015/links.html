@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Charts Demo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      position: relative; 
+  }
+  #section1 {padding-top:50px; background-color: #E0E0E0;}
+  #section2  {padding-top:20px; background-color: #E3F2FD;}
+  #section3 {padding-top:20px; background-color: #C5CAE9;}
+  #section4 {padding-top:20px; background-color: #E0E0E0;}
+  #section5  {padding-top:20px; background-color: #E3F2FD;}
+  #section6  {padding-top:20px; background-color: #101010; color: beige;}
+
+  </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Interactive Charts</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+            <li><a href="#section1">HTMLWidgets</a></li>
+            <li><a href="#section2">Chart Libraries</a></li>
+            <li><a href="#section3">R</a></li>
+            <li><a href="#section4">Web Dev</a></li>
+            <li><a href="#section5">D3.js</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+
+
+    <! ------------------------------   1111   ------------------------------------ -->
+    <div id="section1" class="container-fluid">
+
+        <h1>HTMLWidgets</h1>
+
+        <h3>By Examples</h3>
+        <ul>
+            <li><a href="Examples/Iris/Iris_ds_exploration.html" target="_blank">Iris</a></li>
+            <li>Sensors
+                <ul>
+                    <li><a href="Examples\Sensors\dygraph_demo.html" target="_blank">sensors example</a></li>
+                    <li><a href="Examples\Sensors\sensors_many.html" target="_blank">Many sensors - small multiples</a></li>
+                    <li><a href="Examples\Sensors\Sensors_Data_Set.html" target="_blank">Sensors explore</a></li>
+                    <li><a href="Examples\Sensors\box_plot.html" target="_blank">box plot</a></li>
+                    <li>MotionChart</li>
+                    <li><a href="Examples\Sensors\streamgraph.html" target="_blank">streamgraph</a></li>
+                    <li><a href="Examples\Sensors\Heatmap.html" target="_blank">Heatmap</a></li>
+
+                </ul>
+            </li>
+            <li>More
+                <ul>
+                    <li><a href="Examples/More/coffeewheel.html" target="_blank">coffeewheel</a></li>
+                    <li><a href="http://bl.ocks.org/timelyportfolio/e591b7c5360633e136d7" target="_blank">treemap with d3treeR</a></li>
+                </ul>
+            </li>
+        </ul>
+
+
+
+        <h3>More HTMLWidgets Examples</h3>
+        <ul>
+            <li><a href="http://www.buildingwidgets.com/blog/" target="_blank">buildingwidgets - new widgets each week</a></li>
+            <li><a href="http://hafen.github.io/htmlwidgetsgallery/" target="_blank">htmlwidgets gallery</a></li>
+        </ul>
+        <br />
+    </div>
+
+    <! ------------------------------   2222  ------------------------------------ -->
+
+    <div id="section2" class="container-fluid">
+        <br />
+        <h1>Chart Libraries</h1>
+
+        <h3>HTMLWidgets</h3>
+        <ul>
+            <li>
+                dygraphs - TimeSeries &nbsp<a href="https://rstudio.github.io/dygraphs/index.html" target="_blank">R package</a>,
+                &nbsp&nbsp<a href="http://dygraphs.com/gallery/#g/synchronize" target="_blank">JS gallery</a>
+            </li>
+            <li>
+                threejs - 3D &nbsp<a href="http://bwlewis.github.io/rthreejs/" target="_blank">R package</a>,
+                &nbsp&nbsp<a href="http://threejs.org/examples/#webgl_interactive_draggablecubes" target="_blank">JS gallery</a>
+            </li>
+            <li><a href="https://rpubs.com/hrbrmstr/taucharts" target="_blank">taucharts</a></li>
+            <li><a href="http://hrbrmstr.github.io/metricsgraphics/" target="_blank">metricsgraphics</a></li>
+           
+        </ul>
+
+        <h3>rCharts</h3>
+        <ul>
+            <li><a href="http://ramnathv.github.io/rCharts/" target="_blank">rCharts Home</a></li>
+            <li>NVD3 &nbsp<a href="http://ramnathv.github.io/posts/rcharts-nvd3/" target="_blank">R examples</a>,&nbsp&nbsp<a href="http://nvd3.org/examples/index.html" target="_blank">JS examples</a></li>
+            <li>Highcharts &nbsp<a href="https://github.com/ramnathv/rCharts/blob/master/inst/libraries/highcharts/examples.R" target="_blank">R examples</a>,&nbsp&nbsp<a href="http://www.highcharts.com/demo" target="_blank">JS examples</a></li>
+            <li><a href="http://rcharts.io/gallery/" target="_blank">rcharts gallery</a></li>
+
+        </ul>
+
+        <h3>Other Libraries</h3>
+        <ul>
+            <li><a href="https://plot.ly/r/" target="_blank">plot.ly</a></li>
+            <li><a href="https://cran.r-project.org/web/packages/googleVis/vignettes/googleVis_examples.html" target="_blank">googleVis</a></li>
+        </ul>
+
+        <h3>Good to know</h3>
+        <ul>
+            <li><a href="http://homes.cs.washington.edu/~jheer/files/zoo/" target="_blank">A Tour Through the Visualization Zoo</a></li>
+        </ul>
+        <br />
+
+    </div>
+
+    <! ------------------------------   333333   ------------------------------------ -->
+ 
+    <div id="section3" class="container-fluid">
+        <br />
+        <h3>Knitr</h3>
+        <ul>
+            <li><a href="Knitr/Rmd_template_1.html" target="_blank">Template 1</a></li>
+            <li><a href="Knitr/Rmd_template_2.html" target="_blank">Template 2</a></li>
+        </ul>
+
+        <h3>Shiny</h3>
+        <ul>
+            <li><a href="https://rstudio.github.io/shinydashboard/index.html" target="_blank">Shiny Dashboards</a></li>
+            <li><a href="http://simulx.webpopix.org/simulx-with-shiny/" target="_blank">Dashboard Examples</a></li>
+        </ul>
+        <br />
+    </div>
+
+    <! ------------------------------   444444  ------------------------------------ -->
+
+<div id="section4" class="container-fluid">
+    <br />
+     <h2>HTML</h2>
+    <ul>
+        <li><a href="http://www.w3schools.com/html/default.asp" target="_blank">W3schools HTML</a></li>
+        <li><a href="http://www.w3schools.com/svg/default.asp" target="_blank">W3schools SVG</a></li>
+        <li><a href="http://www.w3schools.com/html/html_iframe.asp" target="_blank">iframe</a></li>       
+    </ul>   
+
+  <h2>CSS</h2>
+    <ul>
+        <li><a href="http://www.w3schools.com/css/default.asp" target="_blank">W3schools CSS</a></li>
+        <li><a href="http://www.w3schools.com/bootstrap/default.asp" target="_blank">W3schools Bootstrap</a></li>
+        <li><a href="http://getbootstrap.com/components/" target="_blank">get bootstrap</a></li>
+    </ul>
+
+  <h2>JavaScript</h2>
+    <ul>
+        <li><a href="http://www.w3schools.com/js/default.asp" target="_blank">W3schools JavaScript</a></li>
+        <li><a href="http://learnjsdata.com/index.html" target="_blank">Manipulating Data</a></li>
+        <li><a href="http://codepen.io/collection/nxebBg/">Blocks interactions</a></li>
+    </ul>
+  <br />
+
+  <h3>Colors</h3>
+    <ul>
+        <li><a href="http://colorbrewer2.org/" target="_blank">Colorbrewer</a></li>
+        <li><a href="https://www.google.com/design/spec/style/color.html#color-color-palette"  target="_blank">Google Color palette</a></li>
+    </ul>
+
+    <h3>Good to know</h3>
+    <ul>
+        <li><a href="http://www.evolutionoftheweb.com/" target="_blank">Evolution of the web</a></li>
+    </ul>
+
+
+    <br />
+</div>
+
+
+    <! ------------------------------   55555  ------------------------------------ -->
+
+   
+<div id="section5" class="container-fluid">
+    <br />
+     <h1>D3.js</h1>
+  
+    <h3><a href="D3_demo\index.html" target="_blank">d3 demo</a> </h3>
+
+    <h3>Inspiration</h3>
+    <ul>
+        <li><a href="http://d3js.org/" target="_blank">d3js.org</a></li>
+        <li><a href="https://www.dashingd3js.com/data-visualization-and-d3-newsletter" target="_blank">Data Visualization & D3.js Weekly Newsletter</a></li>
+    </ul>
+    
+
+    <h3>Tutorials</h3>
+    <ul>
+        <li><a href="https://www.dashingd3js.com/table-of-contents" target="_blank">dashingd3js</a></li>
+        <li><a href="https://www.udacity.com/course/viewer#!/c-ud507/" target="_blank">Udacity - Data Visualization and D3.js</a></li>
+        <li><a href="http://chimera.labs.oreilly.com/books/1230000000345/index.html" target="_blank">Scott Murray</a></li>
+        <li><a href="https://leanpub.com/D3-Tips-and-Tricks/read" target="_blank">D3 Tips and Tricks</a></li>
+    </ul>
+
+
+    <h3>Explained Visually</h3>
+    <ul>
+        <li><a href="http://setosa.io/ev/" target="_blank">Setosa Explained Visually</a></li>
+        <li><a href="http://rpsychologist.com/" target="_blank">rpsychologist</a>&nbsp&nbsp<a href="http://rpsychologist.com/d3/correlation/" target="_blank">Correlation Example</a> </li>
+        <li><a href="http://bl.ocks.org/avimoondra/ebefde2695cc87dcd093">Cluster Sampling Example</a></li>
+        <li><a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/">r2d3 intro to machine learning</a></li>
+        <li><a href="http://stemkoski.github.io/Three.js/Graphulus-Function.html" target="_blank">3D math Function</a></li>     
+    </ul>
+    
+
+    <!--h3>Just for fun Examples</!--h3>
+    <ul>
+        <li><a href="http://bl.ocks.org/mbostock/3057239" target="_blank">Geodesic Rainbow</a></li>
+        <li><a href="http://bl.ocks.org/mbostock/9539958" target="_blank">OMG Particles II</a></li>
+    </ul-->
+
+
+
+    <h3>Interactivity Examples</h3>
+    <ul>
+        <li><a href="https://www.biostat.wisc.edu/~kbroman/D3/" target="_blank">D3 examples from Karl Broman</a>
+            <ul>
+                <li><a href="http://kbroman.org/qtlcharts/example/iplotMScanone.html" target="_blank">iplotMScanone</a></li>
+                <li><a href="http://kbroman.org/qtlcharts/example/iplotCorr.html" target="_blank">iplotCorr</a></li>
+                <li><a href="http://kbroman.org/qtlcharts/example/iboxplot.html" target="_blank">iboxplot</a></li>   
+            </ul>
+        </li>
+        <li>
+            Block interaction examples
+            <ul>
+                <li><a href="http://codepen.io/EfratVil/full/PPLBBE/" target="_blank">toggle block size</a></li>
+                <li><a href="http://codepen.io/EfratVil/full/MKaEZG/" target="_blank">Filter & Sort with lazyload + mixitup</a></li>
+                <li><a href="http://kbroman.org/qtlcharts/example/iboxplot.html" target="_blank">Filter & Sort with Isotope</a></li>
+            </ul>
+        </li>    
+        <li>
+            Small Multiples Examples
+            <ul>
+                <li><a href="http://vallandingham.me/co2_small_multiple/" target="_blank">With Drill Down</a></li>
+                <li><a href="http://projects.propublica.org/graphics/ambulances" target="_blank">Linked & Sort</a></li>
+            </ul>
+        </li>      
+    
+    </ul>
+
+    <br /><br /><br />
+</div>
+    <! ------------------------------   66666  ------------------------------------ -->
+
+
+    <div id="section6" class="container-fluid">
+        <br />
+    Created by Efrat Vilenski for Israel R User Group Meeting. Jan 2016
+        <br /><br />
+   </div>
+
+</body>
+</html>

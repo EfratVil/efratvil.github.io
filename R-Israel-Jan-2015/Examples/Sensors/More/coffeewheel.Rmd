@@ -1,0 +1,19 @@
+---
+title: "coffeewheel"
+author: "Efrat Vilenski, Jan 2016"
+date: "R-Israel User Group demo"
+output: html_document
+---
+
+### coffeewheel example
+Example from: https://github.com/armish/coffeewheel
+
+```{r }
+#devtools::install_github("armish/coffeewheel")
+
+library("coffeewheel")
+coffeewheel(sampleWheelData, width=500, height=500, partitionAttribute="value")
+
+sampleWheelData
+```
+

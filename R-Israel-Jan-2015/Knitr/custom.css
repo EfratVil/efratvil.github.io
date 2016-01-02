@@ -1,0 +1,31 @@
+
+
+body {
+    background-color:   darkgray;
+}
+
+h4 {color: darkblue;
+    font-size: 32px;
+}
+
+
+.box {
+   padding: 30px;
+   border-color: darkgray;
+   border-width: 10px;
+   border-style: solid;
+}
+
+
+.green     {  background-color:forestgreen;}
+.blue      {
+  background: #d1e5f0;
+}
+
+.lightgrey {
+  background-color: lightgrey;
+}
+
+.cyan      {
+  background-color:  cyan;
+}

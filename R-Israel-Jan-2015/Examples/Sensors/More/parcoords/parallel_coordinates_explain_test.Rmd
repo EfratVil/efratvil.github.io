@@ -1,0 +1,38 @@
+---
+title: "Test"
+output: revealjs::revealjs_presentation
+---
+
+### Random
+```{r parcoord1, fig=TRUE, echo=FALSE, results='asis', warning=FALSE }
+library(parcoords)
+set.seed(10)
+a <- rnorm(50,0,1)
+b <- rnorm(50,0,1)
+c <- rnorm(50,0,1)
+d <- rnorm(50,0,1)
+e <- rnorm(50,0,1)
+data <- data.frame(a=a, b=b, c=c, d=d, e=e)    
+parcoords(data, rownames=FALSE,reorderable = T,brushMode = "2d-strums")
+
+```
+
+### Random2
+```{r parcoord2, fig=TRUE, echo=FALSE, results='asis', warning=FALSE}
+plot(cars)
+
+```
+
+### Random
+```{r parcoord3, fig=TRUE, echo=FALSE, results='asis', warning=FALSE}
+set.seed(10)
+a <- rnorm(50,0,1)
+b <- rnorm(50,0,1)
+c <- rnorm(50,0,1)
+d <- rnorm(50,0,1)
+e <- rnorm(50,0,1)
+data <- data.frame(a=a, b=b, c=c, d=d, e=e)    
+parcoords(data, rownames=FALSE,reorderable = T,brushMode = "2d-strums")
+
+```
+

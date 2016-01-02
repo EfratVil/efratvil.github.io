@@ -1,0 +1,96 @@
+---
+title: "R Markdown Template 2"
+output: html_document
+---
+
+<link href="custom.css" rel="stylesheet" />
+
+<br/>
+<h4>My Graphs</h4>
+<br/>
+
+
+<div class="container">
+  
+
+  <div class="col-md-3 green box">
+  <h4>Box1</h4>
+  ```{r, echo=FALSE}
+  plot(cars)
+  ```
+  </div>
+  
+  
+  <div class="col-md-3 blue box">
+  <h4>Box2</h4>
+  ```{r, echo=FALSE}
+  plot(cars)
+  ```
+  </div>
+  
+  <div class="col-md-3 lightgrey box">
+  <h4>Box3</h4>
+  ```{r, echo=FALSE}
+  plot(cars)
+  ```
+  </div>
+  
+  <div class="col-md-3 green box">
+  <h4>Box4</h4>
+  ```{r, echo=FALSE}
+  plot(cars)
+  ```
+  </div>
+  
+
+</div>  <!--  Container    -->
+
+<div class="container">
+  
+
+  <div class="col-md-4 green box">
+  <h4>Box1</h4>
+  ```{r, echo=FALSE}
+  plot(cars)
+  ```
+  </div>
+  
+  
+  <div class="col-md-4 blue box">
+  <h4>Box2</h4>
+  ```{r, echo=FALSE}
+  plot(cars)
+  ```
+  </div>
+  
+  <div class="col-md-4 lightgrey box">
+  <h4>Box3</h4>
+  ```{r, echo=FALSE}
+  plot(cars)
+  ```
+  </div>
+  
+
+</div>  <!--  Container    -->
+
+<div class="container">
+  
+
+  <div class="col-md-6 green box">
+  <h4>Box1</h4>
+  ```{r, echo=FALSE}
+  plot(cars)
+  ```
+  </div>
+  
+  
+  <div class="col-md-6 blue box">
+  <h4>Box2</h4>
+  ```{r, echo=FALSE}
+  plot(cars)
+  ```
+  </div>
+  
+
+</div>  <!--  Container    -->
+

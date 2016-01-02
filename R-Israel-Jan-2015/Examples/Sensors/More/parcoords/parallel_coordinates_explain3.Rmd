@@ -1,0 +1,13 @@
+
+### Negative Correlation
+```{r, fig.width=8, fig.height=3}
+library(parcoords)
+set.seed(10)
+a <- rnorm(50,0,1)
+b <- -a*0.8 + 0.4
+c <- a*0.2 + 1
+d <- -a*1.1 - 0.5
+e <- a*8 - 5
+data <- data.frame(a=a, b=b, c=c, d=d, e=e)    
+parcoords(data, rownames=FALSE,reorderable = T,brushMode = "2d-strums")
+```
