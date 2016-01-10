@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>JS snippets</title>
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+</head>
+
+
+<body>
+
+    <header></header>
+    <nav></nav>
+
+    <div class="content-wrapper">
+
+
+        <section class="section1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="page-head-line">Filters</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Filter 1</h4>
+                        <a href="#" id="btn_e1" class="btn btn-info filter" data-filter="Neg-Y">Negative</a>
+                        <a href="#" id="btn_e2" class="btn btn-info filter" data-filter="Above_9500">9500</a>
+                        <a href="#" id="btn3" class="btn btn-info filter">c</a>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <h4>Sensor ID:</h4>
+                        <input type="text" ID ="Sensor_input" class="form-control">
+                        <a href="#" id="btn_Sensor" class="btn">Go</a>
+                        <div id="line_chart1"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>   <!-- section END-->
+        <!--==========================================================================-->
+
+
+        <section id="section2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="page-head-line">Sensors Index</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--div id="graphdiv2" style="width:100%; height:200px;"></!--div>
+                        <br /-->
+                        <div id="graphdiv5" style="width:100%; height:200px;"></div>
+                        <br />
+                    </div>
+                </div>
+
+            </div>
+        </section>   <!-- section END-->
+
+
+        <!--====================================================================================================-->
+
+    </div>   <!-- content-wrapper -->
+
+
+    <footer></footer> 
+
+    <!--================================
+     JavaScript Refs
+    ==================================-->
+    <script src="assets/js/jquery-1.11.1.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/d3.min.js"></script>     
+    <script src="assets/js/dygraph-combined-dev.js"></script>
+    <script src="assets/js/underscore-min.js"></script>
+
+
+    <script src="JS/main.js"></script>
+    <script src="JS/ev_data_tst.js"></script>
+    
+    <script src="JS/ev_js_data.js"></script>
+    <script src="JS/evb_basic.js"></script>
+
+
+    <script type="text/javascript">
+        /*================================
+          Doc ready scripts
+          ==================================*/
+        $(document).ready(function () {
+            init_settings();
+            $("#sensor").addClass("menu-top-active");
+
+            // $("#count").html(e1());
+
+            a = [];
+            b = [];
+
+
+            var x = sensor_data_new.filter(function (d) { return d.sensor_id == 25119; });
+
+            for (var j = 0; j < x.length; j++) {  //
+
+                b = [];
+                b.push(new Date(x[j]["datetime"]));
+                b.push(x[j]["value"]);
+                a.push(b);
+            }
+
+            g5 = new Dygraph(
+                   document.getElementById("graphdiv5"),
+                   a,
+                   {
+                       labels: ["date", "value"]
+                   }          // options
+                 );
+
+
+
+        });
+
+        /*================================
+           window load scripts
+        ==================================*/
+        $(window).load(function () {
+
+
+                  $("#btn_e1").click(function () {
+
+                      a = [];
+                      b = [];
+
+
+                      var x = sensor_data_new.filter(function (d) { return d.sensor_id == 25161; });
+
+                      for (var j = 0; j < x.length; j++) {  //
+
+                          b = [];
+                          b.push(new Date(x[j]["datetime"]));
+                          b.push(x[j]["value"]);
+                          a.push(b);
+                      }
+
+
+                      g5 = new Dygraph(
+                             document.getElementById("graphdiv5"),
+                             a,
+                             {
+                                 labels: ["date", "value"]
+                             }        
+                           );
+                  });
+
+
+
+                  
+
+
+                  $("#btn_Sensor").click(function () {
+
+                      //alert($("#Sensor_input").val());
+
+                      a = [];
+                      b = [];
+
+
+                      var x = sensor_data_new.filter(function (d) { return d.sensor_id == $("#Sensor_input").val(); });
+
+                      for (var j = 0; j < x.length; j++) {  //
+
+                          b = [];
+                          b.push(new Date(x[j]["datetime"]));
+                          b.push(x[j]["value"]);
+                          a.push(b);
+                      }
+
+
+                      g5 = new Dygraph(
+                             document.getElementById("graphdiv5"),
+                             a,
+                             {
+                                 labels: ["date", "value"]
+                             }
+                           );
+
+
+
+                  });
+
+
+                  $("#btn_e2").click(function () {
+
+                      a = [];
+                      b = [];
+
+
+                      var x = sensor_data_new.filter(function (d) { return d.sensor_id == 25119; });
+
+                      for (var j = 0; j < x.length; j++) {  //
+
+                          b = [];
+                          b.push(new Date(x[j]["datetime"]));
+                          b.push(x[j]["value"]);
+                          a.push(b);
+                      }
+
+
+                      g5 = new Dygraph(
+                             document.getElementById("graphdiv5"),
+                             a,
+                             {
+                                 labels: ["date", "value"]
+                             }     
+                           );
+                  });
+        });
+
+    </script>
+
+</body>
+</html>

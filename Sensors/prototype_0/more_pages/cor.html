@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>JS snippets</title>
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+
+
+    <style>
+        .pixel:hover {
+            stroke: #000;
+            stroke-width: 1px;
+        }
+
+        .tick:hover {
+            fill: #aaa;
+            /* stroke: #000;
+            stroke-width: 1px;*/
+        }
+
+        div.tooltip {
+            position: absolute;
+            text-align: left;
+            padding: 8px;
+            font: 12px sans-serif;
+            background: #000;
+            color: #ddd;
+            border: solid 1px #aaa;
+            border-radius: 4px;
+            pointer-events: none;
+        }
+
+        /*----*/
+        body {
+            font: 10px sans-serif;
+        }
+
+        .axis {
+            font-size: 12px;
+        }
+
+            .axis path,
+            .axis line {
+                fill: none;
+                stroke: #000;
+                shape-rendering: crispEdges;
+            }
+
+        .dot {
+            stroke: #f46d43;
+        }
+
+        svg {
+            margin: 30px;
+        }
+
+        /*div.tooltip {
+                    position: absolute;
+                    max-width: 200px;
+                    height: auto;
+                    padding: 5px;
+                    background-color: white;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    border-radius: 5px;
+                    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                    pointer-events: none;
+                    font-family: sans-serif;
+                    font-size: 12px;
+                }*/
+
+        #Indicator_explain {
+            padding: 0px 12px 0px 24px;
+            height: 50px;
+            width: 900px;
+        }
+
+
+        table td {
+            border: none;
+        }
+    </style>
+
+
+
+</head>
+
+
+<body>
+
+    <header></header>
+    <nav></nav>
+
+    <div class="content-wrapper">
+
+        <!--==========================================================================-->
+
+
+        <section id="section2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        Sort by:
+                        <select id="sort_func">
+                            <option value="abs_value">by Absolute Value</option>
+                            <option value="value" >by Value</option>
+                            <option value="similarity" selected="selected">by Similarity</option>
+                            <option value="alphabetic">Alphabetic</option>
+                            <option value="original">Original</option>
+                        </select>
+                        Keep symmetry?
+                        <input type="checkbox" id="keep_symmetry" checked="true">
+                        <input type="text" id="zoom" value="1">
+                    
+
+
+
+                        <br />
+                        <table>
+                            <tr>
+                                <td style="vertical-align: top;">
+                                    <svg id="chart"></svg>
+
+                                </td>
+                                <td style="vertical-align: top;"><br /><br /><div id="scatter" style="font-size:18px; margin-left:40px;">Click a square to see matching scatter plot.</div><br /><svg id="scatter_chart"></svg> </td>
+                            </tr>
+                            <!--tr>
+            <td style="vertical-align: top;"><br /><div id="asset1"></div><br /><svg id="line_chart1"></svg></td>
+            <td style="vertical-align: top;"><br /><div id="asset2"></div><br /><svg id="line_chart2"></svg></td>
+        </tr-->
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>   <!-- section END-->
+
+
+        <!--====================================================================================================-->
+
+    </div>   <!-- content-wrapper -->
+
+
+    <footer></footer> 
+    <div class="tooltip" style="opacity: 0.01"></div>
+    <!--================================
+     JavaScript Refs
+    ==================================-->
+    <script src="assets/js/jquery-1.11.1.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/d3.min.js"></script>     
+    <script src="assets/js/jquery.mixitup.min.js"></script>
+
+    <script src="JS/main.js"></script>
+    <script src="JS/ev_data.js"></script>
+    
+    <!--script src="JS/ev_js_data.js"></script>
+        <script type='text/javascript' src="JS/evb_Regression2.js"></script>
+    <script src="JS/evb_basic.js"></script-->
+
+
+
+    
+    <script type='text/javascript' src="JS/correxplorer.js"></script>
+
+
+
+    <script type="text/javascript">
+        /*================================
+          Doc ready scripts
+          ==================================*/
+        $(document).ready(function () {
+            init_settings();
+            $("#Exp_index").addClass("menu-top-active");
+           
+           // $("#count").html(e1());
+        });
+
+        /*================================
+           window load scripts
+        ==================================*/
+        $(window).load(function () {
+
+
+        });
+    </script>
+
+   
+
+
+
+
+
+
+
+</body>
+</html>

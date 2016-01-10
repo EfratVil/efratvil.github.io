@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Sensors Demo</title>
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+</head>
+
+
+<body>
+
+    <header></header>
+    <nav></nav>
+
+    <div class="content-wrapper">
+
+
+        <section class="section1">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <h4>Sensor ID:</h4>
+                        <input type="text" ID ="Sensor_input" class="form-control">               
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#" id="btn_Sensor" class="btn btn-info filter">Go</a>  
+                    </div>
+                </div>
+
+            </div>
+        </section>   <!-- section END-->
+        <!--==========================================================================-->
+
+
+        <section id="section2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="page-head-line">Sensors Index</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                       
+                        <div id="MDS" style="width:100%; height:150px;"></div>
+                        <div id="Growth" style="width:100%; height:150px;"></div>
+                        <div id="line_chart1"></div>
+                        <br />
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--div id="graphdiv2" style="width:100%; height:200px;"></!--div>
+                        <br /-->
+                        <div id="graphdiv5" style="width:100%; height:200px;"></div>
+                        <br />
+                        <div id="Grid" style="width:100%; "></div>
+                        <br />
+                    </div>
+                </div>
+
+            </div>
+        </section>   <!-- section END-->
+
+
+        <!--====================================================================================================-->
+
+    </div>   <!-- content-wrapper -->
+
+
+    <footer></footer> 
+
+    <!--================================
+     JavaScript Refs
+    ==================================-->
+    <script src="assets/js/jquery-1.11.1.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/d3.min.js"></script>     
+    <script src="assets/js/dygraph-combined-dev.js"></script>
+    <script src="assets/js/underscore-min.js"></script>
+
+
+    <script src="JS/main.js"></script>
+    <script src="JS/ev_data.js"></script>
+    
+    <script src="JS/ev_js_data.js"></script>
+    <script src="JS/evb_basic.js"></script>
+
+
+    <script type="text/javascript">
+        /*================================
+          Doc ready scripts
+          ==================================*/
+        $(document).ready(function () {
+            init_settings();
+            $("#sensor_daily").addClass("menu-top-active");
+
+
+            
+           
+           
+        });
+
+        /*================================
+           window load scripts
+        ==================================*/
+        $(window).load(function () {
+
+
+
+            // test table
+            $("#btn_Sensor").click(function () {
+
+
+                // Darken a color
+                function darkenColor(colorStr) {
+                    // Defined in dygraph-utils.js
+                    var color = Dygraph.toRGB_(colorStr);
+                    color.r = Math.floor((255 + color.r) / 2);
+                    color.g = Math.floor((255 + color.g) / 2);
+                    color.b = Math.floor((255 + color.b) / 2);
+                    return 'rgb(' + color.r + ',' + color.g + ',' + color.b + ')';
+                }
+
+                // This function draws bars for a single series. See
+                // multiColumnBarPlotter below for a plotter which can draw multi-series
+                // bar charts.
+                function barChartPlotter(e) {
+                    var ctx = e.drawingContext;
+                    var points = e.points;
+                    var y_bottom = e.dygraph.toDomYCoord(0);
+
+                    ctx.fillStyle = darkenColor(e.color);
+
+                    // Find the minimum separation between x-values.
+                    // This determines the bar width.
+                    var min_sep = Infinity;
+                    for (var i = 1; i < points.length; i++) {
+                        var sep = points[i].canvasx - points[i - 1].canvasx;
+                        if (sep < min_sep) min_sep = sep;
+                    }
+                    var bar_width = Math.floor(2.0 / 3 * min_sep);
+
+                    // Do the actual plotting.
+                    for (var i = 0; i < points.length; i++) {
+                        var p = points[i];
+                        var center_x = p.canvasx;
+
+                        ctx.fillRect(center_x - bar_width / 2, p.canvasy,
+                            bar_width, y_bottom - p.canvasy);
+
+                        ctx.strokeRect(center_x - bar_width / 2, p.canvasy,
+                            bar_width, y_bottom - p.canvasy);
+                    }
+                }
+
+
+                //var s_d = sensors_daily.filter(function (d) { return d.sensor_id == 25161; }).map(function (d, i) {
+                //    return {
+                //        Date: d.thedate,
+                //        MDS: d.MDS
+                //    };
+                //});
+
+
+                a = [];
+                b = [];
+
+                // line chart dygraph
+                var x = sensors_daily.filter(function (d) { return d.sensor_id == 25161 && d.Include_Flag == 'Y'; });
+
+                for (var j = 0; j < x.length; j++) {  //
+
+                    b = [];
+                    b.push(new Date(x[j]["thedate"]));
+                    b.push(x[j]["MDS"]);
+                    a.push(b);
+                }
+
+             //   console.log(a);
+
+                g = new Dygraph(
+                        document.getElementById("MDS"), a,
+                        {
+                            legend: 'always',
+                            //    title: 'Daily Widget Sales',
+                            includeZero: true,
+                            dateWindow: [Date.parse("2015/05/16"), Date.parse("2015/09/01")],
+                            animatedZooms: true,
+                            drawXGrid: false,
+                            plotter: barChartPlotter,
+                            labels: ["date", "MDS"]
+                        }
+                    );
+
+
+
+
+                a = [];
+                b = [];
+
+                // line chart dygraph
+                var x = sensors_daily.filter(function (d) { return d.sensor_id == 25161 && d.Include_Flag == 'Y'; });
+
+                for (var j = 0; j < x.length; j++) {  //
+
+                    b = [];
+                    b.push(new Date(x[j]["thedate"]));
+                    b.push(x[j]["Growth"]);
+                    a.push(b);
+                }
+
+                //   console.log(a);
+
+                g = new Dygraph(
+                        document.getElementById("Growth"), a,
+                        {
+                            legend: 'always',
+                            //    title: 'Daily Widget Sales',
+                            includeZero: true,
+                            dateWindow: [Date.parse("2015/05/16"), Date.parse("2015/09/01")],
+                            animatedZooms: true,
+                            drawXGrid: false,
+                            plotter: barChartPlotter,
+                            labels: ["date", "Growth"]
+                        }
+                    );
+
+
+
+
+
+                //=====================================
+
+
+                var ds = sensors.map(function (d, i) {
+                    return {
+                        index: i + 1,
+                        project: d.project_id,
+                        sensor: d.sensor_id,
+                        logger: d.logger_id
+                    };
+                });
+
+              //  console.log(ds);
+
+                $("#Grid").html(Table_From_DS_Wide1(ds, 10));
+               // console.log(Table_From_DS_Wide1(ds, 4));
+
+
+              // test bar chart
+
+                
+              // ds1 = sensors_daily.filter(function (d) { return d.sensor_id == 25161 && d.Include_Flag == 'Y'; }).map(function (d, i) {
+              //      return {
+              //          value: d.MDS,
+              //          index: i + 1
+              //      };
+              //  });
+              //// create_bar_chart3("bar_chart1", ds1, "index", "MDS");
+
+
+
+
+                      a = [];
+                      b = [];
+
+                // line chart dygraph
+                      var x = sensors_daily.filter(function (d) { return d.sensor_id == 25161 && d.Include_Flag == 'Y'; });
+
+                      for (var j = 0; j < x.length; j++) {  //
+
+                          b = [];
+                          b.push(new Date(x[j]["thedate"]));
+                          b.push(x[j]["MDS"]);
+                          b.push(x[j]["Growth"]);
+                          a.push(b);
+                      }
+
+                    //  console.log(a);
+
+                      g5 = new Dygraph(
+                             document.getElementById("graphdiv5"),
+                             a,
+                             {
+                                 labels: ["date", "MDS","Growth"]
+                             }        
+                           );
+
+                      //g5 = new Dygraph(
+                      //       document.getElementById("bar_chart1"),
+                      //       a,
+                      //       {
+                      //           plotter: barChartPlotter,
+                      //           labels: ["date", "MDS"]
+                      //       }
+                      //     );
+
+
+                      //g6 = new Dygraph(div, data, {
+                      //    plotter: barChartPlotter,
+                      //    dateWindow: [0, 9]  // avoid clipping first and last bars
+                      //});
+
+
+                  });
+
+           
+        });
+
+    </script>
+
+
+</body>
+</html>

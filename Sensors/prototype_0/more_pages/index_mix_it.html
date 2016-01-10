@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>JS snippets</title>
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/mix.css" rel="stylesheet" />
+</head>
+
+
+<body>
+
+    <header></header>
+    <nav></nav>
+
+    <div class="content-wrapper">
+
+
+        <section class="section1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="page-head-line">Filters</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Filter 1</h4>
+                        <a href="#" id="btn1" class="btn btn-info filter" data-filter="Grade-A">A</a>
+                        <a href="#" id="btn2" class="btn btn-info filter" data-filter="Grade-B">B</a>
+                        <a href="#" id="btn3" class="btn btn-info filter">C</a>
+
+                    </div>
+
+                    <div class="col-md-6">
+                                            
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <h4 class="page-head-line">Sensors Index</h4>
+                        <div id="Grid"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>   <!-- section END-->
+        <!--==========================================================================-->
+
+
+        <section id="section2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="page-head-line">Sensors Index</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                    </div>
+                </div>
+
+            </div>
+        </section>   <!-- section END-->
+
+
+        <!--====================================================================================================-->
+
+    </div>   <!-- content-wrapper -->
+
+
+    <footer></footer> 
+
+    <!--================================
+     JavaScript Refs
+    ==================================-->
+    <script src="assets/js/jquery-1.11.1.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/d3.min.js"></script>     
+    <script src="assets/js/jquery.mixitup.min.js"></script>
+
+    <script src="JS/main.js"></script>
+    <script src="JS/ev_data.js"></script>
+    
+    <script src="JS/ev_js_data.js"></script>
+    <script src="JS/evb_basic.js"></script>
+
+
+    <script type="text/javascript">
+        /*================================
+          Doc ready scripts
+          ==================================*/
+        $(document).ready(function () {
+            init_settings();
+            $("#index").addClass("menu-top-active");
+           
+        });
+
+        /*================================
+           window load scripts
+        ==================================*/
+        $(window).load(function () {
+
+
+            /* section 3 */
+            //sensor_data_short1 = sensor_data_short.map(function (d, i) {
+            //    return {
+            //        value: d.value,
+            //        index: i + 1
+            //    };
+            //});
+            //create_bar_chart3("line_chart1", sensor_data_short1, "index", "value");
+
+
+            //  $("#Grid").html(Table_From_DS_Wide1(sensors, 5));
+            $("#Grid").html(mix_From_DS(sensors, 20));
+        });
+    </script>
+
+    <script type="text/javascript">
+                $(function () {
+                    $('#Grid').mixitup({
+                        filterLogic: 'and',
+                        multiFilter: true
+                    });
+                });
+    </script>
+
+
+    <script type="text/javascript">
+
+
+            function colorPickerUp(c, h) {
+                var color = "";
+
+                if (c == 7) { color = "#1a9850"; }
+                else if (c == 6) { color = "#66bd63"; }
+                else if (c == 5) { color = "#a6d96a"; }
+                else if (c == 4) { color = "#d9ef8b"; }
+                else if (c == 3) { color = "#fee08b"; }
+                else if (c == 2) { color = "#fdae61"; }
+                else if (c == 1) { color = "#f46d43"; }
+                else { color = "#d73027"; }
+
+
+                return "style = 'height: " + h * 4 + "px; background-color: " + color + "; margin-left: 6px; margin-right: 6px;'"
+            }
+
+            $.get('data/sensors_features.csv', function (data) {
+
+                var html = '<div>';
+
+                // split data into rows
+                var rows = data.split("\n");
+
+                rows.forEach(function getvalues(ourrow) {
+
+                    // split row into columns
+                    var columns = ourrow.split(",");
+                    html += "<div class='mix category-1'><h4 class='page-head-line'>" + columns[0] + "</h4></div>";
+                      
+                })
+
+  
+           //     $('#Grid').append(html);
+
+            });
+
+
+            $("#btnFilter").click(function () {
+
+                $.each($('.xx'), function (index, value) {
+                    //  $(this).css("color", "Blue");
+                    $(this).css({ "visibility": "hidden" });
+                });
+
+
+            });
+
+    </script>
+
+
+
+
+
+</body>
+</html>

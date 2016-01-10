@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="assets/css/isotope.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>Sensors</h1>
+    <h2>Filter</h2>
+    <div id="filters" class="button-group">
+        <button class="button is-checked" data-filter="*">show all</button>
+        <button class="button" data-filter=".Grade-A">A</button>
+        <button class="button" data-filter=".Grade-B">B</button>
+        <button class="button" data-filter=".Grade-C">C</button> <!--.alkali, .alkaline-earth-->
+        <button class="button" data-filter=":not(.transition)">not transition</button>
+        <button class="button" data-filter=".metal:not(.transition)">metal but not transition</button>
+        <button class="button" data-filter="numberGreaterThan30">number > 30</button>
+        <button class="button" data-filter="numberGreaterThan50">number > 50</button>
+        <button class="button" data-filter="numberGreaterThan100">number > 100</button>
+    </div>
+
+    <h2>Sort</h2>
+    <div id="sorts" class="button-group">
+        <button class="button is-checked" data-sort-by="original-order">original order</button>
+        <button class="button" data-sort-by="project_id">project_id</button>
+        <button class="button" data-sort-by="sensor_id">sensor_id</button>
+        <button class="button" data-sort-by="number">number</button>
+        <button class="button" data-sort-by="weight">weight</button>
+        <button class="button" data-sort-by="category">category</button>
+    </div>
+
+    <h2>Test</h2>
+    <div id="sorts" class="button-group">
+        <button class="button is-checked" id="btn_orig">original</button>
+        <button class="button" id="btn_W200">W200</button>
+        <button class="button" id="btn_W300">W300</button>
+        <button class="button" id="btn_H150">H150</button>
+        <button class="button" id="btn_H200">H200</button>
+        <button class="button" id="btn_Wide">Wide</button>
+        <button class="button" id="btn_Hide">Hide</button>
+        <button class="button" id="btn_Show">Show</button>
+    </div>
+    <br/>
+
+
+    <a href="#" id="btn_e1" class="btn btn-info filter" data-filter="Neg-Y">Negative</a>
+
+
+    <br />
+    <div id="Grid">
+    </div>
+
+    <script src="assets/js/jquery-1.11.1.js"></script>
+    <script src="assets/js/d3.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="JS/ev_data.js"></script>
+    <script src="JS/ev_js_data.js"></script>
+
+    <script>
+
+        function isotope2_From_DS(data, top) {
+
+            var html = '';
+            html += "<div class='isotope'> ";
+
+            for (var i = 0; i < data.length; i++) {
+
+                html += "<div class='element-item transition metal ";
+                html += "Grade-" + data[i]["Class1"];  //data[i]["Class1"]
+                html += "' data-category='" + data[i]["Class1"] + "'>";  //data[i]["Class1"] "transition"
+                html += "<h3 class='x1'>" + data[i]["project_id"] + "</h3>";
+                html += "<br/><p class='sensor_id'>" + data[i]["sensor_id"] + "</p>";
+                //html += "<p class='number'>" + data[i]["Cnt_Days_10X"] + "</p>";
+               // html += "<br/><p class='weight'>" + data[i]["Class1"] + "</p>";
+                html += "</div>";
+            }
+
+            html += "</div>";
+
+            return html;
+
+        }
+
+
+
+
+        function isotope1_From_DS(data, top) {
+
+            var html = '';
+            html += "<div class='isotope'> ";
+
+            for (var i = 0; i < data.length; i++) {
+
+               html += "<div class='element-item transition metal' >";
+
+              // html += "<div class='panel panel-info'>";
+
+               html += "<div class='sensor_id'>" + data[i]["sensor_id"] + "</div>";
+               html += "<div class='project_id'>" + data[i]["project_id"] + "</div>";
+               html += "<div class='x1'>werwer</div>";
+
+              // html += "</div>";   // panel
+
+               html += "</div>";   // element
+
+
+
+
+           //    html += "<div class='element-item transition metal' >";
+
+          //     html += "<div class='panel panel-info'>";
+           //    html += "<div class='panel-heading sensor_id'>" + data[i]["sensor_id"] + "</div>";
+           //    html += "<div class='panel-body'><div class='project_id'>" + data[i]["project_id"] + "</div>";
+           //    html += "<div class='x1'>werwer</div>";
+            //   html += "</div></div>";
+
+
+                //html += "<div class='list-group'>";
+                //html += "<a href='#' class='list-group-item active'>";
+                //html += "<h4 class='list-group-item-heading'>" + data[i]["sensor_id"] + "</h4>";
+                //html += "<p class='list-group-item-text'>" + data[i]["project_id"] + "</p>";
+                //html += "</a></div>";
+
+
+                //html += "Grade-" + data[i]["Class1"];  //data[i]["Class1"]
+                //html += "' data-category='" + data[i]["Class1"] + "'>";  //data[i]["Class1"] "transition"
+                //html += "<h3 class='project_id'>" + data[i]["project_id"] + "</h3>";
+                //html += "<br/><p class='sensor_id'>" + data[i]["sensor_id"] + "</p>";
+                ////html += "<p class='number'>" + data[i]["Cnt_Days_10X"] + "</p>";
+                //// html += "<br/><p class='weight'>" + data[i]["Class1"] + "</p>";
+                
+            }
+
+            html += "</div>";
+
+            return html;
+
+        }
+
+
+        
+
+
+        $("#btn_e1").click(function () {
+            $("#Grid").html(isotope2_From_DS(sensors, 20));  //.filter(function (d) { return d.sensor_id < 28000; })
+
+            // init Isotope
+            var $container = $('.isotope').isotope({
+                itemSelector: '.element-item',
+                layoutMode: 'fitRows',
+                //masonry: {columnWidth: 220},
+                getSortData: {
+                    project_id: '.project_id',
+                    sensor_id: '.sensor_id',
+                    number: '.number parseInt',
+                    category: '[data-category]',
+                    weight: function (itemElem) {
+                        var weight = $(itemElem).find('.weight').text();
+                        return parseFloat(weight.replace(/[\(\)]/g, ''));
+                    }
+                }
+            });
+
+            // filter functions
+            var filterFns = {
+                // show if number is greater than 50
+                numberGreaterThan50: function () {
+                    var number = $(this).find('.number').text();
+                    return parseInt(number, 10) > 50;
+                },
+                numberGreaterThan30: function () {
+                    var number = $(this).find('.number').text();
+                    return parseInt(number, 10) > 30;
+                },
+
+                numberGreaterThan100: function () {
+                    var number = $(this).find('.number').text();
+                    return parseInt(number, 10) > 100;
+                },
+                // show if name ends with -ium
+                ium: function () {
+                    var name = $(this).find('.name').text();
+                    return name.match(/ium$/);
+                }
+            };
+
+            // bind filter button click
+            $('#filters').on('click', 'button', function () {
+                var filterValue = $(this).attr('data-filter');
+                // use filterFn if matches value
+                filterValue = filterFns[filterValue] || filterValue;
+                $container.isotope({ filter: filterValue });
+            });
+
+            // bind sort button click
+            $('#sorts').on('click', 'button', function () {
+                var sortByValue = $(this).attr('data-sort-by');
+                $container.isotope({ sortBy: sortByValue });
+            });
+
+            // change is-checked class on buttons
+            $('.button-group').each(function (i, buttonGroup) {
+                var $buttonGroup = $(buttonGroup);
+                $buttonGroup.on('click', 'button', function () {
+                    $buttonGroup.find('.is-checked').removeClass('is-checked');
+                    $(this).addClass('is-checked');
+                });
+            });
+
+
+        });
+
+        $("#btn_Hide").click(function () {
+
+            $.each($('.x1'), function (index, value) {
+                //$(this).children("td").children(".Avail").fadeOut("slow");
+                $(this).fadeOut("slow");
+                //  $(this).css('background', 'blue');
+
+                var $container = $('.isotope').isotope({
+                    itemSelector: '.element-item',
+                    layoutMode: 'fitRows',
+                    //masonry: {columnWidth: 220},
+                    getSortData: {
+                        project_id: '.project_id',
+                        sensor_id: '.sensor_id',
+                        number: '.number parseInt',
+                        category: '[data-category]',
+                        weight: function (itemElem) {
+                            var weight = $(itemElem).find('.weight').text();
+                            return parseFloat(weight.replace(/[\(\)]/g, ''));
+                        }
+                    }
+                });
+            });
+
+        });
+
+
+        $("#btn_Show").click(function () {
+
+            $.each($('.x1'), function (index, value) {
+                //$(this).children("td").children(".Avail").fadeOut("slow");
+                $(this).fadeIn("slow");
+                //  $(this).css('background', 'blue');
+
+                var $container = $('.isotope').isotope({
+                    itemSelector: '.element-item',
+                    layoutMode: 'fitRows',
+                    //masonry: {columnWidth: 220},
+                    getSortData: {
+                        project_id: '.project_id',
+                        sensor_id: '.sensor_id',
+                        number: '.number parseInt',
+                        category: '[data-category]',
+                        weight: function (itemElem) {
+                            var weight = $(itemElem).find('.weight').text();
+                            return parseFloat(weight.replace(/[\(\)]/g, ''));
+                        }
+                    }
+                });
+            });
+
+        });
+
+
+        $("#btn_W200").click(function () {
+      
+            $.each($('.element-item'), function (index, value) {
+              //  $(this).children("td").children(".Avail").fadeOut("slow");
+                $(this).css('background', 'blue');
+            });
+
+       });
+
+
+        $("#btn_H150").click(function () {
+
+            $.each($('.element-item'), function (index, value) {
+                $(this).height('250px');
+            });
+
+            var $container = $('.isotope').isotope({
+                itemSelector: '.element-item',
+                layoutMode: 'fitRows',
+                //masonry: {columnWidth: 220},
+                getSortData: {
+                    project_id: '.project_id',
+                    sensor_id: '.sensor_id',
+                    number: '.number parseInt',
+                    category: '[data-category]',
+                    weight: function (itemElem) {
+                        var weight = $(itemElem).find('.weight').text();
+                        return parseFloat(weight.replace(/[\(\)]/g, ''));
+                    }
+                }
+            });
+
+        });
+
+
+        $("#btn_W300").click(function () {
+
+            $.each($('.element-item'), function (index, value) {
+                $(this).width('300px');
+            });
+
+            var $container = $('.isotope').isotope({
+                itemSelector: '.element-item',
+                layoutMode: 'fitRows',
+                //masonry: {columnWidth: 220},
+                getSortData: {
+                    project_id: '.project_id',
+                    sensor_id: '.sensor_id',
+                    number: '.number parseInt',
+                    category: '[data-category]',
+                    weight: function (itemElem) {
+                        var weight = $(itemElem).find('.weight').text();
+                        return parseFloat(weight.replace(/[\(\)]/g, ''));
+                    }
+                }
+            });
+        });
+
+
+        //$(window).load(function () {
+        //    console.log("sdf");
+        //    $("#Grid").html(isotope_From_DS(sensors, 20));
+        //    //$("#Grid").html(mix_From_DS(sensors, 20));
+
+        //});
+
+
+
+
+        $(document).ready(function () {
+
+        });
+
+
+    </script>
+
+</body>
+</html>

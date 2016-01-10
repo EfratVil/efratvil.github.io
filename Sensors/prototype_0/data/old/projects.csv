@@ -1,0 +1,221 @@
+project_id,Sensors_cnt,Sensors_A_cnt,Sensors_B_cnt,Sensors_C_cnt,project_name,seeding_date,zan,flower_per_m,du_gidul,kav_noa,area,ET_station,sensor_type
+2772,3,2,1,0,Yarkon Hava Cotton 2015,1/1/2015,0,6/9/2015,0,0,emek_hefer,beit_dagan,regular
+2790,2,2,0,0,Mizra 75 Cotton 2015,3/25/2015,5,1/1/2015,0,0,emek_yizrael,nir_haemek,regular
+2791,2,2,0,0,Mizra 36 Cotton 2015,3/29/2015,9,1/1/2015,0,0,emek_yizrael,nir_haemek,regular
+2793,3,3,0,0,Harel Yashan Cotton 2015,3/15/2015,4,6/16/2015,0,0,darom,nahshon,regular
+2794,3,3,0,0,Harel 350 Cotton 2015,3/16/2015,5,6/16/2015,0,0,darom,nahshon,regular
+2795,3,3,0,0,Harel Gimel Cotton 2015,3/11/2015,5,6/16/2015,0,0,darom,nahshon,regular
+2796,3,3,0,0,Harel Avocado Cotton 2015,3/10/2015,9,6/16/2015,0,0,darom,nahshon,regular
+2797,3,3,0,0,Shemesh Mata akur Cotton 2015,3/10/2015,4,1/1/2015,0,1,galil_elion,kfar_blum,regular
+2798,3,3,0,0,Shemesh 4 Cotton 2015,3/6/2015,5,1/1/2015,0,0,galil_elion,kfar_blum,regular
+2799,3,3,0,0,Shemesh Ahuza 12 Cotton 2015,3/10/2015,12,1/1/2015,0,0,galil_elion,kfar_blum,regular
+2800,3,3,0,0,Shemesh Ahuza 5 Cotton 2015,3/10/2015,5,1/1/2015,0,0,galil_elion,kfar_blum,regular
+2801,3,3,0,0,Gat Tel maarav tzafon Cotton 2015,3/16/2015,5,6/14/2015,0,0,darom,negba,regular
+2802,3,3,0,0,Gat Tel maarav darom Cotton 2015,3/16/2015,5,6/14/2015,0,0,darom,negba,regular
+2803,3,3,0,0,Gat Aroch gimel Cotton 2015,3/16/2015,5,6/14/2015,0,0,darom,negba,regular
+2804,4,3,1,0,Gat Block katzar Cotton 2015,3/15/2015,4,6/14/2015,0,0,darom,negba,regular
+2805,3,3,0,0,Gat Block be'er Cotton 2015,3/15/2015,4,6/14/2015,0,0,darom,negba,regular
+2811,2,1,1,0,Netofa 201 darom maarav Cotton 2015,3/11/2015,5,1/1/2015,0,0,galil_maaravi,akko,regular
+2812,2,2,0,0,Netofa 201 tzafon mizrah Cotton 2015,3/11/2015,5,1/1/2015,0,0,galil_maaravi,akko,regular
+2813,3,2,1,0,Netofa 202 darom maarav Cotton 2015,3/11/2015,9,1/1/2015,0,0,galil_maaravi,akko,regular
+2814,2,2,0,0,Netofa 202 tzafon maarav Cotton 2015,3/11/2015,9,1/1/2015,0,0,galil_maaravi,akko,regular
+2815,2,2,0,0,Netofa 103 mizrah Cotton 2015,3/15/2015,5,1/1/2015,0,0,galil_maaravi,akko,regular
+2816,3,2,1,0,Netofa 103 maarav Cotton 2015,3/15/2015,5,1/1/2015,0,0,galil_maaravi,akko,regular
+2817,2,2,0,0,Netofa 106 darom Cotton 2015,3/15/2015,1,1/1/2015,0,0,galil_maaravi,akko,regular
+2818,2,2,0,0,Netofa 106 tzafon Cotton 2015,3/15/2015,1,1/1/2015,0,0,galil_maaravi,akko,regular
+2819,3,2,1,0,Netofa 223 mizrah Cotton 2015,3/10/2015,5,1/1/2015,0,0,galil_maaravi,akko,regular
+2820,2,2,0,0,Netofa 223 maarav Cotton 2015,3/10/2015,5,1/1/2015,0,0,galil_maaravi,akko,regular
+2821,2,2,0,0,Netofa 222 mizrah Cotton 2015,3/9/2015,1,1/1/2015,0,0,galil_maaravi,akko,regular
+2822,2,1,1,0,Netofa 222 maarav Cotton 2015,3/9/2015,1,1/1/2015,0,0,galil_maaravi,akko,regular
+2823,2,2,0,0,Alonim 50 Cotton 2015,3/20/2015,99,1/1/2015,0,0,emek_yizrael,tel_tura,regular
+2824,3,0,3,0,Alonim 51 Cotton 2015,3/20/2015,99,1/1/2015,0,0,emek_yizrael,tel_tura,regular
+2825,2,2,0,0,Alonim 91 Cotton 2015,3/18/2015,4,6/19/2015,0,0,emek_yizrael,tel_tura,regular
+2826,3,0,3,0,Alonim 81 Cotton 2015,3/17/2015,5,6/15/2015,0,0,emek_yizrael,tel_tura,regular
+2827,3,2,0,1,Alonim 92 PS Cotton 2015,3/18/2015,4,6/19/2015,0,0,emek_yizrael,tel_tura,regular
+2828,3,3,0,0,Gan Shmuel Kav3 Gl5 Cotton 2015,3/10/2015,5,6/9/2015,0,0,emek_hefer,beit_dagan,regular
+2829,3,3,0,0,Gan Shmuel Kav2 Gl5 Cotton 2015,3/10/2015,5,6/9/2015,0,0,emek_hefer,beit_dagan,regular
+2830,4,3,1,0,Gan Shmuel Kav3 Gl9 Cotton 2015,3/10/2015,9,6/7/2015,0,0,emek_hefer,beit_dagan,regular
+2830,4,3,1,0,Gan Shmuel Kav3 Gl9 Cotton 2015,1/1/2015,0,1/1/2015,0,0,emek_hefer,beit_dagan,regular
+2831,3,3,0,0,Gan Shmuel Kav2 Gl9 Cotton 2015,3/10/2015,9,6/7/2015,0,0,emek_hefer,beit_dagan,regular
+2832,3,3,0,0,Gan Shmuel Kav 9 Cotton 2015,3/15/2015,5,6/7/2015,0,0,emek_hefer,beit_dagan,regular
+2833,3,3,0,0,Gan Shmuel Kav 11 Cotton 2015,3/15/2015,5,6/17/2015,0,0,emek_hefer,beit_dagan,regular
+2834,3,3,0,0,Gan Shmuel Kav 8 Cotton 2015,3/16/2015,4,6/17/2015,0,0,emek_hefer,beit_dagan,regular
+2835,3,3,0,0,Gan Shmuel Kav 10 Cotton 2015,3/16/2015,4,6/17/2015,0,0,emek_hefer,beit_dagan,regular
+2836,3,3,0,0,Tzoraa Lavan maarav darom Cotton 2015,3/19/2015,9,6/23/2015,0,1,darom,nahshon,regular
+2837,3,3,0,0,Tzoraa 13 darom Cotton 2015,3/15/2015,4,6/15/2015,0,0,darom,nahshon,regular
+2838,3,3,0,0,Tzoraa 13 tzafon Cotton 2015,3/15/2015,4,6/15/2015,0,0,darom,nahshon,regular
+2839,3,3,0,0,Tzoraa 14 darom Cotton 2015,3/17/2015,1,6/23/2015,0,0,darom,nahshon,regular
+2840,3,3,0,0,Tzoraa kzaza alef maarav Cotton 2015,3/10/2015,4,6/23/2015,0,0,darom,nahshon,regular
+2841,3,3,0,0,Tzoraa kzaza alef mizrah Cotton 2015,3/13/2015,5,6/15/2015,0,0,darom,nahshon,regular
+2842,3,3,0,0,Tzoraa Shoresh 3 Cotton 2015,3/14/2015,4,6/15/2015,0,0,darom,nahshon,regular
+2843,3,0,3,0,Tzoraa Shoresh 1 Cotton 2015,3/11/2015,5,6/15/2015,0,0,darom,nahshon,regular
+2844,3,3,0,0,Tzoraa Shoresh 5 Cotton 2015,3/14/2015,4,6/15/2015,0,0,darom,nahshon,regular
+2845,3,3,0,0,Tzoraa 14 tzafon Cotton 2015,3/17/2015,1,6/23/2015,0,0,darom,nahshon,regular
+2846,3,3,0,0,Tzoraa Lavan maarav tzafon Cotton 2015,3/19/2015,9,6/23/2015,0,1,darom,nahshon,regular
+2847,3,3,0,0,Tzoraa 10.2 Cotton 2015,3/19/2015,9,6/23/2015,0,0,darom,nahshon,regular
+2848,3,3,0,0,Dganim 28-29 tzafon Cotton 2015,3/17/2015,4,6/16/2015,0,0,darom,negba,regular
+2849,1,1,0,0,Dganim 28-29 darom Cotton 2015,3/17/2015,4,6/16/2015,0,0,darom,negba,regular
+2850,1,1,0,0,Dganim 4 -5 tzafon Cotton 2015,3/16/2015,5,6/16/2015,0,0,darom,negba,regular
+2851,1,1,0,0,Dganim 4 -5 darom Cotton 2015,3/16/2015,5,6/16/2015,0,0,darom,negba,regular
+2854,3,3,0,0,Etzion du-gidul 101 Cotton 2015,4/8/2015,9,7/1/2015,1,0,darom,nahshon,regular
+2855,3,3,0,0,Etzion 103 Cotton 2015,3/14/2015,1,6/18/2015,0,0,darom,nahshon,regular
+2856,3,3,0,0,Etzion 108 Cotton 2015,3/14/2015,9,6/18/2015,0,0,darom,nahshon,regular
+2857,3,3,0,0,Etzion 113 Cotton 2015,3/15/2015,5,6/21/2015,0,0,darom,nahshon,regular
+2858,3,3,0,0,Etzion du-gidul 116 Cotton 2015,4/8/2015,1,7/1/2015,1,0,darom,nahshon,regular
+2859,3,3,0,0,Etzion 117 Cotton 2015,3/13/2015,1,6/21/2015,0,0,darom,nahshon,regular
+2860,3,3,0,0,Etzion 119 Cotton 2015,3/11/2015,1,6/18/2015,0,0,darom,nahshon,regular
+2861,4,3,0,1,Etzion 124 Cotton 2015,3/16/2015,5,6/18/2015,0,0,darom,nahshon,regular
+2861,4,3,0,1,Etzion 124 Cotton 2015,1/1/2015,0,1/1/2015,0,0,darom,nahshon,regular
+2873,3,3,0,0,Ein tzurim du-gidul Dganim 2 Cotton 2015,1/1/2015,99,6/29/2015,1,0,darom,negba,regular
+2874,3,3,0,0,Ein tzurim du-gidul Bet 4 Cotton 2015,3/30/2015,9,6/24/2015,1,0,darom,negba,regular
+2875,3,3,0,0,Ein tzurim Abdis 1 mizrah Cotton 2015,3/15/2015,4,6/14/2015,0,0,darom,negba,regular
+2876,3,3,0,0,Shiller 7 Cotton 2015,3/15/2015,1,1/1/2015,0,0,darom,beit_dagan,regular
+2877,3,3,0,0,Gat Gadol tzafon Cotton 2015,3/15/2015,5,6/14/2015,0,0,darom,negba,regular
+2878,3,3,0,0,Shiller 1 maarav Cotton 2015,3/15/2015,5,1/1/2015,0,0,darom,beit_dagan,regular
+2879,3,3,0,0,Shiller 1 mizrah Cotton 2015,3/15/2015,5,1/1/2015,0,0,darom,beit_dagan,regular
+2880,3,3,0,0,Gevaram Niva Alef Cotton 2015,1/1/2015,4,6/22/2015,0,0,darom,negba,regular
+2881,3,3,0,0,Gevaram Horva Cotton 2015,1/1/2015,4,1/1/2015,0,0,darom,negba,regular
+2882,3,3,0,0,Gevaram Hadash bet Cotton 2015,1/1/2015,4,1/1/2015,0,0,darom,negba,regular
+2883,3,3,0,0,Gevaram Mesila Maarav Cotton 2015,1/1/2015,5,1/1/2015,0,0,darom,negba,regular
+2884,3,3,0,0,Gevaram Niva Bet Cotton 2015,1/1/2015,4,6/22/2015,0,0,darom,negba,regular
+2885,3,3,0,0,Gevaram Horva Ezer Cotton 2015,1/1/2015,4,1/1/2015,0,0,darom,negba,regular
+2886,NULL,NULL,NULL,NULL,Ein tzurim du-gidul Alef kavnoa tzafon Cotton 2015,4/15/2015,5,6/30/2015,1,1,darom,negba,regular
+2887,NULL,NULL,NULL,NULL,Ein tzurim du-gidul Alef kavnoa darom Cotton 2015,4/15/2015,5,6/30/2015,1,1,darom,negba,regular
+2889,3,3,0,0,Gat Sde Moshe bet cotton Cotton 2015,3/13/2015,99,6/7/2015,0,0,darom,negba,regular
+2897,3,3,0,0,Yavne 1 Cotton 2015,3/20/2015,4,6/14/2015,0,0,darom,beit_dagan,regular
+2898,3,3,0,0,Yavne 6 Cotton 2015,3/20/2015,5,6/14/2015,0,0,darom,beit_dagan,regular
+2899,3,3,0,0,Yavne du-gidul 10 Cotton 2015,4/6/2015,5,6/22/2015,1,0,darom,beit_dagan,regular
+2900,3,3,0,0,Yavne 21 Cotton 2015,3/13/2015,9,6/6/2015,0,0,darom,beit_dagan,regular
+2901,3,3,0,0,Yavne 36 Cotton 2015,3/13/2015,6,6/8/2015,0,0,darom,beit_dagan,regular
+2902,3,3,0,0,Yavne 25 Cotton 2015,3/18/2015,5,6/16/2015,0,0,darom,beit_dagan,regular
+2903,3,3,0,0,Yavne 40 Cotton 2015,3/18/2015,99,6/10/2015,0,0,darom,beit_dagan,regular
+2904,6,5,1,0,Yavne 53 Cotton 2015,3/16/2015,99,6/6/2015,0,0,darom,beit_dagan,regular
+2904,6,5,1,0,Yavne 53 A Cotton 2015,3/16/2015,99,6/6/2015,0,0,darom,beit_dagan,regular
+2905,3,3,0,0,Yavne du-gidul 48 Cotton 2015,3/27/2015,99,6/16/2015,1,0,darom,beit_dagan,regular
+2906,3,3,0,0,Yavne 64 Cotton 2015,3/15/2015,4,6/14/2015,0,0,darom,beit_dagan,regular
+2907,3,3,0,0,Yavne 3PS Cotton 2015,3/19/2015,5,6/14/2015,0,0,darom,beit_dagan,regular
+2908,3,3,0,0,Yavne du-gidul 8PS Cotton 2015,3/27/2015,4,6/20/2015,1,0,darom,beit_dagan,regular
+2912,3,3,0,0,Naan Mata Cotton 2015,3/15/2015,4,6/14/2015,0,0,darom,beit_dagan,regular
+2914,3,2,0,1,Naan du-gidul Zain kavnoa maarav Cotton 2015,4/20/2015,99,6/30/2015,1,1,darom,beit_dagan,regular
+2915,4,3,1,0,Naan Meshulash darom Cotton 2015,3/18/2015,4,1/1/2015,0,0,darom,beit_dagan,regular
+2915,4,3,1,0,Naan Meshulash darom Cotton 2015,3/18/2015,4,6/14/2015,0,0,darom,beit_dagan,regular
+2919,3,3,0,0,Yarkon Avocado Cotton 2015,1/1/2015,0,6/2/2015,0,0,emek_hefer,beit_dagan,regular
+2922,3,3,0,0,Reshafim Radra Cotton 2015,3/10/2015,9,6/1/2015,0,0,emek_yizrael,nir_haemek,regular
+2930,3,3,0,0,Tzabar kama 32 Cotton 2015,3/16/2015,9,1/1/2015,0,0,darom,nahshon,regular
+2931,3,3,0,0,Tzabar kama 59 Cotton 2015,3/16/2015,4,1/1/2015,0,0,darom,nahshon,regular
+2932,3,3,0,0,Tzabar kama du-gidul 62 Cotton 2015,4/1/2015,9,1/1/2015,1,0,darom,nahshon,regular
+2933,3,3,0,0,Tzabar kama 3 Cotton 2015,3/17/2015,5,1/1/2015,0,0,darom,nahshon,regular
+2936,2,2,0,0,Megido 201 maarav Cotton 2015,3/22/2015,4,6/15/2015,0,0,emek_yizrael,nir_haemek,regular
+2937,3,2,1,0,Megido 201 mizrah Cotton 2015,3/22/2015,4,6/15/2015,0,0,emek_yizrael,nir_haemek,regular
+2938,2,2,0,0,Megido PS 202 gilboa maarav Cotton 2015,4/21/2015,4,7/15/2015,0,0,emek_yizrael,nir_haemek,regular
+2939,2,2,0,0,Megido PS 202 gilboa mizrah Cotton 2015,4/21/2015,4,7/15/2015,0,0,emek_yizrael,nir_haemek,regular
+2940,2,2,0,0,Megido 209 schachot mizrah Cotton 2015,3/22/2015,9,6/21/2015,0,0,emek_yizrael,nir_haemek,regular
+2941,2,2,0,0,Megido 209 schachot maarav Cotton 2015,3/22/2015,9,6/21/2015,0,0,emek_yizrael,nir_haemek,regular
+2942,4,3,1,0,Megido 103 tzafon Cotton 2015,1/1/2015,0,1/1/2015,0,0,emek_yizrael,nir_haemek,regular
+2942,4,3,1,0,Megido 103 tzafon Cotton 2015,3/20/2015,5,6/20/2015,0,0,emek_yizrael,nir_haemek,regular
+2943,2,2,0,0,Megido 103 darom Cotton 2015,3/20/2015,5,6/20/2015,0,0,emek_yizrael,nir_haemek,regular
+2944,2,2,0,0,Megido 115 mizrah Cotton 2015,3/20/2015,5,6/16/2015,0,0,emek_yizrael,nir_haemek,regular
+2945,2,2,0,0,Megido 115 maarav Cotton 2015,3/20/2015,5,6/16/2015,0,0,emek_yizrael,nir_haemek,regular
+2946,3,3,0,0,Regev 53 Cotton 2015,3/8/2015,5,6/11/2015,0,0,galil_maaravi,akko,regular
+2953,4,3,0,1,Hulata Muvlaat mizrah Cotton 2015,3/10/2015,5,1/1/2015,0,0,galil_elion,kfar_blum,regular
+2953,4,3,0,1,Hulata Muvlaat mizrah Cotton 2015,1/1/2015,0,1/1/2015,0,0,galil_elion,kfar_blum,regular
+2965,3,3,0,0,Agridera Kvish 7 Cotton 2015,1/1/2015,0,6/18/2015,0,0,darom,nahshon,regular
+2966,3,3,0,0,Agridera 1 - 2 Cotton 2015,1/1/2015,0,6/18/2015,0,0,darom,nahshon,regular
+2967,3,2,1,0,Hanegev Beeri gimel mizrah Cotton 2015,3/16/2015,4,1/1/2015,0,0,darom,dorot,regular
+2968,3,3,0,0,Hanegev Beeri gimel maarav Cotton 2015,3/16/2015,4,1/1/2015,0,0,darom,dorot,regular
+2969,3,3,0,0,Hanegev Tal or yud mizrah Cotton 2015,3/13/2015,5,6/14/2015,0,0,darom,dorot,regular
+2970,3,3,0,0,Hanegev Agavot het tzafon Cotton 2015,3/19/2015,5,6/14/2015,0,0,darom,dorot,regular
+2971,3,3,0,0,Hanegev Agavot het darom Cotton 2015,3/19/2015,5,6/14/2015,0,0,darom,dorot,regular
+2972,3,3,0,0,Hanegev Azata bet 1 Cotton 2015,3/17/2015,4,6/11/2015,0,0,darom,dorot,regular
+2973,3,3,0,0,Hanegev Azata bet 2 Cotton 2015,3/17/2015,4,6/11/2015,0,0,darom,dorot,regular
+2974,3,3,0,0,Hanegev Sde teiman hei tzafon Cotton 2015,3/23/2015,9,1/1/2015,0,0,darom,dorot,regular
+2975,3,3,0,0,Hanegev Sde teiman hei darom Cotton 2015,3/23/2015,9,1/1/2015,0,0,darom,dorot,regular
+2976,1,1,0,0,Nir galim 14 maarav zakhar Cotton 2015,1/1/2015,0,6/14/2015,0,0,darom,beit_dagan,regular
+2977,1,1,0,0,Nir galim 2 zakhar Cotton 2015,1/1/2015,0,6/7/2015,0,0,darom,beit_dagan,regular
+2978,1,1,0,0,Nir galim 14 mizrah zakhar Cotton 2015,1/1/2015,0,6/7/2015,0,0,darom,beit_dagan,regular
+2979,1,1,0,0,Nir galim 17 tzafon zakhar Cotton 2015,1/1/2015,0,6/21/2015,0,0,darom,beit_dagan,regular
+2980,3,3,0,0,Nir galim 17 merkaz nekeva Cotton 2015,1/1/2015,0,6/21/2015,0,0,darom,beit_dagan,regular
+2981,3,3,0,0,Nir galim 102 zakhar Cotton 2015,1/1/2015,0,6/19/2015,0,0,darom,beit_dagan,regular
+2982,3,3,0,0,Nir galim 102 nekeva Cotton 2015,1/1/2015,0,6/19/2015,0,0,darom,beit_dagan,regular
+2983,3,3,0,0,Nir galim 8 zakhar Cotton 2015,1/1/2015,0,6/18/2015,0,0,darom,beit_dagan,regular
+2984,3,2,1,0,Naan du-gidul Zain kavnoa mizrah Cotton 2015,4/20/2015,99,6/30/2015,1,1,darom,beit_dagan,regular
+2985,3,3,0,0,Naan Meshulash tzafon Cotton 2015,3/18/2015,4,6/14/2015,0,0,darom,beit_dagan,regular
+2990,3,3,0,0,Geva Komi merkaz Cotton 2015,3/15/2015,4,6/9/2015,0,0,emek_yizrael,nir_haemek,regular
+2991,3,0,3,0,Geva Komi mizrah Cotton 2015,3/15/2015,4,6/9/2015,0,0,emek_yizrael,nir_haemek,regular
+2992,2,2,0,0,Gadot 6-9 maarav Cotton 2015,3/10/2015,5,6/9/2015,0,1,galil_elion,kfar_blum,regular
+2993,2,2,0,0,Gadot du-gidul 2-4 tzafon Cotton 2015,3/11/2015,5,1/1/2015,1,1,galil_elion,kfar_blum,regular
+2994,2,2,0,0,Gadot Tamun Cotton 2015,3/10/2015,5,6/13/2015,0,0,galil_elion,kfar_blum,regular
+2995,2,2,0,0,Gadot Mushrafe Cotton 2015,3/15/2015,5,6/9/2015,0,1,galil_elion,kfar_blum,regular
+2996,3,3,0,0,Havat gadash A Cotton 2015,1/1/2015,0,6/20/2015,0,0,galil_elion,kfar_blum,regular
+2997,3,3,0,0,Havat gadash C Cotton 2015,1/1/2015,0,6/20/2015,0,0,galil_elion,kfar_blum,regular
+2998,3,3,0,0,Hulata Pica maarav Tzafon Cotton 2015,3/8/2015,5,1/1/2015,0,0,galil_elion,kfar_blum,regular
+2999,3,3,0,0,Hulata Muvlaat maarav Cotton 2015,3/10/2015,5,1/1/2015,0,0,galil_elion,kfar_blum,regular
+3000,3,3,0,0,Hulata Pica maarav Darom Cotton 2015,3/8/2015,5,1/1/2015,0,0,galil_elion,kfar_blum,regular
+3001,4,2,1,1,Hefer Mahzor darom Cotton 2015,3/16/2015,5,1/1/2015,0,0,emek_hefer,beit_dagan,regular
+3002,3,3,0,0,Hefer Kakun tzafon Cotton 2015,3/20/2015,4,1/1/2015,0,0,emek_hefer,beit_dagan,regular
+3003,3,3,0,0,Hefer Kubani 4 Cotton 2015,3/22/2015,6,1/1/2015,0,0,emek_hefer,beit_dagan,regular
+3004,3,3,0,0,Hefer Kakun maarav Cotton 2015,3/18/2015,5,1/1/2015,1,0,emek_hefer,beit_dagan,regular
+3005,3,0,3,0,Hefer du-gidul Biuv Cotton 2015,4/17/2015,0,1/1/2015,0,0,emek_hefer,beit_dagan,regular
+3006,3,3,0,0,Hefer Bitza tzafon Cotton 2015,3/24/2015,99,1/1/2015,0,0,emek_hefer,beit_dagan,regular
+3007,3,3,0,0,Hefer du-gidul Kakun mizrah Cotton 2015,4/5/2015,4,1/1/2015,1,0,emek_hefer,beit_dagan,regular
+3008,3,3,0,0,Yiron Tzafon Bayit Darom Cotton 2015,3/10/2015,5,6/10/2015,0,0,galil_elion,kfar_blum,regular
+3009,3,3,0,0,Yiron Tzafon Bayit Tzafon Cotton 2015,3/10/2015,5,6/10/2015,0,0,galil_elion,kfar_blum,regular
+3010,3,3,0,0,Yiron Darom Bayit Darom Cotton 2015,3/18/2015,9,6/17/2015,0,0,galil_elion,kfar_blum,regular
+3011,3,3,0,0,Yiron Darom Bayit Tzafon Cotton 2015,3/18/2015,9,6/17/2015,0,0,galil_elion,kfar_blum,regular
+3012,3,3,0,0,Dan Klil muvtaha Cotton 2015,3/9/2015,5,6/6/2015,0,0,galil_elion,kfar_blum,regular
+3013,3,3,0,0,Dan Mem1 Cotton 2015,3/9/2015,5,6/6/2015,0,0,galil_elion,kfar_blum,regular
+3014,3,2,1,0,Masrik 26 Cotton 2015,3/4/2015,9,6/10/2015,0,0,galil_maaravi,akko,regular
+3015,4,3,0,1,Masrik 21 Tzafon Cotton 2015,3/6/2015,5,6/10/2015,0,0,galil_maaravi,akko,regular
+3016,3,3,0,0,Masrik 21 Darom Cotton 2015,3/6/2015,5,6/10/2015,0,0,galil_maaravi,akko,regular
+3017,3,3,0,0,Ein hashofet Gilboa mizrah Cotton 2015,3/24/2015,5,1/1/2015,0,0,emek_yizrael,nir_haemek,regular
+3018,3,3,0,0,Ein hashofet Gilboa maarav Cotton 2015,3/24/2015,5,1/1/2015,0,0,emek_yizrael,nir_haemek,regular
+3019,2,2,0,0,Ein harod Naoora Cotton 2015,3/26/2015,4,1/1/2015,0,0,emek_yizrael,nir_haemek,regular
+3020,2,2,0,0,Ein harod Het tzafon Cotton 2015,3/24/2015,5,6/19/2015,0,0,emek_yizrael,nir_haemek,regular
+3021,2,2,0,0,Ein harod Ablec merkaz Cotton 2015,3/24/2015,4,1/1/2015,0,1,emek_yizrael,nir_haemek,regular
+3022,3,3,0,0,Regev 61 Cotton 2015,3/10/2015,9,6/11/2015,0,0,galil_maaravi,akko,regular
+3023,3,3,0,0,Regev 81 Cotton 2015,3/11/2015,6,6/11/2015,0,0,galil_maaravi,akko,regular
+3023,3,3,0,0,Regev 81 Cotton 2015,1/1/2015,0,1/1/2015,0,0,galil_elion,akko,regular
+3024,3,3,0,0,Regev 18 Cotton 2015,3/9/2015,9,6/11/2015,0,0,galil_maaravi,akko,regular
+3025,3,3,0,0,Regev 24 Cotton 2015,3/12/2015,6,6/11/2015,0,0,galil_maaravi,akko,regular
+3026,3,3,0,0,Regev 21 Cotton 2015,3/8/2015,5,6/11/2015,0,0,galil_maaravi,akko,regular
+3027,3,3,0,0,Regev 14 Cotton 2015,3/11/2015,6,6/11/2015,0,0,galil_maaravi,akko,regular
+3028,3,3,0,0,Ram 28 Cotton 2015,3/16/2015,5,6/15/2015,0,0,galil_maaravi,akko,regular
+3029,3,3,0,0,Ram 29 Cotton 2015,3/16/2015,5,6/15/2015,0,0,galil_maaravi,akko,regular
+3030,3,3,0,0,Ram 63 mizrah Cotton 2015,3/16/2015,5,6/15/2015,0,0,galil_maaravi,akko,regular
+3031,3,3,0,0,Ram 63 maarav Cotton 2015,3/16/2015,5,6/15/2015,0,0,galil_maaravi,akko,regular
+3034,1,1,0,0,gadash haemek Yud Beit tzafon Cotton 2015,3/18/2015,4,6/17/2015,0,0,emek_yizrael,nir_haemek,uncertain
+3035,1,1,0,0,gadash haemek Yud Beit darom Cotton 2015,3/18/2015,4,6/17/2015,0,0,emek_yizrael,nir_haemek,uncertain
+3036,1,1,0,0,gadash haemek Bet Sarid mzirah Cotton 2015,1/1/2015,9,6/17/2015,0,0,emek_yizrael,nir_haemek,uncertain
+3037,1,1,0,0,gadash haemek Bet Sarid maarav Cotton 2015,1/1/2015,9,6/17/2015,0,0,emek_yizrael,nir_haemek,uncertain
+3038,1,1,0,0,Yad Mordechai Algia 3 kav 4 Cotton 2015,1/1/2015,5,1/1/2015,0,0,darom,negba,uncertain
+3039,1,1,0,0,Yad Mordechai Algia 3 kav 5 Cotton 2015,1/1/2015,5,1/1/2015,0,0,darom,negba,uncertain
+3040,1,1,0,0,Yad Mordechai Algia 4 kav 5 Cotton 2015,2/3/1900,5,1/1/2015,0,0,darom,negba,uncertain
+3041,1,1,0,0,Yad Mordechai Algia 4 kav 6 Cotton 2015,1/1/2015,5,1/1/2015,0,0,darom,negba,uncertain
+3042,3,0,2,1,Eletz Tavor 2 Cotton 2015,3/11/2015,9,6/11/2015,0,0,emek_yizrael,kaduri,regular
+3043,4,3,1,0,Eletz A.A.G. Cotton 2015,3/10/2015,9,6/11/2015,0,0,emek_yizrael,kaduri,regular
+3044,3,3,0,0,Eletz Al Ared Darom Konowa Cotton 2015,4/2/2015,4,1/1/2015,0,1,emek_yizrael,kaduri,regular
+3045,3,3,0,0,Eletz du-gidul S.F.T. Tzafon Konowa Cotton 2015,4/26/2015,5,1/1/2015,1,1,emek_yizrael,kaduri,regular
+3046,3,3,0,0,Eletz du-gidul S.F.T Tzafon Teftof Cotton 2015,4/28/2015,5,1/1/2015,1,0,emek_yizrael,kaduri,regular
+3047,3,3,0,0,Tzoraa 13 darom PS Cotton 2015,3/15/2015,4,6/15/2015,0,0,darom,nahshon,regular
+3048,3,3,0,0,Tzoraa 13 tzafon PS Cotton 2015,1/1/2015,4,6/15/2015,0,0,darom,nahshon,regular
+3049,3,3,0,0,Etzion 108 ps Cotton 2015,3/14/2015,9,6/18/2015,0,0,darom,nahshon,regular
+3053,3,3,0,0,Hanegev Tal or tzafon 3SD Cotton 2015,3/13/2015,5,6/14/2015,0,0,darom,dorot,regular
+3054,3,3,0,0,Hanegev Tal or darom 3SD Cotton 2015,3/13/2015,5,6/14/2015,0,0,darom,dorot,regular
+3058,3,3,0,0,Yavne 3PS 3SD Cotton 2015,3/19/2015,5,6/14/2015,0,0,darom,beit_dagan,regular
+3059,3,3,0,0,Yavne du-gidul 8PS 3SD Cotton 2015,3/27/2015,4,6/20/2015,1,0,darom,beit_dagan,regular
+3064,3,3,0,0,Gan Shmuel Kav 11 PS Cotton 2015,3/15/2015,5,1/1/2015,0,0,emek_hefer,beit_dagan,regular
+3071,3,2,1,0,Gadot 6-9 mizrah Cotton 2015,3/10/2015,5,6/9/2015,0,1,galil_elion,kfar_blum,regular
+3072,3,3,0,0,Hanegev Sde teiman dalet Cotton 2015,1/1/2015,5,1/1/2015,0,0,darom,dorot,regular
+3073,3,3,0,0,Naan Tikva mizrah Cotton 2015,3/16/2015,12,6/14/2015,0,0,darom,beit_dagan,regular
+3082,4,4,0,0,Horesh yizrael Kavei gova mizrah Cotton 2015,3/16/2015,5,6/12/2015,0,0,emek_yizrael,nir_haemek,regular
+3082,4,4,0,0,Horesh yizrael Kavei gova mizrah Cotton 2015,1/1/2015,0,1/1/2015,0,0,emek_yizrael,nir_haemek,regular
+3083,4,3,1,0,Horesh yizrael Kavei gova maarav Cotton 2015,1/1/2015,0,1/1/2015,0,0,emek_yizrael,nir_haemek,regular
+3083,4,3,1,0,Horesh yizrael Kavei gova maarav Cotton 2015,3/16/2015,5,6/12/2015,0,0,emek_yizrael,nir_haemek,regular
+3084,3,3,0,0,Beit hashita Giora 1 Merkaz Cotton 2015,4/18/2015,5,1/1/2015,0,0,emek_yizrael,nir_haemek,regular
+3085,6,0,5,1,Beit hashita 9-10 Tzafon Cotton 2015,3/15/2015,5,1/1/2015,0,0,emek_yizrael,nir_haemek,regular
+3097,NULL,NULL,NULL,NULL,Ein harod Het PS tzafon Cotton 2015,3/24/2015,4,6/19/2015,0,0,emek_yizrael,nir_haemek,regular
+3116,3,3,0,0,Gat Block katzar PS Cotton 2015,3/15/2015,4,6/14/2015,0,0,darom,negba,regular
+3117,3,3,0,0,Brenner 7-800 Cotton 2015,1/1/2015,0,6/15/2015,0,0,darom,beit_dagan,regular
+3205,2,0,1,1,Brenner 3-200 Cotton 2015,1/1/2015,0,1/1/2015,0,0,darom,beit_dagan,regular
+3252,2,0,2,0,Mevoot Ora Cotton 2015,1/1/2015,0,6/15/2015,0,0,darom,nahshon,regular
+3259,2,0,2,0,Mevoot Tarom Cotton 2015,1/1/2015,0,6/15/2015,0,0,darom,nahshon,regular

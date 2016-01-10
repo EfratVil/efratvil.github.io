@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Sensors Demo</title>
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+
+
+<body>
+
+    <header></header>
+    <nav></nav>
+
+    <div class="content-wrapper">
+
+        <section class="section1">
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <h4 style="display:inline; margin-right:15px;">Project ID:</h4>
+                        <input type="text" ID="Project_input" class="form-control" style="width: 100px; display:inline; margin-right:15px; vertical-align:bottom;">
+                        <a href="#" id="btn_Project" class="btn btn-info filter">Go</a>
+                    </div>   
+
+                    <div class="col-md-5">
+                        <b>Project:</b>&nbsp;<p id="project_id" class="project"></p> <br/>
+                        <b>Project Name:</b>&nbsp;<p id="project_name" class="project"></p>
+                    </div>
+                    <div class="col-md-4">
+                        <b>Days:</b><br/>
+                        <b>10X:</b>&nbsp;<p id="Days_10x" class="days"></p>&nbsp;&nbsp;&nbsp;
+                        <b>20X:</b>&nbsp;<p id="Days_20x" class="days"></p>&nbsp;&nbsp;&nbsp;
+                        <b>30X:</b>&nbsp;<p id="Days_30x" class="days"></p>&nbsp;&nbsp;&nbsp;
+                        <b>40X:</b>&nbsp;<p id="Days_40x" class="days"></p>&nbsp;&nbsp;&nbsp;
+                    </div>
+
+                </div>
+
+            </div>
+        </section>   
+        <!--==========================================================================-->
+
+        <section id="section2">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>MDS</h4>
+                        <div id="MDS1" style="width:100%; height:180px;"></div>
+                    </div>                 
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Growth</h4>
+                        <div id="Growth" style="width:100%; height:180px;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>   
+
+
+        <!--====================================================================================================-->
+
+    </div>   <!-- content-wrapper -->
+
+
+    <footer></footer> 
+
+    <!--================================
+     JavaScript Refs
+    ==================================-->
+    <script src="assets/js/jquery-1.11.1.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/d3.min.js"></script>     
+    <script src="assets/js/dygraph-combined-dev.js"></script>
+    <script src="assets/js/underscore-min.js"></script>
+
+
+    <script src="JS/main.js"></script>
+    <script src="JS/ev_data.js"></script>
+    
+    <script src="JS/ev_js_data.js"></script>
+    <script src="JS/evb_basic.js"></script>
+
+
+    <script type="text/javascript">
+        /*================================
+          Doc ready scripts
+          ==================================*/
+        $(document).ready(function () {
+            init_settings();
+            $("#sensor_daily").addClass("menu-top-active");         
+           
+        });
+
+        /*================================
+           window load scripts
+        ==================================*/
+        $(window).load(function () {
+
+
+            $("#btn_Project").click(function () {
+
+
+                var p = projects.filter(function (d) { return d.project_id == $("#Project_input").val(); });
+
+                $("#project_id").html(p[0]["project_id"]);
+                $("#project_name").html(p[0]["project_name"]);
+
+
+                // Get list of project sensors 
+
+                s_arr = [];
+                var s = sensors.filter(function (d) { return d.project_id == p[0]["project_id"]; });
+
+
+                for (var i = 0; i < s.length; i++) {
+                    s_arr.push(s[i]["sensor_id"]);
+                }
+                console.log(s_arr);
+
+                //console.log(y);
+                //$("#Days_10x").html(y[0]["Cnt_Days_10X"]);
+                //$("#Days_20x").html(y[0]["Cnt_Days_20X"]);
+                //$("#Days_30x").html(y[0]["Cnt_Days_30X"]);
+                //$("#Days_40x").html(y[0]["Cnt_Days_40X"]);
+
+                
+
+  
+                // -------  Dygraph functions ------- 
+                // Darken a color
+                function darkenColor(colorStr) {
+                    // Defined in dygraph-utils.js
+                    var color = Dygraph.toRGB_(colorStr);
+                    color.r = Math.floor((255 + color.r) / 2);
+                    color.g = Math.floor((255 + color.g) / 2);
+                    color.b = Math.floor((255 + color.b) / 2);
+                    return 'rgb(' + color.r + ',' + color.g + ',' + color.b + ')';
+                }
+
+                // Multiple column bar chart
+                function multiColumnBarPlotter(e) {
+                    // We need to handle all the series simultaneously.
+                    if (e.seriesIndex !== 0) return;
+
+                    var g = e.dygraph;
+                    var ctx = e.drawingContext;
+                    var sets = e.allSeriesPoints;
+                    var y_bottom = e.dygraph.toDomYCoord(0);
+
+                    // Find the minimum separation between x-values.
+                    // This determines the bar width.
+                    var min_sep = Infinity;
+                    for (var j = 0; j < sets.length; j++) {
+                        var points = sets[j];
+                        for (var i = 1; i < points.length; i++) {
+                            var sep = points[i].canvasx - points[i - 1].canvasx;
+                            if (sep < min_sep) min_sep = sep;
+                        }
+                    }
+                    var bar_width = Math.floor(2.0 / 3 * min_sep);
+
+                    var fillColors = [];
+                    var strokeColors = g.getColors();
+                    for (var i = 0; i < strokeColors.length; i++) {
+                        fillColors.push(darkenColor(strokeColors[i]));
+                    }
+
+                    for (var j = 0; j < sets.length; j++) {
+                        ctx.fillStyle = fillColors[j];
+                        ctx.strokeStyle = strokeColors[j];
+                        for (var i = 0; i < sets[j].length; i++) {
+                            var p = sets[j][i];
+                            var center_x = p.canvasx;
+                            var x_left = center_x - (bar_width / 2) * (1 - j/(sets.length-1));
+
+                            ctx.fillRect(x_left, p.canvasy,
+                                bar_width/sets.length, y_bottom - p.canvasy);
+
+                            ctx.strokeRect(x_left, p.canvasy,
+                                bar_width/sets.length, y_bottom - p.canvasy);
+                        }
+                    }
+                }
+
+
+                //======================= MDS Graph =======================                         
+                var m = MDS_wide.map(function (d, i) {
+                    return {
+                        thedate: d.thedate,
+                        [s_arr[0].toString()]: +d[s_arr[0].toString()],
+                        [s_arr[1].toString()]: +d[s_arr[1].toString()],
+                        [s_arr[2].toString()]: +d[s_arr[2].toString()]
+                    };
+                });
+
+
+                a = [];
+                b = [];
+
+
+                for (var j = 0; j < m.length; j++) {  
+
+                    b = [];
+                    b.push(new Date(m[j]["thedate"]));
+                    b.push(m[j][s_arr[0]]);
+                    b.push(m[j][s_arr[1]]);
+                    b.push(m[j][s_arr[2]]);
+                    a.push(b);
+                }
+
+
+                g1 = new Dygraph(
+                         document.getElementById("MDS1"), a,
+                         {
+                             legend: 'always',
+                             includeZero: true,
+                             dateWindow: [Date.parse("2015/05/16"), Date.parse("2015/09/01")],
+                             animatedZooms: true,
+                             drawXGrid: false,
+                             plotter: multiColumnBarPlotter,
+                             labels: ["date", s_arr[0].toString(), s_arr[1].toString(), s_arr[2].toString()]
+
+                         }
+                     );
+
+
+
+
+                //======================= Growth Graph =======================
+                var g = Growth_wide.map(function (d, i) {
+                    return {
+                        thedate: d.thedate,
+                        [s_arr[0].toString()]: +d[s_arr[0].toString()],
+                        [s_arr[1].toString()]: +d[s_arr[1].toString()],
+                        [s_arr[2].toString()]: +d[s_arr[2].toString()]
+                    };
+                });
+
+                a = [];
+                b = [];
+
+
+                for (var j = 0; j < g.length; j++) {
+
+                    b = [];
+                    b.push(new Date(g[j]["thedate"]));
+                    b.push(g[j][s_arr[0]]);
+                    b.push(g[j][s_arr[1]]);
+                    b.push(g[j][s_arr[2]]);
+                    a.push(b);
+                }
+
+                g = new Dygraph(
+                        document.getElementById("Growth"), a,
+                        {
+                            legend: 'always',
+                            includeZero: true,
+                            dateWindow: [Date.parse("2015/05/16"), Date.parse("2015/09/01")],
+                            animatedZooms: true,
+                            drawXGrid: false,
+                            plotter: multiColumnBarPlotter,
+                            labels: ["date", s_arr[0].toString(), s_arr[1].toString(), s_arr[2].toString()]
+                        }
+                    );
+
+
+
+                  });          
+        });
+
+    </script>
+
+</body>
+</html>
