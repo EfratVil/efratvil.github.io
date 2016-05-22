@@ -1,0 +1,2 @@
+https://gist.github.com/datapixie/5986521
+This is an animated variation of mbostock's [normalized stacked barchart](https://gist.github.com/mbostock/3886394). When you click on a block, that block is sent to the bottom of the stack and the bars are reordered by decreasing height of that block. This allows you to compare any value in the stacks with a common baseline, eliminating a common criticism of stacked barcharts.
