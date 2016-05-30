@@ -1,0 +1,162 @@
+﻿table {
+    border-collapse: collapse;
+    border: none;
+    border-spacing: 0;
+    /*margin: 30px;*/
+    padding: 2px;
+    border: 0;
+    font-size: 9px;
+    font: inherit;
+    vertical-align: baseline;
+    display: table;
+
+}
+
+thead {
+    display: table-header-group;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+tbody {
+    display: table-row-group;
+}
+
+th.cn {
+    padding: 0px;
+}
+.cn {
+    font-size: 9px;
+    text-align: left;
+}
+
+
+td.lb, th.lb {
+    border-left: 1px solid #000;
+}
+
+
+th.s, td.s, tr.s {
+    background-color: #e6e6e6;
+}
+
+td, th {
+    display: table-cell;
+    text-align: center;
+}
+
+tr {
+    display: table-row;
+}
+
+td, th {
+    height: 12px;
+    padding: 2px;
+    margin: 0px;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    vertical-align: middle;
+}
+
+element.style {
+    left: -1px;
+}
+
+
+.cnr {
+    position: relative;
+    right: -1px;
+    top: 100px;
+    white-space: nowrap;
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+    -webkit-transform-origin: top left;
+    -moz-transform-origin: top left;
+    -ms-transform-origin: top left;
+    -o-transform-origin: top left;
+    transform-origin: top left;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.cn {
+    font-size: 9px;
+    text-align: left;
+}
+
+.cni {
+    height: 100px;
+    width: 10px;
+}
+
+
+
+
+
+/*
+
+table {
+    width:80%;
+    margin: 30px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+
+
+th {
+
+   vertical-align: top;
+   padding: 15px 0;
+   border: 1px solid black;
+   border-collapse: collapse;
+   height: 250px;
+} 
+
+td {
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+    background-color: #eee;
+}
+
+*/
+/*table {
+  font-family: sans-serif;
+  border-collapse: collapse;
+  margin: 30px;
+}
+
+thead th {
+   -moz-transform: rotate(-90deg);  */ /* FF3.5+ */
+/*   -o-transform: rotate(-90deg); */ /* Opera 10.5 */
+/*   -webkit-transform: rotate(-90deg); */ /* Saf3.1+, Chrome */
+/*   filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=3);*/  /* IE6,IE7 */
+/*   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)"; *//* IE8 */
+  /* vertical-align: top;
+   width: 100px;
+  */
+ /*
+  vertical-align:text-top;
+   margin: 0px 0px 0px 0px;
+   height: 150px;
+   padding: 0px 0px 0px 0px;
+
+ /* 
+} 
+th {
+  color: #666;
+  font-weight: normal;
+}
+td, th {
+  padding: 0px 0px 0px 0px;
+  text-align: center;
+  border: solid 1px #999;
+}*/

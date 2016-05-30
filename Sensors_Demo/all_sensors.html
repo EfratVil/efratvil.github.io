@@ -1,0 +1,247 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Demo</title>
+        <style>
+            body {
+                font: 10px sans-serif;
+            }
+
+            .axis  {
+                font-size: 12px;
+            }
+
+            .axis path,
+            .axis line {
+                fill: none;
+                stroke: #000;
+                shape-rendering: crispEdges;
+            }
+            svg {
+                margin: 5px;
+            }
+
+            div.tooltip {
+                position: absolute;
+                max-width: 200px;
+                height: auto;
+                padding: 5px;
+                background-color: white;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                pointer-events: none; /* MUI IMPORTANTE! */
+                font-family: sans-serif;
+                font-size: 12px;
+            }
+
+            #Indicator_explain {
+                padding: 0px 12px 0px 24px;
+                height: 50px;
+                width: 900px;
+            }
+                          .tick line{
+                                 opacity: 0.8;
+                                 stroke: gray;
+                          }
+
+        </style>
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet" />
+        <link href="assets/css/isotope.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav></nav>   
+                        
+                <div class="content-wrapper">
+                    <section class="section2" style="padding-top: 15px">
+                        <div class="container">
+                            <div class="row">                           
+                                <div class="col-md-12">
+                            
+                                    <div class="row" id="info_box" >
+                                        <h2>All sensors view</h2><br/>
+                                        <!--<div class="col-md-8">
+                                            <div class="alert alert-info">
+                                                Weekly charts of IOT sensors of agriculture plants.
+                                                <br>
+                                                Finding outliers is not trivial. There are few methods, giving diffrent results.<br>
+                                                <strong>Few methods were included:</strong>
+                                                <ul>
+                                                    <li>
+                                                        Hotelling T2
+                                                    </li>
+                                                    <li>
+                                                        PCA distance
+                                                    </li>
+                                                    <li>
+                                                        Correlation Matrix
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>-->
+                                        <div class="col-md-12">
+                                            <div class="alert alert-info" style="background-color: #F5F5F5; border-color: gray;">
+                                                How much time would it take you to scan by eye, 400 weekly sensor charts?
+                                                <br>
+                                                <strong> Can you find all the outliers?</strong>
+                                                <ul>
+                                                    <li>
+                                                        Sure, some of them are outstanding. 
+                                                    </li>
+                                                    <li>
+                                                        But other, are similar enough to the rest. It is hard, time consuming, if not impossible to detect by eye.
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <a href="#" id="btn_charts" class="btn btn-info filter">Show Charts</a>
+
+                                </div>                          
+                            </div>
+
+                        </div>
+                    </section>
+                    <!--==========================================================================-->
+
+                    <section id="section1">
+
+                            <div class="row">
+                    
+                                    <div id="Grid" style="margin-left: 40px; margin-right: 40px;">
+                              
+                            </div>
+                        </div>
+                    </section>
+
+                    <!--====================================================================================================-->
+
+                </div>   <!-- content-wrapper -->
+       
+        <br/><br />    
+        <footer></footer>            
+    
+        <script src="assets/js/jquery-1.11.1.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/d3.min.js"></script>
+        <script src="assets/js/isotope.pkgd.min.js"></script>
+        <!--script src="assets/js/dygraph-combined-dev.js"></script-->
+
+
+        <script src="JS/main.js"></script>
+        <script src="JS/get_data.js"></script>
+        <script src="JS/evb_basic.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("nav").html(Setnav());
+                $("footer").html(Setfooter());
+                $("#Corr_Matrix").removeClass("btn-wb").addClass("btn-wb-active");
+            });
+        </script>
+
+        <script type="text/javascript">
+
+            function isotope1_From_DS(data, top) {
+                var html = '';
+                html += "<div class='isotope'> ";
+
+                for (var i = 0; i < data.length; i++) {
+                    html += "<div class='element-item ";
+                    html += "grade-" + data[i]["grade_auto"] + " ";
+                    html += "'>"; 
+
+                    html += "<div class='panel panel-info'>";
+                    html += "<div class='panel-heading sensor_id'><a href='sensor.html?sensor_id=" + data[i]["sensor_id"] + "' target='_blank'>" + data[i]["sensor_id"] + "</a></div>";
+
+                    html += "<div class='panel-body'>";
+                    html += "<p class='weekly_graph' id='g_" + data[i]["sensor_id"] + "'></p>";
+
+                    html += "</div></div></div>";
+                }
+                html += "</div>";
+                return html;
+            }
+
+
+        $(window).load(function () {
+
+            $("#btn_charts").click(function () {
+                $("#Grid").html(isotope1_From_DS(outliers_matrix, 20));  //.filter(function (d) { return d.sensor_id < 28000; })
+
+                $.each($('.weekly_graph'), function (index, value) {
+                    sensor = $(this).attr('id').substring(2, 7);
+                    var ds1 = dsp.filter(function (d) { return d.sensor_id == sensor; });
+
+                    var sensor_data = ds1.map(function (d, i) {
+                        return {
+                            index: i + 1,
+                            value: d.nds_wt_value, //nds_trend,
+                            Mean_value: d3.mean(ds1, function (d) { return d.nds_wt_value; }),
+                            nor_value: d.nor_value
+                        };
+
+                    });
+                    Line_chart_time_ID("g_" + sensor, sensor_data, "index", "nor_value", 270, 170);
+//                    create_Linr_chart_2_vars("g_" + sensor, sensor_data, "index", "value", "Mean_value", 300, 180);
+                });
+            });
+        });
+
+
+
+        //var dsp, outliers_matrix;
+        //d3.csv('data/raw/raw_Week9_new.csv', function (data) {
+        //    dsp = data;
+        //    readyCheck('file1');
+        //})
+
+        //d3.csv('data/outliers_Week9.csv', function(data) {
+        //    outliers_matrix = data;
+        //    readyCheck('file2');
+        //})
+
+        //var readyFiles = { 'file1': false, 'file2': false };
+
+
+        //function readyCheck(filename) {
+        //    readyFiles[filename] = true;
+
+        //    if (readyFiles['file1'] == true && readyFiles['file2'] == true) {
+
+
+        //        $("#Grid").html(isotope1_From_DS(outliers_matrix, 20));  //.filter(function (d) { return d.sensor_id < 28000; })
+
+        //        $.each($('.weekly_graph'), function (index, value) {
+        //            sensor = $(this).attr('id').substring(2, 7);
+        //            var ds1 = dsp.filter(function (d) { return d.sensor_id == sensor; });
+
+        //            var sensor_data = ds1.map(function (d, i) {
+        //                return {
+        //                    index: i + 1,
+        //                    value: d.nds_wt_value, //nds_trend,
+        //                    Mean_value: d3.mean(ds1, function (d) { return d.nds_wt_value; }),
+        //                    nor_value: d.nor_value
+        //                };
+
+        //            });
+        //            Line_chart_time_ID("g_" + sensor, sensor_data, "index", "nor_value", 270, 170);
+        //            //                    create_Linr_chart_2_vars("g_" + sensor, sensor_data, "index", "value", "Mean_value", 300, 180);
+        //        });
+
+        //    }
+        //}
+        </script>
+    </body>
+</html>

@@ -1,0 +1,602 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Cotton Sensors</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link href="assets/css/tables.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/isotope.css" rel="stylesheet" />
+
+    <style>
+                        /*================================
+            Line Chart
+        ==================================*/
+
+                        .axis path,
+                        .axis line {
+                            fill: none;
+                            stroke: #000;
+                            shape-rendering: crispEdges;
+                        }
+
+                        .x.axis path {
+                            display: none;
+                        }
+
+                        .line {
+                            fill: none;
+                            stroke: steelblue;
+                            stroke-width: 1.5px;
+                        }
+
+                          .tick line{
+                                 opacity: 0.8;
+                                 stroke: gray;
+                          }
+    </style>
+
+</head>
+<body>
+    <h1>Cotton Outliers</h1>
+
+    <section id="section1"><div class="container">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <select id="week"><option value="Week1">Week1</option><option value="Week2">Week2</option><option value="Week3">Week3</option><option value="Week4">Week4</option><option value="Week5">Week5</option><option value="Week6">Week6</option><option value="Week7">Week7</option><option value="Week8">Week8</option><option selected="" value="Week9">Week9</option><option value="Week10">Week10</option><option value="Week11">Week11</option><option value="Week12">Week12</option><option value="Week13">Week13</option><option value="Week14">Week14</option><option value="Week15">Week15</option></select>
+                    <!--<select class="target">
+                        <option value="option1" selected="selected">Option 1</option>
+                        <option value="option2">Option 2</option>
+                    </select>-->
+                    <a href="#" id="btn_e1" class="btn btn-info filter">Go</a>
+                    <a href="#" id="btn_H400" class="btn btn-info filter">Show Graphs</a>
+                    <br /><br />
+
+                    <div id="filters" class="button-group">
+                        <button class="button is-checked" data-filter="*">show all</button>
+                        <button id="W1" class="button" data-filter=".grade-Good">Good</button>
+                        <button id="W2" class="button" data-filter=".grade-Outlier">Outlier</button>
+                        <button id="W3" class="button" data-filter=".grade-tbd">tbd</button>
+
+                    </div>
+                    <br />
+                    <div id="sorts" class="button-group">
+                        <button class="button is-checked" data-sort-by="original-order">original order</button>
+                        <button class="button" data-sort-by="T2">T2</button>
+                        <button class="button" data-sort-by="PC10">PC10</button>
+                        <button class="button" data-sort-by="S">S</button>
+                        <button class="button" data-sort-by="SS">SS</button>
+                        <button class="button" data-sort-by="CM">CM</button>
+                   </div>
+                    <br />            
+                 </div>
+
+                <div class="col-md-6">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th bgcolor="#E1F5FE">&nbsp;T2&nbsp;</th>
+                                <th>&nbsp; PC10 &nbsp;</th>
+                                <th>&nbsp; S &nbsp; </th>
+                                <th>&nbsp; SS &nbsp;</th>
+                                <th>&nbsp; CM &nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Weekly</th>
+                                <td>T2</td>
+                                <td>PC10</td>
+                                <td>S</td>
+                                <td>SS</td>
+                                <td>CM</td>
+                            </tr>
+                            <tr>
+                                <th>Daily</th>
+                                <td>T2</td>
+                                <td>PC10</td>
+                                <td>S</td>
+                                <td>SS</td>
+                                <td>CM</td>
+                            </tr>
+                            <tr>
+                                <th>Daily wt</th>
+                                <td>T2</td>
+                                <td>PC10</td>
+                                <td>S</td>
+                                <td>SS</td>
+                                <td>CM</td>
+                            </tr>
+                            <tr>
+                                <th>Daily sd wt</th>
+                                <td>T2</td>
+                                <td>PC10</td>
+                                <td>S</td>
+                                <td>SS</td>
+                                <td>CM</td>
+                            </tr>
+                            <!--tr>
+                <th>MDS</th>
+                <td>T2</td>
+                <td>D1</td>
+                <td>D2</td>
+                <td>...</td>
+                <td>D7</td>
+            </tr>
+            <tr>
+                <th>Growth</th>
+                <td>T2</td>
+                <td>D1</td>
+                <td>D2</td>
+                <td>...</td>
+                <td>D7</td>
+
+            </tr-->
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div></section>
+
+    <!--<div id="filters">
+        <a href="#" id="btn_G" class="btn btn-info" data-filter=".grade-Good">Good</a>
+        <a href="#" id="btn_O" class="btn btn-info" data-filter=".grade-Outlier">Outlier</a>
+        <a href="#" id="btn_T" class="btn btn-info" data-filter=".grade-tbd">tbd</a>
+        <br /><br />
+    </div>-->
+
+        <br /><br />
+  
+    <br/>
+
+    
+    <br />
+    <div id="Grid">
+    </div>
+
+    <script src="assets/js/jquery-1.11.1.js"></script>
+    <script src="assets/js/d3.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/2.5.0/math.min.js"></script> <!-- !!!!!!!Todo -->
+    <script src="JS/get_data.js"></script>
+    <script src="JS/evb_basic.js"></script>
+
+    <script>
+
+        function Week_Grade(grade, week) {
+
+          var Week_Grade = "";
+
+          switch(grade) {
+                                case "A":
+                                    Week_Grade= "W" + week + "-G";  // Good
+                                    break;
+                                case "Z":
+                                    Week_Grade = "W" + week + "-N";  // not installed
+                                    break;
+                                default:
+                                    Week_Grade = "W" + week + "-P";  // problem
+                                    }
+
+
+            return Week_Grade;
+
+        }
+
+        function color_class(Flag, Method) {
+            var color = "";
+            switch (Method) {
+                case "b":          // binary flag. 0 - ok, 1 - issue
+                    switch (Flag) {
+                        case 0:
+                            color = "green";  // Good
+                            break;
+                        default:
+                            color = "red";  // Flag
+                    }
+                    break;
+                case "s":          // binary flag. 0 - ok, 1 - issue
+
+                    if (Flag < 3) {
+                        color = "green";  // Good
+                    }
+                    else {
+                        color = "red";  // Flag
+                    }
+                    break;
+                case "c":          // binary flag. 0 - ok, 1 - issue
+
+                    if (Flag < 2.25) {
+                        color = "green";  // Good
+                    }
+                    else {
+                        color = "red";  // Flag
+                    }
+                    break;
+                default:
+                    color = "black";
+                    break;
+            }
+            return color;
+        }
+
+        function color_td(Flag, Method) {
+            var color = "";
+            switch (Method) {
+                case "b":          // binary flag. 0 - ok, 1 - issue
+                    switch (Flag) {
+                        case 0:
+                            color = "td_green";  // Good
+                            break;
+                        default:
+                            color = "td_red";  // Flag
+                    }
+                    break;
+                case "s":          // binary flag. 0 - ok, 1 - issue
+
+                    if ((Flag < 3) && (Flag > -3)) {
+                        color = "td_green";  // Good
+                    }
+                    else {
+                        color = "td_red";  // Flag
+                    }
+                    break;
+                case "c":          // binary flag. 0 - ok, 1 - issue
+
+                    if (Flag > 0.3) {
+                        color = "td_green";  // Good
+                    }
+                    else {
+                        color = "td_red";  // Flag
+                    }
+                    break;
+                default:
+                    color = "black";
+                    break;
+            }
+            return color;
+        }
+
+        function isotope1_From_DS(data, top) {
+
+            var html = '';
+            html += "<div class='isotope'> ";
+
+            for (var i = 0; i < data.length; i++) {
+                html += "<div class='element-item ";
+                html += "grade-" + data[i]["grade_auto"] + " ";
+                //html += "T2_MF-" + data[i]["T2_MDS_Flag"] + " ";
+                //html += "T2_GF-" + data[i]["T2_Growth_Flag"] + " ";
+                //html += "PC10-";
+                //if (data[i]["PC_dist_10"] < 3)
+                //{ html += "0 "; }
+                //else
+                //{ html += "1 "; }
+                //html += "PC5-";
+                //if (data[i]["PC_dist_5"] < 3)
+                //{ html += "0 "; }
+                //else
+                //{ html += "1 "; }
+                //html += "CM_S-";
+                //if (data[i]["CM_Sum_sd"] < 2.25)
+                //{ html += "0 "; }
+                //else
+                //{ html += "1 "; }
+                //html += "CM_SS-";
+                //if (data[i]["CM_Sum_Square_sd"] < 2.25)
+                //{ html += "0 "; }
+                //else
+                //{ html += "1 "; }
+
+                //html += "WN_T2_HF-" + data[i]["WN_T2_Hourly_Flag"] + " ";
+                //html += "WN_PC10-";
+                //if (data[i]["WN_PC_dist_10"] < 3)
+                //{ html += "0 "; }
+                //else
+                //{ html += "1 "; }
+                //html += "WN_PC5-";
+                //if (data[i]["WN_PC_dist_5"] < 3)
+                //{ html += "0 "; }
+                //else
+                //{ html += "1 "; }
+                //html += "WN_CM_S-";
+                //if (data[i]["WN_CM_Sum_sd"] < 2.25)
+                //{ html += "0 "; }
+                //else
+                //{ html += "1 "; }
+                //html += "WN_CM_SS-";
+                //if (data[i]["WN_CM_Sum_Square_sd"] < 2.25)
+                //{ html += "0 "; }
+                //else
+                //{ html += "1 "; }
+                //html += "DNT_CM_S-";
+                //if (data[i]["DNT_CM_Sum_sd"] < 2.25)
+                //{ html += "0 "; }
+                //else
+                //{ html += "1 "; }
+                //html += "DNT_CM_SS-";
+                //if (data[i]["DNT_CM_Sum_Square_sd"] < 2.25)
+                //{ html += "0 "; }
+                //else
+                //{ html += "1 "; }
+
+
+                html += "'>"; //  data-category='" + data[i]["Week4"] + "' >";
+
+                html += "<div class='panel panel-info'>";
+                html += "<div class='panel-heading sensor_id'><a href='http://plantbeat.phytech.com/projects/3925/breakdown' target='_blank'>" + data[i]["sensor_id"] + "</a></div>";
+                            
+                html += "<div class='panel-body'>";
+
+                html += "<table align = 'center' width='100%'>";
+                //html += "<thead>";
+                //html += "<tr>";
+                //html += "<th></th>";
+                //html += "<th>T2</th>";
+                //html += "<th>PC10</th>";
+                //html += "<th>PC5</th>";
+                //html += "<th>S</th>";
+                //html += "<th>SS</th>";
+                //html += "</tr>";
+                //html += "</thead>";
+                html += "<tbody>";
+
+                html += "<tr>";
+                html += "<th>NW</th>";
+                html += "<td class ='" + color_td(data[i]["nw_T2_Flag"], "b") + "'>" + data[i]["nw_T2"] + "</td>";
+                html += "<td class ='" + color_td(data[i]["nw_PC_dist_10"], "s") + "'>" + data[i]["nw_PC_dist_10"] + "</td>";
+                html += "<td class ='" + color_td(data[i]["nw_CM_Avg_Sum"], "c") + "'>" + data[i]["nw_CM_Avg_Sum"] + "</td>";
+                html += "<td class ='" + color_td(data[i]["nw_CM_Avg_Sum_Square"], "c") + "'>" + data[i]["nw_CM_Avg_Sum_Square"] + "</td>";
+                html += "<td class ='" + color_td(data[i]["nw_CM_T2_Flag"], "b") + "'>" + data[i]["nw_CM_T2"] + "</td>";
+                html += "</tr>";
+
+                html += "<tr>";
+                html += "<th>ND</th>";
+                html += "<td class ='" + color_td(data[i]["nd_T2_Flag"], "b") + "'>" + data[i]["nd_T2"] + "</td>";
+                html += "<td class ='" + color_td(data[i]["nd_PC_dist_10"], "s") + "'>" + data[i]["nd_PC_dist_10"] + "</td>";
+                html += "<td class ='" + color_td(data[i]["nd_CM_Avg_Sum"], "c") + "'>" + data[i]["nd_CM_Avg_Sum"] + "</td>";
+                html += "<td class ='" + color_td(data[i]["nd_CM_Avg_Sum_Square"], "c") + "'>" + data[i]["nd_CM_Avg_Sum_Square"] + "</td>";
+                html += "<td class ='" + color_td(data[i]["nd_CM_T2_Flag"], "b") + "'>" + data[i]["nd_CM_T2"] + "</td>";
+                html += "</tr>";
+
+                html += "<tr>";
+                html += "<th>NDT</th>";
+                html += "<td class ='" + color_td(data[i]["nd_wt_T2_Flag"], "b") + "'>" + data[i]["nd_wt_T2"] + "</td>";
+                html += "<td class ='" + color_td(data[i]["nd_wt_PC_dist_10"], "s") + "'>" + data[i]["nd_wt_PC_dist_10"] + "</td>";
+                html += "<td class ='" + color_td(data[i]["nd_wt_CM_Avg_Sum"], "c") + "'>" + data[i]["nd_wt_CM_Avg_Sum"] + "</td>";
+                html += "<td class ='" + color_td(data[i]["nd_wt_CM_Avg_Sum_Square"], "c") + "'>" + data[i]["nd_wt_CM_Avg_Sum_Square"] + "</td>";
+                html += "<td class ='" + color_td(data[i]["nd_wt_CM_T2_Flag"], "b") + "'>" + data[i]["nd_wt_CM_T2"] + "</td>";
+                html += "</tr>";
+
+                html += "<tr>";
+                html += "<th>NDST</th>";
+                html += "<td class ='T2 " + color_td(data[i]["nds_wt_T2_Flag"], "b") + "'>" + data[i]["nds_wt_T2"] + "</td>";
+                html += "<td class ='PC10 " + color_td(data[i]["nds_wt_PC_dist_10"], "s") + "'>" + data[i]["nds_wt_PC_dist_10"] + "</td>";
+                html += "<td class ='S " + color_td(data[i]["nds_wt_CM_Avg_Sum"], "c") + "'>" + data[i]["nds_wt_CM_Avg_Sum"] + "</td>";
+                html += "<td class ='SS " + color_td(data[i]["nds_wt_CM_Avg_Sum_Square"], "c") + "'>" + data[i]["nds_wt_CM_Avg_Sum_Square"] + "</td>";
+                html += "<td class ='CM " + color_td(data[i]["nds_wt_CM_T2_Flag"], "b") + "'>" + data[i]["nds_wt_CM_T2"] + "</td>";
+                html += "</tr>";
+
+                html += "</tbody>";
+                html += "</table>";
+
+                html += "<p class='weekly_graph' id='g_" + data[i]["sensor_id"] + "'></p>";
+
+                html += "</div>";
+                html += "</div>";
+
+                html += "</div>";
+            }
+
+            html += "</div>";
+
+            return html;
+        }
+
+
+        $("#btn_e1").click(function () {
+
+            $("#Grid").html(isotope1_From_DS(outliers_matrix, 20));  //.filter(function (d) { return d.sensor_id < 28000; })
+
+            // init Isotope
+            var $container = $('.isotope').isotope({
+                itemSelector: '.element-item',
+                layoutMode: 'fitRows',
+                //masonry: {columnWidth: 220},
+                getSortData: {
+                 //   project_id: '.project_id',
+                    sensor_id: '.sensor_id',
+                   // T2: '.T2',
+                    T2: function (itemElem) {
+                        var t = $(itemElem).find('.T2').text();
+                        return (1-t);
+                    },
+                    PC10: function (itemElem) {
+                        var t = $(itemElem).find('.PC10').text();
+                        return (1 - t);
+                    },
+                    S: function (itemElem) {
+                        var t = $(itemElem).find('.S').text();
+                        return (Number(t));
+                    },
+                    SS: function (itemElem) {
+                        var t = $(itemElem).find('.SS').text();
+                        return (Number(t));
+                    },
+                    CM: function (itemElem) {
+                        var t = $(itemElem).find('.CM').text();
+                        return (Number(1 - t));
+                    }
+                }
+            });
+
+            // filter functions
+            var filterFns = {
+                // show if number is greater than 50
+                numberGreaterThan50: function () {
+                    var number = $(this).find('.number').text();
+                    return parseInt(number, 10) > 50;
+                },
+                numberGreaterThan30: function () {
+                    var number = $(this).find('.number').text();
+                    return parseInt(number, 10) > 30;
+                },
+
+                numberGreaterThan100: function () {
+                    var number = $(this).find('.number').text();
+                    return parseInt(number, 10) > 100;
+                },
+                // show if name ends with -ium
+                ium: function () {
+                    var name = $(this).find('.name').text();
+                    return name.match(/ium$/);
+                }
+            };
+
+            // bind filter button click
+            $('#filters').on('click', 'button', function () {
+                var filterValue = $(this).attr('data-filter');
+                // use filterFn if matches value
+                filterValue = filterFns[filterValue] || filterValue;
+                $container.isotope({ filter: filterValue });
+            });
+
+            // bind sort button click
+            $('#sorts').on('click', 'button', function () {
+                var sortByValue = $(this).attr('data-sort-by');
+                $container.isotope({ sortBy: sortByValue });
+            });
+
+            // change is-checked class on buttons
+            $('.button-group').each(function (i, buttonGroup) {
+                var $buttonGroup = $(buttonGroup);
+                $buttonGroup.on('click', 'button', function () {
+                    $buttonGroup.find('.is-checked').removeClass('is-checked');
+                    $(this).addClass('is-checked');
+                });
+            });
+
+
+        });
+
+        // get data for new week
+        $("#week").change(function () {
+            get_ds_ww($("#week").val());
+            get_outliers($("#week").val());
+            $("#btn_e1").trigger('click');
+        });
+
+        $("#btn_Hide").click(function () {
+
+            $.each($('.x1'), function (index, value) {
+                //$(this).children("td").children(".Avail").fadeOut("slow");
+                $(this).fadeOut("slow");
+                //  $(this).css('background', 'blue');
+
+                var $container = $('.isotope').isotope({
+                    itemSelector: '.element-item',
+                    layoutMode: 'fitRows',
+                    //masonry: {columnWidth: 220},
+                    getSortData: {
+                        project_id: '.project_id',
+                        sensor_id: '.sensor_id',
+                        number: '.number parseInt',
+                        category: '[data-category]',
+                        weight: function (itemElem) {
+                            var weight = $(itemElem).find('.weight').text();
+                            return parseFloat(weight.replace(/[\(\)]/g, ''));
+                        }
+                    }
+                });
+            });
+
+        });
+
+        $("#btn_W200").click(function () {
+
+            $.each($('.element-item'), function (index, value) {
+              //  $(this).children("td").children(".Avail").fadeOut("slow");
+                $(this).css('background', 'blue');
+            });
+
+       });
+
+        $("#btn_H400").click(function () {
+
+            //$.each($('.element-item'), function (index, value) {
+            //    $(this).width('300px');
+            //});
+
+            $.each($('.weekly_graph'), function (index, value) {
+                sensor = $(this).attr('id').substring(2, 7);
+                var ds1 = dsp.filter(function (d) { return d.sensor_id == sensor; });
+
+                var sensor_data = ds1.map(function (d, i) {
+                    return {
+                        index: i + 1,
+                        value: d.nds_wt_value, //nds_trend,
+                        Mean_value: d3.mean(ds1, function (d) { return d.nds_wt_value; }),
+                        nor_value: d.nor_value
+                    };
+
+                });
+                Line_chart_time_ID("g_" + sensor, sensor_data, "index", "nor_value", 270, 170);
+               // Line_chart_time_ID("g_" + sensor, sensor_data, "index", "value", 270, 170);
+              //  create_Linr_chart_2_vars("g_" + sensor, sensor_data, "index", "value", "Mean_value", 300, 180);
+            });
+
+            var $container = $('.isotope').isotope({
+                itemSelector: '.element-item',
+                layoutMode: 'fitRows',
+                //masonry: {columnWidth: 220},
+                getSortData: {
+                    project_id: '.project_id',
+                    sensor_id: '.sensor_id',
+                    number: '.number parseInt',
+                    category: '[data-category]',
+                    weight: function (itemElem) {
+                        var weight = $(itemElem).find('.weight').text();
+                        return parseFloat(weight.replace(/[\(\)]/g, ''));
+                    }
+                }
+            });
+
+        });
+
+        $("#btn_W300").click(function () {
+
+            $.each($('.element-item'), function (index, value) {
+                $(this).width('300px');
+            });
+
+            var $container = $('.isotope').isotope({
+                itemSelector: '.element-item',
+                layoutMode: 'fitRows',
+                //masonry: {columnWidth: 220},
+                getSortData: {
+                    project_id: '.project_id',
+                    sensor_id: '.sensor_id',
+                    number: '.number parseInt',
+                    category: '[data-category]',
+                    weight: function (itemElem) {
+                        var weight = $(itemElem).find('.weight').text();
+                        return parseFloat(weight.replace(/[\(\)]/g, ''));
+                    }
+                }
+            });
+        });
+
+
+        //$(document).ready(function () {
+        //    $("#aa").html(ww_dd());
+        //});
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Assets Visualization Demo</title>
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet" />
+        <link href="assets/css/charts.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav></nav>   
+                        
+                <div class="content-wrapper">
+                    <section class="section2" style="padding-top: 15px">
+                        <div class="container">
+                            <div class="row">                           
+                                <div class="col-md-12">                          
+                                    <div class="row" id="info_box">
+                                        <h2>All sensors view</h2><br/>
+                                        <div class="col-md-8">
+                                            <div class="alert alert-info">
+                                                fghfgh
+                                                <br>
+                                                fghfgh.<br>
+                                                <strong>fghfgh:</strong>
+                                                <ul>
+                                                    <li>
+                                                        aaaa
+                                                    </li>
+                                                    <li>
+                                                       bbbb
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="alert alert-info">
+                                                dfgdfgdffgdffgdgf?
+                                                <br>
+                                                <strong> dfgdfg?</strong>
+                                                <ul>
+                                                    <li>
+                                                        nnnnnnn 
+                                                    </li>
+                                                    <li>
+                                                       mmmmmmmmmm
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#" id="btn_charts" class="btn btn-info filter">Show Charts</a>
+                                </div>                          
+                            </div>
+
+                        </div>
+                    </section>
+                    <!--==========================================================================-->
+
+                    <section id="section1">
+                            <div class="row">
+                                    <div id="chart" style="margin-left: 40px; margin-right: 40px;">
+                                        <div id="example"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!--====================================================================================================-->
+
+                </div>   <!-- content-wrapper -->
+       
+        <br/><br />    
+        <footer></footer>            
+    
+        <script src="assets/js/jquery-1.11.1.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/d3.min.js"></script>
+
+        <script src="JS/main.js"></script>
+        <script src="JS/get_data.js"></script>
+        <script src="JS/evb_basic.js"></script>
+        <!--<script src="JS/column-chart.js"></script>-->
+        <!--<script src="JS/bar-chart.js"></script>-->
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("nav").html(Setnav());
+                $("footer").html(Setfooter());
+                $("#Corr_Matrix").removeClass("btn-wb").addClass("btn-wb-active");
+            });
+        </script>
+
+        <script type="text/javascript">
+
+        $(window).load(function () {
+
+            $("#btn_charts").click(function () {
+                
+                // cm1 = cm[0];
+                // console.log(cm1);
+
+
+              //  var xx = [];
+              ////  var b = [];
+              //  // create ds of the last hour of the last day (placed at row 168 of each sensor)
+              //  // Object.keys(raw_wide_nor_value[0]) - contains string of col names (sensors)
+              //  for (var i = 0; i < Object.keys(cm[0]).length ; i++) {//
+              //      //  id_.push(j);             
+              //      xx.push([i.toString(),cm[6][24588]*10]);
+              //  }
+                              
+                cm1 = cm.map(function (d, i) {
+                    return {
+                        x: i + 1,
+                        y: cm[i][24946]
+                    };
+                });
+
+                cm1.sort(function (a, b) { return (b.y) - (a.y); });
+                console.log(cm1);
+               // console.log(cm1);
+                Simple_bar_chart1("chart", cm1, "x", "y", 1080, 220)
+
+
+//--------------------------------------------------------------------
+
+     //           var data = d3.range(20).map(function (d) { return { "x": d, "y": Math.floor(Math.random() * 100) } }),
+     //bc = barChart();
+     //          // console.log(data);
+     //           d3.select("body").datum(cm1)
+     //           .call(bc);
+
+
+
+
+
+//=======================================
+              //  Simple_bar_chart("chart", cm1, "index", "cor", 1080, 220);
+
+                //var data = [["A", 0.012], ["B", -0.025], ["C", 0.008], ["D", 0.023], ["E", -0.009], ["F", 0.005], ["g", -0.009], ["g", 0.005]];
+                //console.log(data);
+                //  d3.select("#example")
+                //  .datum(xx)
+                //    .call(columnChart()
+                //.width(960)
+                //.height(500)
+                //.x(function (d, i) { return d[0]; })
+                //.y(function (d, i) { return d[1]; }));
+
+                     
+            });
+           
+            });
+
+       </script>
+    </body>
+</html>

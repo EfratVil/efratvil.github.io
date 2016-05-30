@@ -1,0 +1,260 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Assets Visualization Demo</title>
+        <style>
+            .node {
+                stroke: #fff;
+                stroke-width: 1.5px;
+            }
+
+            .link {
+                stroke: #999;
+                stroke-opacity: .6;
+                stroke-width: 0px;
+            }
+        </style>
+
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <link href="assets/css/charts.css" rel="stylesheet" />
+        <!--<link href="assets/css/style.css" rel="stylesheet" />
+        <link href="assets/css/isotope.css" rel="stylesheet" />-->
+    </head>
+    <body>
+        <nav></nav>   
+                        
+                <div class="content-wrapper">
+                    <section class="section2" style="padding-top: 15px">
+                        <div class="container">
+                            <div class="row">                           
+                                <div class="col-md-12">
+                                    <div class="row" id="info_box">
+                                        <h2>Trend Outliers</h2>
+                                        <div class="col-md-8">
+                                            <button class="button" id="btn_H400">Show Graphs</button>
+
+                                            <br />
+
+                                            <br />
+                                            <div id="trends"></div>
+                                            <div id="graphs"></div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="alert alert-info" style="background-color: #F5F5F5; border-color: gray;">
+                                               SPC chart to identify trend Outliers due to abnormal growth during 1 week.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div> <br /><br />
+                                </div>                          
+                            </div>
+
+                    </section>
+                    <!--==========================================================================-->
+
+                    <section id="section1">
+                        <div id="sorts" class="button-group">
+                           
+
+                        </div>
+                    </section>
+
+                    <!--====================================================================================================-->
+
+                </div>   <!-- content-wrapper -->
+       
+        <br/><br />    
+       
+    
+        <script src="assets/js/jquery-1.11.1.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/d3.min.js"></script>
+        <!--<script src="assets/js/isotope.pkgd.min.js"></script>-->
+
+        <script src="JS/main.js"></script>
+        <!--<script src="JS/get_data.js"></script-->
+        <script src="JS/evb_basic.js"></script>>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("nav").html(Setnav());
+                $("footer").html(Setfooter());
+                $("#Corr_Matrix").removeClass("btn-wb").addClass("btn-wb-active");
+            });
+        </script>
+        <script>
+
+
+
+            var raw_wide_nor_value = [];
+
+            function get_raw_nor_value_ww(ww) {
+
+                d3.csv("data/raw/" + ww + "_wide_by_Sensor_nor_value.csv", function (error, data) {
+                    if (error) throw error;
+
+
+                    data.forEach(function (d) {
+                        Object.keys(data[0]).filter(function (k) { return k != "datetime" }).forEach(function (k) {
+                            d[k] = +d[k];
+                        });
+                    });
+
+                    raw_wide_nor_value = data;
+
+                });
+            }
+
+            get_raw_nor_value_ww("Week9");
+
+
+            function color_class(Flag, Method) {
+                var color = "";
+                switch (Method) {
+                    case "b":          // binary flag. 0 - ok, 1 - issue
+                        switch (Flag) {
+                            case 0:
+                                color = "green";  // Good
+                                break;
+                            default:
+                                color = "red";  // Flag
+                        }
+                        break;
+                    case "s":          // binary flag. 0 - ok, 1 - issue
+
+                        if (Flag < 3) {
+                            color = "green";  // Good
+                        }
+                        else {
+                            color = "red";  // Flag
+                        }
+                        break;
+                    case "c":          // binary flag. 0 - ok, 1 - issue
+
+                        if (Flag < 2.25) {
+                            color = "green";  // Good
+                        }
+                        else {
+                            color = "red";  // Flag
+                        }
+                        break;
+                    default:
+                        color = "black";
+                        break;
+                }
+                return color;
+            }
+
+            function color_td(Flag, Method) {
+                var color = "";
+                switch (Method) {
+                    case "b":          // binary flag. 0 - ok, 1 - issue
+                        switch (Flag) {
+                            case 0:
+                                color = "td_green";  // Good
+                                break;
+                            default:
+                                color = "td_red";  // Flag
+                        }
+                        break;
+                    case "s":          // binary flag. 0 - ok, 1 - issue
+
+                        if ((Flag < 3) && (Flag > -3)) {
+                            color = "td_green";  // Good
+                        }
+                        else {
+                            color = "td_red";  // Flag
+                        }
+                        break;
+                    case "c":          // binary flag. 0 - ok, 1 - issue
+
+                        if (Flag < 2.25) {
+                            color = "td_green";  // Good
+                        }
+                        else {
+                            color = "td_red";  // Flag
+                        }
+                        break;
+                    default:
+                        color = "black";
+                        break;
+                }
+                return color;
+            }
+
+
+            $("#btn_H400").click(function () {
+                var sensor_id_ = [];
+                var value_ = [];
+
+              //  console.log(raw_wide_nor_value);
+                // create ds of the last hour of the last day (placed at row 168 of each sensor)
+                // Object.keys(raw_wide_nor_value[0]) - contains string of col names (sensors)
+                for (var j = 1; j < Object.keys(raw_wide_nor_value[0]).length - 1; j++) {
+                    //  id_.push(j);
+                    sensor_id_.push(Object.keys(raw_wide_nor_value[0])[j]);
+                    value_.push(raw_wide_nor_value[167][Object.keys(raw_wide_nor_value[10])[j]]);
+                }
+
+                var data = sensor_id_.map(function (d, i) {
+                    return {
+                        id: i + 1,
+                        sensor_id: sensor_id_[i],
+                        value: value_[i]
+                    };
+                });
+
+                //delete temp arrays
+                sensor_id_ = [];
+                value_ = [];
+
+                // Line_chart_time_ID("trends", data, "id", "value", 600, 250);
+                create_spc_plot("trends", data, "id", "value", 700, 350, 125, 207.546);
+                var outliers = data.filter(function (d) { return d.value < (125 - 3 * 207.546) });
+
+                $("#graphs").append("<h3>Lower</h3>");
+
+                for (var i = 0; i < outliers.length; i++) {
+                    $("#graphs").append("<h4>Sensor: " + outliers[i].sensor_id + "  Trend: " + outliers[i].value + "</h4>");
+                    jjj = outliers[i].sensor_id;
+                    var lll = raw_wide_nor_value.map(function (d, i) {
+                        return {
+                            index: i + 1,
+                            value: d[jjj]
+                        };
+                    });
+                    Line_chart_time_ID("graphs", lll, "index", "value", 300, 180);
+                }
+
+                $("#graphs").append("</br></br><h3>Higher</h3>");
+
+                outliers = data.filter(function (d) { return d.value > (125 + 3 * 207.546) });
+
+                for (var i = 0; i < outliers.length; i++) {
+                    $("#graphs").append("<h4>Sensor: " + outliers[i].sensor_id + "  Trend: " + outliers[i].value + "</h4>");
+                    jjj = outliers[i].sensor_id;
+                    var lll = raw_wide_nor_value.map(function (d, i) {
+                        return {
+                            index: i + 1,
+                            value: d[jjj]
+                        };
+                    });
+                    Line_chart_time_ID("graphs", lll, "index", "value", 300, 180);
+                }
+
+
+
+
+
+            });
+
+  
+
+        </script>
+       
+    </body>
+</html>

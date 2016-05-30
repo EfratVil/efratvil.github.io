@@ -1,0 +1,230 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Sensors Demo</title>
+        <style>
+            body {
+                font: 10px sans-serif;
+            }
+
+            .axis  {
+                font-size: 12px;
+            }
+
+            .axis path,
+            .axis line {
+                fill: none;
+                stroke: #000;
+                shape-rendering: crispEdges;
+            }
+            svg {
+                margin: 5px;
+            }
+
+            div.tooltip {
+                position: absolute;
+                max-width: 200px;
+                height: auto;
+                padding: 5px;
+                background-color: white;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                pointer-events: none; /* MUI IMPORTANTE! */
+                font-family: sans-serif;
+                font-size: 12px;
+            }
+
+            #Indicator_explain {
+                padding: 0px 12px 0px 24px;
+                height: 50px;
+                width: 900px;
+            }
+                          .tick line{
+                                 opacity: 0.8;
+                                 stroke: gray;
+                          }
+
+        </style>
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet" />
+        <link href="assets/css/isotope.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav></nav>   
+                        
+                <div class="content-wrapper">
+                    <section class="section2" style="padding-top: 15px">
+                        <div class="container">
+                            <div class="row">                           
+                                <div class="col-md-12">
+                                    <h2 style="display: inline">Sensor details</h2>&nbsp;&nbsp;
+
+                                    <h4 style="display:inline;">Sensor ID:</h4>&nbsp;&nbsp;
+                                    <input type="text" ID="Sensor_input" style="height: 28px; width:100px;">&nbsp;&nbsp;
+
+                                    <a href="#" id="btn_GD" class="btn btn-info filter">Analyze</a><br />
+                                </div>
+
+                                    <!--<div class="row" id="info_box">-->
+                                <div class="col-md-8">
+                                    
+                                    <div id="charts">
+                                    </div>
+                                </div>
+
+                                        <div class="col-md-4">
+                                            <div class="alert alert-info"  style="background-color: #F5F5F5; border-color: gray;">
+                                                Sensors data is recived in raw format. Few transformations are needed in order to be able to compare diffrent sensors. For example, need remove effects from:
+                                                <ul>
+                                                    <li>
+                                                        Age of plant / different growth factor.
+                                                    </li>
+                                                    <li>
+                                                        Lag from last Irrigation
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    <!--</div>-->
+                                    <!--</div>--> <br /><br />
+                                </div>                          
+                            </div>
+
+                    </section>
+                    <!--==========================================================================-->
+
+                    <!--<section id="section1">
+                            <div id="charts">
+                         
+                        </div>
+                    </section>-->
+
+                    <!--====================================================================================================-->
+
+                </div>   <!-- content-wrapper -->
+       
+        <br/><br />    
+        <footer></footer>            
+    
+        <script src="assets/js/jquery-1.11.1.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/d3.min.js"></script>
+        <!--<script src="assets/js/isotope.pkgd.min.js"></script>-->
+
+        <script src="JS/main.js"></script>
+        <script src="JS/get_data.js"></script>
+        <script src="JS/evb_basic.js"></script>
+        <script src="JS/sensor.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("nav").html(Setnav());
+                $("footer").html(Setfooter());
+                $("#Corr_Matrix").removeClass("btn-wb").addClass("btn-wb-active");
+            });
+        </script>
+
+        <script type="text/javascript">
+
+ $(document).ready(function () {
+
+     function ds_col_to_array(ds, col) {
+         var col_arr = [];
+
+         for (var i = 0; i < ds.length; i++) {
+             col_arr.push(+ds[i][col]);
+         }
+
+         return col_arr;
+     }
+
+     function arrays_diff(array1, array2) {
+         var arrays_diff = [];
+         
+        // console.log(array1);
+
+         for (var i = 0; i < array1.length; i++) {
+             arrays_diff.push(array1[i] - array2[i]);
+         }
+
+         return arrays_diff;
+     }
+
+     function arrays_distance(array1, array2) {
+         var arrays_dist=0;
+
+         
+
+         for (var i = 0; i < array1.length; i++) {
+             arrays_dist += (array1[i] - array2[i]) * (array1[i] - array2[i]);
+         }
+        // console.log(arrays_dist);
+         return Math.sqrt(arrays_dist).toFixed(1);
+     }
+
+
+            (function ($) {
+                $.QueryString = (function (a) {
+                    if (a == "") return {};
+                    var b = {};
+                    for (var i = 0; i < a.length; ++i) {
+                        var p = a[i].split('=');
+                        if (p.length != 2) continue;
+                        b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+                    }
+                    return b;
+                })(window.location.search.substr(1).split('&'))
+            })(jQuery);
+
+            if ($.QueryString["sensor_id"] != "") {
+                $("#Sensor_input").val($.QueryString["sensor_id"]);           
+            }
+      
+
+     var dsp, ll, cm;
+     d3.csv('data/raw/raw_Week9_new.csv', function (data) {
+         dsp = data;
+         console.log(dsp);
+         readyCheck('file1');
+     })
+
+     d3.csv('data/raw/location_Week9.csv', function (data) {
+         ll = data;
+         console.log(ll);
+         readyCheck('file2');
+     })
+
+     d3.csv('data/cor/cor_nds_wt_week9.csv', function (data) {
+         cm = data;
+         console.log(cm);
+         readyCheck('file3');
+     })
+
+
+     var readyFiles = { 'file1': false, 'file2': false, 'file3': false };
+
+     function readyCheck(filename) {
+         readyFiles[filename] = true;
+
+         if (readyFiles['file1'] == true && readyFiles['file2'] == true && readyFiles['file3'] == true) {
+                 sensor_graphs();
+         }
+     }
+
+
+            $("#btn_GD").click(function () {
+                sensor_graphs();
+
+            });
+        });
+        </script>
+    </body>
+</html>

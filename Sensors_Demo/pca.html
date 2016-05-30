@@ -1,0 +1,249 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>MSPC Demo - Sensors</title>
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet" />
+        <link href="assets/css/charts.css" rel="stylesheet" />
+     </head>
+    <body>
+        <nav></nav>   
+                        
+                <div class="content-wrapper">
+
+                    <section class="section2" style="padding-top: 15px;">
+                        <div class="container">
+
+                            <div class="row">
+                                <h2 >PCA - Outliers based on 10 first PC's</h2>
+                                <div class="col-md-8">
+                                  <!--  Select Week:
+                                    <select id="week">
+                                        <option value="Week1">Week1</option>
+                                        <option value="Week2">Week2</option>
+                                        <option value="Week3">Week3</option>
+                                        <option value="Week4">Week4</option>
+                                        <option value="Week5">Week5</option>
+                                        <option value="Week6">Week6</option>
+                                        <option value="Week7">Week7</option>
+                                        <option value="Week8">Week8</option>
+                                        <option selected value="Week9">Week9</option>
+                                        <option value="Week10">Week10</option>
+                                        <option value="Week11">Week11</option>
+                                        <option value="Week12">Week12</option>
+                                        <option value="Week13">Week13</option>
+                                        <option value="Week14">Week14</option>
+                                        <option value="Week15">Week15</option>
+                                    </select>
+ -->
+
+                                    <a href="#" id="btn_square" class="btn btn-info filter">Square PC's</a>
+
+                                    <!--&nbsp;&nbsp;&nbsp; PC X:
+                                    <select id="pcx">
+                                        <option selected value="PC1">PC1</option>
+                                        <option value="PC2">PC2</option>
+                                        <option value="PC3">PC3</option>
+                                        <option value="PC4">PC4</option>
+                                    </select>-->
+
+                                   
+                                    <!--&nbsp;&nbsp;&nbsp; PC Y:
+                                    <select id="pcy">
+                                        <option value="PC1">PC1</option>
+                                        <option selected value="PC2">PC2</option>
+                                        <option value="PC3">PC3</option>
+                                        <option value="PC4">PC4</option>
+                                    </select>-->
+
+                                </div>
+                                <div class="col-md-4">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </section>
+                    <!--==========================================================================-->
+
+                    <section id="section1">
+                        <div class="container">
+
+                            <div class="row">
+                                <div class="col-md-9">
+                            
+                                    <div id="y_asset_lbl" style="margin-left: 52px; position: relative; top: 30px;"></div>
+                                    <div id="x_asset_lbl" style="margin-left: 560px;  position: relative; top: 450px; width: 120px; text-align: right;"></div>
+
+                                    <svg id="chart"></svg>
+                                                                       
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="info" style="width:100%; margin-left: 20px; border-width: 1px; border-color: #847C77; padding-top: 20px; padding-bottom: 20px;">
+                                        <div><p id="sensor_name" style="display: inline">Hover over a bar to see sensor details</p><p id="sensor_id" style="display: inline;"></p></div>
+                                        <!--a href="#" id="btn_Sensor" class="btn">Go</a-->
+                                        <div id="graphdiv5" style="width:100%; height:150px;"></div>
+                                        <br />
+                                        <div id="graphdiv6" style="width:100%; height:150px;"></div>
+                                        <br />
+                                    </div>
+                                </div>
+
+                                <!--<div class="col-md-3">
+                                    <div class="info" style="width:100%; margin-left: 20px; border-width: 1px; border-color: #847C77; margin-top: 0px; padding-top: 10px; padding-bottom: 20px;">
+                                        <h4 style="margin-bottom: 0px;">Sensor ID: <p id="sensor_id" style="display: inline;"></p></h4>
+
+                                        <h5 id="raw_graph" style="margin-bottom: 0px;"></h5>
+                                        <div id="graphdiv5" style="width:100%; height:140px;"></div>
+
+                                        <h5 id="nds_wt_graph" style="margin-bottom: 0px; margin-top: 22px;"></h5>
+                                        <div id="graphdiv6" style="width:100%; height:140px;"></div>
+                                    </div>
+                                </div>-->
+
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <!--====================================================================================================-->
+
+
+                    <section id="section2">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="eig1"></div>
+                                    <div id="rotations1"></div>
+                                </div>
+                            </div>
+                        </div>
+                            <!--div class="container">
+           <br/>
+           <div class="row">
+               <div class="col-md-3">
+                  "sdfsdf"
+                   <svg id="chart_t2"></svg>
+               </div>
+
+               <div class="col-md-3">
+                   "sdfsdf"
+                   <svg id="chart_t3"></svg>
+               </div>
+
+               <div class="col-md-3">
+                   "sdfsdf"
+                   <svg id="chart_t4"></svg>
+               </div>
+
+               <div class="col-md-3">
+                   "sdfsdf"
+                   <svg id="chart_t5"></svg>
+               </div>
+
+           </div>
+        </div-->
+</section>
+
+                    <!--====================================================================================================-->
+
+
+
+                </div>   <!-- content-wrapper -->
+              
+        <footer></footer>            
+    
+
+
+        <script src="assets/js/jquery-1.11.1.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/d3.min.js"></script>
+        <!--script src="assets/js/dygraph-combined-dev.js"></script-->
+
+        <script src="JS/ev_pca.js"></script>  
+        <script src="JS/main.js"></script>
+        <script src="JS/get_data.js"></script>
+
+        <script src="JS/pca_data.js"></script>
+        <script src="JS/ev_raw_data1.js"></script>
+        <script src="JS/evb_basic.js"></script>
+
+
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("nav").html(Setnav());
+                $("footer").html(Setfooter());
+                $("#pca").removeClass("btn-wb").addClass("btn-wb-active");
+            });
+        </script>
+        <script type="text/javascript">
+        $(window).load(function () {
+
+            $("#eig1").append("<h3>Cumulative Scree plot</h3>");
+          Simple_bar_chart("eig1", pca_eig, "PC", "nds_wt_cumvariance", 600, 250)
+          //  Simple_bar_chart("eig1", pca_eig, "PC", "nd_wt_cumvariance", 300, 150)
+          //  Simple_bar_chart("eig1", pca_eig, "PC", "nd_cumvariance", 300, 150)
+          //  Simple_bar_chart("eig1", pca_eig, "PC", "nw_cumvariance", 300, 150)
+
+            pca_rotations = pca_rotations.map(function (d, i) {
+                return {
+                    index: i + 1,
+                    nds_wt_PC1: d.nds_wt_PC1,
+                    nds_wt_PC2: d.nds_wt_PC2,
+                    nds_wt_PC3: d.nds_wt_PC3,
+                    nds_wt_PC4: d.nds_wt_PC4,
+                    nds_wt_PC5: d.nds_wt_PC5,
+                    nds_wt_PC6: d.nds_wt_PC6,
+                    nds_wt_PC7: d.nds_wt_PC7,
+                    nds_wt_PC8: d.nds_wt_PC8,
+                    nds_wt_PC9: d.nds_wt_PC9,
+                    nds_wt_PC10: d.nds_wt_PC10
+                };
+            });
+
+            $("#rotations1").append("<h3>PC1</h3>");
+            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC1", 1080, 220)
+            $("#rotations1").append("<h3>PC2</h3>");
+            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC2", 1080, 220)
+            $("#rotations1").append("<h3>PC3</h3>");
+            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC3", 1080, 220)
+            $("#rotations1").append("<h3>PC4</h3>");
+            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC4", 1080, 220)
+            $("#rotations1").append("<h3>PC5</h3>");
+            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC5", 1080, 220)
+            $("#rotations1").append("<h3>PC6</h3>");
+            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC6", 1080, 220)
+            $("#rotations1").append("<h3>PC7</h3>");
+            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC7", 1080, 220)
+            $("#rotations1").append("<h3>PC8</h3>");
+            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC8", 1080, 220)
+            $("#rotations1").append("<h3>PC9</h3>");
+            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC9", 1080, 220)
+            $("#rotations1").append("<h3>PC10</h3>");
+            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC10", 1080, 220)
+
+            var pca_sensor = outliers_matrix.filter(function (d) { return d.sensor_id == 13343; });
+
+          //  console.log(pca_sensor);
+            
+            a = [];
+            b = [];
+
+           for (var j = 0; j < x.length; j++) {  //
+                b = [];
+                b.push(+pca_sensor[0]["DN_PC1"]);
+                b.push(+pca_sensor[0]["DN_PC2"]);
+                a.push(b);
+            }
+
+        });
+        </script>
+    </body>
+</html>

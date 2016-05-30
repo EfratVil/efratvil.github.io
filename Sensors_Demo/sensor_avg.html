@@ -1,0 +1,222 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Demo</title>
+        <style>
+            body {
+                font: 10px sans-serif;
+            }
+
+            .axis  {
+                font-size: 12px;
+            }
+
+            .axis path,
+            .axis line {
+                fill: none;
+                stroke: #000;
+                shape-rendering: crispEdges;
+            }
+            svg {
+                margin: 5px;
+            }
+
+            div.tooltip {
+                position: absolute;
+                max-width: 200px;
+                height: auto;
+                padding: 5px;
+                background-color: white;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                pointer-events: none; /* MUI IMPORTANTE! */
+                font-family: sans-serif;
+                font-size: 12px;
+            }
+
+            #Indicator_explain {
+                padding: 0px 12px 0px 24px;
+                height: 50px;
+                width: 900px;
+            }
+                          .tick line{
+                                 opacity: 0.8;
+                                 stroke: gray;
+                          }
+
+        </style>
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet" />
+        <link href="assets/css/isotope.css" rel="stylesheet" />
+        <link href="assets/css/charts.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav></nav>                   
+                <div class="content-wrapper">
+                    <section class="section2" style="padding-top: 15px">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2>Sensors Location Estimates</h2><br />
+                                </div>
+                            </div> 
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div id="charts"></div>
+                                    <!--<a href="#" id="btn_GD" class="btn btn-info filter">Analyze</a>-->
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="alert alert-info"  style="background-color: #F5F5F5; border-color: gray;">
+                                        <strong>Methods for Location Estimate</strong>
+                                        <ul>
+                                            <li>
+                                                <strong>Mean</strong>
+                                            </li>
+                                            <li>
+                                                <strong>Median</strong>
+                                            </li>
+                                            <li>
+                                                <strong>MCD</strong> - Minimum Covariance Determinant
+                                            </li>
+                                            <li>
+                                                <strong>MVE</strong> - Minimum Volume Ellipsoid
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+                                    <div class="alert alert-info" style="background-color: #F5F5F5; border-color: gray;">
+                                        <strong>MCD & MVE Explanation</strong>
+                                        <ul>
+                                            <li>
+                                                <strong>MCD</strong> - Minimum Covariance Determinant<br />
+                                                The MCD estimator searches for the half of the data that is most tightly clustered together among all subsets containing half of the data, 
+                                                as measured by the generalized variance. Once an approximation of the subset of half of the data has been determined that minimizes the
+                                                generalized variance, compute the usual mean and covariance matrix based on this subset. This yields the MCD estimate of location and scatter.
+
+                                            </li>
+                                            <li>
+                                                <strong>MVE</strong> - Minimum Volume Ellipsoid<br />
+                                                Consider any ellipsoid containing half of the data. The basic idea is to search among all such ellipsoids for the one having the smallest volume. 
+                                                Once this subset is found, the mean and covariance matrix of the corresponding points are taken as the estimated measure of location and scatter, respectively.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+
+                                <br /><br />
+
+                            </div>
+
+                    </section>
+                    <!--==========================================================================-->
+
+                    <section id="section1">
+                            
+                    </section>
+
+                    <!--====================================================================================================-->
+
+                </div>   <!-- content-wrapper -->
+       
+        <br/><br />    
+        <footer></footer>            
+    
+        <script src="assets/js/jquery-1.11.1.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/d3.min.js"></script>
+        <script src="assets/js/isotope.pkgd.min.js"></script>
+
+        <script src="JS/main.js"></script>
+        <script src="JS/get_data.js"></script>
+        <script src="JS/evb_basic.js"></script>
+
+
+        <script type="text/javascript">
+
+
+            var data1;
+            d3.csv('data/raw/location_Week9.csv', function(data) {
+                data1 = data;
+                readyCheck('file1');
+            })
+
+            var readyFiles = { 'file1': false };
+
+            function readyCheck(filename) {
+                readyFiles[filename] = true;
+
+                if (readyFiles['file1']==true) {
+
+                    var ll1 = data1.map(function (d, i) {
+                        return {
+                            id: i + 1,
+                            mean: +d.mean,
+                            median: +d.median,
+                            mve: +d.mve,
+                            mcd: +d.mcd
+                        };
+                    });
+
+                    $("#charts").html("");
+
+                    $("#charts").append("<div class='info-box' id='l0'><h4>Comparing different Location Estimates</h4></div>");
+                    d3mv_MultiLine_chart({ data: ll1, chart: "l0", x_ds: "id", width: 600, height: 300 });
+
+                    var ll2 = data1.map(function (d, i) {
+                        return {
+                            id: i + 1,
+                            mean: +d.mean - d.mean,
+                            median: +d.median - d.mean,
+                            mve: +d.mve - d.mean,
+                            mcd: +d.mcd - d.mean
+                        };
+                    });
+
+                    $("#charts").append("<div class='info-box' id='l0a'><h4>Location Estimates Compared to the Mean</h4></div>");
+                    d3mv_MultiLine_chart({ data: ll2, chart: "l0a", x_ds: "id", width: 600, height: 300 });
+
+                    $("#charts").append("<h3>Pairs Comparison</h3>");
+                    // Location
+                    $("#charts").append("<div class='info-box' id='l1'><h4>Mean vs Median - (Dist " + arrays_distance(ds_col_to_array(ll1, "mean"), ds_col_to_array(ll1, "median")) + ")</h4></div>");
+                    create_Line_chart_2_vars({ data: ll1, chart: "l1", x_ds: "id", y1_ds: "mean", y2_ds: "median", width: 600, height: 250 });
+
+                    $("#charts").append("<div class='info-box' id='l2'><h4>Median vs mcd - (Dist " + arrays_distance(ds_col_to_array(ll1, "median"), ds_col_to_array(ll1, "mcd")) + ")</h4></div>");
+                    create_Line_chart_2_vars({ data: ll1, chart: "l2", x_ds: "id", y1_ds: "mcd", y2_ds: "median", width: 600, height: 250 });
+
+                    $("#charts").append("<div class='info-box' id='l3'><h4>Median vs mve - (Dist " + arrays_distance(ds_col_to_array(ll1, "median"), ds_col_to_array(ll1, "mve")) + ")</h4></div>");
+                    create_Line_chart_2_vars({ data: ll1, chart: "l3", x_ds: "id", y1_ds: "mve", y2_ds: "median", width: 600, height: 250 });
+
+                    $("#charts").append("<div class='info-box' id='l4'><h4>mve vs mcd - (Dist " + arrays_distance(ds_col_to_array(ll1, "mve"), ds_col_to_array(ll1, "mcd")) + ")</h4></div>");
+                    create_Line_chart_2_vars({ data: ll1, chart: "l4", x_ds: "id", y1_ds: "mve", y2_ds: "mcd", width: 600, height: 250 });
+
+                    }
+            }
+
+           
+
+
+</script>
+        
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("nav").html(Setnav());
+                $("footer").html(Setfooter());
+                $("#Corr_Matrix").removeClass("btn-wb").addClass("btn-wb-active");
+            });
+        </script>
+
+
+    </body>
+</html>

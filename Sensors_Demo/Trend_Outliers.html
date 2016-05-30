@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>MSPC Demo - Sensors</title>
+	<meta charset="utf-8" />
+    <link href="assets/css/isotope.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link href="assets/css/tables.css" rel="stylesheet" />
+    <link href="assets/css/charts.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Trend Outliers - Week 9</h1>
+    <br/>
+    <div id="sorts" class="button-group">
+        <button class="button" id="btn_H400">Show Graphs</button>   
+        <br /><br />      
+    </div>
+    <br/><br />
+    <div id="trends"></div>
+    <div id="graphs"></div>
+
+    <script src="assets/js/jquery-1.11.1.js"></script>
+    <script src="assets/js/d3.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/2.5.0/math.min.js"></script> <!-- !!!!!!!Todo -->
+    <!--<script src="JS/ev_data.js"></script>
+    <script src="JS/ev_js_data.js"></script>-->
+    <script src="JS/get_data.js"></script>
+    <script src="JS/evb_basic.js"></script>
+
+    <script>
+        function color_class(Flag, Method) {
+            var color = "";
+            switch (Method) {
+                case "b":          // binary flag. 0 - ok, 1 - issue
+                    switch (Flag) {
+                        case 0:
+                            color = "green";  // Good
+                            break;
+                        default:
+                            color = "red";  // Flag
+                    }
+                    break;
+                case "s":          // binary flag. 0 - ok, 1 - issue
+
+                    if (Flag < 3) {
+                        color = "green";  // Good
+                    }
+                    else {
+                        color = "red";  // Flag
+                    }               
+                    break;
+                case "c":          // binary flag. 0 - ok, 1 - issue
+
+                    if (Flag < 2.25) {
+                        color = "green";  // Good
+                    }
+                    else {
+                        color = "red";  // Flag
+                    }
+                    break;
+                default:
+                    color = "black";
+                    break;
+            }
+            return color;
+        }
+
+        function color_td(Flag, Method) {
+            var color = "";
+            switch (Method) {
+                case "b":          // binary flag. 0 - ok, 1 - issue
+                    switch (Flag) {
+                        case 0:
+                            color = "td_green";  // Good
+                            break;
+                        default:
+                            color = "td_red";  // Flag
+                    }
+                    break;
+                case "s":          // binary flag. 0 - ok, 1 - issue
+
+                    if ((Flag < 3) && (Flag > -3)) {
+                        color = "td_green";  // Good
+                    }
+                    else {
+                        color = "td_red";  // Flag
+                    }
+                    break;
+                case "c":          // binary flag. 0 - ok, 1 - issue
+
+                    if (Flag < 2.25) {
+                        color = "td_green";  // Good
+                    }
+                    else {
+                        color = "td_red";  // Flag
+                    }
+                    break;
+                default:
+                    color = "black";
+                    break;
+            }
+            return color;
+        }
+
+        $("#btn_H400").click(function () {
+
+            console.log(dsp);
+            var sensor_id_ = [];
+            var value_ = [];
+
+            // create ds of the last hour of the last day (placed at row 168 of each sensor)
+            // Object.keys(raw_wide_nor_value[0]) - contains string of col names (sensors)
+                for (var j = 1; j < Object.keys(dsp[0]).length   -1; j++) {
+                  //  id_.push(j);
+                    sensor_id_.push(Object.keys(dsp[0*i])[j]);
+                    value_.push(dsp[167+167*i][Object.keys(dsp[10])[j]]);
+                }
+                               
+                var data = sensor_id_.map(function (d, i) {
+                    return {
+                        id: i + 1,
+                        sensor_id: sensor_id_[i],
+                        value: value_[i]
+                    };
+                });
+
+            //delete temp arrays
+                sensor_id_ = [];
+                value_ = [];
+    
+               // Line_chart_time_ID("trends", data, "id", "value", 600, 250);
+                create_spc_plot("trends", data, "id", "value", 700, 350, 125, 207.546);
+                var outliers = data.filter(function (d) { return d.value < (125 - 3 * 207.546) });
+
+                $("#graphs").append("<h3>Lower</h3>");
+
+                for (var i = 0; i < outliers.length; i++) {
+                    $("#graphs").append("<h4>Sensor: " + outliers[i].sensor_id + "  Trend: " + outliers[i].value + "</h4>");
+                    jjj = outliers[i].sensor_id;
+                    var lll = raw_wide_nor_value.map(function (d, i) {
+                        return {
+                            index: i + 1,
+                            value: d[jjj]
+                        };
+                    });
+                    Line_chart_time_ID("graphs", lll, "index", "value", 300, 180);
+                }
+
+                $("#graphs").append("</br></br><h3>Higher</h3>");
+
+                outliers = data.filter(function (d) { return d.value > (125 + 3 * 207.546) });
+
+                for (var i = 0; i < outliers.length; i++) {
+                    $("#graphs").append("<h4>Sensor: " + outliers[i].sensor_id + "  Trend: " + outliers[i].value + "</h4>");
+                    jjj = outliers[i].sensor_id;
+                    var lll = raw_wide_nor_value.map(function (d, i) {
+                        return {
+                            index: i + 1,
+                            value: d[jjj]
+                        };
+                    });
+                    Line_chart_time_ID("graphs", lll, "index", "value", 300, 180);
+                }
+        });
+
+        //$(document).ready(function () {
+        //   // $("#aa").html(ww_dd());                  
+        //});
+
+    </script>
+
+</body>
+</html>

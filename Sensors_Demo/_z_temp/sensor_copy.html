@@ -1,0 +1,151 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Assets Visualization Demo</title>
+        <style>
+            body {
+                font: 10px sans-serif;
+            }
+
+            .axis  {
+                font-size: 12px;
+            }
+
+            .axis path,
+            .axis line {
+                fill: none;
+                stroke: #000;
+                shape-rendering: crispEdges;
+            }
+            svg {
+                margin: 5px;
+            }
+
+            div.tooltip {
+                position: absolute;
+                max-width: 200px;
+                height: auto;
+                padding: 5px;
+                background-color: white;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                pointer-events: none; /* MUI IMPORTANTE! */
+                font-family: sans-serif;
+                font-size: 12px;
+            }
+
+            #Indicator_explain {
+                padding: 0px 12px 0px 24px;
+                height: 50px;
+                width: 900px;
+            }
+                          .tick line{
+                                 opacity: 0.8;
+                                 stroke: gray;
+                          }
+
+        </style>
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet" />
+        <link href="assets/css/isotope.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav></nav>   
+                        
+                <div class="content-wrapper">
+                    <section class="section2" style="padding-top: 15px">
+                        <div class="container">
+                            <div class="row">                           
+                                <div class="col-md-12">                          
+                                    <div class="row" id="info_box">
+                                        <h2>All sensors view</h2><br/>
+                                        <div class="col-md-8">
+                                            <div class="alert alert-info">
+                                                fghfgh
+                                                <br>
+                                                fghfgh.<br>
+                                                <strong>fghfgh:</strong>
+                                                <ul>
+                                                    <li>
+                                                        aaaa
+                                                    </li>
+                                                    <li>
+                                                       bbbb
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="alert alert-info">
+                                                dfgdfgdffgdffgdgf?
+                                                <br>
+                                                <strong> dfgdfg?</strong>
+                                                <ul>
+                                                    <li>
+                                                        nnnnnnn 
+                                                    </li>
+                                                    <li>
+                                                       mmmmmmmmmm
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#" id="btn_charts" class="btn btn-info filter">Show Charts</a>
+                                </div>                          
+                            </div>
+
+                        </div>
+                    </section>
+                    <!--==========================================================================-->
+
+                    <section id="section1">
+                            <div class="row">
+                                    <div id="Grid" style="margin-left: 40px; margin-right: 40px;">
+                            </div>
+                        </div>
+                    </section>
+
+                    <!--====================================================================================================-->
+
+                </div>   <!-- content-wrapper -->
+       
+        <br/><br />    
+        <footer></footer>            
+    
+        <script src="assets/js/jquery-1.11.1.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/d3.min.js"></script>
+        <script src="assets/js/isotope.pkgd.min.js"></script>
+
+        <script src="JS/main.js"></script>
+        <script src="JS/get_data.js"></script>
+        <script src="JS/evb_basic.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("nav").html(Setnav());
+                $("footer").html(Setfooter());
+                $("#Corr_Matrix").removeClass("btn-wb").addClass("btn-wb-active");
+            });
+        </script>
+
+        <script type="text/javascript">
+
+        $(window).load(function () {
+
+            $("#btn_charts").click(function () {
+              
+            });
+        });
+        </script>
+    </body>
+</html>

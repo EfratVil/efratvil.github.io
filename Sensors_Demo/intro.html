@@ -1,0 +1,113 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Demo</title>
+        <!--<style>
+            body {
+                font: 10px sans-serif;
+            }
+
+            .axis  {
+                font-size: 12px;
+            }
+
+            .axis path,
+            .axis line {
+                fill: none;
+                stroke: #000;
+                shape-rendering: crispEdges;
+            }
+
+            /*.dot {
+                stroke: #f46d43;
+            }*/
+
+            svg {
+                margin: 5px;
+            }
+
+            div.tooltip {
+                position: absolute;
+                max-width: 200px;
+                height: auto;
+                padding: 5px;
+                background-color: white;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                pointer-events: none; /* MUI IMPORTANTE! */
+                font-family: sans-serif;
+                font-size: 12px;
+            }
+
+            #Indicator_explain {
+                padding: 0px 12px 0px 24px;
+                height: 50px;
+                width: 900px;
+            }
+                          .tick line{
+                                 opacity: 0.8;
+                                 stroke: gray;
+                          }
+
+        </style>-->
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav></nav>                      
+                <div class="content-wrapper">
+                    <section class="section2">
+                        <div class="container">
+                            <div class="row">
+                                <h1>Introduction</h1>
+
+                                <br />
+                                <h3>Robust Multivariate Statistics in Interactive Dashboards for  Remote Operations Centers.</h3>
+                                <h4>The Precision Agriculture Demo</h4>
+                                <br />
+                                <strong>Problem: </strong>Transforming raw streaming sensors data into actionable dashboards
+                                <br />
+                                <strong> Solution: </strong> Data preprocessing with Multivariate statistical process control and robust statistics methods.
+                                <br/><br />
+                                <strong>Visual interactive dashboards to:</strong>
+                        <ul>
+                            <li>Assist non statistics savvy operators to achieve situation awareness and take informed decisions.</li>
+                            <li>Help analysts to decide on best models and fine tune parameters.</li>
+                            <li>Create feedback loop Between operators and analysts.</li>
+                        </ul>
+
+
+</div>
+                        </div>
+                    </section>
+                    <!--==========================================================================-->
+
+                </div>   <!-- content-wrapper -->
+       
+        <br/><br />    
+        <footer></footer>            
+    
+        <script src="assets/js/jquery-1.11.1.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/d3.min.js"></script>
+
+        <script src="JS/main.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("nav").html(Setnav());
+                $("footer").html(Setfooter());
+                $("#intro").removeClass("btn-wb").addClass("btn-wb-active");
+            });
+        </script>
+
+    </body>
+</html>

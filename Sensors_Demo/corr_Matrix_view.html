@@ -1,0 +1,102 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Assets Visualization Demo</title>
+        <style>
+            body {
+                margin: 0;
+            }
+
+            svg {
+                display: block;
+                margin: auto;
+            }
+
+            text {
+                font-size: 10px;
+            }
+
+            row.active, column.active {
+                color: blue;
+            }
+
+            line {
+                stroke: #fff;
+                stroke-width: 1px;
+            }
+        </style>
+    
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet" />
+        <link href="assets/css/isotope.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav></nav>   
+                        
+                <div class="content-wrapper">
+                    <section class="section2" style="padding-top: 15px">
+                        <div class="container">
+                            <div class="row">                           
+                                <div class="col-md-12">
+                                    <div class="row" id="info_box">
+                                        <h2>Correlation Matrix</h2><br />
+                                           <div class="col-md-6">
+                                            <div class="alert alert-info" style="background-color: #F5F5F5; border-color: gray;">
+                                                Based on Correlation of ~400 sensors. 168 Hourly measures (1 week)
+                                                <br>
+                                               Using Robust metod for calculating correlation, to elliminte outliers impact.
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="alert alert-info" style="background-color: #F5F5F5; border-color: gray;">
+                                                Legend:
+                                                <br>
+                                                Blue - High Correlation, White - no Correlation, Red - Negative Correlation
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div> <br /><br />
+                                </div>                          
+                            </div>
+
+                    </section>
+                    <!--==========================================================================-->
+
+                    <section id="section1">
+                            <div id="charts">
+                         
+                        </div>
+                    </section>
+
+                    <!--====================================================================================================-->
+
+                </div>   <!-- content-wrapper -->
+       
+        <br/><br />    
+       
+    
+        <script src="assets/js/jquery-1.11.1.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/d3.min.js"></script>
+
+        <script src="JS/main.js"></script>
+        <!--<script src="JS/get_data.js"></script>-->
+        <!--<script src="JS/evb_basic.js"></script>-->
+        <script src="JS/Draw_corr_matrix.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("nav").html(Setnav());
+                $("footer").html(Setfooter());
+                $("#Corr_Matrix").removeClass("btn-wb").addClass("btn-wb-active");
+            });
+        </script>
+
+    </body>
+</html>

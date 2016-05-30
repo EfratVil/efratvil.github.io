@@ -1,0 +1,251 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Sensors Demo</title>
+        <style>
+            body {
+                font: 10px sans-serif;
+            }
+
+            .axis  {
+                font-size: 12px;
+            }
+
+            .axis path,
+            .axis line {
+                fill: none;
+                stroke: #000;
+                shape-rendering: crispEdges;
+            }
+
+            .dot {
+                stroke: #f46d43;
+            }
+
+            svg {
+                margin: 5px;
+            }
+
+            div.tooltip {
+                position: absolute;
+                max-width: 200px;
+                height: auto;
+                padding: 5px;
+                background-color: white;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                pointer-events: none; /* MUI IMPORTANTE! */
+                font-family: sans-serif;
+                font-size: 12px;
+            }
+
+            #Indicator_explain {
+                padding: 0px 12px 0px 24px;
+                height: 50px;
+                width: 900px;
+            }
+
+
+        </style>
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav></nav>   
+                        
+
+                <div class="content-wrapper">
+
+                    <section class="section2">
+                        <div class="container">
+
+                            <div class="row">
+
+                                <div class="col-md-8">
+                                    <!--Select Week:
+                                    <select id="week">
+                                        <option value="Week1">Week1</option>
+                                        <option value="Week2">Week2</option>
+                                        <option value="Week3">Week3</option>
+                                        <option value="Week4">Week4</option>
+                                        <option value="Week5">Week5</option>
+                                        <option value="Week6">Week6</option>
+                                        <option value="Week7">Week7</option>
+                                        <option value="Week8">Week8</option>
+                                        <option selected value="Week9">Week9</option>
+                                        <option value="Week10">Week10</option>
+                                        <option value="Week11">Week11</option>
+                                        <option value="Week12">Week12</option>
+                                        <option value="Week13">Week13</option>
+                                        <option value="Week14">Week14</option>
+                                        <option value="Week15">Week15</option>
+
+                                    </select>-->
+
+
+                                    Select PC X:
+                                    <select id="pcx">
+                                        <option selected value="PC1">PC1</option>
+                                        <option value="PC2">PC2</option>
+                                        <option value="PC3">PC3</option>
+                                        <option value="PC4">PC4</option>
+                                        <option value="PC5">PC5</option>
+                                        <option value="PC6">PC6</option>
+                                        <option value="PC7">PC7</option>
+                                        <option value="PC8">PC8</option>
+                                        <option value="PC9">PC9</option>
+                                        <option value="PC10">PC10</option>
+                                    </select>
+
+
+                                    Select PC Y:
+                                    <select id="pcy">
+                                        <option value="PC1">PC1</option>
+                                        <option selected value="PC2">PC2</option>
+                                        <option value="PC3">PC3</option>
+                                        <option value="PC4">PC4</option>
+                                        <option value="PC5">PC5</option>
+                                        <option value="PC6">PC6</option>
+                                        <option value="PC7">PC7</option>
+                                        <option value="PC8">PC8</option>
+                                        <option value="PC9">PC9</option>
+                                        <option value="PC10">PC10</option>
+                                    </select>
+
+                                </div>
+                                <div class="col-md-4">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </section>
+                    <!--==========================================================================-->
+
+                    <section id="section1">
+                        <div class="container">
+
+                            <div class="row">
+                                <div class="col-md-8">
+                            
+                                    <div id="y_asset_lbl" style="margin-left: 52px; position: relative; top: 30px;"></div>
+                                    <div id="x_asset_lbl" style="margin-left: 560px;  position: relative; top: 450px; width: 120px; text-align: right;"></div>
+
+                                    <svg id="chart"></svg>
+                                                                       
+                                </div>
+
+                                
+
+                                    <div class="col-md-3">
+
+                                        <div class="info" style="width:100%; margin-left: 20px; border-width: 1px; border-color: #847C77; margin-top: 0px; padding-top: 10px; padding-bottom: 20px;">
+                                            <div><p id="sensor_name" style="display: inline">Hover over a point to see sensor details</p><p id="sensor_id" style="display: inline;"></p></div>
+
+                                            <!--<h5 id="raw_graph" style="margin-bottom: 0px;"></h5>-->
+                                            <div id="graphdiv5" style="width:100%; height:140px;"></div>
+                                            <br/><br />
+                                            <!--<h5 id="nds_wt_graph" style="margin-bottom: 0px; margin-top: 22px;"></h5>-->
+                                            <div id="graphdiv6" style="width:100%; height:140px;"></div>
+                                        </div>
+                                    </div>
+
+                                   
+                              
+
+
+
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <!--====================================================================================================-->
+
+                </div>   <!-- content-wrapper -->
+       
+            
+        <footer></footer>            
+    
+
+
+        <script src="assets/js/jquery-1.11.1.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/d3.min.js"></script>
+        <!--script src="assets/js/dygraph-combined-dev.js"></script-->
+
+
+        <script src="JS/ev_pca_sd.js"></script>  
+        <script src="JS/main.js"></script>
+        <script src="JS/get_data.js"></script>
+        <script src="JS/pca_data.js"></script>
+        <script src="JS/ev_raw_data1.js"></script>
+        <script src="JS/evb_basic.js"></script>
+
+
+
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("nav").html(Setnav());
+                $("footer").html(Setfooter());
+                $("#btn_Regression").removeClass("btn-wb").addClass("btn-wb-active");
+            });
+        </script>
+        <script type="text/javascript">
+        $(window).load(function () {
+
+            get_raw_ww($("#week").val());
+            console.log($("#week").val());
+            
+        $("#week").change(function () {
+
+            get_raw_ww($("#week").val());
+            console.log($("#week").val());
+
+        });
+
+
+        //    a = [];
+        //    b = [];
+        //    var x = raw_ww.filter(function (d) { return d.sensor_id == $("#sensor_id").text(); });  //
+
+        //    for (var j = 0; j < x.length; j++) {
+        //        b = [];
+        //        b.push(new Date(x[j]["datetime"]));
+        //        b.push(x[j]["value"]);
+        //        a.push(b);
+        //    }
+
+        //    g5 = new Dygraph(document.getElementById("graphdiv5"),a,  { labels: ["date", "value"] });
+
+
+        //    a = [];
+        //    b = [];
+        //    var x = raw_ww.filter(function (d) { return d.sensor_id == $("#sensor_id").text() && d.gap < 200 && d.gap > -200; });  //
+
+        //    for (var j = 0; j < x.length; j++) {
+        //        b = [];
+        //        b.push(new Date(x[j]["datetime"]));
+        //        b.push(x[j]["gap"]);
+        //        a.push(b);
+        //    }
+
+        //    g5 = new Dygraph(document.getElementById("graphdiv6"), a, { labels: ["date", "gap"] });
+
+     
+
+
+        });
+        </script>
+    </body>
+</html>

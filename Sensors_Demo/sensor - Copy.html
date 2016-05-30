@@ -1,0 +1,290 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Sensors Demo</title>
+        <style>
+            body {
+                font: 10px sans-serif;
+            }
+
+            .axis  {
+                font-size: 12px;
+            }
+
+            .axis path,
+            .axis line {
+                fill: none;
+                stroke: #000;
+                shape-rendering: crispEdges;
+            }
+            svg {
+                margin: 5px;
+            }
+
+            div.tooltip {
+                position: absolute;
+                max-width: 200px;
+                height: auto;
+                padding: 5px;
+                background-color: white;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                pointer-events: none; /* MUI IMPORTANTE! */
+                font-family: sans-serif;
+                font-size: 12px;
+            }
+
+            #Indicator_explain {
+                padding: 0px 12px 0px 24px;
+                height: 50px;
+                width: 900px;
+            }
+                          .tick line{
+                                 opacity: 0.8;
+                                 stroke: gray;
+                          }
+
+        </style>
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet" />
+        <link href="assets/css/isotope.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav></nav>   
+                        
+                <div class="content-wrapper">
+                    <section class="section2" style="padding-top: 15px">
+                        <div class="container">
+                            <div class="row">                           
+                                <div class="col-md-12">
+                                    <div class="row" id="info_box">
+                                        <h2>Sensor details</h2><br />
+                                        <div class="col-md-8">
+                                            <h4 style="display:inline;">Sensor ID:</h4>&nbsp;&nbsp;
+                                            <input type="text" ID="Sensor_input" style="height: 28px; width:100px;">&nbsp;&nbsp;
+
+                                            <a href="#" id="btn_GD" class="btn btn-info filter">Analyze</a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="alert alert-info">
+                                                dfgdfgdffgdffgdgf?
+                                                <br>
+                                                <strong> dfgdfg?</strong>
+                                                <ul>
+                                                    <li>
+                                                        nnnnnnn
+                                                    </li>
+                                                    <li>
+                                                        mmmmmmmmmm
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div> <br /><br />
+                                </div>                          
+                            </div>
+
+                    </section>
+                    <!--==========================================================================-->
+
+                    <section id="section1">
+                            <div id="charts">
+                         
+                        </div>
+                    </section>
+
+                    <!--====================================================================================================-->
+
+                </div>   <!-- content-wrapper -->
+       
+        <br/><br />    
+        <footer></footer>            
+    
+        <script src="assets/js/jquery-1.11.1.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/d3.min.js"></script>
+        <!--<script src="assets/js/isotope.pkgd.min.js"></script>-->
+
+        <script src="JS/main.js"></script>
+        <script src="JS/get_data.js"></script>
+        <script src="JS/evb_basic.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("nav").html(Setnav());
+                $("footer").html(Setfooter());
+                $("#Corr_Matrix").removeClass("btn-wb").addClass("btn-wb-active");
+            });
+        </script>
+
+        <script type="text/javascript">
+
+ $(document).ready(function () {
+
+     function ds_col_to_array(ds, col) {
+         var col_arr = [];
+
+         for (var i = 0; i < ds.length; i++) {
+             col_arr.push(+ds[i][col]);
+         }
+
+         return col_arr;
+     }
+
+     function arrays_diff(array1, array2) {
+         var arrays_diff = [];
+         
+        // console.log(array1);
+
+         for (var i = 0; i < array1.length; i++) {
+             arrays_diff.push(array1[i] - array2[i]);
+         }
+
+         return arrays_diff;
+     }
+
+     function arrays_distance(array1, array2) {
+         var arrays_dist=0;
+
+         
+
+         for (var i = 0; i < array1.length; i++) {
+             arrays_dist += (array1[i] - array2[i]) * (array1[i] - array2[i]);
+         }
+        // console.log(arrays_dist);
+         return Math.sqrt(arrays_dist).toFixed(1);
+     }
+
+
+            (function ($) {
+                $.QueryString = (function (a) {
+                    if (a == "") return {};
+                    var b = {};
+                    for (var i = 0; i < a.length; ++i) {
+                        var p = a[i].split('=');
+                        if (p.length != 2) continue;
+                        b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+                    }
+                    return b;
+                })(window.location.search.substr(1).split('&'))
+            })(jQuery);
+
+            if ($.QueryString["sensor_id"] != "") {
+                $("#Sensor_input").val($.QueryString["sensor_id"]);
+            }
+      
+
+            $("#btn_GD").click(function () {
+
+                var ds1 = dsp.filter(function (d) { return d.sensor_id == $("#Sensor_input").val(); });
+                // console.log(ds1);
+                sensors_ds = ds1.map(function (d, i) {
+                    return {
+                        index: i + 1,
+                        A_nor_value: +d.nor_value,
+                        Mean_A_nor_value: d3.mean(ds1, function (d) { return d.nor_value; }),
+                        A_nor_daily: +d.nor_daily,
+                        Mean_A_nor_daily: d3.mean(ds1, function (d) { return d.nor_daily; }),
+                        A_nd_wt_value: +d.nd_wt_value,
+                        Mean_A_nd_wt_value: d3.mean(ds1, function (d) { return d.nd_wt_value; }),
+                        A_nds_wt_value: +d.nds_wt_value,
+                        Mean_A_nds_wt_value: d3.mean(ds1, function (d) { return d.nds_wt_value; })
+                    };
+                });
+
+
+
+
+                var ll1 = ll.map(function (d, i) {
+                    return {
+                        index: i + 1,
+                        mean: +d.mean,
+                        median: +d.median,
+                        mve: +d.mve,
+                        mcd: +d.mcd,
+                        sensor: +d[$("#Sensor_input").val()]
+                    };
+                });
+
+              //  var arr1 =
+
+              // console.log(arrays_diff(ds_col_to_array(ll1, "sensor"),ds_col_to_array(ll1, "mve")));
+               // console.log(arrays_distance(ds_col_to_array(ll1, "sensor"), ds_col_to_array(ll1, "mve")));
+
+                
+                //console.log(ds_col_to_array(ll1, "mve"));
+               // console.log(ds_col_to_array(ll1, "sensor"));
+
+                $("#charts").html("");
+
+                // Correlation Matrix Graph
+                cm1 = cm.map(function (d, i) {
+                    return {
+                        x: i + 1,
+                        y: cm[i][$("#Sensor_input").val()]
+                    };
+                });
+
+                cm1.sort(function (a, b) { return (b.y) - (a.y); });
+
+                $("#charts").append("<div class='info-box' id='g0'><h4>Corr</h4></div>");
+                Simple_bar_chart1("g0", cm1, "x", "y", 1080, 220)
+
+
+                // Location
+            //    $("#charts").append("<div class='info-box' id='l1'><h4>MVE - (Dist " + arrays_distance(ds_col_to_array(ll1, "sensor"), ds_col_to_array(ll1, "mve")) + ")</h4></div>");
+                //create_Linr_chart_2_vars("l1", ll1, "index", "sensor", "mve", 650, 260);
+             //   create_Line_chart_2_vars({ data: ll1, chart: "l1", x_ds: "index", y1_ds: "sensor", y2_ds: "mve", width: 650, height: 260 });
+
+
+                $("#charts").append("<div class='info-box' id='l2'><h4>MCD - (Dist " + arrays_distance(ds_col_to_array(ll1, "sensor"), ds_col_to_array(ll1, "mcd")) + ")</h4></div>");
+//                create_Linr_chart_2_vars("l2", ll1, "index", "sensor", "mcd", 650, 260);
+                create_Line_chart_2_vars({ data: ll1, chart: "l2", x_ds: "index", y1_ds: "sensor", y2_ds: "mcd", width: 650, height: 260 });
+
+
+               // $("#charts").append("<div class='info-box' id='l3'><h4>Mean - (Dist " + arrays_distance(ds_col_to_array(ll1, "sensor"), ds_col_to_array(ll1, "mean")) + ")</h4></div>");
+//                create_Linr_chart_2_vars("l3", ll1, "index", "sensor", "mean", 650, 260);
+               // create_Line_chart_2_vars({ data: ll1, chart: "l3", x_ds: "index", y1_ds: "sensor", y2_ds: "mean", width: 650, height: 260 });
+
+
+             //   $("#charts").append("<div class='info-box' id='l4'><h4>Median - (Dist " + arrays_distance(ds_col_to_array(ll1, "sensor"), ds_col_to_array(ll1, "median")) + ")</h4></div>");
+//                create_Linr_chart_2_vars("l4", ll1, "index", "sensor", "median", 650, 260);
+              //  create_Line_chart_2_vars({ data: ll1, chart: "l4", x_ds: "index", y1_ds: "sensor", y2_ds: "median", width: 650, height: 260 });
+
+
+
+                            $("#charts").append("<div class='info-box' id='g1'><h4>Raw</h4></div>");
+                //d3mv_Line_chart({ data: res, chart: "g1", x_ds: "index", y_ds: "value", width: 800, height: 240 });
+             //   create_Linr_chart_2_vars("g1", sensors_ds, "index", "A_nor_value", "Mean_A_nor_value", 650, 260);
+                create_Line_chart_2_vars({ data: sensors_ds, chart: "g1", x_ds: "index", y1_ds: "A_nor_value", y2_ds: "Mean_A_nor_value", width: 650, height: 260 });
+
+
+                //$("#charts").append("<div class='info-box' id='g2'><h4>Daily Raw</h4></div>");
+                //create_Linr_chart_2_vars("g2", sensors_ds, "index", "A_nor_daily", "Mean_A_nor_daily", 650, 260);
+
+                $("#charts").append("<div class='info-box' id='g3'><h4>Daily Raw without Trend</h4></div>");
+                create_Line_chart_2_vars({ data: sensors_ds, chart: "g3", x_ds: "index", y1_ds: "A_nd_wt_value", y2_ds: "Mean_A_nd_wt_value", width: 650, height: 260 });
+
+                // create_Linr_chart_2_vars("g3", sensors_ds, "index", "A_nd_wt_value", "Mean_A_nd_wt_value", 650, 260);
+
+                $("#charts").append("<div class='info-box' id='g4'><h4>Standardized Daily Raw without Trend</h4></div>");
+                create_Line_chart_2_vars({ data: sensors_ds, chart: "g4", x_ds: "index", y1_ds: "A_nds_wt_value", y2_ds: "Mean_A_nds_wt_value", width: 650, height: 260 });
+
+                //  create_Linr_chart_2_vars("g4", sensors_ds, "index", "A_nds_wt_value", "Mean_A_nds_wt_value", 650, 260);
+
+
+
+            });
+        });
+        </script>
+    </body>
+</html>

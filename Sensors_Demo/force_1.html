@@ -1,0 +1,240 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Assets Visualization Demo</title>
+        <style>
+            .node {
+                stroke: #fff;
+                stroke-width: 1.5px;
+            }
+
+            .link {
+                stroke: #999;
+                stroke-opacity: .6;
+                stroke-width: 0px;
+            }
+        </style>
+
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet" />
+        <link href="assets/css/isotope.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav></nav>   
+                        
+                <div class="content-wrapper">
+                    <section class="section2" style="padding-top: 15px">
+                        <div class="container">
+                            <div class="row">                           
+                                <div class="col-md-12">
+                                    <div class="row" id="info_box">
+                                        <h2>Force</h2><br />
+                                        <div class="col-md-8">
+                                            <a href="#" id="btn_GD" class="btn btn-info filter">Analyze</a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="alert alert-info">
+                                                dfgdfgdffgdffgdgf?
+                                                <br>
+                                                <strong> dfgdfg?</strong>
+                                                <ul>
+                                                    <li>
+                                                        nnnnnnn
+                                                    </li>
+                                                    <li>
+                                                        mmmmmmmmmm
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div> <br /><br />
+                                </div>                          
+                            </div>
+
+                    </section>
+                    <!--==========================================================================-->
+
+                    <section id="section1">
+                            <div id="charts">
+                         
+                        </div>
+                    </section>
+
+                    <!--====================================================================================================-->
+
+                </div>   <!-- content-wrapper -->
+       
+        <br/><br />    
+       
+    
+        <script src="assets/js/jquery-1.11.1.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/d3.min.js"></script>
+        <!--<script src="assets/js/isotope.pkgd.min.js"></script>-->
+
+        <script src="JS/main.js"></script>
+        <script src="JS/get_data.js"></script>
+        <script src="JS/evb_basic.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("nav").html(Setnav());
+                $("footer").html(Setfooter());
+                $("#Corr_Matrix").removeClass("btn-wb").addClass("btn-wb-active");
+            });
+        </script>
+
+        <script type="text/javascript">
+
+ $(document).ready(function () {
+       
+
+
+
+
+            $("#btn_GD").click(function () {
+
+                outliers_matrix = outliers_matrix.map(function (d, i) {
+                    return {
+                        index: i + 1,
+                        sensor_id: +d.sensor_id,
+                        grade_auto: d.grade_auto,
+                        name: d.sensor_id
+
+                    };
+                });
+
+
+                //function get_node_data(node) {
+                   
+                //}
+
+
+                links = edges;
+                links = edges.map(function (d, i) {
+                    return {
+                        source: +d.source,
+                        target: +d.targt,
+                        value: +d.value,
+                        index: i + 1
+                        
+                    };
+                });
+
+               var nodes = outliers_matrix.filter(function (d) { return d.index < 101 });
+
+             //   console.log(outliers_matrix);
+               // console.log(edges);
+//                $("#charts").append("<div class='info-box' id='g0'><h4>Corr</h4></div>");
+//                Simple_bar_chart1("g0", cm1, "x", "y", 1080, 220)
+
+               
+
+
+
+                var width = 960,
+                    height = 500;
+
+                var svg = d3.select("#charts").append("svg")
+                    .attr("width", width)
+                    .attr("height", height);
+
+                var dist = d3.scale.linear().range([600, 0]);
+                dist.domain([-1, 1]);
+
+
+                var force = d3.layout.force()
+                    .charge(-120)
+                .linkDistance(function (d) { return dist(d.value); })
+                    .size([width, height]);
+
+
+
+                
+                    var nodesByName = {};
+
+                    // Create nodes for each unique source and target.
+                    links.forEach(function (link) {
+                        link.source = nodeByName(link.source);
+                        link.target = nodeByName(link.target);
+      
+                    });
+
+                    console.log(links);
+                   
+
+                    // Extract the array of nodes from the map by name.
+                    var nodes = d3.values(nodesByName);
+                    console.log(nodes);
+                    nodes = nodes.map(function (d, i) {
+                        return {
+                            index:+d.index,
+                            name: +d.name,
+                            px: +d.px,
+                            py: +d.py,
+                            x: +d.x,
+                            y: +d.y,
+                            weight: i,
+                            grade_auto: outliers_matrix[i]["grade_auto"]
+                        };
+                    });
+
+
+                    console.log(nodes);
+
+                    // Create the link lines.
+                    var link = svg.selectAll(".link")
+                        .data(links)
+                      .enter().append("line")
+                        .attr("class", "link");
+
+                    // Create the node circles.
+                    var node = svg.selectAll(".node")
+                        .data(nodes)
+                      .enter().append("circle")
+                        .attr("class", "node")
+                         .attr("r", 4.5)
+                    .style("fill", function (d) {
+                      if (d.grade_auto == "Good") { return "green"; }
+                      if (d.grade_auto == "Outlier") { return "red"; }
+                      else { return "orange"; }
+                  })
+ 
+               
+               
+               
+                        // .style("fill", function (d) { return "red"; })
+                        .call(force.drag);
+
+                    // Start the force layout.
+                    force
+                        .nodes(nodes)
+                        .links(links)
+                        .on("tick", tick)
+                        .start();
+
+                    function tick() {
+                        link.attr("x1", function (d) { return d.source.x; })
+                            .attr("y1", function (d) { return d.source.y; })
+                            .attr("x2", function (d) { return d.target.x; })
+                            .attr("y2", function (d) { return d.target.y; });
+
+                        node.attr("cx", function (d) { return d.x; })
+                            .attr("cy", function (d) { return d.y; });
+                    }
+
+                    function nodeByName(name) {
+                        return nodesByName[name] || (nodesByName[name] = { name: name });
+                    }
+             
+
+            });
+        });
+        </script>
+    </body>
+</html>

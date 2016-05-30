@@ -1,0 +1,183 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Demo</title>
+        <style>
+            body {
+                font: 10px sans-serif;
+            }
+
+            .axis  {
+                font-size: 12px;
+            }
+
+            .axis path,
+            .axis line {
+                fill: none;
+                stroke: #000;
+                shape-rendering: crispEdges;
+            }
+
+            /*.dot {
+                stroke: #f46d43;
+            }*/
+
+            svg {
+                margin: 5px;
+            }
+
+            div.tooltip {
+                position: absolute;
+                max-width: 200px;
+                height: auto;
+                padding: 5px;
+                background-color: white;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                pointer-events: none; /* MUI IMPORTANTE! */
+                font-family: sans-serif;
+                font-size: 12px;
+            }
+
+            #Indicator_explain {
+                padding: 0px 12px 0px 24px;
+                height: 50px;
+                width: 900px;
+            }
+                          .tick line{
+                                 opacity: 0.8;
+                                 stroke: gray;
+                          }
+
+        </style>
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav></nav>   
+                        
+                <div class="content-wrapper">
+                    <section class="section2">
+                        <div class="container">
+
+                            <div class="row">
+
+                                <div class="col-md-8">
+                                    <h2>Correlation Matrix Method</h2>
+                                    <br/> Color:
+                                    <select id="dot_colors">
+                                        <option selected value="Original">Grade</option>
+                                        <option value="PC10">PC10</option>
+                                        <option value="T2">T2</option>
+                                        <option value="CM">CM</option>
+                                        <!--<option value="T2_MDS">T2 MDS</option>
+                                        <option value="T2_Growth">T2 Growth</option>-->
+                                    </select>
+
+                                    &nbsp;&nbsp; X:
+                                    <select id="x">
+                                        <option value="nds_wt_T2">T2</option>
+                                        <option value="nds_wt_PC_dist_10">PC10</option>
+                                        <option selected value="nds_wt_CM_Avg_Sum">S</option>
+                                        <option value="nds_wt_CM_Avg_Sum_Square">SS</option>
+                                        <option value="nds_wt_CM_T2">CM</option>
+                                    </select>
+
+                                    &nbsp;&nbsp; Y:
+                                    <select id="y">
+                                        <option value="nds_wt_T2">T2</option>
+                                        <option value="nds_wt_PC_dist_10">PC10</option>
+                                        <option value="nds_wt_CM_Avg_Sum">S</option>
+                                        <option selected value="nds_wt_CM_Avg_Sum_Square">SS</option>
+                                        <option value="nds_wt_CM_T2">CM</option>
+                                    </select>
+                                </div>                          
+                            </div>
+
+                        </div>
+                    </section>
+                    <!--==========================================================================-->
+
+                    <section id="section1">
+                        <div class="container">
+
+                            <div class="row">
+                                <div class="col-md-8">
+                            
+                                    <div id="y_asset_lbl" style="margin-left: 52px; position: relative; top: 30px;"></div>
+                                    <div id="x_asset_lbl" style="margin-left: 560px;  position: relative; top: 450px; width: 120px; text-align: right;"></div>
+
+                                    <svg id="chart"></svg>
+                                                                       
+                                </div>
+
+                                <div class="col-md-4">
+
+                                    <div class="info" style="width:100%; margin-left: 20px; border-width: 1px; border-color: #847C77; padding-top: 20px; padding-bottom: 20px;">
+                                        <div>Sensor ID: <p id="sensor_id" style="display: inline;"></p></div>
+                                        <!--a href="#" id="btn_Sensor" class="btn">Go</a-->
+                                        <div id="graphdiv5" style="width:100%; height:150px;"></div>
+                                        <br/>
+                                        <div id="graphdiv6" style="width:100%; height:150px;"></div>
+                                        <br/>
+                                        
+                                        <!--p id="Intercept" style="display: inline;"></p>
+                                        <p id="rSquare" style="display: inline;"></p-->
+                                    </div>
+
+                                   
+                                 </div>
+
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!--====================================================================================================-->
+
+                </div>   <!-- content-wrapper -->
+       
+        <br/><br />    
+        <footer></footer>            
+    
+        <script src="assets/js/jquery-1.11.1.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/d3.min.js"></script>
+        <!--script src="assets/js/dygraph-combined-dev.js"></script-->
+
+
+        <script src="JS/main.js"></script>
+        <script src="JS/get_data.js"></script>
+        <script src="JS/Corr_Matrix.js"></script> 
+        <script src="JS/evb_basic.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("nav").html(Setnav());
+                $("footer").html(Setfooter());
+                $("#Corr_Matrix").removeClass("btn-wb").addClass("btn-wb-active");
+            });
+        </script>
+        <script type="text/javascript">
+        $(window).load(function () {
+            
+        $("#week").change(function () {          
+           // get_ds_ww($("#week").val());
+           // get_outliers($("#week").val());
+            get_ds_ww("Week9");
+            get_outliers("Week9");
+        });
+
+        });
+        </script>
+    </body>
+</html>
