@@ -41,7 +41,7 @@ function Setheader() {
                       "           <li><a href='sensor_avg.html'>'Avg' Sensor</a></li>" +
                       "           <li><a href='Outliers.html'>Finding Outliers</a></li>" +
                       "           <li><a href='sensor.html?sensor_id=12890'>Sensor details</a></li>" +
-                      "           <li><a href='../sensors/trend_outliers.html'>Trend Outliers</a></li>" +
+                      "           <li><a href='Trend_Outliers.html'>Trend Outliers</a></li>" +
                       "         </ul>" +
                       "</div>" +
                       "<button type='button' class='btn btn-primary'><a id='Hotelling' href='Hotelling.html' style='color:white;'>Hotelling</a></button>" +
