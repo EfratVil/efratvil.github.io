@@ -50,8 +50,8 @@ function Setheader() {
                       "            PCA <span class='caret'></span>" +
                       "       </button>" +
                       "         <ul class='dropdown-menu' role='menu'>" +
-                      "           <li><a href='PCA.html'>10 pc's Dist</a></li>" +
-                      "           <li><a href='PCA_sd.html'>PCA pairs</a></li>" +
+                      "           <li><a href='pca.html'>10 pc's Dist</a></li>" +
+                      "           <li><a href='pca_sd.html'>PCA pairs</a></li>" +
                       "         </ul>" +
                       "</div>" +
                       "<div class='btn-group'>" +
