@@ -1,0 +1,302 @@
+﻿<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Interactive Charts Demo</title>
+
+		<meta name="description" content="Presentation powered by reveal.js">
+		<meta name="author" content="Efrat Vilenski">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <link href='//fonts.googleapis.com/css?family=Salsa' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>Interactive Charts</h1>
+					<h3>Demo</h3>
+                    <br/><br /><br />
+					<p style="color: black">
+						Created by Efrat Vilenski, Oct 2016 / @efratvil
+					</p>
+				</section>
+
+
+				<section>
+                    <br/><br />
+					<h2>Interactive charts building blocks</h2>
+                    <h3>are simple...</h3>
+					<!--<p>
+                        <iframe src="http://efratvil.github.io/d3_demo/1_collision/index.html" width="800px" height="480px" scrolling="No"></iframe>  
+					</p>-->
+				</section>
+
+				<section>
+					<h2>The basic Objects: </h2>
+                    <p>
+                        <iframe src="../1_basic_objects/index.html" width="800px;" height="480px;" scrolling="No"></iframe>
+                    </p>
+				</section>
+
+                <section>
+                    <h2>Change Colors: </h2>
+                    <p>
+                        <iframe src="../2_change_colors/index.html" width="800px;" height="480px;" scrolling="No"></iframe>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Change Opacity: </h2>
+                    <p>
+                        <iframe src="../1_4_change_opacity/index.html" width="800px;" height="480px;" scrolling="No"></iframe>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Change Size: </h2>
+                    <p>
+                        <iframe src="../3_change_size/index.html" width="800px;" height="480px;" scrolling="No"></iframe>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Change Location: </h2>
+                    <p>
+                        <iframe src="../4_change_location/index.html" width="800px;" height="480px;" scrolling="No"></iframe>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Change Shape: </h2>
+                    <p>
+                        <iframe src="../5_change_shape/index.html" width="800px;" height="480px;" scrolling="No"></iframe>
+                    </p>
+                </section>               
+
+                <section>
+                    <h2>Data Binding</h2>
+                    <p>
+                        <a class="jsbin-embed" href="http://jsbin.com/jegotinejo/1/embed?output" >JS Bin on jsbin.com</a>
+                        <script src="http://static.jsbin.com/js/embed.min.js?3.35.12"  ></script>
+                        
+                    </p>
+                </section>
+
+                <!-- ====================================================================================  -->
+                
+                <section>
+                    <h1>1) Interactivity Within Charts</h1>
+                </section>
+
+                <section>
+                    <h2>Zoom In / Out</h2>
+                    <p>
+                        <iframe src="../2_1_scatter_zoom.html" width="1000px" height="520px" style="background: white" scrolling="No"></iframe>
+                        <a class="Link1" href="https://plot.ly/" target="_blank">Library - plotly</a> 
+                    </p>
+                </section>
+
+
+                <section>
+                    <h2>Change Data</h2>
+                    <p>
+                        <iframe src="http://efratvil.github.io/d3_demo/2_line_Chart/index.html" width="1000px" height="520px" style="background: white" scrolling="No"></iframe>
+                        <a class="Link1" href="https://bl.ocks.org/mbostock/3903818" target="_blank">Source - mbostock</a>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Series Selection</h2>
+                    <p>
+                        <iframe src="../2_3_Series_selection/stackedAreaChart.html" width="1000px" height="520px" style="background: white" scrolling="No"></iframe>
+                        <a class="Link1" href="http://nvd3.org/index.html" target="_blank">Library - NVD3</a>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Stacked Bar - Sorting</h2>
+                    <p>
+                        <iframe src="http://efratvil.github.io/d3_demo/3_Stacked_bar/index.html" width="1000px" height="520px" style="background: white" scrolling="No"></iframe>
+                        <a class="Link1" href="http://bl.ocks.org/datapixie/5986521" target="_blank">Source - datapixie</a>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>3D rotation</h2>
+                    <p>
+                        <iframe src="../2_3_3d_rotation/01_basics.html" width="1000px" height="520px" style="background: white" scrolling="No"></iframe>
+                        <a class="Link1" href="http://visjs.org/" target="_blank">Library - vis.js</a>
+
+                    </p>
+                </section>
+
+                
+
+                <!--<section>
+                    <h2>Filtering - Wheel Chart</h2>
+                    <p>
+                        <iframe src="http://efratvil.github.io/d3_demo/2_line_Chart/index.html" width="1000px" height="520px" style="background: white" scrolling="No"></iframe>
+                        <a class="Link1" href="https://bl.ocks.org/mbostock/3903818" target="_blank">Source - mbostock</a>
+                    </p>
+                </section>-->
+                <section>
+                    <h2>Network grouping</h2>
+                    <p>
+                        <iframe src="../3_8_Network_Group_ungroup/index.html" width="1000px" height="520px" style="background: white" scrolling="No"></iframe>
+                        Source - <a class="Link1" href="http://bl.ocks.org/larskotthoff/4e5dbf8be2c83631a05b" target="_blank">larskotthoff</a> & 
+                        <a class="Link1" href="http://bl.ocks.org/GerHobbelt/3071239" target="_blank">GerHobbelt</a>
+                    </p>
+                </section>
+
+                <!-- ====================================================================================  -->
+                <section>
+                    <h1>2) Interactivity Across Multiple Charts</h1>
+                </section>
+
+
+                <section>
+                    <h2>Linked views</h2>
+                    <p>
+                        <iframe src="../EDA_Climate_flexboard.html" width="1000px" height="520px" style="background: white" scrolling="No"></iframe>
+                    </p>
+                </section>
+
+
+                <section>
+                    <h2>Connected zoom</h2>
+                    <p>
+                        <iframe src="../2_4_Connected_zoom/index.html" width="1000px" height="520px" style="background: white" scrolling="No"></iframe>
+                        <a class="Link1" href="http://bl.ocks.org/curran/cf4b98fff0517ca04667" target="_blank">Source - curran</a>
+                    </p>
+                    
+                </section>
+
+
+                <section>
+                    <h2>Brush focus bar</h2>
+                    <p>
+                        <iframe src="../2_2_brushable_bar_chart/index.html" width="1000px" height="520px" style="background: white" scrolling="No"></iframe>
+                        <a class="Link1" href="http://bl.ocks.org/nbremer/4c015860931fb6a13afc7bac51f40b43" target="_blank">Source - nbremer</a>
+                    </p>
+                </section>
+                 
+
+                <section>
+                    <h2>Details on demand</h2>
+                    <p>
+                        <iframe src="../2_4_Corr_Matrix/Correlation.html" width="1000px" height="520px" style="background: white" scrolling="No"></iframe>
+
+                    </p>
+                </section>                
+
+
+                <!-- ====================================================================================  -->
+                
+                
+                <section>
+                    <h1>3)Dynamic Dashboards</h1>
+                </section>
+                <section>
+                    <h2>Filters</h2>
+                    <p>
+                        <iframe src="../3_1_objects_filters/index.html" width="1000px" height="520px" style="background: white" scrolling="No"></iframe>                        
+                    </p>
+                </section>
+                <section>
+                    <h2>Filter & sort</h2>
+                    <p>
+                        <iframe src="../3_2_objects_sorting/index_1.html" width="1000px" height="520px" style="background: white" scrolling="No"></iframe>
+                        <a class="Link1" href="http://isotope.metafizzy.co/" target="_blank">Library - isotope.js</a>
+                    </p>
+                </section>
+                <section>
+                    <h2>Details on demand</h2>
+                    <p>
+                        <iframe src="../3_3_dynamic_objects/index.html" width="1000px" height="520px" style="background: white" scrolling="No"></iframe>
+                        <a class="Link1" href="http://masonry.desandro.com/" target="_blank">Library - masonry.js</a>
+                    </p>
+                </section>
+                
+                
+              
+			
+
+
+                <section>
+                    <h2>Visual Analytics Mantra</h2>
+                    <br/>
+                    <h3 style="color:#f46d43">Analyze First</h3>
+                    <h3>Show the Important</h3>
+                    <h3>Zoom, Filter and Analyze Further</h3>
+                    <h3>Details on Demand</h3>
+                </section>
+                
+
+
+                <!-- ====================================================================================  -->
+
+				<section>
+                    <br/><br /><br />
+					<h1>THE END</h1>
+					
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

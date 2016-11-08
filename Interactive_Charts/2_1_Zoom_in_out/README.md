@@ -1,0 +1,1 @@
+Using [d3-brush](https://github.com/d3/d3-brush) to zoom to the brushed region. Double-click or double-tap to zoom out. Another approach is to use [Focus + Context](/mbostock/34f08d5e11952a80609169b7917d4172).

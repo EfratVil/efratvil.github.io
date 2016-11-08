@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Use RequireJS for module loading. -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.js"></script>
+
+    <!-- Configure AMD modules. -->
+    <script>
+      requirejs.config({
+        paths: {
+          d3: "//d3js.org/d3.v3.min",
+          jquery: "//code.jquery.com/jquery-2.1.1.min"
+        }
+      });
+    </script>
+
+    <!-- Include CSS that styles the visualization. -->
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Scatter Plot</title>
+  </head>
+  <body>
+
+    <!-- The visualization will be injected into this div. -->
+    <div id="container"></div>
+    
+    <!-- Run the main program. -->
+    <script src="main.js"></script>
+
+  </body>
+</html>

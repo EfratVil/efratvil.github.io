@@ -1,0 +1,56 @@
+/* Remove the default margin. */
+body {
+  margin: 0px;
+}
+
+/* Make the visualization container fill the page. */
+#container {
+
+  /* Use the default size from bl.ocks.org */
+  width: 960px;
+  height: 500px;
+}
+
+/* Put a border around each plot. */
+svg {
+  border-style: solid;
+  border-color: lightgray;
+  border-width: 1px;
+}
+
+/* Style the visualization. Draws from http://bl.ocks.org/mbostock/3887118 */
+
+/* Tick mark labels */
+.axis .tick text {
+  font: 8pt sans-serif;
+}
+
+/* Axis labels */
+.axis text {
+  font: 14pt sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width: 1.5px;
+}
+
+.title-text {
+  text-anchor: middle;
+  font: 24pt sans-serif;
+}
+
+/* Style the brush. Draws from http://bl.ocks.org/mbostock/4343214 */
+.brush .extent {
+  stroke: gray;
+  fill-opacity: .125;
+  shape-rendering: crispEdges;
+}

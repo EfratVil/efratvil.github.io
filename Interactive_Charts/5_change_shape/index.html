@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <div style="margin-left: 150px; margin-top: 2px;">
+        <button id="btn" type="button" class="btn btn-info btn-sm" style="font-size: 20px;">Square</button>&nbsp;
+        <button id="btn1" type="button" class="btn btn-info btn-sm" style="font-size: 20px;">Circle</button>
+
+    </div>
+    <div id="objects"></div>
+    
+    <script>
+var width = 800,
+    height = 480;
+
+var svg = d3.select("#objects").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+d3.select("body").select("svg").append("rect")
+.attr("rx", 100)
+.attr("ry", 100)
+.attr("x", 100)
+.attr("y", 100)
+.attr("width", 150)
+.attr("height", 150)
+.attr("stroke", "black")
+.style("fill", "#f46d43");
+
+d3.select("body").select("svg").append("rect")
+.attr("rx", 100)
+.attr("ry", 100)
+.attr("x", 300)
+.attr("y", 100)
+.attr("width", 150)
+.attr("height", 150)
+.attr("stroke", "black")
+.style("fill", "#f46d43");
+
+d3.select("body").select("svg").append("rect")
+.attr("rx", 100)
+.attr("ry", 100)
+.attr("x", 500)
+.attr("y", 100)
+.attr("width", 150)
+.attr("height", 150)
+.attr("stroke", "black")
+.style("fill", "#f46d43");
+
+
+d3.select("#btn").on("click", function () {
+
+    d3.selectAll("rect")
+    .transition()
+    .duration(1500)
+    .attr("rx", 0)
+    .attr("ry", 0);
+});
+
+
+d3.select("#btn1").on("click", function () {
+
+    d3.selectAll("rect")
+    .transition()
+    .duration(1500)
+    .attr("rx", 100)
+    .attr("ry", 100);
+});
+
+
+    </script>
+</body>

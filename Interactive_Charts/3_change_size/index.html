@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <div id="objects"></div>
+    <div style="margin-left: 150px; margin-top: 2px;">
+        <button id="btn" type="button" class="btn btn-info btn-sm" style="font-size: 20px;">Change Size</button>
+    </div>
+    <script>
+var width = 800,
+    height = 340;
+
+var svg = d3.select("#objects").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+//Make a circles
+svg.append("circle")
+    .attr("cx", width/6)
+    .attr("cy", 200)
+    .attr("r", 60)
+    .attr('id', "c1")
+    .style("opacity", 1.0)
+    .style("fill", "#f46d43");
+
+svg.append("circle")
+.attr("cx", 2*width / 6)
+.attr("cy", 200)
+.attr("r", 60)
+.style("opacity", 1.0)
+.style("fill", "#f46d43");
+
+svg.append("circle")
+    .attr("cx", 3*width / 6)
+    .attr("cy", 200)
+    .attr("r", 60)
+    .style("opacity", 1.0)
+    .style("fill", "#f46d43");
+
+svg.append("circle")
+    .attr("cx", 4*width / 6)
+    .attr("cy", 200)
+    .attr("r", 60)
+    .style("opacity", 1.0)
+    .style("fill", "#f46d43");
+
+svg.append("circle")
+    .attr("cx", 5*width / 6)
+    .attr("cy", 200)
+    .attr("r", 60)
+    .style("opacity", 1.0)
+    .style("fill", "#f46d43");
+
+function getRandomSize() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 12)]; //16
+    }
+    return color;
+}
+
+// Change color
+d3.select("#btn").on("click", function () {
+
+    var size = Math.floor(Math.random() * 60);
+
+            svg.selectAll('circle')
+                    .transition()
+                    .duration(1500)
+                    .ease(d3.easeLinear)
+                    .attr("r", function (d) { return 10 + size; });
+});
+
+
+    </script>
+</body>

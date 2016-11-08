@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <title></title>
+</head>
+
+<style>
+   
+    h2 {
+        text-align:center;
+        font-weight: bold;
+    }
+    
+     .card {
+        display: inline-block;
+        width: 80px;
+        min-height: 100px;
+        background-color: #fff;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        padding: 0px;
+        border-radius: 3px;
+        -webkit-box-shadow: 0 1px 0px rgba(0,0,0,0.05);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.2s ease-in-out;
+    }
+
+        .card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        }
+</style>
+
+<body>
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <select id='group'>
+        <option selected value='All'>All</option> +
+        <option value='A'>A</option>
+        <option value='B'>B</option>
+        <option value='C'>C</option>
+    </select> <br/><br />
+    
+    <div id="content">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+    </div>
+
+    <div id="menu">
+        <button onClick="doUpdate();">Update</button>
+    </div>
+      
+    <script>
+        var data = [
+          { "name": "A", "score": "#74add1" },
+          { "name": "B", "score": "#fdae61" },
+          { "name": "C", "score": "#fee090" },
+          { "name": "A", "score": "#74add1" },
+          { "name": "B", "score": "#fdae61" },
+          { "name": "C", "score": "#fee090" },
+          { "name": "A", "score": "#74add1" },
+          { "name": "C", "score": "#fee090" },
+          { "name": "A", "score": "#74add1" },
+          { "name": "B", "score": "#fdae61" },
+          { "name": "C", "score": "#fee090" },
+          { "name": "A", "score": "#74add1" },
+          { "name": "C", "score": "#fee090" },
+          { "name": "A", "score": "#74add1" },
+          { "name": "C", "score": "#fee090" },
+          { "name": "B", "score": "#fdae61" }
+        ];
+        var data1;
+
+
+
+        function doUpdate() {
+
+            var t = d3.transition()
+              .duration(3000)
+               .ease(d3.easeLinear);
+
+            var cards = d3.select('#content')
+               .selectAll('div');
+               
+
+            //cards
+            //    .transition()
+            //    .duration(750)
+            //    .ease(d3.easeLinear)
+            //    .style('background-color', function (d) { if (d.name == "A") { return "orange" } else { return "grey" } });
+            // // .style('visibility', function (d) { if (d.name == "A") { return "visible" } else { return "hidden" } });
+
+            //cards
+            //    .transition()
+            //    .delay(1200)
+            //    .duration(750)
+            //    .ease(d3.easeLinear)
+            //   // .style('background-color', function (d) { if (d.name == "A") { return "orange" } else { return "grey" } });
+            // .style('visibility', function (d) { if (d.name == "A") { return "visible" } else { return "hidden" } });
+
+
+
+            data1 = data.filter(function (d) { return d.name == "A"; });
+            cards.data(data1);
+
+            cards.exit()
+.transition(t)
+ .style('background-color', "gray")
+ .style("fill-opacity", 1e-6)
+.remove();
+
+            //cards.exit()
+            //        .transition()
+            //        .delay(1200)
+            //        .duration(750)
+            //      //   .style('background-color', "gray")
+            //         .style("fill-opacity", 1e-6)
+            //        // .style('visibility', "visible")
+            //        .remove();
+
+        }
+
+
+   function update(data, filter) {
+
+       var t = d3.transition()
+      .duration(750)
+       .ease(d3.easeLinear);
+
+       if (filter == "All")
+          { data1 = data; }
+       else
+          { data1 = data.filter(function (d) { return d.name == filter; }); }
+    
+        var cards = d3.select('#content')
+          .selectAll('div')
+          .data(data1);
+              
+
+     //   text.exit()
+     //  .attr("class", "exit")
+     //.transition(t)
+     //  .attr("y", 60)
+     //  .style("fill-opacity", 1e-6)
+     //  .remove();
+
+
+       // EXIT old elements
+        cards.exit()
+        //.transition(t)
+         .style('background-color', "gray")
+         .style("fill-opacity", 1e-6)
+        .remove();
+
+       // ENTER new elements
+        cards.enter()
+         .append('div')
+         .attr("class", "card")
+         .merge(cards)           
+         .html(function (d) { return "<h2>" + d.name + "</h2>"; })
+          //  .transition()
+          //  .delay(1000)
+          //.duration(2000)
+          //.ease(d3.easeLinear)  
+         .style('background-color', function (d) { return d.score; });
+         //.transition(t);
+
+
+
+}
+
+update(data, "All");
+
+
+d3.select("#group").on("change", change)
+function change() {
+    //alert(this.options[this.selectedIndex].value);
+    update(data, this.options[this.selectedIndex].value);
+    
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <style>
+        .card {
+                display: inline-block;
+                width: 150px;
+                min-height:200px;
+                background-color: #fff;
+
+                margin-bottom: 20px;
+                margin-right: 20px;
+                padding: 0px;
+    
+                border-radius: 3px;
+                -webkit-box-shadow: 0 1px 0px rgba(0,0,0,0.05);
+                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+                transition: all 0.2s ease-in-out;
+            }
+
+        .card:hover {
+               box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            }
+    </style>
+
+</head>
+<body>
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <div id="content">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+   
+<script>
+var width = 800,
+    height = 480;
+
+var data = ['A', 'B', 'C', 'D', 'E'];
+//var data = [
+//  {  "name": "A", "score": "cornflowerblue" },
+//  {  "name": "B", "score": "green" },
+//  { "name": "C", "score": "green" },
+//  { "name": "A", "score": "cornflowerblue" },
+//    { "name": "C", "score": "cornflowerblue" },
+//  {  "name": "B", "score": "cornflowerblue" }
+//];
+
+
+d3.select('#content')
+  .selectAll('div')
+  .data(data)
+  .enter()
+  .append('div');
+
+//d3.selectAll('div')
+//  .data(scores)
+//    .html(function (d) { return d.name; })// 'background-color', function (d) { return d.score; })
+//    .style('background-color', function (d) { return d.score; })
+//.enter()
+//.append('div ');
+
+
+
+</script>
+</body>

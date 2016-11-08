@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <div id="objects"></div>
+<script>
+var width = 800,
+    height = 480;
+
+var svg = d3.select("#objects").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+//Make a line
+svg.append("line")
+   .style("stroke", "black")  // line color
+   .style("stroke-width", "5")
+   .attr("x1", 10)
+   .attr("y1", 10)
+   .attr("x2", 180)
+   .attr("y2", 130);
+
+//Make a circle
+svg.append("circle")
+    .attr("cx", 100)
+    .attr("cy", 250)
+    .attr("r", 70)
+    .style("opacity", 1.0)
+    .style("fill", "#f46d43");
+
+//Make a triangle 
+svg.append('polyline')
+.attr('points', '220 150, 260 50, 360 150')
+.style('fill', '#3c763d');
+
+
+//Make a rectangle
+svg.append("rect")
+    .attr("x", 240)
+    .attr("y", 250)
+    .attr("width", 200)
+    .attr("height", 120)
+    .style("opacity", 1.0)
+    .style("fill", "#74add1");
+
+
+//Make an ellipse
+svg.append("ellipse")
+    .attr("cx", 560)
+    .attr("cy", 200)
+    .attr("rx", 70)
+    .attr("ry", 100)
+    .style("opacity", 1.0)
+    .style("fill", "#66bd63");
+
+
+</script>
+</body>

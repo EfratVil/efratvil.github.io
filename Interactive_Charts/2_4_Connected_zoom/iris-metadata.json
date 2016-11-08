@@ -1,0 +1,22 @@
+{
+  "sepal_length":{
+    "type": "Q",
+    "label": "sepal length (cm)"
+  },
+  "sepal_width": {
+    "type": "Q",
+    "label": "sepal width (cm)"
+  },
+  "petal_length": {
+    "type": "Q",
+    "label": "petal length (cm)"
+  },
+  "petal_width": {
+    "type": "Q",
+    "label": "petal width (cm)"
+  },
+  "class": {
+    "type": "N",
+    "label": "species"
+  }
+}
