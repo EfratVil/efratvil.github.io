@@ -1,150 +1,201 @@
 ﻿<!DOCTYPE html>
 <meta charset="utf-8">
 <p id="g1"></p>
-<p id="g3"></p>
-<script src="//d3js.org/d3.v4.min.js"></script>
-<script>
-
-        var data = [],
-            random = d3.randomNormal();
-
-        for (i = 0; i < 120; i++) {
-            data.push({
-                id: i + 1,
-                y: random()
-            });
+<head>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 14px;
         }
-     
+
+        div.tooltip {
+            position: absolute;
+            max-width: 200px;
+            height: auto;
+            padding: 5px;
+            background-color: white;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+            -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+            pointer-events: none; /* MUI IMPORTANTE! */
+            font-family: sans-serif;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <script>
+
+        // Create data
+        function randomData(samples) {
+            var data = [],
+                random = d3.randomNormal();
+
+            for (i = 0; i < samples; i++) {
+                data.push({
+                    x: random(),
+                    y: random()
+                });
+            }
+            return data;
+        }
+
+        var data = randomData(300);
+       // var data = [{ "x": 0, "y": 0 }, { "x": 1, "y": 1 }, { "x": 2, "y": 2 }, { "x": 3, "y": 3 }, { "x": 4, "y": 4 }]
+        //console.log(data);
+
         var margin = { top: 20, right: 20, bottom: 30, left: 30 };
-        width = 500 - margin.left - margin.right,
-        height = 300 - margin.top - margin.bottom;
+        width = 900 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+
+        var tooltip = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
 
         var x = d3.scaleLinear()
-            .range([0, width]);
+              .range([0, width])
+              .nice();
 
         var y = d3.scaleLinear()
             .range([height, 0]);
-    
+
         var xAxis = d3.axisBottom(x).ticks(12),
             yAxis = d3.axisLeft(y).ticks(12 * height / width);
+
 
         var brush = d3.brush().extent([[0, 0], [width, height]]).on("end", brushended),
             idleTimeout,
             idleDelay = 350;
 
 
-        function Create_scatter(chart) {
+        var svg = d3.select("body").append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                    .append("g")
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-            var svg = d3.select("#" + chart).append("svg")
-                        .attr("id", chart + "_svg")
-                        .attr("width", width + margin.left + margin.right)
-                        .attr("height", height + margin.top + margin.bottom)
-                        .append("g")
-                        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        var clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width )
+            .attr("height", height )
+            .attr("x", 0) // - margin.left+20
+            .attr("y", 0); //- margin.top+20
 
-            x.domain(d3.extent(data, function (d) { return d.id; })).nice();
-            
-            y.domain([d3.min(data, function (d) { return d.y; }), d3.max(data, function (d) { return d.y; })]).nice();
+        var xExtent = d3.extent(data, function (d) { return d.x; });
+        var yExtent = d3.extent(data, function (d) { return d.y; });
+        x.domain(d3.extent(data, function (d) { return d.x; })).nice();
+        y.domain(d3.extent(data, function (d) { return d.y; })).nice();
 
-            svg.selectAll(".dot")
-                .data(data)
-              .enter().append("circle")
-                .attr("class", "dot")
-                .attr("r", 4)
-                .attr("cx", function (d) { return x(d.id); })
-                .attr("cy", function (d) { return y(d.y); })
-                .attr("opacity", 0.8)
-                .style("fill", "#4292c6");
+        var scatter = svg.append("g")
+             .attr("id", "scatterplot")
+             .attr("clip-path", "url(#clip)");
+             //.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-            svg.append("g")
-                .attr("class", "axis axis--x")
-                .attr("transform", "translate(0," + (height) + ")")
-                .call(xAxis);
+        //scatter.append("svg:rect")
+        //       .attr("class", "border")
+        //       .attr("width", width)
+        //       .attr("height", height)
+        //       .attr("x", 0 - margin.left)
+        //       .attr("y", 0 - margin.top)
+        //       .style("stroke", "black")
+        //       .style("fill", "none");
 
-            svg.append("g")
-                .attr("class", "axis axis--y")
-                .call(yAxis);
+        scatter.selectAll(".dot")
+            .data(data)
+          .enter().append("circle")
+            .attr("class", "dot")
+            .attr("r", 4)
+            .attr("cx", function (d) { return x(d.x); })
+            .attr("cy", function (d) { return y(d.y); })
+            .attr("opacity", 0.5)
+            .style("fill", "#4292c6");
+      //  .on("mouseover", function (d) {
+      //      //alert("sdfsdf");
+      //      tooltip.transition()
+      //        .duration(500)
+      //        .style("opacity", .9);
+      //      tooltip.html("<strong>x: " + d.x + "</strong> <br/><strong>y: " + d.y + "</strong>")
+      //         .style("left", (d3.event.pageX) + "px")
+      //         .style("top", (d3.event.pageY - 28) + "px");
+      //  })
+      //.on("mouseout", function (d) {
+      //    tooltip.transition()
+      //      .duration(500)
+      //      .style("opacity", 0);
+      //});
 
-            svg.selectAll(".domain")
-                .style("display", "none");
+        // x axis
+        svg.append("g")
+           .attr("class", "x axis")
+           .attr('id', "axis--x")
+           .attr("transform", "translate(0," + height + ")")
+           //.attr("transform", "translate(0," + height + ")")
+           .call(xAxis);
 
-            //svg.append("g")
-            //    .attr("class", "brush")
-            //    .call(brush).extent([[0, 0], [width, height]]).on("brush", brushed).on("end", brushended);
+        svg.append("text")
+       //  .attr("transform","translate(" + (width -50) + " ," + (height-15) + ")")
+         .style("text-anchor", "end")
+            .attr("x", width)
+.attr("y", height - 8)
+         .text("X Label");
 
-            svg.append("g").attr("class", "brush")
-      .call(d3.brush().extent([[0, 0], [width, height]])).call(brush);  //.on("end", brushended).on("brush", brushed)
+        // y axis
+        svg.append("g")
+            .attr("class", "y axis")
+            .attr('id', "axis--y")
+            .call(yAxis);
 
-         }
-
-
-
-        Create_scatter("g1");
-
-function brushended() {
-    
-  var s = d3.event.selection;
-  if (!s) {
-    if (!idleTimeout) return idleTimeout = setTimeout(idled, idleDelay);
-    x.domain(d3.extent(data, function (d) { return d.id; })).nice();
-    y.domain([d3.min(data, function (d) { return d.y; }), d3.max(data, function (d) { return d.y; })]).nice();
-
-  } else {
-      x.domain([s[0][0], s[1][0]].map(x.invert, x));
-      y.domain([s[1][1], s[0][1]].map(y.invert, y))
-
-      d3.select(".brush").call(brush.move, null);
-
-  }
-  zoom();
-}
-
-function idled() {
-  idleTimeout = null;
-}
-
-function zoom( ) {
-    var s = d3.event.selection;
-
-    var svg = d3.select("#g1_svg"); //.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-  var t = svg.transition().duration(750);
-  svg.select(".axis--x").transition(t).call(xAxis);
-  svg.select(".axis--y").transition(t).call(yAxis);
-  svg.selectAll("circle").transition(t)
-      .attr("cx", function (d) { return x(d.id); })
-      .attr("cy", function (d) { return y(d.y); });
+        svg.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 6)
+            //.attr("x", 0 - (height / 5))
+            .attr("dy", "1em")
+            .style("text-anchor", "end")
+            .text("Y Label");
 
 
-  if (s) {
 
-      //var s = d3.event.selection,
-            var x0 = s[0][0],
-             y0 = s[0][1],
-             dx = s[1][0] - x0,
-             dy = s[1][1] - y0;
-      console.log(s);
 
-      //console.log(s);
-      //x0 = s[0][0],
-      //    y0 = s[0][1],
-      //    dx = s[1][0] - x0,
-      //    dy = s[1][1] - y0;
+        scatter.append("g")
+            .attr("class", "brush")
+            .call(brush);
 
-     
-      svg.selectAll('circle')
-        .style("fill", function (d) {
-            if (x(d.x) >= x0 && x(d.x) <= x0 + dx && y(d.y) >= y0 && y(d.y) <= y0 + dy)
-            { return "red"; } // #ec7014
-            else { return "green"; }  //
-        });
+        function brushended() {
 
-          //.style("fill", function (d) {
-          //     if (x(d.x) >= x0) 
-          //     { return "#4292c6"; }
-          //     else { return "#ec7014"; }
-          // });
-  }
+            var s = d3.event.selection;
+            if (!s) {
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, idleDelay);
+                x.domain(d3.extent(data, function (d) { return d.x; })).nice();
+                y.domain(d3.extent(data, function (d) { return d.y; })).nice();
+            } else {
 
-}
+                x.domain([s[0][0], s[1][0]].map(x.invert, x));
+                y.domain([s[1][1], s[0][1]].map(y.invert, y));
+                scatter.select(".brush").call(brush.move, null);
+            }
+            zoom();
+        }
 
-</script>
+        function idled() {
+            idleTimeout = null;
+        }
+
+        function zoom() {
+
+            var t = scatter.transition().duration(750);
+            svg.select("#axis--x").transition(t).call(xAxis);
+            svg.select("#axis--y").transition(t).call(yAxis);
+            scatter.selectAll("circle").transition(t)
+            .attr("cx", function (d) { return x(d.x); })
+            .attr("cy", function (d) { return y(d.y); });
+        }
+
+    </script>
+</body>
