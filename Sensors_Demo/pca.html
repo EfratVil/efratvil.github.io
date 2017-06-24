@@ -1,4 +1,4 @@
-﻿
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -166,11 +166,11 @@
         <script src="assets/js/d3.min.js"></script>
         <!--script src="assets/js/dygraph-combined-dev.js"></script-->
 
-        <script src="JS/ev_pca.js"></script>  
+       <script src="JS/ev_pca.js"></script>  
         <script src="JS/main.js"></script>
-        <script src="JS/get_data.js"></script>
+        <!--<script src="JS/get_data.js"></script>-->
 
-        <script src="JS/pca_data.js"></script>
+        <!--<script src="JS/pca_data.js"></script>-->
         <script src="JS/ev_raw_data1.js"></script>
         <script src="JS/evb_basic.js"></script>
 
@@ -186,62 +186,186 @@
         <script type="text/javascript">
         $(window).load(function () {
 
-            $("#eig1").append("<h3>Cumulative Scree plot</h3>");
-          Simple_bar_chart("eig1", pca_eig, "PC", "nds_wt_cumvariance", 600, 250)
-          //  Simple_bar_chart("eig1", pca_eig, "PC", "nd_wt_cumvariance", 300, 150)
-          //  Simple_bar_chart("eig1", pca_eig, "PC", "nd_cumvariance", 300, 150)
-          //  Simple_bar_chart("eig1", pca_eig, "PC", "nw_cumvariance", 300, 150)
+            var pca_eig = [];
+            var pca_rotations = [];
+            var outliers_matrix = [];
+            var dsp = [];
 
-            pca_rotations = pca_rotations.map(function (d, i) {
-                return {
-                    index: i + 1,
-                    nds_wt_PC1: d.nds_wt_PC1,
-                    nds_wt_PC2: d.nds_wt_PC2,
-                    nds_wt_PC3: d.nds_wt_PC3,
-                    nds_wt_PC4: d.nds_wt_PC4,
-                    nds_wt_PC5: d.nds_wt_PC5,
-                    nds_wt_PC6: d.nds_wt_PC6,
-                    nds_wt_PC7: d.nds_wt_PC7,
-                    nds_wt_PC8: d.nds_wt_PC8,
-                    nds_wt_PC9: d.nds_wt_PC9,
-                    nds_wt_PC10: d.nds_wt_PC10
-                };
+                var data1, data2, data3;
+                d3.csv('data/pca_eig_Week9.csv', function (error,data) {
+                    if (error) throw error;
+
+                    data.forEach(function (d) {
+                        Object.keys(data[0]).filter(function (k) { return k != "datetime" }).forEach(function (k) {
+                            d[k] = +d[k];
+                        });
+                    });
+
+                    pca_eig = data;
+
+                    readyCheck('file1');
+            })
+
+                d3.csv('data/pca_rotations_Week9.csv', function (error, data) {
+                    if (error) throw error;
+
+                    data.forEach(function (d, i) {
+
+                        Object.keys(data[0]).filter(function (k) { return k != "datetime" }).forEach(function (k) {
+                            d[k] = +d[k];
+                        });
+                    });
+
+                    pca_rotations = data;
+	
+                readyCheck('file2');
+                })
+
+                d3.csv('data/outliers_Week9.csv', function (error, data) {
+                    if (error) throw error;
+
+                    //.filter(function (k) { return k != "grade" })
+                    data.forEach(function (d) {
+                        Object.keys(data[0]).forEach(function (k) {
+                            if (k != "grade" & k != "grade_auto")
+                            { d[k] = +Math.round(d[k] * 100) / 100; }
+                        });
+                    });
+                    outliers_matrix = data;
+
+                    readyCheck('file3');
+                })
+
+
+                d3.csv('data/raw/raw_Week9_new.csv', function (error, data) {
+                    if (error) throw error;
+
+                    data.forEach(function (d) {
+                        Object.keys(data[0]).filter(function (k) { return k != "datetime" }).forEach(function (k) {
+                            d[k] = +d[k];
+                        });
+                    });
+
+                    dsp = data;
+
+                    readyCheck('file4');
+                })
+           
+
+
+            
+
+                var readyFiles = { 'file1': false, 'file2': false, 'file3': false, 'file4': false  };
+            function readyCheck(filename) {
+                readyFiles[filename] = true;
+
+                if (readyFiles['file1'] == true && readyFiles['file2'] == true && readyFiles['file3'] == true && readyFiles['file4'] == true) {
+                    $("#eig1").append("<h3>Cumulative Scree plot</h3>");
+                    Simple_bar_chart("eig1", pca_eig, "PC", "nds_wt_cumvariance", 600, 250)
+
+                    pca_rotations = pca_rotations.map(function (d, i) {
+                        return {
+                            index: i + 1,
+                            nds_wt_PC1: d.nds_wt_PC1,
+                            nds_wt_PC2: d.nds_wt_PC2,
+                            nds_wt_PC3: d.nds_wt_PC3,
+                            nds_wt_PC4: d.nds_wt_PC4,
+                            nds_wt_PC5: d.nds_wt_PC5,
+                            nds_wt_PC6: d.nds_wt_PC6,
+                            nds_wt_PC7: d.nds_wt_PC7,
+                            nds_wt_PC8: d.nds_wt_PC8,
+                            nds_wt_PC9: d.nds_wt_PC9,
+                            nds_wt_PC10: d.nds_wt_PC10
+                        };
+                    });
+
+                    $("#rotations1").append("<h3>PC1</h3>");
+                    Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC1", 1080, 220)
+                    $("#rotations1").append("<h3>PC2</h3>");
+                    Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC2", 1080, 220)
+                    $("#rotations1").append("<h3>PC3</h3>");
+                    Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC3", 1080, 220)
+                    $("#rotations1").append("<h3>PC4</h3>");
+                    Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC4", 1080, 220)
+                    $("#rotations1").append("<h3>PC5</h3>");
+                    Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC5", 1080, 220)
+                    $("#rotations1").append("<h3>PC6</h3>");
+                    Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC6", 1080, 220)
+                    $("#rotations1").append("<h3>PC7</h3>");
+                    Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC7", 1080, 220)
+                    $("#rotations1").append("<h3>PC8</h3>");
+                    Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC8", 1080, 220)
+                    $("#rotations1").append("<h3>PC9</h3>");
+                    Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC9", 1080, 220)
+                    $("#rotations1").append("<h3>PC10</h3>");
+                    Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC10", 1080, 220)
+
+                    var pca_sensor = outliers_matrix.filter(function (d) { return d.sensor_id == 13343; });
+
+                    //  console.log(pca_sensor);
+
+                    a = [];
+                    b = [];
+
+                    for (var j = 0; j < x.length; j++) {  //
+                        b = [];
+                        b.push(+pca_sensor[0]["DN_PC1"]);
+                        b.push(+pca_sensor[0]["DN_PC2"]);
+                        a.push(b);
+                    }
+                }
+            }
+
+
+
+
+            $("#sensor_id").change(function () {
+
+                // clean up of old graphs
+                $("#graphdiv5").html("");
+                $("#graphdiv6").html("");
+                //$("#raw_graph").html("raw values");
+                //$("#nds_wt_graph").html("Daily Nor - with out trend");
+
+                sensor = $("#sensor_id").html();
+                $("#sensor_id").html("<a href='sensor.html?sensor_id=" + sensor + "' target='_blank'>" + sensor + "</a>");
+                var ds1 = dsp.filter(function (d) { return d.sensor_id == sensor; });
+
+                var sensor_data = ds1.map(function (d, i) {
+                    return {
+                        index: i + 1,
+                        value: d.nds_wt_value,
+                        nor_value: d.nor_value
+                    };
+                });
+                $("#graphdiv5").append("<strong>Raw Sensor</strong>");
+                Line_chart_time_ID("graphdiv5", sensor_data, "index", "nor_value", 300, 140);
+                //  create_Linr_chart_2_vars("graphdiv6", sensor_data, "index", "value", "value", 300, 140);
+                $("#graphdiv6").append("<strong>Without Trend & Normilized daily</strong>");
+                Line_chart_time_ID("graphdiv6", sensor_data, "index", "value", 300, 140);
+
+                //    create_Line_chart_2_vars({ data: sensor_data, chart: "graphdiv6", x_ds: "index", y1_ds: "value", y2_ds: "value", width: 300, height: 140 });
+
+
+                //Line_chart_time_ID("graphdiv6", sensor_data, "index", "value", 300, 140);
+
+                //var ll1 = ll.map(function (d, i) {
+                //    return {
+                //        index: i + 1,
+                //        mean: +d.mean,
+                //        median: +d.median,
+                //        mve: +d.mve,
+                //        mcd: +d.mcd,
+                //        sensor: +d[$("#sensor_id").html()]
+                //    };
+                //});
+
+                //create_Line_chart_2_vars({ data: ll1, chart: "graphdiv5", x_ds: "index", y1_ds: "sensor", y2_ds: "mcd", width: 500, height: 240 });
+
+
             });
 
-            $("#rotations1").append("<h3>PC1</h3>");
-            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC1", 1080, 220)
-            $("#rotations1").append("<h3>PC2</h3>");
-            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC2", 1080, 220)
-            $("#rotations1").append("<h3>PC3</h3>");
-            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC3", 1080, 220)
-            $("#rotations1").append("<h3>PC4</h3>");
-            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC4", 1080, 220)
-            $("#rotations1").append("<h3>PC5</h3>");
-            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC5", 1080, 220)
-            $("#rotations1").append("<h3>PC6</h3>");
-            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC6", 1080, 220)
-            $("#rotations1").append("<h3>PC7</h3>");
-            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC7", 1080, 220)
-            $("#rotations1").append("<h3>PC8</h3>");
-            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC8", 1080, 220)
-            $("#rotations1").append("<h3>PC9</h3>");
-            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC9", 1080, 220)
-            $("#rotations1").append("<h3>PC10</h3>");
-            Simple_bar_weekly_chart("rotations1", pca_rotations, "index", "nds_wt_PC10", 1080, 220)
 
-            var pca_sensor = outliers_matrix.filter(function (d) { return d.sensor_id == 13343; });
-
-          //  console.log(pca_sensor);
-            
-            a = [];
-            b = [];
-
-           for (var j = 0; j < x.length; j++) {  //
-                b = [];
-                b.push(+pca_sensor[0]["DN_PC1"]);
-                b.push(+pca_sensor[0]["DN_PC2"]);
-                a.push(b);
-            }
 
         });
         </script>
