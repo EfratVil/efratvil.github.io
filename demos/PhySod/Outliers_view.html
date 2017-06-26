@@ -1,0 +1,580 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>PhySod</title>
+        <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="../CSS/main.css" />
+        <link href="../CSS/charts.css" rel="stylesheet" />     
+        <style>
+                        header .logo {
+                float: left;
+                font-size: 20px;
+                line-height: 50px;
+                text-align: center;
+                padding: 10px 10px;
+                width: 220px;
+                font-weight: 500;
+                height: 68px;
+                display: block;
+                background-color: #283744;
+                color: #f9f9f9;
+            }
+
+
+            button a {
+                color: black;
+            }
+
+
+            .card .head {
+    padding: 3px 20px 3px 20px;
+}
+            nav {
+                height: 68px;
+            }
+                .btn {
+                width: 180px;
+                margin-left: 15Px;
+                margin-bottom: 8px;
+            }
+            #details {
+                        position: fixed;
+                        height: 240px;
+                        z-index: 1030;
+                        padding: 15px;
+                        left: 0;
+                        right: 0;
+                        display: block;
+                        /*margin-left:220px;*/
+                        background-color:#F7F5F2;
+                        border-bottom: 1px solid #847C77;
+                        background-color: #efedea
+                    }
+            #header_text {
+                float: left;
+                padding-top: 12px;
+                padding-left: 20px; 
+                font-size: 28px;   
+                font-family: 'Salsa', cursive;
+                color: #337ab7;
+               }
+
+            .focus_circle {
+                 color: #337ab7;
+
+            }
+        </style>
+        <link href="//fonts.googleapis.com/css?family=Salsa" rel="stylesheet" type="text/css">
+     </head>
+    <body>        
+       
+        <header>
+            <a href="About.html" class="logo">Demo</a>
+            <span id="header_text">PhySod - Outlier Scores View</span>
+            <nav>
+                
+            </nav>
+        </header>
+        
+              
+        <wrapper>
+            <left-bar>
+                <br /><br /><br /><br />
+                <!--<h3>Sensors Group:</h3><br />
+    <select id='file_id'>
+        <option selected value='PS_01'>Group1 10/10/17</option>
+        <option value='PS_01'>Group2 10/10/17</option>
+    </select>-->
+                <br /><br /><br />
+                <button id='btn0' type='button' class='btn btn-info btn-sm'><a href="About.html">About</a></button><br />
+                <br />
+                <br />
+
+
+                <button id='btn1' type='button' class='btn btn-info btn-sm'><a href="High_level.html">High Level View</a></button><br />
+                <button id='btn2' type='button' class='btn btn-info btn-sm'><a href="Outliers_view.html">Outliers View</a></button><br />
+                <button id='btn3' type='button' class='btn btn-info btn-sm'><a href="class_adjustment.html">Class What If</a></button><br />
+                <button id='btn4' type='button' class='btn btn-info btn-sm'><a href="Class_perf.html">Class Performance</a></button>
+
+                <br /><br /><br />
+            </left-bar>
+         <right-bar>
+                   
+                  <section style="margin-left: 30px;">
+                      <br/>
+                      <div class="row">
+                          <div class="col-md-5" id="focus_var">
+                          </div>
+                          
+                          <div class="col-md-2" >
+                              <h4><b>Sensor ID:</b></h4><h4 id="sensor_id"></h4><br />
+                          </div>
+                          <!--<div class="col-md-5" style="display: inline-block">
+                              <div>Robust T2:</div><div id="m1"></div>
+                              <div>PCA:</div><div id="m2"></div><br />
+                              <div>Average Correlation:</div><div id="m3"></div><br />
+                              <div>Eigenvector Centrality:</div><div id="m4"></div><br />
+                          </div>-->
+
+                          <div style="font-size:18px">
+                              <b>Scores:</b><br/>
+                              <table cellpadding="10" >
+                                  <tr>
+                                      <td>Robust T2:</td>
+                                      <td id="method1"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>PCA:</td>
+                                      <td id="method2"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>Average Correlation:</td>
+                                      <td id="method3"></td>
+                                  </tr>
+                                  <tr>
+                                      <td>Eigenvector Centrality: &nbsp;</td>
+                                      <td id="method4"></td>
+                                  </tr>
+                              </table>
+
+
+                          </div>
+
+                          
+                          
+                      </div>
+                                           
+                          <div class="row" >
+                              <div class="col-md-12">
+                                  <br />
+                                  <div id="Outliers_Matrix">
+                                  </div>
+                                  
+                              </div>
+                              
+                          </div>
+                  
+                      <br /><br />
+                     
+
+                   </section>
+       
+          </right-bar>
+            
+        </wrapper>
+            
+    <script src="../JS/jQuery.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <!--<script src="//d3js.org/d3.v4.min.js"></script>-->
+    <script src="../JS/d3.v4.min.js"></script>
+
+    <script src="../JS/ev_js_data.js"></script>
+    <script src="../JS/md3_basic.js"></script>
+    <!--<script src="../JS/main.js"></script>-->
+    <script src="charts.js"></script>
+       
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+        var colorRange1 = ['#9BB0DB', '#708DC8', '#486CB4']
+     
+        var color1 = d3.scaleLinear().range(colorRange1).domain([-1, 0, 1]);
+
+        var data, raw_data, quantiles, cor, cor_vector, Outliers_Matrix, network;
+        function go(file_id) {
+
+            
+            d3.csv('../datasets/' + file_id + '/uni_matrix.csv', function (ds) {
+                data = ds;
+                readyCheck('file1');
+            })
+
+           // var raw_data;
+            d3.csv('../datasets/' + file_id + '/data.csv', function (ds) {
+                raw_data = ds;
+                readyCheck('file2');
+            })
+
+      
+            d3.csv('../datasets/' + file_id + '/quantiles_matrix.csv', function (ds) {
+                quantiles = ds;
+                readyCheck('file3');
+            })
+            
+
+            d3.csv('../datasets/' + file_id + '/Outliers_Matrix.csv', function (ds) {
+                Outliers_Matrix = ds;
+               
+                readyCheck('file6');
+            })
+
+            var readyFiles = {
+                'file1': false, 'file2': false, 'file3': false, 'file4': true
+              , 'file5': true, 'file6': false, 'file7': true
+            };
+
+            function readyCheck(filename) {
+                readyFiles[filename] = true;
+
+                if (readyFiles['file1'] == true && readyFiles['file2'] == true && readyFiles['file3'] == true
+                    && readyFiles['file4'] == true && readyFiles['file5'] == true
+                    && readyFiles['file6'] == true
+                    && readyFiles['file7'] == true)
+                {
+                  
+                    data = data.map(function (d, i) {
+                        return {
+                            index: i + 1,
+                            id: d.id,
+                            min: +d.min,
+                            min_op: +d.min_op,
+                            max: +d.max,
+                            max_op: +d.max_op,
+                            quantile_25: +d.quantile_25,
+                            quantile_25_op: +d.quantile_25_op,
+                            quantile_75: +d.quantile_75,
+                            quantile_75_op: +d.quantile_75_op,
+                            median_op: +d.median_op,
+                            median: +d.median,
+                            mad: +d.mad,
+                            mad_op: +d.mad_op,
+                            //    mean: +d.mean,
+                         //   sd: +d.sd,
+                            skness: +d.skness,
+                            skness_op: +d.skness_op,
+                            kurtos: +d.kurtos,
+                            kurtos_op: +d.kurtos_op,
+                            op_sum: +d.op_sum,
+                            m: +d.m,
+                            m_rob: +d.m_rob,
+                            m_bc: +d.m_bc,
+                            m_bc_rob: +d.m_bc_rob
+
+                        };
+                    });
+
+
+                    Outliers_Matrix = Outliers_Matrix.map(function (d, i) {
+                        return {
+                            index: i + 1,
+                            id: d.id,
+                            T2: +d.T2,
+                            T2_rob_mcd: +d.T2_rob_mcd,
+                            EigenvectorCentrality_10: +d.EigenvectorCentrality_10,
+                            EigenvectorCentrality: +d.EigenvectorCentrality,
+                            KCoresOut: +d.KCoresOut,
+                            grade_auto: d.grade_auto,
+                            CM_Avg_Sum: +d.CM_Avg_Sum,
+                            CM_Avg_Sum_Square: +d.CM_Avg_Sum_Square, 
+                            PC_dist_10: +d.PC_dist_10,
+                            PC_dist_20: +d.PC_dist_20,                       
+                            KCoresOut_10: +d.KCoresOut_10,
+                            KCoresOut_9: +d.KCoresOut_9,
+                            KCoresOut_8: +d.KCoresOut_8,
+                            KCoresOut_7: +d.KCoresOut_7,
+                            KCoresOut_6: +d.KCoresOut_6,
+                            KCoresOut_5: +d.KCoresOut_5,
+                          //    CCoefficientLocal: +d.CCoefficientLocal,  ---> Can be removed
+                            //  Betweenness: +d.Betweenness,              ---> Can be removed
+                            closenessOut: +d.closenessOut
+                        };
+                    });
+                   // console.log(Outliers_Matrix);
+
+                    raw_data.filter(function (k) { return k != "datetime" }).forEach(function (d) {
+                        Object.keys(raw_data[0]).forEach(function (k) {
+                            d[k] = +d[k];
+                        });
+                    });
+
+                    quantiles.forEach(function (d) {
+                        Object.keys(quantiles[0]).forEach(function (k) {
+                            d[k] = +d[k];
+                        });
+                    });
+
+                   // $("#graphs").append("<div id='idx'>dsfsd</div><br/>");
+                    $("#focus_var").html("");
+                    $("#focus_var").append("<div class='card hist' id='m2'></div>"); //<div class='head'>Focus Variable</div>                    
+                    d3mv_Line_chart({ data: raw_data, chart: "m2", x_ds: "id", y_ds: "11675", width: 600, height: 200 });
+
+                    //----------------------------------------------------------
+
+                    //11
+                    Outliers_Matrix1 = Outliers_Matrix.sort(function (a, b) {
+                        return b.T2_rob_mcd - a.T2_rob_mcd;
+                    });
+
+                    Outliers_Matrix1 = Outliers_Matrix1.map(function (d, i) {
+                        return {
+                            index: i,
+                            id: d.id,
+                            T2_rob_mcd: +d.T2_rob_mcd,
+                            grade_auto: d.grade_auto,
+                        };
+                    });
+
+
+                    $("#Outliers_Matrix").append("<div class='card' id='o2'><div class='head'>Robust T2</div></div>");
+
+                    d3mv_scatter_plot4({
+                        data: Outliers_Matrix1, x_ds: "index", y_ds: "T2_rob_mcd",
+                        chart: "o2", width: 650, height: 260, color: "grade_auto"
+                      //  color: { col: "KCoresOut", range: ["#1a9850", "#d73027"] }
+                    });
+                    //grade_auto_code
+                 
+                    //22
+                    Outliers_Matrix1 = Outliers_Matrix.sort(function (a, b) {
+                        return b.PC_dist_20 - a.PC_dist_20;
+                    });
+
+                    Outliers_Matrix1 = Outliers_Matrix1.map(function (d, i) {
+                        return {
+                            index: i,
+                            id: d.id,
+                            PC_dist_20: +d.PC_dist_20,
+                            grade_auto: d.grade_auto,
+                        };
+                    });
+
+                    //33
+                    $("#Outliers_Matrix").append("<div class='card' id='o3'><div class='head'>PCA</div></div><br/>");
+                    d3mv_scatter_plot4({
+                        data: Outliers_Matrix1, x_ds: "index", y_ds: "PC_dist_20",
+                        chart: "o3", width: 650, height: 260, color: "grade_auto"
+                    });
+
+                    $("#Outliers_Matrix").append("<div class='card' id='o4'><div class='head'>Average Correlation</div></div>");
+
+                    d3mv_scatter_plot4({
+                        data: Outliers_Matrix, x_ds: "CM_Avg_Sum", y_ds: "CM_Avg_Sum_Square",
+                        chart: "o4", width: 650, height: 260, color: "grade_auto",
+                        Y_Label: "Average correlation", X_Label: "Average correlation squares"
+                        //  color: { col: "KCoresOut", range: ["#1a9850", "#d73027"] }
+                    });
+
+                    //44
+                    var Outliers_Matrix1 = Outliers_Matrix.sort(function (a, b) {
+                        return b.EigenvectorCentrality_10 - a.EigenvectorCentrality_10;
+                    });
+
+                    Outliers_Matrix1 = Outliers_Matrix1.map(function (d, i) {
+                        return {
+                            index: i,
+                            id: d.id,
+                            EigenvectorCentrality_10: +d.EigenvectorCentrality_10,
+                            grade_auto: d.grade_auto,
+                        };
+                    });
+
+                    $("#Outliers_Matrix").append("<div class='card' id='o1'><div class='head'>Eigenvector Centrality</div></div><br/>");
+                    d3mv_scatter_plot4({
+                        data: Outliers_Matrix1, x_ds: "index", y_ds: "EigenvectorCentrality_10",
+                        chart: "o1", width: 650, height: 260, color: "grade_auto"
+                    });
+
+                    d3.select("#range1").on("input", function () {
+                        var svg = d3.select("#o1_svg");
+                        
+                            svg.selectAll('circle')
+                            .transition()
+                            .duration(750)
+                            .ease(d3.easeLinear)
+                            .style("fill", function (d) {    
+                                   if (d.EigenvectorCentrality_10 < d3.select("#range1").property("value") / 100) { return "#1a9850" } else { return "#d73027" }
+                            });
+
+                            svg = d3.select("#o3_svg");
+                            svg.selectAll('circle')
+                                .transition()
+                                .duration(750)
+                                .ease(d3.easeLinear)
+                                .style("fill", function (d) {
+                                    if (d.EigenvectorCentrality_10 < d3.select("#range1").property("value") / 100) { return "#1a9850" } else { return "#d73027" }
+                                });
+
+                            svg = d3.select("#o4_svg");
+                            svg.selectAll('circle')
+                                .transition()
+                                .duration(750)
+                                .ease(d3.easeLinear)
+                                .style("fill", function (d) {
+                                    if (d.EigenvectorCentrality_10 < d3.select("#range1").property("value") / 100) { return "#1a9850" } else { return "#d73027" }
+                                });
+                       });
+
+                 }
+            }
+        }
+
+        go('PS_01');
+
+
+        $("#sensor_id").change(function () {
+           
+            var observation = Outliers_Matrix.filter(function (d) { return d.id == $("#sensor_id").html(); });
+            //console.log(observation);
+            d3.select("#method1").html(Math.round(observation[0]["T2_rob_mcd"] * 100, 2) / 100);
+            d3.select("#method2").html(Math.round(observation[0]["PC_dist_20"] * 100, 2) / 100);
+            d3.select("#method3").html(Math.round(observation[0]["CM_Avg_Sum"] * 100, 2) / 100);   //CM_Avg_Sum_Square
+            d3.select("#method4").html(Math.round(observation[0]["EigenvectorCentrality_10"] * 100, 2) / 100);
+
+            //alert(observation[0].min);
+
+            //$("#focus_var").html("");
+            //d3mv_Line_chart({ data: raw_data, chart: "m2", x_ds: "id", y_ds: $("#sensor_id").html(), width: 600, height: 200 });
+
+            //---------------------
+           
+            //console.log(quantiles);
+            var svg = d3.select("#m2_svg"), //focus_var  .append("svg")
+            width = 600;
+            height = 200;
+
+            svg.selectAll("*").remove();
+
+    margin = { top: 20, right: 20, bottom: 30, left: 50 },
+    width = width - margin.left - margin.right,
+    height = height - margin.top - margin.bottom;
+
+            var x = d3.scaleLinear().range([0, width]),
+            y = d3.scaleLinear().range([height, 0]),
+            z = d3.scaleOrdinal(['#deebf7', '#c6dbef', '#c6dbef', '#deebf7']);
+
+            var area_data = d3.area()
+            .x(function (d) { return x(d.x); })
+            .y0(function (d) { return y(d.low); })
+            .y1(function (d) { return y(d.high); });
+
+            var g = svg.append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+            var keys = quantiles.columns.slice(1);
+
+            x.domain(d3.extent(quantiles, function (d) { return d.x; }));
+            y.domain([d3.min(quantiles, function (d) { return d.quantile_02; }), d3.max(quantiles, function (d) { return d.quantile_98; })]);
+            z.domain(keys);
+
+            for (var i = 0; i < keys.length - 1; i++) {
+                area_ds = quantiles.map(function (d) {
+                    return {
+                        x: +d.x,
+                        low: +d[keys[i]],
+                        high: +d[keys[i + 1]]
+                    };
+                });
+                area = area_data(area_ds);
+                g.append('path')
+                    .attr('d', area)
+                    .style("fill", z(keys[i]));
+            }
+
+            g.append("g")
+                .attr("class", "axis axis--x")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x));
+
+           g.append("text")
+         .style("text-anchor", "end")
+            .attr("x", width)
+            .attr("y", height - 2)
+                  .style("font-size", "12px")
+         .text("Hours");
+
+
+            g.append("g")
+                .attr("class", "axis axis--y")
+                .call(d3.axisLeft(y));
+
+            svg.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 50)
+                .attr("x", -20)
+            .attr("dy", "1em")
+            .style("text-anchor", "end")
+            .style("font-size", "12px")
+            .text("Raw Value");
+
+           
+            var line = d3.line()
+                .x(function (d) { return x(d["id"]); })
+                .y(function (d) { return y(d[$("#sensor_id").html()]); });
+
+            svg.append("path")
+                .datum(raw_data)
+                .attr("class", "line")
+                .attr("d", line)
+                .attr("id", "line")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+           
+            //--------------------------------------------
+         //   d3.select("#sensor_min").html("45555555"); //d["min"]
+         //   d3.select("#sensor_max").html("dddddddddd"); //d["max"]
+ 
+            //$("#bp_q_25").html("PC_dist_20: ");
+            //d3mv_box_plot({
+            //    data: Outliers_Matrix, chart: "bp_q_25", values: ds_col_to_array(Outliers_Matrix, "PC_dist_20"),
+            //    width: 300, height: 30, highlight: observation[0].PC_dist_20,
+            //    showAxis: -1, margin: { top: 5, right: 20, bottom: 5, left: 20 }
+            //}) //
+
+            //$("#bp_median").html("EigenVec: ");
+            //d3mv_box_plot({
+            //    data: Outliers_Matrix, chart: "bp_median", values: ds_col_to_array(Outliers_Matrix, "EigenvectorCentrality_10"),
+            //    width: 500, height: 30, highlight: observation[0].EigenvectorCentrality_10,
+            //    showAxis: -1, margin: { top: 5, right: 20, bottom: 5, left: 20 }
+            //})
+
+ 
+
+        });
+ 
+        d3.select("#file_id").on("change", change)
+        function change() {
+            go(this.options[this.selectedIndex].value);
+        }
+
+   //outliers matrix
+    //d3.select("#btn4").on("click", function () {       
+    //    d3.selectAll('#graphs').style('display', 'none');
+    //    d3.selectAll('#details').style('display', 'inline-block');
+    //    d3.selectAll('#dist_view').style('display', 'none');
+    //    d3.selectAll('#cor').style('display', 'none');
+    //    d3.selectAll('#Outliers_Matrix').style('display', 'inline-block');
+        
+    //});
+    
+        // Change color
+    d3.select("#btn5").on("click", function () {
+        var svg = d3.select("#o4_svg");
+
+        svg.selectAll('circle')
+        .transition()
+        .duration(750)
+        .ease(d3.easeLinear)
+        //.style("fill", "#d6604d");
+
+        .style("fill", function (d) {
+           // console.log(d.id);
+            if (d.id == 56369) { return "blue" } else {
+                if (d.grade_auto == "Good") { return "#1a9850" } else { if (d.grade_auto == "tbd") { return "#fdae61" } else { return "#d73027" } }
+            };
+
+        });           
+
+            });
+    });
+
+
+
+
+
+    </script>
+     
+    </body>
+</html>

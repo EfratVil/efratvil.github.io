@@ -1,0 +1,211 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>PhySod</title>
+        <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="../CSS/main.css" />
+        <link href="../CSS/charts.css" rel="stylesheet" />     
+        <style>
+            
+            text {
+              font: 10px sans-serif;
+              text-anchor: middle;
+            }
+
+            .node--hover circle {
+              stroke: #000;
+              stroke-width: 1.2px;
+            }
+            nav {
+                height: 68px;
+            }
+
+            button a {
+                color: black;
+            }
+
+                .btn {
+                width: 180px;
+                margin-left: 15Px;
+                margin-bottom: 8px;
+            }
+            #details {
+                        position: fixed;
+                        height: 240px;
+                        z-index: 1030;
+                        padding: 15px;
+                        left: 0;
+                        right: 0;
+                        display: block;
+                        margin-left:220px;
+                        background-color:#F7F5F2;
+                        border-bottom: 1px solid #847C77;
+                        background-color: #efedea
+                    }
+            #header_text {
+                float: left;
+                padding-top: 12px;
+                padding-left: 20px; 
+                font-size: 28px;   
+                font-family: 'Salsa', cursive;
+                color: #337ab7;
+               }
+
+            .focus_circle {
+                 color: #337ab7;
+
+            }
+        </style>
+        <link href="//fonts.googleapis.com/css?family=Salsa" rel="stylesheet" type="text/css">
+     </head>
+    <body>        
+       
+        <header><a href="About.html" class="logo">Demo</a>
+            <span id="header_text">PhySod - Ranking Performance</span>
+        <nav>
+       </nav></header>
+        
+              
+        <wrapper>
+
+            <left-bar>
+                <br /><br /><br /><br />
+                <!--<h3>Sensors Group:</h3><br />
+    <select id='file_id'>
+        <option selected value='PS_01'>Group1 10/10/17</option>
+        <option value='PS_01'>Group2 10/10/17</option>
+    </select>-->
+                <br /><br /><br />
+                <button id='btn0' type='button' class='btn btn-info btn-sm'><a href="About.html">About</a></button><br />
+                <br />
+                <br />
+
+
+                <button id='btn1' type='button' class='btn btn-info btn-sm'><a href="High_level.html">High Level View</a></button><br />
+                <button id='btn2' type='button' class='btn btn-info btn-sm'><a href="Outliers_view.html">Outliers View</a></button><br />
+                <button id='btn3' type='button' class='btn btn-info btn-sm'><a href="class_adjustment.html">Class What If</a></button><br />
+                <button id='btn4' type='button' class='btn btn-info btn-sm'><a href="Class_perf.html">Class Performance</a></button>
+
+                <br /><br /><br />
+               
+            </left-bar>
+            <right-bar>
+                   
+                  <section>                  
+                      <div class="row" style="margin-bottom:5px; margin-top: 150px">
+                          <!--<div style="margin-left 50px;">
+                              <table style="width:800px; text-align: center; margin: 18px;">
+                                  <tbody>
+
+                                      <tr style=" color #fff;">
+                                          <td height="10px" style="background-color: #1a9850; width:100px; color: #fff;">Good</td>
+                                          <td height="10px" style="background-color: #a1d99b; width:100px;">Tbd</td>
+                                          <td height="10px" style="background-color: #d73027; width:100px; color: #fff;">Outlier</td>
+                                          <td height="10px" style="background-color: #fdae61; width:100px;">Failed Tech</td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+
+                          </div>-->
+                          
+                          <div class="col-md-12" id="main">
+                  
+                          </div>
+                      </div>
+
+                      <br /><br />
+                   </section>
+       
+          </right-bar>
+            
+        </wrapper>
+            
+    <script src="../JS/jQuery.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="../JS/d3.v4.min.js"></script>
+
+    <script src="../JS/ev_js_data.js"></script>
+    <script src="../JS/md3_basic.js"></script>
+    <script src="../JS/main.js"></script>
+       
+    <script type="text/javascript">
+
+        function go() {
+
+            var stacked_data;
+            d3.csv('stacked_bar.csv', function (ds) {
+                stacked_data = ds;
+                readyCheck('file1');
+            })
+
+            var cor_level;
+            d3.csv('network_cor_levels.csv', function (ds) {
+                cor_level = ds;
+                readyCheck('file2');
+            })
+
+
+            var readyFiles = { 'file1': false, 'file2': false};
+            function readyCheck(filename) {
+                readyFiles[filename] = true;
+                if (readyFiles['file1'] == true && readyFiles['file2'] == true ) {
+
+                    stacked_data = stacked_data.map(function (d, i) {
+                        return {
+                            State: d.date_str,
+                            Failed_Technical: +d.failed_tech,
+                            Statistical_Outlier: +d.stat_outlier,
+                            Statistical_Tbd: +d.stat_tbd,
+                            Statistical_Good: +d.stat_ok
+                        };
+                    });
+
+                    cor_level = cor_level.map(function (d, i) {
+                        return {
+                            // date_str: d.date_str,
+                            id: i + 1,
+                            step1: +d.cm_step1_med,
+                            step2: +d.cm_step2_med,
+                            step3: +d.cm_step3_med,
+                            step4: +d.cm_step4_med,
+                            step5: +d.cm_step5_med,
+                            step6: +d.cm_step6_med,
+                            step7: +d.cm_step7_med
+                        };
+                    });
+                        console.log(stacked_data);
+                        console.log(cor_level);
+
+                        $("#main").append("<div class='card' id='g3b'><div class='head'>Sensors Classes Per Day</div></div>");
+                        d3mv_stacked_bar_chart_link({
+                            data: stacked_data, chart: "g3b", height: 250, width: 1100,
+                            margin: { top: 20, right: 130, bottom: 60, left: 60 },
+                            colors: ["#bdbdbd", "#d73027", "#fdae61", "#1a9850"]   //"#92c5de", 
+                            //colors: ["#f46d43",   "#d73027", "#a1d99b", "#1a9850"]   //"#92c5de", 
+                        });
+
+
+
+
+                        $("#main").append("<div class='card' id='g1'><div class='head'>Correlation Steps</div></div>");
+                        d3mv_MultiLine_chart({
+                            data: cor_level, chart: "g1", x_ds: "id",
+                            width: 1100, height: 300, margin: { top: 20, right: 100, bottom: 30, left: 60 }
+                        });
+
+
+                }
+            }
+        }
+
+        go();
+
+
+    </script>
+     
+    </body>
+</html>

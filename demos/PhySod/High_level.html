@@ -1,0 +1,225 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>MultiDash</title>
+        <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="../CSS/main.css" />
+        <link href="../CSS/charts.css" rel="stylesheet" />     
+        <style>
+            
+            text {
+              font: 10px sans-serif;
+              text-anchor: middle;
+            }
+
+
+            button a {
+                color: black;
+            }
+
+            .node--hover circle {
+              stroke: #000;
+              stroke-width: 1.2px;
+            }
+            nav {
+                height: 68px;
+            }
+                .btn {
+                width: 180px;
+                margin-left: 15Px;
+                margin-bottom: 8px;
+            }
+            #details {
+                        position: fixed;
+                        height: 240px;
+                        z-index: 1030;
+                        padding: 15px;
+                        left: 0;
+                        right: 0;
+                        display: block;
+                        margin-left:220px;
+                        background-color:#F7F5F2;
+                        border-bottom: 1px solid #847C77;
+                        background-color: #efedea
+                    }
+            #header_text {
+                float: left;
+                padding-top: 12px;
+                padding-left: 20px; 
+                font-size: 28px;   
+                font-family: 'Salsa', cursive;
+                color: #337ab7;
+               }
+
+            .focus_circle {
+                 color: #337ab7;
+
+            }
+        </style>
+        <link href="//fonts.googleapis.com/css?family=Salsa" rel="stylesheet" type="text/css">
+     </head>
+    <body>        
+       
+        <header><a href="About.html" class="logo">Demo</a>
+            <span id="header_text">PhySod - High level View</span>
+        <nav>
+       </nav></header>
+        
+              
+        <wrapper>
+
+            <left-bar>
+                <br /><br /><br /><br />
+
+                <br /><br /><br />
+                <button id='btn0' type='button' class='btn btn-info btn-sm'><a href="About.html">About</a></button><br />
+                <br />
+                <br />
+
+
+                <button id='btn1' type='button' class='btn btn-info btn-sm'><a href="High_level.html">High Level View</a></button><br />
+                <button id='btn2' type='button' class='btn btn-info btn-sm'><a href="Outliers_view.html">Outliers View</a></button><br />
+                <button id='btn3' type='button' class='btn btn-info btn-sm'><a href="class_adjustment.html">Class What If</a></button><br />
+                <button id='btn4' type='button' class='btn btn-info btn-sm'><a href="Class_perf.html">Class Performance</a></button>
+
+                <br /><br /><br />
+            </left-bar>
+            <right-bar>
+                   
+                  <section>                  
+                      <div class="row" style="margin-bottom:5px; margin-top: 150px">
+                          <div style="margin-left 50px;">
+                              <table style="width:800px; text-align: center; margin: 18px;">
+                                  <tbody>
+
+                                      <tr style=" color #fff;">
+                                          <td height="10px" style="background-color: #1a9850; width:100px; color: #fff;">Good</td>
+                                          <td height="10px" style="background-color: #fdae61; width:100px;">Tbd</td>
+                                          <td height="10px" style="background-color: #d73027; width:100px; color: #fff;">Outlier</td>
+                                          <td height="10px" style="background-color: #bdbdbd; width:100px;">Failed Tech</td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                 
+
+                          </div>
+                          <svg width="700" height="700"><g transform="translate(1,1)"></g></svg>
+                          <div class="col-md-12" id="main">
+                  
+                          </div>
+                      </div>
+
+                      <br /><br />
+                   </section>
+       
+          </right-bar>
+            
+        </wrapper>
+            
+    <script src="../JS/jQuery.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="../JS/d3.v4.min.js"></script>
+
+    <script src="../JS/ev_js_data.js"></script>
+    <script src="../JS/md3_basic.js"></script>
+    <script src="../JS/main.js"></script>
+       
+    <script type="text/javascript">
+
+      var svg = d3.select("svg"),
+      width = +svg.attr("width"),
+      height = +svg.attr("height");
+
+
+        var format = d3.format(",d");
+
+        function colorPicker(v) {
+            if (v == 0) { return "#1a9850"; }
+            else if (v == 1) { return "#fdae61"; } //a1d99b
+            else if (v == 2) { return "#d73027"; }
+            else if (v == 3) { return "#bdbdbd"; }
+            else if (v == 4) { return "#fdae61"; }
+            else if (v == 5) { return "#a6d96a"; }
+            else if (v == 6) { return "#66bd63"; }
+            else if (v == 7) { return "#66bd63"; }
+            else { return "#1a9850"; }
+        }
+
+
+
+
+
+        var colors = ["#e0e0e0", "#F7F5F2", "#F7F5F2", "#e0e0e0"];
+        var color = d3.scaleOrdinal()
+                    .domain([1, 4])
+                    .range(colors)
+
+        var stratify = d3.stratify()
+            .parentId(function (d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
+
+        var pack = d3.pack()
+            .size([width - 2, height - 2])
+            .padding(3);
+
+        d3.csv("Circle_pack.csv", function (error, data) {
+            if (error) throw error;
+
+            var xx = data;
+            //console.log(xx);
+
+            var root = stratify(data)
+                .sum(function (d) { return d.value; })
+                .sort(function (a, b) { return b.value - a.value; });
+
+            var root1 = stratify(data)
+             .sum(function (d) { return d.value; })
+             .sort(function (a, b) { return b.value - a.value; });
+            console.log(root1);
+
+            pack(root);
+
+            var node = svg.select("g")
+              .selectAll("g")
+              .data(root.descendants())
+              .enter().append("g")
+                .attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; })
+                .attr("class", function (d) { return "node" + (!d.children ? " node--leaf" : d.depth ? "" : " node--root"); })
+                .each(function (d) { d.node = this; })
+                .on("mouseover", hovered(true))
+                .on("mouseout", hovered(false));
+
+            node.append("circle")
+                .attr("id", function (d) { return "node-" + d.id; })
+                .attr("r", function (d) { return d.r; })
+                .style("fill", function (d) {
+                    if (d.depth == 3)
+                    { return colorPicker(d.id.substring(d.id.lastIndexOf(".") + 1).split(/(?=[A-Z][^A-Z])/g)) }
+                    else { return color(d.depth); }
+                });
+
+
+            var leaf = node.filter(function (d) { return !d.children; });
+
+            leaf.append("clipPath")
+                .attr("id", function (d) { return "clip-" + d.id; })
+              .append("use")
+                .attr("xlink:href", function (d) { return "#node-" + d.id + ""; });
+
+            node.append("title") //Tool tip text
+                .text(function (d) { return d.id.slice(6, d.id.length).slice(0, d.id.length-10) + "\n" + format(d.value); });
+        });
+
+        function hovered(hover) {
+            return function (d) {
+                d3.selectAll(d.ancestors().map(function (d) { return d.node; })).classed("node--hover", hover);
+            };
+        }
+
+    </script>
+     
+    </body>
+</html>
