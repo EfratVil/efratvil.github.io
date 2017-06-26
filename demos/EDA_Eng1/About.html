@@ -1,0 +1,163 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>PhySod</title>
+        <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="../CSS/main.css" />
+        <link href="../CSS/charts.css" rel="stylesheet" />     
+        <style>
+                        header .logo {
+                float: left;
+                font-size: 20px;
+                line-height: 50px;
+                text-align: center;
+                padding: 10px 10px;
+                width: 220px;
+                font-weight: 500;
+                height: 68px;
+                display: block;
+                background-color: #283744;
+                color: #f9f9f9;
+            }
+
+            button a {
+                color: black;
+            }
+
+
+            .card .head {
+    padding: 3px 20px 3px 20px;
+}
+            nav {
+                height: 68px;
+            }
+                .btn {
+                width: 180px;
+                margin-left: 15Px;
+                margin-bottom: 8px;
+            }
+            #details {
+                        position: fixed;
+                        height: 240px;
+                        z-index: 1030;
+                        padding: 15px;
+                        left: 0;
+                        right: 0;
+                        display: block;
+                        /*margin-left:220px;*/
+                        background-color:#F7F5F2;
+                        border-bottom: 1px solid #847C77;
+                        background-color: #efedea
+                    }
+            #header_text {
+                float: left;
+                padding-top: 12px;
+                padding-left: 20px; 
+                font-size: 28px;   
+                font-family: 'Salsa', cursive;
+                color: #337ab7;
+               }
+
+            .focus_circle {
+                 color: #337ab7;
+
+            }
+        </style>
+        <link href="//fonts.googleapis.com/css?family=Salsa" rel="stylesheet" type="text/css">
+     </head>
+    <body>        
+       
+        <header>
+            <a href="index.html" class="logo">Eng 1 - Demo</a>
+            <span id="header_text">Bearing Vibration Sensors for Process Monitoring</span>
+            <nav>
+                <div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.html"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;About</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+              
+        <wrapper>
+            <left-bar>
+                <br /><br /><br /><br />
+                <!--<h3>Sensors Group:</h3><br />
+                <select id='file_id'>
+                    <option selected value='PS_01'>Group1 10/10/17</option>
+                    <option value='PS_01'>Group2 10/10/17</option>
+                </select>-->
+    
+                <button id='btn0' type='button' class='btn btn-info btn-sm'><a href="About.html">About</a></button><br />
+                <br />
+                <br />
+
+
+                <button id='btn1' type='button' class='btn btn-info btn-sm'><a href="index.html">Univariate Checks</a></button><br />
+
+
+                <br /><br /><br />
+                <!--<button id="btn5" type="button" class="btn btn-info btn-sm">test</button>-->
+            </left-bar>
+         <right-bar>
+                   
+                  <section style="margin-left: 30px;">
+
+                        
+                                           
+                          <div class="row" >
+                              <div style="width: 1050px;">
+                                  <br />
+                                  <h1 style="text-align:center">
+                                      Visualizations of bearing vibration sensors monitoring process from steady state, damage initiation, steady damage propagation through accelerated damage propagation. 
+
+                                  </h1>
+                                  <br />
+                                  <div id="intro_image">
+                                      <img src="bearing.PNG" />
+                                  </div>
+                                  <br />
+                                  <h4>Efrat Vilenski & Jonathan D. Rosenblatt</h4>
+                                  <p style="font-size: 18px;">
+                                      Dept. of Industrial Engineering and Management,<br />
+                                      Ben Gurion University of the Negev, Israel
+                                  </p>
+                                  
+                                  <h4>In colloboration with <a href="https://sites.google.com/site/bortmanlab/">Bortman lab </a> </h4>
+                                  <p style="font-size: 18px;">
+                                      Dept. of Mechanical Engineering,<br />
+                                      Ben Gurion University of the Negev, Israel
+                                  </p>
+                              </div>
+                              
+                          </div>
+                  
+                      <br /><br />
+                     
+
+                   </section>
+       
+          </right-bar>
+            
+        </wrapper>
+            
+    <script src="../JS/jQuery.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="../JS/d3.v4.min.js"></script>
+
+    <script src="../JS/main.js"></script>
+       
+    <script type="text/javascript">
+
+    
+
+
+    </script>
+     
+    </body>
+</html>

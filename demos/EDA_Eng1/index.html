@@ -1,0 +1,497 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>MultiDash</title>
+        <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="../CSS/main.css" />
+        <link href="../CSS/charts.css" rel="stylesheet" />     
+        <style>
+            nav {
+                height: 68px;
+            }
+                .btn {
+                width: 180px;
+                margin-left: 15Px;
+                margin-bottom: 8px;
+            }
+            #details {
+                        position: fixed;
+                        height: 240px;
+                        z-index: 1030;
+                        padding: 15px;
+                        left: 0;
+                        right: 0;
+                        display: block;
+                        margin-left:220px;
+                        background-color:#F7F5F2;
+                        border-bottom: 1px solid #847C77;
+                        background-color: #efedea
+                    }
+            #header_text {
+                float: left;
+                padding-top: 12px;
+                padding-left: 20px; 
+                font-size: 28px;   
+                font-family: 'Salsa', cursive;
+                color: #337ab7;
+               }
+
+        </style>
+        <link href="//fonts.googleapis.com/css?family=Salsa" rel="stylesheet" type="text/css">
+     </head>
+    <body>        
+       
+        <header><a href="index.html" class="logo">Eng 1 - Demo</a>
+            <span id="header_text">Bearing Vibration Sensors for Process Monitoring</span>
+        <nav><div >
+            <ul class="nav navbar-nav navbar-right">
+               <li><a href="About.html"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;About</a></li>
+            </ul></div>
+       </nav></header>
+        
+              
+        <wrapper>
+
+            <left-bar>
+                <br/><br/><br /><br />
+
+                <button id='btn0' type='button' class='btn btn-info btn-sm'><a href="About.html">About</a></button><br />
+                <br />
+                <br />
+                <h3>Data Set</h3><br />
+                <select id='file_id'>
+                    <option value='Stable'>Stable</option>
+                    <option value='Fail'>Fail</option>
+                    <option value='CP4_AXI'>CP4_AXI</option>
+                    <option value='CP5_AXI'>CP5_AXI</option>
+                    <option value='Axi_Q_75'>Axi Q_75</option>
+                    <!--<option value='Tan_Q_75'>Tan Q_75</option>-->
+                    
+                </select>
+                <br/><br /><br />
+                <!--<button id='btn1' type='button' class='btn btn-info btn-sm'>Correlation</button><br />  
+                <button id='btn2' type='button' class='btn btn-info btn-sm'>Mass Univariate</button><br />
+                <button id='btn3' type='button' class='btn btn-info btn-sm'>Quantiles</button>          
+                <button id='btn4' type='button' class='btn btn-info btn-sm'>Outliers Matrix</button>-->
+
+            </left-bar>
+            <right-bar>
+                   
+                  <section>
+                      <div id="details" > <!--style="display:none"-->
+                          <div class="row" >
+                              <div class="col-md-6">
+                                  <h4>Id: <div id="sensor_id"></div></h4><br />
+                                  <!--<div id="bp_min">min</div>
+                                  <div id="bp_max">max</div>-->
+                                  <div id="bp_q_25">Q 25</div>
+                                  <div id="bp_median">Median</div>
+                                  <div id="bp_q_75">Q 75</div><br />
+
+                                  
+                              </div>
+                              <div class="col-md-6" id="focus_var">
+                              </div>
+                          </div>
+                      
+                      </div><br />
+                    
+                      <div class="row" style="margin-bottom:5px; margin-top: 250px">
+                          <div class="col-md-12" id="graphs" >
+                          </div>
+                          <div class="col-md-12" id="dist_view" style="display:none">
+                          </div>
+                          <div class="col-md-12" id="cor" style="display:none" >
+                          </div>
+                          <div class="col-md-12" id="Outliers_Matrix" style="display:none">
+                          </div>
+                      </div>
+
+                      <br /><br />
+
+                   </section>
+       
+          </right-bar>
+            
+        </wrapper>
+            
+    <script src="../JS/jQuery.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <!--<script src="//d3js.org/d3.v4.min.js"></script>-->
+    <script src="../JS/d3.v4.min.js"></script>
+
+    <script src="../JS/ev_js_data.js"></script>
+    <script src="../JS/md3_basic.js"></script>
+    <script src="../JS/main.js"></script>
+       
+    <script type="text/javascript">
+
+   // $("header").html(Set_header());
+
+    $(document).ready(function () {
+        var data, raw_data, quantiles, cor, cor_vector, Outliers_Matrix, network;
+        function go(file_id) {
+
+            //../Eng2_data/
+            d3.csv('../datasets/Eng1/' + file_id + '/uni_matrix.csv', function (ds) {
+                data = ds;
+                readyCheck('file1');
+            })
+
+           // var raw_data;
+            d3.csv('../datasets/Eng1/' + file_id + '/data.csv', function (ds) {
+                raw_data = ds;
+               
+
+                readyCheck('file2');
+            })
+
+      
+            d3.csv('../datasets/Eng1/' + file_id + '/quantiles_matrix.csv', function (ds) {
+                quantiles = ds;
+                readyCheck('file3');
+            })
+            
+            //d3.text('../datasets/' + file_id + '/cor.csv', function (text) {
+            //    var data = d3.csvParseRows(text, function (d) {
+            //        return d.map(Number);
+            //    });
+            //    cor = data;
+            //    readyCheck('file4');
+            //});
+
+            //d3.csv('../datasets/' + file_id + '/cor_vector.csv', function (ds) {
+            //    cor_vector = ds;
+            //    readyCheck('file5');
+            //})
+
+            //d3.csv('../datasets/' + file_id + '/Outliers_Matrix.csv', function (ds) {
+            //    Outliers_Matrix = ds;
+            //    readyCheck('file6');
+            //})
+
+            //d3.csv('../datasets/' + file_id + '/network.csv', function (ds) {
+            //    network = ds;
+            //    readyCheck('file7');
+            //})
+            var readyFiles = {
+                'file1': false, 'file2': false, 'file3': false
+            };
+
+            function readyCheck(filename) {
+                readyFiles[filename] = true;
+                if (readyFiles['file1'] == true && readyFiles['file2'] == true && readyFiles['file3'] == true
+                   ) {
+
+                    //  id,min,quantile_25,median,quantile_75,max,mean,sd,mad,skness,kurtos,min_bc,quantile_25_bc,median_bc,quantile_75_bc,max_bc,mean_bc,sd_bc,mad_bc,skness_bc,kurtos_bc,min_op,quantile_25_op,median_op,quantile_75_op,max_op,mean_op,sd_op,mad_op,skness_op,kurtos_op,op_sum,Missing_Vals
+                    // console.log(cor_vector);
+                    
+                    data = data.map(function (d, i) {
+                        return {
+                            index: i + 1,
+                            id: d.id,
+                            min: +d.min,
+                            min_op: +d.min_op,
+                            max: +d.max,
+                            max_op: +d.max_op,
+                            quantile_25: +d.quantile_25,
+                            quantile_25_op: +d.quantile_25_op,
+                            quantile_75: +d.quantile_75,
+                            quantile_75_op: +d.quantile_75_op,
+                            median_op: +d.median_op,
+                            median: +d.median,
+                            mad: +d.mad,
+                            mad_op: +d.mad_op,
+                            //    mean: +d.mean,
+                         //   sd: +d.sd,
+                            skness: +d.skness,
+                            skness_op: +d.skness_op,
+                            kurtos: +d.kurtos,
+                            kurtos_op: +d.kurtos_op,
+                            op_sum: +d.op_sum,
+                            m: +d.m,
+                            m_rob: +d.m_rob,
+                            m_bc: +d.m_bc,
+                            m_bc_rob: +d.m_bc_rob
+
+                        };
+                    });
+
+                    //sensor_id,CM_Sum,CM_Sum_Square,CM_Avg_Sum,CM_Avg_Sum_Square,CM_Avg_SS_adj2,CM_T2,CM_T2_Flag,PC_dist_5,PC_dist_10,PC_dist_20,grade_auto,grade_auto_code,grade,CM_step1,CM_step2,CM_step3,CM_step4,CM_step5,CM_step6,CM_step7,CM_step8,CM_step9,CM_step10,CCoefficientLocal,EigenvectorCentrality,KCoresOut,VertexStrength,Betweenness,closenessOut,EdgeBetweenness,KCoresOut_adj,EigenvectorCentrality_adj,EigenvectorCentrality_10,KCoresOut_10,KCoresOut_9,KCoresOut_8,KCoresOut_7,KCoresOut_6,KCoresOut_5,KM_cluster,Outlier_group
+               
+
+                    raw_data.filter(function (k) { return k != "datetime" }).forEach(function (d) {
+                        Object.keys(raw_data[0]).forEach(function (k) {
+                            d[k] = +d[k];
+                        });
+                    });
+
+                    quantiles.forEach(function (d) {
+                        Object.keys(quantiles[0]).forEach(function (k) {
+                            d[k] = +d[k];
+                        });
+                    });
+ 
+                    //cor_vector.forEach(function (d) {
+                    //    Object.keys(cor_vector[0]).forEach(function (k) {
+                    //        d[k] = +d[k];
+                    //    });
+                    //});
+
+                   
+
+                   // console.log(quantiles);
+
+                    $("#graphs").html("");
+                    $("#graphs").append("<div class='card hist' id='m1'><div class='head'>Outliers Sum</div></div>");
+
+                    d3mv_scatter_plot1({
+                        data: data, x_ds: "index", y_ds: "op_sum",
+                        chart: "m1", width: 600, height: 240,
+                        color: { col: "op_sum", range: ["steelblue", "red"]}
+                    });
+
+                    $("#graphs").append("<div class='card hist' id='m2a'><div class='head'>m_bc_rob</div></div><br/>");
+
+                    d3mv_scatter_plot1({
+                        data: data, x_ds: "index", y_ds: "m_bc_rob",
+                        chart: "m2a", width: 600, height: 240,
+                        color: { col: "op_sum", range: ["steelblue", "red"] }
+                    });
+
+                   // $("#graphs").append("<div id='idx'>dsfsd</div><br/>");
+                    $("#focus_var").html("");
+                    $("#focus_var").append("<div class='card hist' id='m2'></div>"); //<div class='head'>Focus Variable</div>                    
+                    d3mv_Line_chart({ data: raw_data, chart: "m2", x_ds: "id", y_ds: "1000", width: 600, height: 200 });
+                    
+
+                    var variables = ["min", "quantile_25", "median", "quantile_75", "max", "mad", "skness", "kurtos"];
+
+                    variables.forEach(function (d,i) {
+                        $("#graphs").append("<div class='card hist' id='g" + i + "'><div class='head'>" + variables[i] + "</div></div>");
+                        $("#graphs").append("<div class='card hist' id='s" + i + "'><div class='head'>" + variables[i] + "</div></div>");
+                        d3mv_hist_dist({ values: ds_col_to_array(data, variables[i]), chart: "g"+i, width: 600, height: 240 });
+                        d3mv_scatter_plot1({
+                            data: data, x_ds: "index", y_ds: variables[i],
+                            chart: "s" + i, width: 600, height: 240,
+                            color: { col: variables[i] +"_op", range: ["steelblue", "red"] }
+                        });
+            
+                    });
+
+
+                    //Dist view
+                    //var df = data.map(function (d, i) {
+                    //    return {
+                    //        id: +d.index,
+                    //        min: +d.min,
+                    //        quantile_25: +d.quantile_25,
+                    //        median: +d.median,
+                    //        quantile_75: +d.quantile_75,
+                    //        max: +d.max
+                    //    };
+                    //});
+
+                    var df= data.sort(function (a, b) {
+                        return b.quantile_25 - a.quantile_25;
+                    });
+
+                    df = df.map(function (d, i) {
+                        return {
+                            id: i,
+                            min: +d.min,
+                            quantile_25: +d.quantile_25,
+                            median: +d.median,
+                            quantile_75: +d.quantile_75,
+                            max: +d.max
+                        };
+                    });
+
+                    //cl(df, "df");
+                    // console.table(df); style='display: none;
+                    $("#dist_view").html("");
+                    $("#dist_view").append("<div class='card'  id='dist1'  width: 900px'><div class='head'>Quantiles view</div></div>");
+                    d3mv_MultiLine_chart({ data: df, chart: "dist1", x_ds: "id", width: 900, height: 460, margin: { top: 20, right: 100, bottom: 30, left: 50 } });
+                    
+
+                    $("#cor").html("");
+                   
+                    
+
+                   
+
+                    //$("#cor").append("<div class='card' id='d14'><div class='head'>cor</div></div><br/>");
+                    //d3mv_bubbles({ data: data1, chart: "d14", height: 600, width: 600 });
+
+                    $("#Outliers_Matrix").html("");
+                   
+
+
+                 }
+            }
+        }
+
+        go('stable');
+
+
+        $("#sensor_id").change(function () {
+           
+            var observation = data.filter(function (d) { return d.id == $("#sensor_id").html(); });
+            //alert(observation[0].min);
+
+            //$("#focus_var").html("");
+            //d3mv_Line_chart({ data: raw_data, chart: "m2", x_ds: "id", y_ds: $("#sensor_id").html(), width: 600, height: 200 });
+
+            //---------------------
+           
+            //console.log(quantiles);
+            var svg = d3.select("#m2_svg"), //focus_var  .append("svg")
+            width = 600;
+            height = 200;
+
+            svg.selectAll("*").remove();
+
+    margin = { top: 20, right: 20, bottom: 30, left: 50 },
+    width = width - margin.left - margin.right,
+    height = height - margin.top - margin.bottom;
+
+            var x = d3.scaleLinear().range([0, width]),
+            y = d3.scaleLinear().range([height, 0]),
+            z = d3.scaleOrdinal(['#deebf7', '#c6dbef', '#c6dbef', '#deebf7']);
+
+            var area_data = d3.area()
+            .x(function (d) { return x(d.x); })
+            .y0(function (d) { return y(d.low); })
+            .y1(function (d) { return y(d.high); });
+
+            var g = svg.append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+            var keys = quantiles.columns.slice(1);
+
+           // console.log(keys);
+           // console.log(keys[4]);
+
+            x.domain(d3.extent(quantiles, function (d) { return d.x; }));
+            y.domain([d3.min(quantiles, function (d) { return d.quantile_02; }), d3.max(quantiles, function (d) { return d.quantile_98; })]);
+            z.domain(keys);
+
+            for (var i = 0; i < keys.length - 1; i++) {
+             //   console.log(keys[i]);
+
+               
+
+                area_ds = quantiles.map(function (d) {
+                    return {
+                        x: +d.x,
+                        low: +d[keys[i]],
+                        high: +d[keys[i + 1]]
+                    };
+                });
+               // console.log(area_ds);
+                area = area_data(area_ds);
+                g.append('path')
+                    .attr('d', area)
+                    .style("fill", z(keys[i]));
+            }
+
+            g.append("g")
+                .attr("class", "axis axis--x")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x));
+
+            g.append("g")
+                .attr("class", "axis axis--y")
+                .call(d3.axisLeft(y));
+
+           
+            var line = d3.line()
+                .x(function (d) { return x(d["id"]); })
+                .y(function (d) { return y(d[$("#sensor_id").html()]); });
+
+            svg.append("path")
+                .datum(raw_data)
+                .attr("class", "line")
+                .attr("d", line)
+                .attr("id", "line")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+           
+            //--------------------------------------------
+            d3.select("#sensor_min").html("45555555"); //d["min"]
+            d3.select("#sensor_max").html("dddddddddd"); //d["max"]
+            //$("#bp_min").html("Min: ");
+            //d3mv_box_plot({
+            //    data: data, chart: "bp_min", values: ds_col_to_array(data, "min"),
+            //    width: 500, height: 30, highlight: observation[0].min,
+            //    showAxis: -1, margin: { top: 5, right: 20, bottom: 5, left: 20 }
+            //}) //
+            //$("#bp_max").html("Max: ");
+            //d3mv_box_plot({
+            //    data: data, chart: "bp_max", values: ds_col_to_array(data, "max"),
+            //    width: 500, height: 30, highlight: observation[0].max,
+            //    showAxis: -1, margin: { top: 5, right: 20, bottom: 5, left: 20 }
+            //})
+
+            $("#bp_q_25").html("Q 25: ");
+            d3mv_box_plot({
+                data: data, chart: "bp_q_25", values: ds_col_to_array(data, "quantile_25"),
+                width: 500, height: 30, highlight: observation[0].quantile_25,
+                showAxis: -1, margin: { top: 5, right: 20, bottom: 5, left: 20 }
+            }) //
+
+            $("#bp_median").html("Median: ");
+            d3mv_box_plot({
+                data: data, chart: "bp_median", values: ds_col_to_array(data, "median"),
+                width: 500, height: 30, highlight: observation[0].median,
+                showAxis: -1, margin: { top: 5, right: 20, bottom: 5, left: 20 }
+            })
+
+            $("#bp_q_75").html("Q 75: ");
+            d3mv_box_plot({
+                data: data, chart: "bp_q_75", values: ds_col_to_array(data, "quantile_75"),
+                width: 500, height: 30, highlight: observation[0].quantile_75,
+                showAxis: -1, margin: { top: 5, right: 20, bottom: 5, left: 20 }
+            })
+
+
+
+            //quantile_25: +d.quantile_25,
+            //quantile_25_op: +d.quantile_25_op,
+            //quantile_75: +d.quantile_75,
+            //quantile_75_op: +d.quantile_75_op,
+            //median_op: +d.median_op,
+
+
+            //
+            //d3mv_box_plot({
+            //    data: data, chart: "bp_max", values: ds_col_to_array(data, "max"),
+            //    width: 500, height: 30, highlight: observation[0].max,
+            //    showAxis: -1, margin: { top: 5, right: 20, bottom: 5, left: 20 }
+            //}) //
+
+
+        });
+ 
+        d3.select("#file_id").on("change", change)
+        function change() {
+            go(this.options[this.selectedIndex].value);
+        }
+
+
+    
+        
+    });
+
+
+
+
+
+    </script>
+     
+    </body>
+</html>
