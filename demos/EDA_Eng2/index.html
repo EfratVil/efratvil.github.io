@@ -45,7 +45,7 @@
      </head>
     <body>        
        
-        <header><a href="index.html" class="logo">Eng 1 - Demo</a>
+        <header><a href="index.html" class="logo">Eng 2 - Demo</a>
             <span id="header_text">Bearing Vibration Sensors for Process Monitoring</span>
         <nav>
        </nav></header>
@@ -61,12 +61,23 @@
                 <br />
                 <h3>Data Set</h3><br />
                 <select id='file_id'>
-                    <option value='Stable'>Stable</option>
-                    <option value='Fail'>Fail</option>
-                    <option value='CP4_AXI'>CP4_AXI</option>
-                    <option value='CP5_AXI'>CP5_AXI</option>
-                    <option value='Axi_Q_75'>Axi Q_75</option>
-                    <!--<option value='Tan_Q_75'>Tan Q_75</option>-->
+                    <option selected value='A1x_min'>A1x_min</option> 
+                    <option value='A1x_quantile_25'>A1x_quantile_25</option>
+                    <option value='A1x_median'>A1x_median</option>
+                    <option value='A1x_quantile_75'>A1x_quantile_75</option>
+                    <option value='A1x_max'>A1x_max</option> 
+                    <option value='A1x_mad'>A1x_mad</option>
+                    <option value='A1x_skness'>A1x_skness</option>    
+                    <option value='A1x_kurtos'>A1x_kurtos</option>  
+                    <option value='A1y_quantile_25'>A1y_quantile_25</option>   
+
+                    
+                    <option value='1000_A1x'>1000-01_A1x</option>
+                    <option value='1000_A1y'>1000-01_A1y</option>
+                    <option value='1000_A1z'>1000-01_A1z</option>
+                    <option value='1161_A1x'>1161_A1x</option>
+                    <option value='1161_A1y'>1161_A1y</option>
+                    <option value='1161_A1z'>1161_A1z</option>
                     
                 </select>
                 <br/><br /><br />
@@ -88,6 +99,9 @@
                                   <div id="bp_q_25">Q 25</div>
                                   <div id="bp_median">Median</div>
                                   <div id="bp_q_75">Q 75</div><br />
+
+
+
 
                                   
                               </div>
@@ -118,7 +132,6 @@
             
     <script src="../JS/jQuery.js"></script>
     <script src="../JS/bootstrap.min.js"></script>
-    <!--<script src="//d3js.org/d3.v4.min.js"></script>-->
     <script src="../JS/d3.v4.min.js"></script>
 
     <script src="../JS/ev_js_data.js"></script>
@@ -134,13 +147,13 @@
         function go(file_id) {
 
             //../Eng2_data/
-            d3.csv('../datasets/Eng1/' + file_id + '/uni_matrix.csv', function (ds) {
+            d3.csv('../datasets/Eng2/' + file_id + '/uni_matrix.csv', function (ds) {
                 data = ds;
                 readyCheck('file1');
             })
 
            // var raw_data;
-            d3.csv('../datasets/Eng1/' + file_id + '/data.csv', function (ds) {
+            d3.csv('../datasets/Eng2/' + file_id + '/data.csv', function (ds) {
                 raw_data = ds;
                
 
@@ -148,33 +161,11 @@
             })
 
       
-            d3.csv('../datasets/Eng1/' + file_id + '/quantiles_matrix.csv', function (ds) {
+            d3.csv('../datasets/Eng2/' + file_id + '/quantiles_matrix.csv', function (ds) {
                 quantiles = ds;
                 readyCheck('file3');
             })
             
-            //d3.text('../datasets/' + file_id + '/cor.csv', function (text) {
-            //    var data = d3.csvParseRows(text, function (d) {
-            //        return d.map(Number);
-            //    });
-            //    cor = data;
-            //    readyCheck('file4');
-            //});
-
-            //d3.csv('../datasets/' + file_id + '/cor_vector.csv', function (ds) {
-            //    cor_vector = ds;
-            //    readyCheck('file5');
-            //})
-
-            //d3.csv('../datasets/' + file_id + '/Outliers_Matrix.csv', function (ds) {
-            //    Outliers_Matrix = ds;
-            //    readyCheck('file6');
-            //})
-
-            //d3.csv('../datasets/' + file_id + '/network.csv', function (ds) {
-            //    network = ds;
-            //    readyCheck('file7');
-            //})
             var readyFiles = {
                 'file1': false, 'file2': false, 'file3': false
             };
@@ -244,21 +235,21 @@
                    // console.log(quantiles);
 
                     $("#graphs").html("");
-                    $("#graphs").append("<div class='card hist' id='m1'><div class='head'>Outliers Sum</div></div>");
+                    //$("#graphs").append("<div class='card hist' id='m1'><div class='head'>Outliers Sum</div></div>");
 
-                    d3mv_scatter_plot1({
-                        data: data, x_ds: "index", y_ds: "op_sum",
-                        chart: "m1", width: 600, height: 240,
-                        color: { col: "op_sum", range: ["steelblue", "red"]}
-                    });
+                    //d3mv_scatter_plot1({
+                    //    data: data, x_ds: "index", y_ds: "op_sum",
+                    //    chart: "m1", width: 600, height: 240,
+                    //    color: { col: "op_sum", range: ["steelblue", "red"]}
+                    //});
 
-                    $("#graphs").append("<div class='card hist' id='m2a'><div class='head'>m_bc_rob</div></div><br/>");
+                    //$("#graphs").append("<div class='card hist' id='m2a'><div class='head'>m_bc_rob</div></div><br/>");
 
-                    d3mv_scatter_plot1({
-                        data: data, x_ds: "index", y_ds: "m_bc_rob",
-                        chart: "m2a", width: 600, height: 240,
-                        color: { col: "op_sum", range: ["steelblue", "red"] }
-                    });
+                    //d3mv_scatter_plot1({
+                    //    data: data, x_ds: "index", y_ds: "m_bc_rob",
+                    //    chart: "m2a", width: 600, height: 240,
+                    //    color: { col: "op_sum", range: ["steelblue", "red"] }
+                    //});
 
                    // $("#graphs").append("<div id='idx'>dsfsd</div><br/>");
                     $("#focus_var").html("");
@@ -332,7 +323,7 @@
             }
         }
 
-        go('stable');
+        go('A1x_kurtos');
 
 
         $("#sensor_id").change(function () {

@@ -45,9 +45,12 @@
      </head>
     <body>        
        
-        <header><a href="index.html" class="logo">Eng 1 - Demo</a>
-            <span id="header_text">Bearing Vibration Sensors for Process Monitoring</span>
-        <nav>
+        <header><a href="index.html" class="logo">EDA100</a>
+            <span id="header_text">Multivariate EDA</span>
+        <nav><div >
+            <ul class="nav navbar-nav navbar-right">
+               <li><a href="index.html"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;About</a></li>
+            </ul></div>
        </nav></header>
         
               
@@ -55,25 +58,20 @@
 
             <left-bar>
                 <br/><br/><br /><br />
-
-                <button id='btn0' type='button' class='btn btn-info btn-sm'><a href="About.html">About</a></button><br />
-                <br />
-                <br />
                 <h3>Data Set</h3><br />
                 <select id='file_id'>
-                    <option value='Stable'>Stable</option>
-                    <option value='Fail'>Fail</option>
-                    <option value='CP4_AXI'>CP4_AXI</option>
-                    <option value='CP5_AXI'>CP5_AXI</option>
-                    <option value='Axi_Q_75'>Axi Q_75</option>
+                    <option selected value='A1x_kurtos'>A1x_kurtos</option>
+                    <option value='A1y_quantile_25'>A1y_quantile_25</option>
+                    
+                    <option value='1161_A1x'>1161_A1x</option>
                     <!--<option value='Tan_Q_75'>Tan Q_75</option>-->
                     
                 </select>
                 <br/><br /><br />
-                <!--<button id='btn1' type='button' class='btn btn-info btn-sm'>Correlation</button><br />  
+                <button id='btn1' type='button' class='btn btn-info btn-sm'>Correlation</button><br />  
                 <button id='btn2' type='button' class='btn btn-info btn-sm'>Mass Univariate</button><br />
                 <button id='btn3' type='button' class='btn btn-info btn-sm'>Quantiles</button>          
-                <button id='btn4' type='button' class='btn btn-info btn-sm'>Outliers Matrix</button>-->
+                <button id='btn4' type='button' class='btn btn-info btn-sm'>Outliers Matrix</button>
 
             </left-bar>
             <right-bar>
@@ -133,14 +131,13 @@
         var data, raw_data, quantiles, cor, cor_vector, Outliers_Matrix, network;
         function go(file_id) {
 
-            //../Eng2_data/
-            d3.csv('../datasets/Eng1/' + file_id + '/uni_matrix.csv', function (ds) {
+            d3.csv('../Eng2_data/' + file_id + '/uni_matrix.csv', function (ds) {
                 data = ds;
                 readyCheck('file1');
             })
 
            // var raw_data;
-            d3.csv('../datasets/Eng1/' + file_id + '/data.csv', function (ds) {
+            d3.csv('../Eng2_data/' + file_id + '/data.csv', function (ds) {
                 raw_data = ds;
                
 
@@ -148,7 +145,7 @@
             })
 
       
-            d3.csv('../datasets/Eng1/' + file_id + '/quantiles_matrix.csv', function (ds) {
+            d3.csv('../Eng2_data/' + file_id + '/quantiles_matrix.csv', function (ds) {
                 quantiles = ds;
                 readyCheck('file3');
             })
@@ -332,7 +329,7 @@
             }
         }
 
-        go('stable');
+        go('A1x_kurtos');
 
 
         $("#sensor_id").change(function () {
@@ -479,7 +476,42 @@
             go(this.options[this.selectedIndex].value);
         }
 
+    //correlation
+    d3.select("#btn1").on("click", function () {
+        d3.selectAll('#graphs').style('display', 'none');
+        d3.selectAll('#details').style('display', 'inline-block');
+        d3.selectAll('#dist_view').style('display', 'none');
+        d3.selectAll('#cor').style('display', 'inline-block');
+        d3.selectAll('#Outliers_Matrix').style('display', 'none');
+    });
 
+   //mass univariate
+    d3.select("#btn2").on("click", function () {
+        d3.selectAll('#graphs').style('display', 'inline-block');
+        d3.selectAll('#details').style('display', 'inline-block');
+        d3.selectAll('#dist_view').style('display', 'none');
+        d3.selectAll('#cor').style('display', 'none');
+        d3.selectAll('#Outliers_Matrix').style('display', 'none');
+    });
+
+    //quantiles
+    d3.select("#btn3").on("click", function () {
+        d3.selectAll('#graphs').style('display', 'none');
+        d3.selectAll('#details').style('display', 'none');
+        d3.selectAll('#dist_view').style('display', 'inline-block');
+        d3.selectAll('#cor').style('display', 'none');
+        d3.selectAll('#Outliers_Matrix').style('display', 'none');
+    });
+
+   //outliers matrix
+    d3.select("#btn4").on("click", function () {       
+        d3.selectAll('#graphs').style('display', 'none');
+        d3.selectAll('#details').style('display', 'inline-block');
+        d3.selectAll('#dist_view').style('display', 'none');
+        d3.selectAll('#cor').style('display', 'none');
+        d3.selectAll('#Outliers_Matrix').style('display', 'inline-block');
+        
+    });
     
         
     });
