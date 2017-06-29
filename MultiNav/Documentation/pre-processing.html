@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>MultiNav - Multivariate Explanatory Data Analysis</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="MultiNav Documentation">
+  <meta name="generator" content="bookdown 0.1 and GitBook 2.6.7">
+
+  <meta property="og:title" content="MultiNav - Multivariate Explanatory Data Analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="MultiNav Documentation" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="MultiNav - Multivariate Explanatory Data Analysis" />
+  
+  <meta name="twitter:description" content="MultiNav Documentation" />
+  
+
+<meta name="author" content="Efrat Vilenski Supervised by Jonathan Rosenblatt">
+
+<meta name="date" content="2017-06-29">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="Introduction.html">
+<link rel="next" href="basic-charts.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a></li>
+<li class="chapter" data-level="2" data-path="Introduction.html"><a href="Introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="pre-processing.html"><a href="pre-processing.html"><i class="fa fa-check"></i><b>3</b> Pre-Processing</a><ul>
+<li class="chapter" data-level="3.1" data-path="pre-processing.html"><a href="pre-processing.html#univariate-matrix"><i class="fa fa-check"></i><b>3.1</b> Univariate Matrix</a></li>
+<li class="chapter" data-level="3.2" data-path="pre-processing.html"><a href="pre-processing.html#quantiles-matrix"><i class="fa fa-check"></i><b>3.2</b> Quantiles Matrix</a></li>
+<li class="chapter" data-level="3.3" data-path="pre-processing.html"><a href="pre-processing.html#bi-variate-matrix"><i class="fa fa-check"></i><b>3.3</b> bi-variate Matrix</a></li>
+<li class="chapter" data-level="3.4" data-path="pre-processing.html"><a href="pre-processing.html#scoring-matrix"><i class="fa fa-check"></i><b>3.4</b> Scoring Matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="basic-charts.html"><a href="basic-charts.html"><i class="fa fa-check"></i><b>4</b> Basic Charts</a></li>
+<li class="chapter" data-level="5" data-path="statistical-charts.html"><a href="statistical-charts.html"><i class="fa fa-check"></i><b>5</b> Statistical Charts</a></li>
+<li class="chapter" data-level="6" data-path="linked-charts.html"><a href="linked-charts.html"><i class="fa fa-check"></i><b>6</b> Linked Charts</a></li>
+<li class="chapter" data-level="7" data-path="multiple-linked-charts.html"><a href="multiple-linked-charts.html"><i class="fa fa-check"></i><b>7</b> Multiple Linked Charts</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MultiNav - Multivariate Explanatory Data Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pre-processing" class="section level1">
+<h1><span class="header-section-number">3</span> Pre-Processing</h1>
+<p>The package includes several functions for data pre-processing of common EDA tasks. The output from the function can be used as input for the charts in the package.</p>
+<div id="univariate-matrix" class="section level2">
+<h2><span class="header-section-number">3.1</span> Univariate Matrix</h2>
+<p><strong>Scope:</strong> The univariate matrix creates a collection of univariate descriptive statistics performed on the values of each variable.</p>
+<p><strong>Input:</strong> The function expects input of a data.frame with continues variables from the same scale. A numeric unique id for each observation can also be included in the data.frame. It should be stored in a field called ‘seq_id’ or ‘n_id’. If the id field does not exist, the row names will be used as the id. Any missing data should be handled before calling the function (for example by interpolation). Note: Any records containing missing values will be omitted by default.</p>
+<table style="width:81%;">
+<colgroup>
+<col width="19%" />
+<col width="61%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Statistic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>min</td>
+<td>Minimum value.</td>
+</tr>
+<tr class="even">
+<td>quantile_25</td>
+<td>Quantile 25.</td>
+</tr>
+<tr class="odd">
+<td>median</td>
+<td>Median value.</td>
+</tr>
+<tr class="even">
+<td>quantile_75</td>
+<td>Quantile 75.</td>
+</tr>
+<tr class="odd">
+<td>max</td>
+<td>Maximum value.</td>
+</tr>
+<tr class="even">
+<td>mean</td>
+<td>Mean value.</td>
+</tr>
+<tr class="odd">
+<td>sd</td>
+<td>Standard deviation.</td>
+</tr>
+<tr class="even">
+<td>mad</td>
+<td>Mad - Median Absolute Deviation from the median. Robust estimate of standard deviation.</td>
+</tr>
+<tr class="odd">
+<td>Skewness</td>
+<td>A measure of the asymmetry.</td>
+</tr>
+<tr class="even">
+<td>Kurtosis</td>
+<td>A measure of the “tailedness”.</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Example</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(MultiNav)
+data &lt;-<span class="st"> </span>sensors1 </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">uni_matrix&lt;-<span class="kw">Calc_uni_matrix</span>(data)
+<span class="kw">head</span>(uni_matrix)</code></pre></div>
+<pre><code>##          id        min quantile_25     median quantile_75       max
+## 15865 15865 -2.8681051   -1.586566 -0.2859626 0.003064215 0.7149066
+## 22002 22002 -2.6999008   -1.671163 -0.2096194 0.196828205 0.5226045
+## 21983 21983 -2.6804906   -1.559330 -0.1550818 0.195357652 0.5531044
+## 10623 10623 -0.6118928    0.000000  0.8135215 1.913528423 2.9588621
+## 21997 21997 -2.7398721   -1.352205 -0.0959520 0.243901975 0.6045355
+## 21985 21985 -2.4655656   -1.375499  0.0000000 0.367252422 0.7539952
+##             mean       sd       mad   skewness kurtosis
+## 15865 -0.7041083 1.015367 0.9481736 -0.5796902 1.956918
+## 22002 -0.6457662 1.005336 0.8239657 -0.5955111 1.819309
+## 21983 -0.6236780 1.005586 0.7808334 -0.6645638 1.956463
+## 10623  0.9817285 1.008607 1.2331924  0.3027817 1.686112
+## 21997 -0.5772812 1.004993 0.7058016 -0.7568686 2.131443
+## 21985 -0.4833901 1.005245 0.7551929 -0.6472314 1.930408</code></pre>
+<p><strong>Arguments:</strong> <br/> op - Creates additional set of variables which are the box-cox transformation for each one of the uni_matrix fields to normality. For example for the calculated vector of minimum values called ‘min’ in the uni_matrix table, a new vector will be created called ‘min_bc’. Also another set of variables are created which indicate outlier points (1 - outlier, 0 - normal). The outlier points are marked based on 3 sigma spc rule, of the box-cox transformation. For example the outlier points of the ‘min’ vector will be calculated and stored in the ‘min_op’ field.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">uni_matrix&lt;-<span class="kw">Calc_uni_matrix</span>(data, <span class="dt">op=</span>T)
+<span class="kw">names</span>(uni_matrix)</code></pre></div>
+<pre><code>##  [1] &quot;id&quot;             &quot;min&quot;            &quot;quantile_25&quot;    &quot;median&quot;        
+##  [5] &quot;quantile_75&quot;    &quot;max&quot;            &quot;mean&quot;           &quot;sd&quot;            
+##  [9] &quot;mad&quot;            &quot;skewness&quot;       &quot;kurtosis&quot;       &quot;min_bc&quot;        
+## [13] &quot;quantile_25_bc&quot; &quot;median_bc&quot;      &quot;quantile_75_bc&quot; &quot;max_bc&quot;        
+## [17] &quot;mean_bc&quot;        &quot;sd_bc&quot;          &quot;mad_bc&quot;         &quot;skewness_bc&quot;   
+## [21] &quot;kurtosis_bc&quot;    &quot;min_op&quot;         &quot;quantile_25_op&quot; &quot;median_op&quot;     
+## [25] &quot;quantile_75_op&quot; &quot;max_op&quot;         &quot;mean_op&quot;        &quot;sd_op&quot;         
+## [29] &quot;mad_op&quot;         &quot;skewness_op&quot;    &quot;kurtosis_op&quot;</code></pre>
+</div>
+<div id="quantiles-matrix" class="section level2">
+<h2><span class="header-section-number">3.2</span> Quantiles Matrix</h2>
+<p><strong>Scope:</strong> The quantiles matrix creates a collection of several descriptive statistics performed on each observation over the values of all variables (all variables are on the same scale).</p>
+<p><strong>Input:</strong> The function expects input of a data.frame with continues variables from the same scale. A numeric unique id for each observation can also be included in the data.frame. It should be stored in a field called ‘seq_id’ or ‘n_id’. If the id field does not exist, the row names will be used as the id. Any missing data should be handled before calling the function (for example by interpolation). Note: Any records containing missing values will be omitted by default.</p>
+<table>
+<thead>
+<tr class="header">
+<th>First Header</th>
+<th>Second Header</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>quantile_02</td>
+<td>Quantile 02.</td>
+</tr>
+<tr class="even">
+<td>quantile_25</td>
+<td>Quantile 25.</td>
+</tr>
+<tr class="odd">
+<td>median</td>
+<td>Median value.</td>
+</tr>
+<tr class="even">
+<td>quantile_75</td>
+<td>Quantile 75.</td>
+</tr>
+<tr class="odd">
+<td>quantile_98</td>
+<td>Quantile 98.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">quantiles_matrix&lt;-<span class="kw">Calc_quantiles_matrix</span>(<span class="kw">as.data.frame</span>(data))
+<span class="kw">head</span>(quantiles_matrix)</code></pre></div>
+<pre><code>##   seq_id quantile_02 quantile_25    median quantile_75 quantile_98
+## 1      1  0.00000000  0.00000000 0.0000000   0.0000000   0.0000000
+## 2      2 -0.03870017  0.04523335 0.1030843   0.1738428   0.2951007
+## 3      3 -0.08548829  0.13717688 0.2205888   0.2702622   0.4064945
+## 4      4 -0.07559891  0.20626624 0.3045882   0.3844724   0.5117038
+## 5      5 -0.15480067  0.21575141 0.3549804   0.4573237   0.6494262
+## 6      6 -0.24359237  0.23009727 0.4339755   0.5568298   0.7250820</code></pre>
+</div>
+<div id="bi-variate-matrix" class="section level2">
+<h2><span class="header-section-number">3.3</span> bi-variate Matrix</h2>
+<p><strong>Scope:</strong> The bi-variate matrix creates a collection of descriptive statistics performed on the data of each pair of variables.</p>
+<p><strong>Note:</strong> Will be included in future versions.</p>
+</div>
+<div id="scoring-matrix" class="section level2">
+<h2><span class="header-section-number">3.4</span> Scoring Matrix</h2>
+<p><strong>Scope:</strong> The Scoring matrix creates a collection of multivariate methods to score each variable.</p>
+<p><strong>Note:</strong> Will be included in future versions.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="basic-charts.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": "https://github.com/rstudio/bookdown-demo/edit/master/%s",
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
