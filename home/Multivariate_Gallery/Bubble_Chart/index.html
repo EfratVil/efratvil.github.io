@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+    body {  font-family: 'Exo', sans-serif; }
+    .leftlabel, .rightlabel {  
+            width: 50px;
+            padding: 2px;
+            text-align: center;
+        }
+</style>
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+
+    <div style="margin-left: 150px; margin-top: 2px;">
+        <span class="leftlabel">1960</span>
+        <input id="range1" type="range" min="1960" max="2015" value="2000" style="width: 400px; margin-right: 10px;" />
+        <span class="rightlabel">2015</span>
+    </div>
+
+    <svg id="s1"></svg>
+
+<script src="//d3js.org/d3.v4.js"></script>
+<script>
+
+var diameter = 960,
+    format = d3.format(",d"),
+    color = d3.scaleOrdinal(d3.schemeCategory20c);
+
+var bubble = d3.pack()
+             .size([diameter, diameter])
+             .padding(1.5);
+
+var svg = d3.select("#s1")
+    .attr("width", diameter)
+    .attr("height", diameter)
+    .attr("class", "bubble");
+
+d3.csv("world_pop.csv", function (error, data) {
+  if (error) throw error;
+
+  var xx = {"children": data};
+
+  var root = d3.hierarchy(xx)          
+        .sum(function (d) { return d["2000"]; })
+        .sort(function (a, b) { return b["2000"] - a["2000"]; });
+  bubble(root);
+
+  var node = svg.selectAll(".node")
+      .data(root.children)
+    .enter().append("g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+    node.append("title")
+      .text(function(d) { return d.data.className + ": " + format(d.value); });
+
+    node.append("circle")
+      .attr("r", function (d) { return d.r;})
+      .style("fill", function(d) { 
+          return color(d.data.region);
+      });
+
+    node.append("text")
+      .attr("dy", ".3em")
+      .style("text-anchor", "middle")
+      .text(function (d) { if (d.r > 18) { return d.data.code } else { return "" }; })
+      .style("font-size", function (d) {
+          if (d.r > 50) { return "36px" } else {
+              if (d.r > 30) { return "26px" } else {
+                  if (d.r > 20) { return "18px" } else { return "12px" }}};
+      });
+
+
+   // Range selection change event
+   d3.select("#range1").on("change", function () {
+        var year = d3.select("#range1").property("value");
+        xx = { "children": data };
+
+        var root1 = d3.hierarchy(xx)
+               .sum(function (d) { return d[year]; })
+               .sort(function (a, b) { return b[year] - a[year]; });
+        bubble(root1);
+
+        node
+      .data(root1.children)
+        .transition()
+         .duration(750)
+         .ease(d3.easeLinear)
+        .attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")";});
+
+        node.selectAll('circle')
+            .data(function (d) { return [d]; });
+
+        node.selectAll('circle')
+             .transition()
+             .duration(750)
+             .ease(d3.easeLinear)
+             .attr("r", function (d) { return d.r; });
+
+        node.selectAll('text')
+                .data(function (d) { return [d]; });
+
+        node.selectAll("text")
+            .transition()
+             .duration(750)
+             .ease(d3.easeLinear)
+      .text(function (d) { if (d.r > 18) { return d.data.code } else { return "" }; })
+      .style("font-size", function (d) {
+          if (d.r > 50) { return "36px" } else {
+              if (d.r > 30) { return "26px" } else {
+                  if (d.r > 20) { return "18px" } else { return "12px" }
+              }
+          };
+      });
+    });
+
+}); // end d3.csv
+
+
+// Returns a flattened hierarchy containing all leaf nodes under the root.
+function classes(root) {
+  var classes = [];
+
+  function recurse(name, node) {
+    if (node.children) node.children.forEach(function(child) { recurse(node.name, child); });
+    else classes.push({packageName: name, className: node.name, value: node.size});
+  }
+
+  recurse(null, root);
+  return {children: classes};
+}
+
+d3.select(self.frameElement).style("height", diameter + "px");
+
+</script>
+</body>
