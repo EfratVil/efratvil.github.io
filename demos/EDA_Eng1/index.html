@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
-        <title>MultiDash</title>
+        <title>MultiNav-Demo</title>
         <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
 
         <link rel="stylesheet" href="../CSS/main.css" />
@@ -99,6 +99,11 @@
                     
                       <div class="row" style="margin-bottom:5px; margin-top: 250px">
                           <div class="col-md-12" id="graphs" >
+                              <span style="text-align: center">
+                                  </br>
+                                  <h2>Pls wait a minute while the data is loading.</h2>
+                                  <h2>Large files...</h2>
+                              </span>
                           </div>
                           <div class="col-md-12" id="dist_view" style="display:none">
                           </div>
@@ -153,28 +158,6 @@
                 readyCheck('file3');
             })
             
-            //d3.text('../datasets/' + file_id + '/cor.csv', function (text) {
-            //    var data = d3.csvParseRows(text, function (d) {
-            //        return d.map(Number);
-            //    });
-            //    cor = data;
-            //    readyCheck('file4');
-            //});
-
-            //d3.csv('../datasets/' + file_id + '/cor_vector.csv', function (ds) {
-            //    cor_vector = ds;
-            //    readyCheck('file5');
-            //})
-
-            //d3.csv('../datasets/' + file_id + '/Outliers_Matrix.csv', function (ds) {
-            //    Outliers_Matrix = ds;
-            //    readyCheck('file6');
-            //})
-
-            //d3.csv('../datasets/' + file_id + '/network.csv', function (ds) {
-            //    network = ds;
-            //    readyCheck('file7');
-            //})
             var readyFiles = {
                 'file1': false, 'file2': false, 'file3': false
             };
@@ -183,9 +166,6 @@
                 readyFiles[filename] = true;
                 if (readyFiles['file1'] == true && readyFiles['file2'] == true && readyFiles['file3'] == true
                    ) {
-
-                    //  id,min,quantile_25,median,quantile_75,max,mean,sd,mad,skness,kurtos,min_bc,quantile_25_bc,median_bc,quantile_75_bc,max_bc,mean_bc,sd_bc,mad_bc,skness_bc,kurtos_bc,min_op,quantile_25_op,median_op,quantile_75_op,max_op,mean_op,sd_op,mad_op,skness_op,kurtos_op,op_sum,Missing_Vals
-                    // console.log(cor_vector);
                     
                     data = data.map(function (d, i) {
                         return {
@@ -203,8 +183,7 @@
                             median: +d.median,
                             mad: +d.mad,
                             mad_op: +d.mad_op,
-                            //    mean: +d.mean,
-                         //   sd: +d.sd,
+
                             skness: +d.skness,
                             skness_op: +d.skness_op,
                             kurtos: +d.kurtos,
@@ -218,9 +197,6 @@
                         };
                     });
 
-                    //sensor_id,CM_Sum,CM_Sum_Square,CM_Avg_Sum,CM_Avg_Sum_Square,CM_Avg_SS_adj2,CM_T2,CM_T2_Flag,PC_dist_5,PC_dist_10,PC_dist_20,grade_auto,grade_auto_code,grade,CM_step1,CM_step2,CM_step3,CM_step4,CM_step5,CM_step6,CM_step7,CM_step8,CM_step9,CM_step10,CCoefficientLocal,EigenvectorCentrality,KCoresOut,VertexStrength,Betweenness,closenessOut,EdgeBetweenness,KCoresOut_adj,EigenvectorCentrality_adj,EigenvectorCentrality_10,KCoresOut_10,KCoresOut_9,KCoresOut_8,KCoresOut_7,KCoresOut_6,KCoresOut_5,KM_cluster,Outlier_group
-               
-
                     raw_data.filter(function (k) { return k != "datetime" }).forEach(function (d) {
                         Object.keys(raw_data[0]).forEach(function (k) {
                             d[k] = +d[k];
@@ -233,15 +209,6 @@
                         });
                     });
  
-                    //cor_vector.forEach(function (d) {
-                    //    Object.keys(cor_vector[0]).forEach(function (k) {
-                    //        d[k] = +d[k];
-                    //    });
-                    //});
-
-                   
-
-                   // console.log(quantiles);
 
                     $("#graphs").html("");
                     $("#graphs").append("<div class='card hist' id='m1'><div class='head'>Outliers Sum</div></div>");
@@ -260,7 +227,6 @@
                         color: { col: "op_sum", range: ["steelblue", "red"] }
                     });
 
-                   // $("#graphs").append("<div id='idx'>dsfsd</div><br/>");
                     $("#focus_var").html("");
                     $("#focus_var").append("<div class='card hist' id='m2'></div>"); //<div class='head'>Focus Variable</div>                    
                     d3mv_Line_chart({ data: raw_data, chart: "m2", x_ds: "id", y_ds: "1000", width: 600, height: 200 });
@@ -277,21 +243,10 @@
                             chart: "s" + i, width: 600, height: 240,
                             color: { col: variables[i] +"_op", range: ["steelblue", "red"] }
                         });
+                        $("#graphs").append("</br>>");
             
                     });
 
-
-                    //Dist view
-                    //var df = data.map(function (d, i) {
-                    //    return {
-                    //        id: +d.index,
-                    //        min: +d.min,
-                    //        quantile_25: +d.quantile_25,
-                    //        median: +d.median,
-                    //        quantile_75: +d.quantile_75,
-                    //        max: +d.max
-                    //    };
-                    //});
 
                     var df= data.sort(function (a, b) {
                         return b.quantile_25 - a.quantile_25;
@@ -308,8 +263,6 @@
                         };
                     });
 
-                    //cl(df, "df");
-                    // console.table(df); style='display: none;
                     $("#dist_view").html("");
                     $("#dist_view").append("<div class='card'  id='dist1'  width: 900px'><div class='head'>Quantiles view</div></div>");
                     d3mv_MultiLine_chart({ data: df, chart: "dist1", x_ds: "id", width: 900, height: 460, margin: { top: 20, right: 100, bottom: 30, left: 50 } });
@@ -317,12 +270,6 @@
 
                     $("#cor").html("");
                    
-                    
-
-                   
-
-                    //$("#cor").append("<div class='card' id='d14'><div class='head'>cor</div></div><br/>");
-                    //d3mv_bubbles({ data: data1, chart: "d14", height: 600, width: 600 });
 
                     $("#Outliers_Matrix").html("");
                    
@@ -338,15 +285,8 @@
         $("#sensor_id").change(function () {
            
             var observation = data.filter(function (d) { return d.id == $("#sensor_id").html(); });
-            //alert(observation[0].min);
 
-            //$("#focus_var").html("");
-            //d3mv_Line_chart({ data: raw_data, chart: "m2", x_ds: "id", y_ds: $("#sensor_id").html(), width: 600, height: 200 });
-
-            //---------------------
-           
-            //console.log(quantiles);
-            var svg = d3.select("#m2_svg"), //focus_var  .append("svg")
+             var svg = d3.select("#m2_svg"), //focus_var  .append("svg")
             width = 600;
             height = 200;
 
@@ -371,17 +311,11 @@
 
             var keys = quantiles.columns.slice(1);
 
-           // console.log(keys);
-           // console.log(keys[4]);
-
             x.domain(d3.extent(quantiles, function (d) { return d.x; }));
             y.domain([d3.min(quantiles, function (d) { return d.quantile_02; }), d3.max(quantiles, function (d) { return d.quantile_98; })]);
             z.domain(keys);
 
             for (var i = 0; i < keys.length - 1; i++) {
-             //   console.log(keys[i]);
-
-               
 
                 area_ds = quantiles.map(function (d) {
                     return {
@@ -390,7 +324,7 @@
                         high: +d[keys[i + 1]]
                     };
                 });
-               // console.log(area_ds);
+
                 area = area_data(area_ds);
                 g.append('path')
                     .attr('d', area)
@@ -421,18 +355,7 @@
             //--------------------------------------------
             d3.select("#sensor_min").html("45555555"); //d["min"]
             d3.select("#sensor_max").html("dddddddddd"); //d["max"]
-            //$("#bp_min").html("Min: ");
-            //d3mv_box_plot({
-            //    data: data, chart: "bp_min", values: ds_col_to_array(data, "min"),
-            //    width: 500, height: 30, highlight: observation[0].min,
-            //    showAxis: -1, margin: { top: 5, right: 20, bottom: 5, left: 20 }
-            //}) //
-            //$("#bp_max").html("Max: ");
-            //d3mv_box_plot({
-            //    data: data, chart: "bp_max", values: ds_col_to_array(data, "max"),
-            //    width: 500, height: 30, highlight: observation[0].max,
-            //    showAxis: -1, margin: { top: 5, right: 20, bottom: 5, left: 20 }
-            //})
+
 
             $("#bp_q_25").html("Q 25: ");
             d3mv_box_plot({
@@ -455,21 +378,6 @@
                 showAxis: -1, margin: { top: 5, right: 20, bottom: 5, left: 20 }
             })
 
-
-
-            //quantile_25: +d.quantile_25,
-            //quantile_25_op: +d.quantile_25_op,
-            //quantile_75: +d.quantile_75,
-            //quantile_75_op: +d.quantile_75_op,
-            //median_op: +d.median_op,
-
-
-            //
-            //d3mv_box_plot({
-            //    data: data, chart: "bp_max", values: ds_col_to_array(data, "max"),
-            //    width: 500, height: 30, highlight: observation[0].max,
-            //    showAxis: -1, margin: { top: 5, right: 20, bottom: 5, left: 20 }
-            //}) //
 
 
         });
