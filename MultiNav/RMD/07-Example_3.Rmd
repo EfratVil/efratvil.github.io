@@ -1,0 +1,65 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# Example III
+## Example III - Breast Cancer Data Set
+
+This example shows how MultiNav usage can be extended for exploring a general multivariate dataset, that does not have temporal attributes. 
+
+The demonstrated dataset is one of the datasets reviewed in the paper - 
+<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0152173">A Comparative Evaluation of Unsupervised Anomaly Detection Algorithms for Multivariate Data</a>. The paper referes to datasets that can be used for benchmarking unsupervised anomaly detection algorithms.
+
+
+About the **Breast Cancer Wisconsin (Diagnostic)** dataset: the features are extracted from medical images of a fine needle aspirate (FNA) describing the cell nuclei. The challange is to separate cancer from healthy patients with unsupervised anomaly detection methods. The dataset contains 367 instances in total and having 2.72% anomalies (10 anomalies).
+<br/><br/>
+
+
+
+```{r, message=FALSE}
+library(MultiNav)
+
+```
+
+
+```{r exp0, message=FALSE, error=FALSE, echo=FALSE}
+
+#path <- "G://My Drive/Univ/Reaserch_topics/Anomaly Detection/DataSets" 
+# setwd(path)
+
+``` 
+### Load The Data
+We load the data, scale it, and remove the class variable. 
+Before using MultiNav, we also transpose the data. MultiNav is built for finding anomalies in variables (typically sensors in IoT use cases). If the goal of the analysis is to find anomalies in observations (such as in this data set), first a transpose of the data is required.
+
+
+```{r exp1, fig.height=4, fig.width=7}
+
+ds <- read.csv('breast-cancer-unsupervised-ad.csv',                stringsAsFactors = FALSE, check.names = FALSE)
+ds[,31]<-NULL
+
+ds<-as.data.frame(t((scale(ds))))
+colnames(ds)<-seq(1:dim(ds)[2])
+
+``` 
+</br>
+
+### Initial Data Exploration
+First we explore the data with the 1st order scores.
+```{r exp2, message=FALSE, error=FALSE, fig.height=4, fig.width=7}
+  
+MultiNav(ds,type = "snapshot scores")
+
+
+``` 
+
+### MultiVariate Anomalies
+
+Then we examin the multivariate anomalies. Few anomoalies are identified. 
+```{r exp4, message=FALSE, error=FALSE, fig.height=4, fig.width=7}
+MultiNav(ds,type = "snapshot scores", scores="mv")
+``` 
+
+</br></br>
+
