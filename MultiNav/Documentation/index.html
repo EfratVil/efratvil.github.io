@@ -5,12 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>MultiNav - Multivariate Explanatory Data Analysis</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <title>MultiNav R Package</title>
   <meta name="description" content="MultiNav Documentation">
-  <meta name="generator" content="bookdown 0.1 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
-  <meta property="og:title" content="MultiNav - Multivariate Explanatory Data Analysis" />
+  <meta property="og:title" content="MultiNav R Package" />
   <meta property="og:type" content="book" />
   
   
@@ -18,15 +17,15 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="MultiNav - Multivariate Explanatory Data Analysis" />
+  <meta name="twitter:title" content="MultiNav R Package" />
   
   <meta name="twitter:description" content="MultiNav Documentation" />
   
 
-<meta name="author" content="Efrat Vilenski Supervised by Jonathan Rosenblatt">
+<meta name="author" content="Efrat Vilenski Supervised by Dr. Jonathan Rosenblatt">
 
-<meta name="date" content="2017-06-29">
 
+<meta name="date" content="2019-11-14">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,7 +34,6 @@
   
 
 <link rel="next" href="Introduction.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -58,22 +56,72 @@
 <body>
 
 
+
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">MultiNav</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a></li>
-<li class="chapter" data-level="2" data-path="Introduction.html"><a href="Introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
-<li class="chapter" data-level="3" data-path="pre-processing.html"><a href="pre-processing.html"><i class="fa fa-check"></i><b>3</b> Pre-Processing</a></li>
-<li class="chapter" data-level="4" data-path="basic-charts.html"><a href="basic-charts.html"><i class="fa fa-check"></i><b>4</b> Basic Charts</a></li>
-<li class="chapter" data-level="5" data-path="statistical-charts.html"><a href="statistical-charts.html"><i class="fa fa-check"></i><b>5</b> Statistical Charts</a></li>
-<li class="chapter" data-level="6" data-path="linked-charts.html"><a href="linked-charts.html"><i class="fa fa-check"></i><b>6</b> Linked Charts</a></li>
-<li class="chapter" data-level="7" data-path="multiple-linked-charts.html"><a href="multiple-linked-charts.html"><i class="fa fa-check"></i><b>7</b> Multiple Linked Charts</a></li>
+<li class="chapter" data-level="2" data-path="Introduction.html"><a href="Introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="Introduction.html"><a href="Introduction.html#concept"><i class="fa fa-check"></i><b>2.1</b> Concept</a></li>
+<li class="chapter" data-level="2.2" data-path="Introduction.html"><a href="Introduction.html#definitions-terminology"><i class="fa fa-check"></i><b>2.2</b> Definitions / Terminology</a></li>
+<li class="chapter" data-level="2.3" data-path="Introduction.html"><a href="Introduction.html#development"><i class="fa fa-check"></i><b>2.3</b> Development</a></li>
+<li class="chapter" data-level="2.4" data-path="Introduction.html"><a href="Introduction.html#installation"><i class="fa fa-check"></i><b>2.4</b> Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="pre-processing.html"><a href="pre-processing.html"><i class="fa fa-check"></i><b>3</b> Pre-Processing</a><ul>
+<li class="chapter" data-level="3.1" data-path="pre-processing.html"><a href="pre-processing.html#univariate-matrix"><i class="fa fa-check"></i><b>3.1</b> Univariate Matrix</a></li>
+<li class="chapter" data-level="3.2" data-path="pre-processing.html"><a href="pre-processing.html#quantiles-matrix"><i class="fa fa-check"></i><b>3.2</b> Quantiles Matrix</a></li>
+<li class="chapter" data-level="3.3" data-path="pre-processing.html"><a href="pre-processing.html#anoamly-scores"><i class="fa fa-check"></i><b>3.3</b> Anoamly Scores</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="pre-processing.html"><a href="pre-processing.html#hotellings-t2"><i class="fa fa-check"></i><b>3.3.1</b> Hotelling’s <span class="math inline">\(T^2\)</span></a></li>
+<li class="chapter" data-level="3.3.2" data-path="pre-processing.html"><a href="pre-processing.html#eigenvector-centrality"><i class="fa fa-check"></i><b>3.3.2</b> Eigenvector Centrality</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="snapshot-scores-view.html"><a href="snapshot-scores-view.html"><i class="fa fa-check"></i><b>4</b> Snapshot Scores View</a><ul>
+<li class="chapter" data-level="4.1" data-path="snapshot-scores-view.html"><a href="snapshot-scores-view.html#default-scores"><i class="fa fa-check"></i><b>4.1</b> Default Scores</a></li>
+<li class="chapter" data-level="4.2" data-path="snapshot-scores-view.html"><a href="snapshot-scores-view.html#default-multivariate-scores"><i class="fa fa-check"></i><b>4.2</b> Default Multivariate Scores</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="snapshot-scores-view.html"><a href="snapshot-scores-view.html#mv-default"><i class="fa fa-check"></i><b>4.2.1</b> MV Default</a></li>
+<li class="chapter" data-level="4.2.2" data-path="snapshot-scores-view.html"><a href="snapshot-scores-view.html#t2-variations"><i class="fa fa-check"></i><b>4.2.2</b> T2 Variations</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="snapshot-scores-view.html"><a href="snapshot-scores-view.html#custom-scores"><i class="fa fa-check"></i><b>4.3</b> Custom Scores</a></li>
+<li class="chapter" data-level="4.4" data-path="snapshot-scores-view.html"><a href="snapshot-scores-view.html#custom-quantiles"><i class="fa fa-check"></i><b>4.4</b> Custom Quantiles</a></li>
+<li class="chapter" data-level="4.5" data-path="snapshot-scores-view.html"><a href="snapshot-scores-view.html#examine-historical-scores"><i class="fa fa-check"></i><b>4.5</b> Examine Historical Scores</a></li>
+<li class="chapter" data-level="4.6" data-path="snapshot-scores-view.html"><a href="snapshot-scores-view.html#examine-outliers"><i class="fa fa-check"></i><b>4.6</b> Examine Outliers</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="example-i-dendrometer-sensors.html"><a href="example-i-dendrometer-sensors.html"><i class="fa fa-check"></i><b>5</b> Example I - Dendrometer Sensors</a><ul>
+<li class="chapter" data-level="5.1" data-path="example-i-dendrometer-sensors.html"><a href="example-i-dendrometer-sensors.html#exploratory-data-anaylsis-with-first-order-scores"><i class="fa fa-check"></i><b>5.1</b> Exploratory Data Anaylsis with First Order Scores</a></li>
+<li class="chapter" data-level="5.2" data-path="example-i-dendrometer-sensors.html"><a href="example-i-dendrometer-sensors.html#evaluate-multivariate-scoring-methods"><i class="fa fa-check"></i><b>5.2</b> Evaluate Multivariate Scoring Methods</a></li>
+<li class="chapter" data-level="5.3" data-path="example-i-dendrometer-sensors.html"><a href="example-i-dendrometer-sensors.html#review-outliers"><i class="fa fa-check"></i><b>5.3</b> Review Outliers</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="example-ii-lambs-weight.html"><a href="example-ii-lambs-weight.html"><i class="fa fa-check"></i><b>6</b> Example II - Lambs Weight</a><ul>
+<li class="chapter" data-level="6.1" data-path="example-ii-lambs-weight.html"><a href="example-ii-lambs-weight.html#initial-exploration"><i class="fa fa-check"></i><b>6.1</b> Initial Exploration</a></li>
+<li class="chapter" data-level="6.2" data-path="example-ii-lambs-weight.html"><a href="example-ii-lambs-weight.html#examin-multivariate-outliers"><i class="fa fa-check"></i><b>6.2</b> Examin Multivariate Outliers</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="example-ii-lambs-weight.html"><a href="example-ii-lambs-weight.html#three-days-window"><i class="fa fa-check"></i><b>6.2.1</b> Three Days Window</a></li>
+<li class="chapter" data-level="6.2.2" data-path="example-ii-lambs-weight.html"><a href="example-ii-lambs-weight.html#days-window"><i class="fa fa-check"></i><b>6.2.2</b> 7 Days Window</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="example-iii.html"><a href="example-iii.html"><i class="fa fa-check"></i><b>7</b> Example III</a><ul>
+<li class="chapter" data-level="7.1" data-path="example-iii.html"><a href="example-iii.html#example-iii---breast-cancer-data-set"><i class="fa fa-check"></i><b>7.1</b> Example III - Breast Cancer Data Set</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="example-iii.html"><a href="example-iii.html#load-the-data"><i class="fa fa-check"></i><b>7.1.1</b> Load The Data</a></li>
+<li class="chapter" data-level="7.1.2" data-path="example-iii.html"><a href="example-iii.html#initial-data-exploration"><i class="fa fa-check"></i><b>7.1.2</b> Initial Data Exploration</a></li>
+<li class="chapter" data-level="7.1.3" data-path="example-iii.html"><a href="example-iii.html#multivariate-anomalies"><i class="fa fa-check"></i><b>7.1.3</b> MultiVariate Anomalies</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="charts.html"><a href="charts.html"><i class="fa fa-check"></i><b>8</b> Charts</a><ul>
+<li class="chapter" data-level="8.1" data-path="charts.html"><a href="charts.html#line-chart"><i class="fa fa-check"></i><b>8.1</b> Line Chart</a></li>
+<li class="chapter" data-level="8.2" data-path="charts.html"><a href="charts.html#scatter-plot"><i class="fa fa-check"></i><b>8.2</b> Scatter Plot</a></li>
+<li class="chapter" data-level="8.3" data-path="charts.html"><a href="charts.html#network-chart"><i class="fa fa-check"></i><b>8.3</b> Network Chart</a></li>
+<li class="chapter" data-level="8.4" data-path="charts.html"><a href="charts.html#functional-boxplot"><i class="fa fa-check"></i><b>8.4</b> Functional BoxPlot</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="linked-charts.html"><a href="linked-charts.html"><i class="fa fa-check"></i><b>9</b> Linked Charts</a><ul>
+<li class="chapter" data-level="9.1" data-path="linked-charts.html"><a href="linked-charts.html#scatter-plot-with-linked-line-chart"><i class="fa fa-check"></i><b>9.1</b> Scatter Plot With Linked Line Chart</a></li>
+<li class="chapter" data-level="9.2" data-path="linked-charts.html"><a href="linked-charts.html#network-graph-with-linked-line-charts"><i class="fa fa-check"></i><b>9.2</b> Network Graph With Linked Line Charts</a></li>
+<li class="chapter" data-level="9.3" data-path="linked-charts.html"><a href="linked-charts.html#multiple-linked-charts"><i class="fa fa-check"></i><b>9.3</b> Multiple Linked Charts</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -86,7 +134,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MultiNav - Multivariate Explanatory Data Analysis</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MultiNav R Package</a>
           </h1>
         </div>
 
@@ -95,12 +143,12 @@
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">MultiNav - Multivariate Explanatory Data Analysis</h1>
-<h4 class="author"><em>Efrat Vilenski Supervised by Jonathan Rosenblatt</em></h4>
-<h4 class="date"><em>2017-06-29</em></h4>
+<h1 class="title">MultiNav R Package</h1>
+<h4 class="author"><em>Efrat Vilenski Supervised by Dr. Jonathan Rosenblatt</em></h4>
+<h4 class="date"><em>2019-11-14</em></h4>
 </div>
 <div id="preface" class="section level1">
-<h1><span class="header-section-number">1</span> Preface</h1>
+<h1><span class="header-section-number">Chapter 1</span> Preface</h1>
 <div id="bg" style="text-align: center">
 <p><img src="images/book_header_s.PNG" alt=""></p>
 </div>
@@ -118,8 +166,9 @@ This is the documentation for <em>MultiNav R Packadge</em>! Visit the <a href="h
         </div>
       </div>
 
-<a href="Introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="Introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -128,9 +177,10 @@ This is the documentation for <em>MultiNav R Packadge</em>! Visit the <a href="h
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
+"github": false,
 "facebook": true,
 "twitter": true,
 "google": false,
@@ -144,15 +194,29 @@ gitbook.start({
 "family": "sans",
 "size": 2
 },
-"edit": "https://github.com/rstudio/bookdown-demo/edit/master/%s",
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"text": "Edit"
+},
 "download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
 "toc": {
-"collapse": "subsection"
+"collapse": "section"
 }
 });
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
