@@ -1,6 +1,11 @@
-# Example I - Dendrometer Sensors
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Example I - Dendrometer Sensors {#example1}
 
-The first example dataset corresponds to the challenge of identifying  malfunctioning dendrometer sensors with unsupervised anomaly detection methods. Dendrometers are measurement devices that can continuously monitor and record size variation in plant organs like stems, branches and fruits. Data from dendrometers can be used for monitoring of plants' daily water status, and accordingly make irrigation decisions. The challenge is to identify the malfunctioning sensors and filtering them out, before making irrigation decisions.
+The first example corresponds to the task of identifying  malfunctioning [dendrometer sensors](https://en.wikipedia.org/wiki/Dendrometry) with unsupervised anomaly detection methods. Dendrometers are measurement devices that continuously monitor size variation in plant organs like stems, branches and fruits. Data from dendrometers can be used for monitoring plants' daily water status, and make automated irrigation decisions. A major challenge is to identify malfunctioning sensors and filter them out before making irrigation decisions.
 
 </br>
 Loading the necessary packages:
@@ -8,60 +13,85 @@ Loading the necessary packages:
 library(MultiNav)
 library(RColorBrewer)
 library(data.table)
-
 ```
 
-## Exploratory Data Anaylsis with First Order Scores
-We start by loading the 'DendrometerSensors' dataset and performing initial exploration to get a feel of how the data looks like and to check if there are any sensors that have obvious anomalies. The dendrometer dataset includes data of 100 sensors from 120 hourly readings (5 days). The data is already pre-processed to ensure distributions are symmetric.
+## Exploratory Data Anaylsis with Univariate Scores
 
+The dendrometer dataset includes data of 100 sensors from 120 hourly readings (5 days). 
+We start by loading the 'DendrometerSensors' dataset and performing initial exploration to get a feel of how the data looks like and to check if there are any sensors that have obvious anomalies. 
 
-The exploration starts with a simple heatmap. It provides a quick view of the data. Some anomalies can be seen, but it is hard to understand the details. 
-
+The exploration starts with a simple heatmap. It provides a quick view of the data. 
+Daily growth cycles are clear. 
+Some anomalies can be seen, but it is hard to understand the details. 
+[TODO: add some discussion of what you see.]
 
 ```{r ex1, message=FALSE, warning=FALSE}
-data <- DendrometerSensors
+data <- DendrometerSensors 
 
-cols <- rev(colorRampPalette(c("red", "white", "blue"))(100))
-lattice::levelplot(as.matrix(data), col.regions = cols[length(cols):1],
-                   ylab="Dendrometer Id",xlab="Hours")
+cols <- rev(colorRampPalette(c("red", "white", "blue"))(100)) # make color palette
 
+lattice::levelplot(as.matrix(data), 
+                   col.regions = cols[length(cols):1],
+                   ylab="Dendrometer Id",xlab="Hours") # heatmap
 ```
 
-Next we will explore the data with MultiNav. We do this by examining the data with the default first order scores that are calculated per sensor.
+To idetify anomalous sensors, and find more subtle anomalies than the ones visible in a heatmap, we will use  __MultiNav__. 
+We start with a battery of univariate, sensor-wise, summary statistics.
+The univariate summary statistics that are chosen by default are the 0.25,0.5,0.75 quantiles, and the MAD.
 
-Hoovering over a point in one of the scores scatter plots, will automatically show highlighted the scores that the sensor received for all the other scoring methods and also will show the selected sensor values layed on top of a functional box plot. With this display, we can easily visually identify several anomalies (104, 142, 161, 182) and get an understanding of the nature of the anomaly.
+Hoovering over a sensor in the scatter plots will automatically highlight the sensor in all plots. It will also show the sensor's raw measurements on a _functional box-plot_.
+With this display, we can visually identify several anomalous sensors (104, 142, 161, 182) and investigate the nature of the anomaly, with the functional boxplot.
 
 ```{r ex2, message=FALSE, warning=FALSE}
-
-MultiNav(data,type = "snapshot scores")
-
+MultiNav(data, type = "snapshot scores")
 ```
+[TODO: "snapshot scores" is a long name. Use one word. Maybe "snapshot", "snap", "main"? What other options are available except "snapshot"?]
+
 
 </br></br>
 
+
 ## Evaluate Multivariate Scoring Methods
-Next, several methods of multivariate anomaly scores will be calculated. At the first evaluation phase, it is not yet clear which of the methods is most suitable for this specific dataset (or combination of methods). We will evaluate and compare the scores with the "snapshot scores" display.
+The previous univariate summaries, are computed based on the whole data. 
+To study local patterns, we may want to compute summaries in a sliding window. 
+Moreover, we may want to account for correlations in each window. 
+The following scoring methods, collectively called "multivariate", first estimate the correlations within a single window, and then compute an anomaly score for the window. 
+One may think of multivariate, as "second order" scores, because we will use an estimate of the correlation between periods.
 
-The anomaly scores will be calculated based on a time window of 72 hours. As pre-processing for this step, it is required to remove hours where the standard deviation equals 0 (which leaves 66 valid hours). The anomaly scores per sensor are calculated and stored in a data.table called Calculated.Scores, and passed to the MultiNav() function.
+We propose various methods for computing correlations, and scores. 
+Readers familiar with the multivariate testing literature, will recognize that our various multivariate scores are all variations on Hotelling's classic $$T^2$$ statistic.
+The appropriate method depends on the size of the window, the number of sensors, and the empirical correlations in the data.
+For this reason, we do not recomend a-priori a single method, but rather, supply the user various such scoring rules. 
 
+[TODO: use proper indentation for functions, and R object: `data.table`, `Calculated.Scores`, etc.]
+By default, we use windows of 72 hours [TODO: the default window size needs to be a function of the data. Maybe sqrt of the number of periods? I also see that this is not actually a default, but rather, an arbitrary choice you made]. 
+As pre-processing for this step, it is required to remove hours where the standard deviation equals 0 (which leaves 66 valid hours). [TODO: please automate this verificaton within your functions, instead of asking the user to do it]
+The anomaly scores per sensor are calculated and stored in a `data.table` called `Calculated.Scores`, and passed to the `MultiNav()` function using the `scores=`  argument.
+
+[TODO: some detail of the default multivaraite scoring rules is necessary.]
+
+[TODO: use comments to exaplain what your code is doing]
 ```{r e36, message=FALSE, warning=FALSE, error=FALSE, fig.height=5.5}
-# We will examin anomalies in a window of last 72 hours.
-mat<-data[49:120,]
-# Excluding the hours with 0 sd (data remaining 66 hours).
-exclude.hours<- c(1,24,25,48,49,72)
+mat<-data[49:120,] # subset last 72 hours 
+exclude.hours<- c(1,24,25,48,49,72) #[TODO: make the extraction automated].
 mat<-mat[-exclude.hours,]
 
 set.seed(123)
-T2 <- T2(t(mat))
+T2 <- T2(t(mat)) # [TODO: avoid replacing an object in place.]
 T2_mcd75 <- T2_mcd75(t(mat))
 T2_co <- round(T2_CrouxOllerer(t(mat)),5)
-EigenCent<-EigenCentrality(mat)
+EigenCent<-EigenCentrality(mat) # [TODO:loading a package from within a function is bad style.]
 
+Calculated.Scores <- as.data.table(cbind(
+  id=as.numeric(colnames(mat)), 
+  T2=T2,
+  T2_mcd75=T2_mcd75, 
+  T2_co=T2_co, 
+  EigenCent))
+head(Calculated.Scores) # Inspect customize scores
 
-Calculated.Scores <- as.data.table(cbind(id=as.numeric(colnames(mat)), T2=T2,T2_mcd75=T2_mcd75, T2_co=T2_co, EigenCent))
-head(Calculated.Scores)
-
-MultiNav(mat,type = "snapshot scores", scores = Calculated.Scores)
+MultiNav(mat, type = "snapshot scores", 
+         scores = Calculated.Scores) # [TODO: why do I get a warning? #TODO: why am I getting a warning message?]
 
 ``` 
 </br></br>
@@ -69,34 +99,36 @@ MultiNav(mat,type = "snapshot scores", scores = Calculated.Scores)
 
 After visual examination of the anomaly scores, we can see:
 
++ Some sensors are identified as anomalous by viewing the multivariate scores, but they were not detected by the univariate scores. For example sensor 150.
 
-+ There are some sensors that can be identified visually as anomaly by viewing the multivariate scores, but they were not detected by the univariate scores. For example sensor 150.
++ _T2 score_ - This score does not seem to separate the anomalies as cleanly as the robust _T2_MCD75_. This is probably due to the fact that the covariance within a window is estimated from multiple windows: because some windows contain anomalies, then _masking_ occurs. A robust scoring rule such as _T2_MCD75_ is not masked, and is thus more sensitive to outliers. 
 
-+ T2 score - as expected from a non robust anomaly score, this score does not seem to separate the anomalies as cleanly as the robust T2_MCD75. 
++ _EigenvectorCentrality_ score is good at capturing anti-correlation patterns, and works well in this use case as complimentary method to _T2_MCD75_. _EigenvectorCentrality_ identified sensor 104 as outlier and also identified sensor 187 which were not identified by _T2_MCD75_.  
 
-+ The T2_MCD75 score does a good job identifying most of the outliers, but may fail to recognize some outliers such as exhibited in sensor 104. 
-
-+ EigenvectorCentrality score is good at capturing anit-correlation patterns, and works well in this use case as complimentary method to T2_MCD75. This method identified sensor 104 as outlier and also identified sensor 187 which were not identified with T2_MCD75.  
-
-+ T2_co score was a good anomaly score candidate as it is both robust and adaptive for high dimensional data sets. However, in our specific use case where correlation levels are relatively high it does not seem to perform well. 
++ _T2_co_ score had great potential: being designed to be both robust, and adaptive to high-dimension. Alas, in our specific example, it is a poor performer [TODO: explain why].
 
 
 ## Review Outliers
-Next, we want to investigate anomalies found using our two selected anomaly methods: T2_MCD75 a robust multivariate anomaly score together with EigenvectorCentrality score. Our strategy is to use those scoring methods together. It is not necessary to exclude the sensors that were already identified as first order anomalies in the EDA phase, as those combined methods will also identify them. 
-
-We will call again the "snapshot scores" display. But this time we will provide as input, a longer data stream containing data from 120 hours and ask to calculate rolling historical scores of a 66 hours window. We will also call the "mv" default scores set, which calculates both T2_MCD75 and EigenvectorCentrality scores.
+With univariate scoring rules, it is easy to understand the source of an anomaly. With windowed multivaraite rules, the nature of an anomaly is less obvious. 
+We thus want to investigate anomalies detected. 
+For this purpose we use the "snapshot scores" display again. 
+This time we will provide as input, a longer data stream containing data from 120 periods, not only 73. 
+In this period, we calculate historical scores in windows of size 66. 
+We use `scores="mv"` to call for the default multivariate scores,: _T2_MCD75_ and _EigenvectorCentrality_.
+[TODO: you should start with presentng scores="mv", and then show how to compute manually the scores matrix.]
 
 ```{r e4, message=FALSE, error=FALSE, warning=FALSE}
+exclude.hours<- c(1,24,25,48,49,72,73,96,97,120) #[TODO: never extract manually. Always use a script to generate the extraction indices.]
 
-exclude.hours<- c(1,24,25,48,49,72,73,96,97,120)
-
-MultiNav(data[-exclude.hours,],type = "snapshot scores", window=66, scores="mv")
-
+MultiNav(data[-exclude.hours,], type = "snapshot scores", window=66, scores="mv")
 ``` 
-</br></br>
-Looking at the display, and hovering over a scatter plot point representing an anomalous sensor, we can further learn more about the strength and weakness of our two selected methods for identifying specific patterns of anomalies. 
+[TODO: this display takes a while to load. Can you make it more efficient?]
 
-In general, we can visually observe that the T2_mcd75 separates the anomalous sensors better than the EigenvectorCentrality method, but it misses some anomalous sensors such as 104, 187. 
+</br></br>
+
+Looking at the display, and hovering over a scatter plot point, we can learn more about the strength and weakness of our two selected methods for identifying specific patterns of anomalies. 
+
+In general, we can visually observe that the _T2_mcd75_ separates the anomalous sensors better than _EigenvectorCentrality_, but it misses some anomalous sensors such as 104, 187. 
 
 To review the historical scores of a specific sensor, click on the sensor's point in one of the scores scatter plots. The displays updates, the focus moves to the selected sensor and the historical scores for the sensor are shown. This functionality enables to review if there is a trend of improvement or deterioration in the sensor's historical scores. 
 

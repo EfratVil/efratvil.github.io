@@ -1,8 +1,13 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Example II - Lambs Weight
 
-The second example dataset corresponds to a challenge of identifying anomalous lambs (that may require farmers attention) based on daily weight estimates of individual lambs in a herd. Our goal is to identify anomalous lambs and provide visual tools to examine and understand the anomalies. 
+The second example corresponds to identifying anomalous lambs, that may require farmers attention, based on daily weight estimates of individual lambs in a herd. Our goal is to identify anomalous lambs and provide visual tools to examine and understand the anomalies. 
 
-The dataset contains data of 80 daily weight estimates for 39 lambs. Data was collected from a novel system (developed by the Volcani PLF lab) which contains electronic scales and drinking behavior sensor, designed for automatic small-ruminant monitoring. The water source is an attraction point, that voluntarily attracts the animals to the scale several times per day.
+The dataset contains data of 80 daily weight estimates for 39 lambs. Data was collected from a novel system (developed by the Volcani PLF lab [TODO: add link]) which contains electronic scales and drinking behavior sensor, designed for automatic small-ruminant monitoring. The water source is an attraction point, that voluntarily attracts the animals to the scale several times per day. [TODO: maybe add an image?]
 
 </br>
 Loading the necessary packages:
@@ -10,71 +15,68 @@ Loading the necessary packages:
 library(MultiNav)
 library(corrplot)
 library(RColorBrewer)
-
-
 ```
 
 ##  Initial Exploration
 
-First we will load and examin the lambs dataset with a basic heat map. We can see that during the 80 days, the lambs gain weight rapidly.
+First we will load and examine the lambs dataset with a basic heat map. We can see that during the 80 days, the lambs gain weight rapidly.
 
 ```{r ex0a, fig.height=8, fig.width=10}
 data<-LambsWeight
 
 cols <- rev(colorRampPalette(brewer.pal(6, "Blues"))(100))
-lattice::levelplot(t(data), col.regions = cols[length(cols):1], ylab="Days",xlab="Lamb ID")
-
+lattice::levelplot(t(data), 
+                   col.regions = cols[length(cols):1], 
+                   ylab="Days",
+                   xlab="Lamb ID") # TODO: time usually on x axis. 
 ```
 </br></br>
 
-Then we explore the data for the whole period of 80 days with MultiNav's default first order scores. Each point in the scatter plot, represents a lamb.
+Then we explore the data for the whole period of 80 days with MultiNav's default univariate scores. Each point in the scatter plot, represents a lamb.
 
 ```{r ex0b}
-MultiNav(data,type = "snapshot scores")
-
+MultiNav(data,type = "snapshot scores") # TODO: hover. not hoover. 
 ```
 </br></br>
 
-Next we will calculate and examine the daily weight change in percentage. The anomaly scores that will be calculated in the next sections will also be based on the weight gaps.
+From the functional boxplot, we see a general grow trend. 
+Because we prefer data that is statistically "stable", we will examine the growth-ratio. The anomaly scores that will be calculated in the next sections will also be based on the weight gaps.
 
 ```{r ex4}
 data_diff<-apply(data, 2, diff)
 data_diff_per<-100*data_diff/data[1:dim(data)[1]-1,]
 MultiNav(data_diff_per,type = "snapshot scores")
-
 ```
 </br></br>
 
-From both of the exploration displays, we can get see that during the whole period, there are no extream outliers lambs manifested in the first order scores.
+From both of the exploration displays, we can get see that during the whole period, there are no extreme outliers lambs manifested in the univariate scores.
 
 ## Examin Multivariate Outliers
-In this use case, we demonstrate additional MultiNav functionality. The goal is to find individual outlier lambs and understand the nature of the anomaly. The anomalies will be examined in diffrent time windows.
+We now proceed from univariate summary statistics, to a multivariate score, in a short time-window. 
 
-### Three Days Window
-Here we calculate an anomaly score for each lamb, based on variations of T2 Hotelling method. The parameter "show_diff = TRUE" is set, which adds an additional functional box plot of the differenced data. This plot will enable to investigate further the nature of the anomaly. For example, the anomaly in sensor 692 is easy to understand as it is manifested in each one of the days. But for sensor 628, the anomaly is not manifested in any specific day. To understand the nature of the anomaly, we will look at the added differenced data functional boxplot. We see that there a rapid change in the differenced data which is much more than the difference in the other normal sensors.
+### Sliding Window of Univariate Scores
+We now move from univariate scores in a window, to multivariate scores, in a window. As seen in Example @\ref(example1), our multivariate scores are variations of Hotelling's classical $$T^2$$ statistic.
+The parameter `show_diff = TRUE` adds an additional functional box plot of the differenced data.The anomaly in sensor 692 is easy to understand as it is manifested in each one of the days. But for sensor 628, the anomaly is not manifested in any specific day. To understand the nature of the anomaly, we will look at the functional boxplot of differenced data. We see that there a rapid change in the differenced data which is much more than the difference in the other normal lambs.
 
-Additionally, the parameter "window=3" was added. When using the "window" parameter, we provide longer stream of data and scores per sliding window are calculated (beware, this may be computationally expensive). Only scores from the last window are initially displayed, but when clicking on a point representing a sensor, the historical scores for the sensor are displayed.
+Additionally, the parameter `window=3` was added. When using the `window` parameter, instead of a single summary for the whole data, we compute the summary in a sliding window (beware, this may be slow). Only scores from the last window are initially displayed, but when clicking on a point representing a sensor, the historical scores in the sliding window are displayed. [TODO: this is redundant. Should have been explained in the first example.]
+One may return from the single sensor view, to the all-sensor view, by hitting the "Back to scores" button (upper left corner).
 ```{r ex4a, fig.height=5.5}
-
-MultiNav(data_diff_per,type = "snapshot scores",
-         scores = "T2_Variations",window=3, show_diff = TRUE)
-
+MultiNav(data_diff_per, type = "snapshot scores",
+         scores = "T2_Variations", window=3, show_diff = TRUE)
 ``` 
 
 </br></br>
 
 
-### 7 Days Window
-Next we will calculating anomaly score for each lamb, using the "mv" desult scores set. Two scores are calculated, T2_MCD75 which seems to work well, and the EigenvectorCentrality methods, which does not sepereate anomalies well for this dataset.
+### Sliding Window of Multivariate Scores
+Next we will calculating anomaly score for each lamb, using the "mv" desult scores set. Two scores are calculated, _T2_MCD75_ which seems to work well, and the _EigenvectorCentrality_ method, which does not separate anomalies well for this dataset.
 
 ```{r ex4d, fig.height=5}
-
 window<-7
-data.last.7D<-data_diff[(dim(data_diff)[2]-window+1):dim(data_diff)[2],]
+data.last.7D <- data_diff[(dim(data_diff)[2]-window+1):dim(data_diff)[2],]
 
-
-MultiNav(data_diff_per,type = "snapshot scores", scores = "mv",window=7, show_diff = TRUE)
-
+MultiNav(data_diff_per,type = "snapshot scores", 
+         scores = "mv", window=7, show_diff = TRUE)
 ``` 
 </br></br>
 
