@@ -1,6 +1,6 @@
 # Introduction {#Introduction}
 
-The MultiNav R package provides facilities for visualizing multivariate data with focus on tools custom made for unsupervised anomaly detection tasks, such as:
+The **MultiNav** R package provides facilities for visualizing multivariate data with focus on tools custom made for unsupervised anomaly detection tasks, such as:
 
 + EDA - Exploratory Data Analysis.
 + Evaluating different methods of anomaly scores.
@@ -8,15 +8,15 @@ The MultiNav R package provides facilities for visualizing multivariate data wit
 + Tracking anomaly scores levels over time.
 
 
-The **MultiNav** *R* package contains both variety of custom displays with interactive visualizations as well as data pre-processing functions with algorithms from several fields. These include multivariate statistics, robust statistics, process control, unsupervised machine learning, and network analysis. 
+The __MultiNav__ *R* package contains variety of custom displays with interactive visualizations as well as data pre-processing functions with algorithms from several fields. These include multivariate statistics, robust statistics, process control, unsupervised machine learning, and network analysis. 
 
-The package is developed based on learning's from data analysis projects of  industrial IoT real-world use cases. It is developed as part of a PhD study.
+The package is developed based on learning's from data analysis projects of industrial IoT real-world use cases. It is developed as part of a PhD study.
 
-**MultiNav** is powered by an *R* backend, with *javascript + <a href="https://d3js.org/">D3.js</a>* frontend (enabled by utilizing *<a href="http://www.htmlwidgets.org/">HTMLwidgets</a>*). 
+__MultiNav__ is powered by an *R* backend, with *javascript + <a href="https://d3js.org/">D3.js</a>* frontend (enabled by utilizing *<a href="http://www.htmlwidgets.org/">HTMLwidgets</a>*). 
  
 
 ## Concept
-The **MultiNav** package is designed to work with multivariate streaming data coming from sensors network, where all variables are continuous and from the same scale. But usage can be extended to any general multivariate dataset with continuous variables.
+The __MultiNav__ package is designed to work with multivariate streaming data coming from sensors network, where all variables are continuous and from the same scale. But usage can be extended to any general multivariate dataset with continuous variables.
 
 + n - number of observations. In our use cases, typically the observations are sensors readings from different equally spaced time periods.
 Row name will be used as unique identifier for the observation. Row names should be **numeric**.
@@ -26,7 +26,7 @@ Row name will be used as unique identifier for the observation. Row names should
   <img src="images/nxp.PNG" alt="">
 </div> 
 
-+ Snapshot Scores vs Sliding Temporal Window: There are two modes of analysis. "Snapshot Scores" mode - the input data is analyzed as one window. On the other hand, in the "Sliding Temporal Window" we use the sliding window approach. Each sliding window is analyzed separately.  
++ Snapshot Scores vs Sliding Temporal Window: There are two modes of analysis. "Snapshot Scores" mode - the input data is analyzed as one window. On the other hand, in the "Sliding Temporal Window" mode, we use the sliding window approach. Each sliding window is analyzed separately.  
 
 
 **Important**: Missing values should be handled prior to using **MultiNav** functions. Any records with missing values will be automatically omitted. It is recommended to handle missing values as a pre-processing step (for example by interpolations and extrapolations).
@@ -34,13 +34,15 @@ Row name will be used as unique identifier for the observation. Row names should
 
 ## Definitions / Terminology
 
-+ Scoring- Each anomaly method typically calculates "outlyingness" score for each observation in the dataset. Lower scores indicate normal observations and high scores reflect outliers. 
++ Scoring - Each anomaly method typically calculates "outlyingness" score for each sensor (variable) in the dataset. Lower scores indicate normal sensors and high scores reflect outliers. 
  
-+ Thresholding - Cut-off values of anomaly scores in order to label observations into the anomaly classes.
++ Thresholding - Cut-off values of anomaly scores in order to label sensors into anomaly classes.
 
-+ Anomaly / outlier classification / Filtering - The process of giving anomaly scores and applying threshold to identify "Outlier" observations. Assigning each observation a label. Typically classifying the observations into binary class of "Outlier" and "Normal".
++ Anomaly / Outlier classification / Filtering - The process of giving anomaly scores and applying a threshold to identify "Outlier" sensors, assigning each sensor a label. Typically classifying the sensors into binary class of "Outlier" and "Normal".
 
-+ Anomaly Ensemble / Aggregation / Pooling - methods to combine anomaly scores from a variety of algorithms into one vector of scores.
++ Signal Interpretation - Understanding why an instance (in our use-case a sensor) was given an anomalous score. 
+
++ Sliding Temporal Window - Anomalies are declared based on readings from recent history. This is achieved by choosing a time window of a fixed length, and sliding it along the streaming dataset. The anomaly scores are calculated per sliding window.  Like any multi-period process-control algorithm, the window's length balances detection power against speed of detection.
 
 
 
@@ -58,12 +60,12 @@ In the future, additional functionality may be added:
     + Ensemble anomaly scores.
     + Data pre-processing and transformation.
 * Additional functionality for multivariate exploratory data analysis.
-* Tools for clustering tasks. 
+* Tools for unsupervised clustering tasks. 
 
 
 
 ## Installation 
-Stable version from CRAN - not available yet (soon coming...).
+Stable version from CRAN - not available yet (coming soon ...).
 
 ```r
 install.packages("MultiNav")

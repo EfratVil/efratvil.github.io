@@ -1,85 +1,75 @@
 # Linked Charts
 
-MultiNav also provides several options for linked charts. Two inputs are required: Multivariate data (raw data) and summary data and. Each id in the summary data will be connected to the mattching variable (with the same id) in the raw table. 
+__MultiNav__ also provides additional flexible options for creating linked charts. The link is created by setting the same 'link_id' paramter in multiple charts. The linked charts can be effectvie when knitting rmd files into html pages for creating dashboard page with many linked charts.
 
-First, let's create some data:
+Note: The link is created based on the sensor id (having an id column in summary datasets or variable name in detailed datasets).
 
-```{r message=FALSE, error=FALSE}
+First, let's load some sensors data and calculate sensor scores:
+
+```{r LC1, message=FALSE, error=FALSE}
 library(MultiNav)
 data <- DendrometerSensors
 uni_matrix<-Calc_uni_matrix(data)
-quantiles_matrix<-Calc_quantiles_matrix(data)
 
 data<-cbind(seq_id=as.numeric(row.names(data)), data)
-
 ```
 
-## Scatter Plot With Linked Line Chart
-
-Creates a scatter plot With linked line chart. With an option to add functional boxplot as a background for the line chart.
-
-<p class="well" style=" background-color: #F1F1F1; padding: 10px; border: 1px solid #cccccc;">MultiNav(data, type = "scatter_and_linked_line",
-     x= NULL, y= NULL, raw_data = NULL, link_id = NULL, q_data = NULL)</p>
+## Adding linked charts to "scores" display
+There is an option to add additional linked scatter charts to the "scores" display. To do so, set the parameter `link_id`. All charts sharing the same `link_id` will be connected.
 
 
-**Arguments:** <br/>
-data	 - 
-Data set in data.table, data.frame or matrix frormat which contains summary scores for each variable. Includes additional column named: "seq_id" to identify the variable names.<br/>
-x	 - 
-variable name for the x values of the scatter plot.<br/> 
-y	 - 
-variable name for the y values of the scatter plot.<br/> 
-raw_data - Data set in data.frame frormat containing the raw data of connected variables. <br/> 
-link_id - Serves as an identifier for the linked charts (allowing several linked charts on the same markdown page).
-
-**Example:** <br/>
-```{r message=FALSE, error=FALSE, fig.height=4}
-MultiNav(uni_matrix,type = "scatter_and_linked_line",
-         "min", "max", raw_data = data, link_id="chart_a")
+Hover over any point to see the link in action.
+```{r LC2, message=FALSE, error=FALSE, fig.height=4}
+MultiNav(data,type = "scores",link_id="link_a")
 
 ``` 
 
 </br></br>
-**Optional Arguments:** <br/>
-q_data - quantiles dataset, which can be created with aid of the data pre-processing function 'Calc_quantiles_matrix()' 
 
+```{r LC3, message=FALSE, error=FALSE, fig.height=2}
+MultiNav(uni_matrix,type = "scatter","quantile_25", "quantile_75" , link_id="link_a")
 
-**Example:** <br/>
-Same example as before, with a functional boxplot added in the background of the line chart.
-
-```{r message=FALSE, error=FALSE, fig.height=4}
-MultiNav(uni_matrix,type = "scatter_and_linked_line",
-         "min", "max", raw_data = data, link_id="chart_b",
-         q_data = quantiles_matrix)
 ``` 
 
+## Scatter Plot with linked line chart
+Link a scatter plot with a line chart then add additonal linked scatter plots. 
+
+**Example I:** <br/>
+```{r LC4, message=FALSE, error=FALSE, fig.height=4}
+MultiNav(uni_matrix,type = "scatter_and_linked_line",
+         "min", "max", raw_data = data, link_id="link_b")
+``` 
+</br>
+
+```{r LC5, message=FALSE, error=FALSE, fig.height=2}
+MultiNav(uni_matrix,type = "scatter","mad", "median" , link_id="link_b")
+``` 
 </br></br>
 
+** Example II** </br>
+Adding functional box plot as background to the line chart.<br/>
+Basically it is the same example as before, only we calculate custom quantiles and pass them to the linked scatter plot, with the `quantiles` parameter.
 
-## Network Graph With Linked Line Charts
+```{r LC6, message=FALSE, error=FALSE, fig.height=4}
+quantiles_matrix<-Calc_quantiles_matrix(data)
 
-Creates a network graph with force layout and a linked line chart. With an option to add functional boxplot as a background for the line chart.
+MultiNav(uni_matrix,type = "scatter_and_linked_line",
+         "min", "max", raw_data = data, link_id="link_c",
+         quantiles= quantiles_matrix)
+``` 
+</br>
+```{r LC6a, message=FALSE, error=FALSE, fig.height=2}
+MultiNav(uni_matrix,type = "scatter","mad", "median" , link_id="link_c")
+``` 
+</br></br>
 
-<p class="well" style=" background-color: #F1F1F1; padding: 10px; border: 1px solid #cccccc;">MultiNav(data, type = "network_and_linked_line",
-     x= NULL, y= NULL, raw_data = NULL, link_id = NULL, q_data = NULL)</p>
+**Note:** the quantiles dataset, can be created with aid of the data pre-processing function `Calc_quantiles_matrix()`. 
 
+## Network graph With linked line charts
+Creates a network graph with force layout and a linked line chart. 
+There is an option to add functional boxplot as a background for the line chart, and also option to add additional linked scatter plots.
 
-**Arguments:** <br/>
-data	 - 
-Dataset with expected columns named: "from", "to", "weight". The weight should be scaled to the range 0-300.<br/>
-x	 - 
-variable name for the x values of the scatter plot.<br/> 
-y	 - 
-variable name for the y values of the scatter plot.<br/> 
-raw_data - Dataset containing the raw data of the connected variables. <br/>
-link_id - Serves as an id for the linked charts (allowing several linked charts on the same markdown page).
-
-**Optional Arguments:** <br/>
-q_data - Data set in data.frame frormat of quantiles over time. Data set can be created with aid of the data pre-processing function 'Calc_quantiles_matrix()' 
-
-**Example:** <br/>
-
-```{r message=FALSE, error=FALSE, fig.height=4}
+```{r LC7, message=FALSE, error=FALSE, fig.height=4}
 library(igraph)
 
 exclude.vars <- match(c("seq_id"), names(data)) 
@@ -89,26 +79,8 @@ g  <- graph.adjacency((1-cor)*150,weighted=TRUE, diag=FALSE,mode= "upper")
 network <- get.data.frame(g)
 head(network)
 MultiNav(network,type = "network_and_linked_line",
-          raw_data = data, link_id="chart_c",
-         q_data = quantiles_matrix)
-
+          raw_data = data, link_id="link_d",
+         quantiles = quantiles_matrix)
 ```
 
-## Multiple Linked Charts
-
-There is an option to link multiple charts to the same linked line chart. The multiple link is set by setting the same 'link_id' paramter in multiple charts. This option can be effectvie when knitting rmd files to create dashboard page with many linked charts.
-
-
-```{r message=FALSE, error=FALSE, fig.height=4}
-MultiNav(uni_matrix,type = "scatter_and_linked_line",
-         "min", "max", raw_data = data, link_id="chart_D",q_data = quantiles_matrix)
-
-``` 
-
-</br></br>
-
-```{r message=FALSE, error=FALSE, fig.height=2}
-MultiNav(uni_matrix,type = "scatter","quantile_25", "quantile_75" , link_id="chart_D")
-
-``` 
-
+ 

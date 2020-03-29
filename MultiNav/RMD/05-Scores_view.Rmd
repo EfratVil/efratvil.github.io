@@ -1,0 +1,142 @@
+# "scores" Display
+
+The "scores" display is __MultiNav__'s main tool for common anomaly detection tasks. This section provides a **technical** review and demonstration of available parameters. More  demonstrations along with detailed explanations are provided in the example sections.
+
+The "scores" display, presents anomaly scores to the analyst for inspection, each anomaly score is displayed in a separate scatter plot. Each point in the scatter plot represents a specific sensor. When the analyst's hovers over a specific sensor, the matching scores (of the same sensor) from all the other anomaly scores are highlighted (with a larger point and orange color). In addition, the values from the selected sensor are presented layed on top of a functional box plot, which enables to compare the sensor's readings relative to readings from the other sensors. This display relays on interactivity of linked charts to enable quickly examination of different sensors.
+
+
+Loading the package and some data.
+```{r sv1, warning=FALSE, message=FALSE}
+library(MultiNav)
+
+data<-LambsWeight
+
+```
+
+## Default scores
+__MultiNav__ provides several sets of default scores. Details and explanations on each score set can be found in [Example I](example1.html).
+
+
+## Default univariate scores set
+The set of default univariate scores is suitable for initial exploratory data analysis (EDA) and finding univariate anomalies.
+
+**Input:** 
+The only input required is a continuous multivariate dataset with variables on the same scale. The dataset should be in the format of a `data.table`, `data.frame` or `matrix`. Observations with NA values will be omitted. 
+
+
+```{r sv2, fig.height=5.5}
+MultiNav(data, type = "scores")
+```
+
+<br/><br/>
+
+## Default multivariate scores 
+
+### "mv" default
+
+```{r sv6a, warning=FALSE}
+# Extracting data from last 3 days
+window<-3
+data.3D<-data[(dim(data)[2]-window+1):dim(data)[2],]
+
+MultiNav(data.3D,type = "scores", scores = "mv")
+```
+<br/><br/>
+
+### "T2_Variations" scores 
+
+```{r sv6}
+MultiNav(data.3D,type = "scores", scores = "T2_Variations")
+```
+<br/><br/>
+
+
+## Custom scores
+__MultiNav__ also allows input of custom scores per sensor.
+
+**Input:** 
+1) Raw data, continuous multivariate dataset.
+2) Dataset of calculated scores for each sensor (up to four different scores). 
+
+```{r sv3, fig.height=5.5}
+
+quantile_25 <- apply(data,2,quantile,probs=0.25,na.rm = TRUE)
+median <- apply(data,2,median,na.rm = TRUE)
+quantile_75 <- apply(data,2,quantile,probs=0.75,na.rm = TRUE)
+mad<- apply(data,2,mad,na.rm = TRUE)
+anomaly.scores<- cbind(id=as.numeric(colnames(data)), 
+                 quantile_25,median,quantile_75,mad)
+head(anomaly.scores)
+
+MultiNav(data,type = "scores", scores = anomaly.scores)
+
+```
+
+<br/><br/>
+
+
+## Custom quantiles
+__MultiNav__ also allows input of custom quantiles, used for creating custom functional box plot envalops (instead of the default).
+
+**Input:** 
+1) Raw data, continuous multivariate dataset 
+2) Pre calculated custom quantiles dataset (in the structure of the example below). 
+
+```{r sv5, fig.height=5.5}
+quantiles_matrix<-Calc_quantiles_matrix(data)
+head(quantiles_matrix)
+
+MultiNav(data,type = "scores", quantiles=quantiles_matrix)
+
+```
+<br/><br/>
+
+
+## Examine historical scores
+__MultiNav__ also enables to review historical scores per sensor (calculated per "Sliding Temporal Window"). The scores from the last window are presented. When clicking on a point representing a sensor, the display updates. The focus moves to the selected sensor and the sensor's historical scores are displayed (sliding window scores).  
+
+**Input:** Continuous multivariate data. The `window` parameter is set. Historical scores per sliding window are calculated.
+
+Note: since scores are calculated for each sensor per each sliding window, this action maybe time consuming! 
+
+```{r sv7, fig.height=5.5}
+
+MultiNav(data,type = "scores", scores = "mv",window=3)
+```
+<br/><br/>
+
+
+There is also an option for providing calculated scores per sensor per window. The calculated scores dataset should be in the specific format as in the example below.
+
+**Note: ** when providing calculated scores per temporal window, the 'window' parameter does not need to be set.
+
+
+```{r sv7a, fig.height=5.5}
+
+scores<-sliding_window_scores(data,14,scores="T2_Variations") 
+head(scores)
+MultiNav(data,type = "scores", sliding_scores = scores)
+
+```
+<br/><br/>
+
+## Examine outliers
+Setting the `show_diff = TRUE` parameter, the "scores" display adds additional functional box plot of the differenced data.It  may provide needed insights regarding the nature of the anomaly.
+
+```{r sv8, fig.height=5.5}
+
+MultiNav(data, type = "scores", scores = "mv",window=3, show_diff = TRUE)
+
+```
+<br/><br/>
+
+## Functional box plot labels
+Setting the parameters `xlbl` and `ylbl` will add x and y axis labels for the functional box plot.
+
+```{r sv9, fig.height=5.5}
+
+MultiNav(data, type = "scores", xlbl = "date id", ylbl = "kg")
+
+```
+<br/><br/>
+

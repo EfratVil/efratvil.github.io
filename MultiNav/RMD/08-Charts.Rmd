@@ -1,6 +1,6 @@
 # Charts
 
-MultiNav provides several basic charts that are used as building blocks for the interactive displays. These charts can also be used as stand-alone. <br/>
+__MultiNav__ provides several basic charts that are used as building blocks for the interactive displays. These charts can also be used as stand-alone. <br/>
 
 First let's create some data:
 
@@ -19,22 +19,17 @@ data<- cbind(seq_id=row.names(data), data)
 ```
 
 
-
-
-## Line Chart
+## Line chart
 
 Simple line chart.<br/>
 
-<p class="well" style=" background-color: #F1F1F1; padding: 10px; border: 1px solid #cccccc;">MultiNav(data,type = "line", x= NULL, y= NULL)</p>
+<p class="well" style=" background-color: #F1F1F1; padding: 10px; border: 1px solid #cccccc;">MultiNav(data,type = "line", x, y)</p>
 
 
 **Arguments:** <br/>
-data	 - 
-Data set in data.table, data.frame or matrix frormat to use for plot.<br/> 
-x	 - 
-variable name of x values.<br/> 
-y	 - 
-variable name for y values.<br/> 
+data	 - Dataset in `data.table`, `data.frame` or `matrix` fromat to use for plot.<br/> 
+x	 - variable name of x values.<br/> 
+y	 - variable name for y values.<br/> 
 
 
 **Example:** <br/>
@@ -45,19 +40,16 @@ MultiNav(data,type = "line","seq_id", "X1")
 
 ```
 
-## Scatter Plot
+## Scatter plot
 Simple scatter plot chart.
 
-<p class="well" style=" background-color: #F1F1F1; padding: 10px; border: 1px solid #cccccc;">MultiNav(data,type = "scatter", x= NULL, y= NULL)</p>
+<p class="well" style=" background-color: #F1F1F1; padding: 10px; border: 1px solid #cccccc;">MultiNav(data,type = "scatter", x, y)</p>
 
 
 **Arguments:** <br/>
-data	 - 
-Data set in data.table, data.frame or matrix frormat to use for plot.<br/> 
-x	 - 
-variable name of x values.<br/> 
-y	 - 
-variable name for y values.<br/> 
+data	 - Dataset in `data.table`, `data.frame` or `matrix` fromat to use for plot.<br/> 
+x	 - variable name of x values.<br/> 
+y	 - variable name for y values.<br/> 
 
 **Example:** <br/>
 
@@ -66,7 +58,7 @@ MultiNav(data,"scatter","X1", "X2")
 ``` 
 
 
-## Network Chart
+## Network chart
 Network chart, with force layout. 
 
 <p class="well" style=" background-color: #F1F1F1; padding: 10px; border: 1px solid #cccccc;">MultiNav(data,type = "network")</p>
@@ -74,7 +66,7 @@ Network chart, with force layout.
 
 **Arguments:** <br/>
 data	 - 
-Dataset in data.table, data.frame or matrix frormat. The dataset should have columns named: "from", "to", "weight". The weight should be scaled to the numeric range 0-300.<br/> 
+Dataset in `data.table`, `data.frame` or `matrix` fromat. The dataset should have columns named: "from", "to", "weight". The weight should be scaled to the numeric range 0-300.<br/> 
 
 
 **Example:** <br/>		
@@ -83,7 +75,6 @@ Dataset in data.table, data.frame or matrix frormat. The dataset should have col
 library(igraph)
 data <- DendrometerSensors 
 cor<-cor(data,use="pairwise.complete.obs")
-
 
 g  <- graph.adjacency((1-cor)*150,weighted=TRUE, diag=FALSE,mode= "upper")
 network <- get.data.frame(g)
@@ -95,23 +86,19 @@ MultiNav(network,type = "network")
 
 ``` 
 
-
-
-## Functional BoxPlot
+## Functional boxplot
 The functional boxplot provides a visual tool for understanding
 the behavior of majority of the data over time. In our functional boxplot, the inner envelope, shows the range between the 25th percentile of the readings
 over time, and the 75th percentile. The outer envelope is drawn
-with a brighter color, and shows the range from the 2nd percentile to
-the 98th percentile of the readings over time (containing 96% of the
+with a brighter color, and shows the range from the 5th percentile to
+the 95th percentile of the readings over time (containing 90% of the
 data). <br/>
 
-<p class="well" style=" background-color: #F1F1F1; padding: 10px; border: 1px solid #cccccc;">MultiNav(data, type = "functional_box",
-     raw_data = NULL, line_id = NULL)</p>
+<p class="well" style=" background-color: #F1F1F1; padding: 10px; border: 1px solid #cccccc;">MultiNav(data, type = "functional_box", raw_data)</p>
 
 
 **Arguments:** <br/>
-data	 - 
-Dataset in data.table, data.frame or matrix frormat. The dataset should have columns named: seq_id", "min","quantile_a", "quantile_b","median","quantile_c","quantile_d", "max"
+data	 - Dataset in `data.table`, `data.frame` or `matrix` format. The dataset should have columns named: seq_id", "min","quantile_a", "quantile_b","median","quantile_c","quantile_d", "max"
 
 **Optional arguments:** <br/>
 raw_data  - Dataset containing the raw data used for calculating the functional boxplot. <br/>

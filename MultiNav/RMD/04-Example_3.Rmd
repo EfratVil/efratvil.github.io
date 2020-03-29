@@ -1,0 +1,49 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+editor_options: 
+  chunk_output_type: console
+---
+# Example III - Breast Cancer Data Set 
+
+This example shows how __MultiNav__ can be used for exploring a general multivariate dataset, that does not have temporal attributes. 
+
+The demonstrated dataset is one of the datasets reviewed in the paper [A Comparative Evaluation of Unsupervised Anomaly Detection Algorithms for Multivariate Data](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0152173). The paper discusses datasets that can be used for benchmarking unsupervised anomaly detection algorithms.
+
+About the **Breast Cancer Wisconsin (Diagnostic)** dataset: the features are extracted from medical images of a [fine needle aspirate](https://en.wikipedia.org/wiki/Fine-needle_aspiration) (FNA) describing the cell nuclei. The challenge is to separate cancer from healthy patients with unsupervised anomaly detection methods. The dataset contains 367 instances in total and having 2.72% anomalies (10 anomalies).
+<br/><br/>
+
+```{r, message=FALSE}
+library(MultiNav)
+```
+
+### Load The Data
+We load the data, scale it, and remove the class variable. 
+Before using __MultiNav__, we also transpose the data. MultiNav is built for finding anomalies in variables (typically sensors in IoT use cases). If the goal of the analysis is to find anomalies in observations (such as in this data set), first a transpose of the data is required.
+
+```{r exp1, fig.height=4, fig.width=7}
+ds <- read.csv('breast-cancer-unsupervised-ad.csv',stringsAsFactors = FALSE, check.names = FALSE)
+ds[,31]<-NULL
+
+ds<-as.data.frame(t(scale(ds)))
+colnames(ds)<-seq(1:dim(ds)[2])
+``` 
+
+### Initial Data Exploration
+First we explore the data with the univariate scores. Few mild anomalies can be easily identified, such as instance #1 which received relatively high scores and instance #80 which has high scores on 3/4 of the scores. 
+```{r exp2, message=FALSE, error=FALSE, fig.height=4, fig.width=7}
+MultiNav(ds, type = "scores")
+``` 
+</br></br>
+
+### Multivariate Anomalies
+
+Then we examine the multivariate anomalies with the default multivariate scores set. For this data set the eigencetrality score is not useful (does not separate any instances as anomalies). The T2_mcd75 score, identifies several anomalies. For example instances #1,#29, #31, #80, #156 receive high scores compared to the rest. Using the functional box plot, a sense of the nature of the anomaly can be received. 
+
+```{r exp4, message=FALSE, error=FALSE, warning=FALSE, fig.height=4, fig.width=7}
+MultiNav(ds, type = "scores", scores="mv")
+``` 
+</br></br>
+
+Note that the intention in this example was merely to demonstrate __MultiNav__ capabilities for working on anomaly detection tasks on a general multivariate dataset. The search of suitable anomaly detection methods for this example dataset was not part of the scope.
