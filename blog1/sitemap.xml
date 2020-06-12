@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://localhost:1313/blog1/posts/my-third-post/</loc>
+    <lastmod>2020-06-12T14:41:53+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog1/posts/</loc>
+    <lastmod>2020-06-12T14:41:53+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog1/</loc>
+    <lastmod>2020-06-12T14:41:53+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog1/tags/basic-elements/</loc>
+    <lastmod>2020-06-12T14:41:47+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog1/categories/</loc>
+    <lastmod>2020-06-12T14:41:47+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog1/tags/css/</loc>
+    <lastmod>2020-06-12T14:41:47+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog1/categories/development/</loc>
+    <lastmod>2020-06-12T14:41:47+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog1/tags/html/</loc>
+    <lastmod>2020-06-12T14:41:47+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog1/posts/my-second-post/</loc>
+    <lastmod>2020-06-12T14:41:47+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog1/tags/</loc>
+    <lastmod>2020-06-12T14:41:47+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog1/posts/my-first-post/</loc>
+    <lastmod>2020-06-12T14:41:37+03:00</lastmod>
+  </url>
+  
+</urlset>
